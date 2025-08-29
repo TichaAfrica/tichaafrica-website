@@ -3,24 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ticha Africa – Teachers Leading AI Education</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
-    header { background: #003366; color: #fff; padding: 20px; text-align: center; }
-    h1 { margin: 0; font-size: 2rem; }
-    section { padding: 20px; max-width: 800px; margin: auto; }
-    .cta { display: inline-block; background: #FFB400; color: #000; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 20px; }
-  </style>
+  <title>TichaAfrica – AI for African Classrooms</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <!-- Header -->
   <header>
-    <h1>Ticha Africa</h1>
-    <p>Empowering Teachers to Shape AI in African Education</p>
+    <div class="container">
+      <img src="images/logo.png" alt="TichaAfrica Logo" class="logo">
+      <h1>AI for African Classrooms</h1>
+    </div>
   </header>
-  <section>
-    <h2>Our Mission</h2>
-    <p>We equip African teachers with the tools and knowledge to lead AI integration in classrooms — creating fair, future-ready education for all.</p>
-    <a href="mailto:contact@tichaafrica.com" class="cta">Join the Movement</a>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Be Part of Africa’s First Mobile-First AI Curriculum</h2>
+    <p>
+      TichaAfrica is building a teacher-led AI program guided by the African Union AI Strategy and UNESCO AI CFT.
+      This free training will empower African teachers, digital coaches, and school leaders to lead human-first, ethical AI integration.
+    </p>
+    <p><strong>Your experience will shape this future.</strong></p>
   </section>
+
+  <!-- Embedded Form -->
+  <section class="form-section">
+    <h2>Share Your Insights</h2>
+    <form name="ticha-insights" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="ticha-insights">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <select name="role" required>
+        <option value="">Select Your Role</option>
+        <option value="Teacher">Teacher</option>
+        <option value="Digital Teacher/Coach">Digital Teacher/Coach</option>
+        <option value="School Administrator">School Administrator</option>
+      </select>
+      <textarea name="insight" placeholder="Share your biggest challenge or experience with AI in teaching" required></textarea>
+      <button type="submit">Submit Insights</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 TichaAfrica – Shaping the Future of African Education</p>
+  </footer>
+
 </body>
 </html>
