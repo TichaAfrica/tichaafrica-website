@@ -1,207 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ticha Africa – AI for African Teachers</title>
-  /* ===============================
-   Global Styles
-=============================== */
-:root {
-  --primary-color: #003366;    /* Deep Navy Blue */
-  --secondary-color: #FFD700;  /* Gold */
-  --accent-color: #228B22;     /* Leaf Green */
-  --neutral-color: #808080;    /* Grey */
-  --background-color: #f9f9f9; /* Light background */
-  --font-family: 'Helvetica Neue', Arial, sans-serif;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: var(--font-family);
-  color: var(--primary-color);
-  background-color: var(--background-color);
-  line-height: 1.6;
-}
-
-/* ===============================
-   Header
-=============================== */
-header {
-  background-color: var(--primary-color);
-  color: white;
-  padding: 20px 40px;
-  text-align: center;
-}
-
-header h1 {
-  font-size: 2.5rem;
-  margin: 0;
-}
-
-header p {
-  font-size: 1.2rem;
-  color: var(--secondary-color);
-}
-
-/* ===============================
-   Navigation
-=============================== */
-nav {
-  background-color: var(--secondary-color);
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 10px 0;
-}
-
-nav a {
-  color: var(--primary-color);
-  text-decoration: none;
-  font-weight: bold;
-}
-
-nav a:hover {
-  color: var(--accent-color);
-}
-
-/* ===============================
-   Main Content
-=============================== */
-main {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
-
-section {
-  margin-bottom: 40px;
-}
-
-section h2 {
-  color: var(--primary-color);
-  border-bottom: 3px solid var(--secondary-color);
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-}
-
-p {
-  color: var(--neutral-color);
-  font-size: 1.1rem;
-}
-
-/* ===============================
-   Buttons
-=============================== */
-.button {
-  display: inline-block;
-  padding: 12px 25px;
-  background-color: var(--accent-color);
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 6px;
-  transition: background 0.3s ease;
-}
-
-.button:hover {
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
-}
-
-/* ===============================
-   Footer
-=============================== */
-footer {
-  background-color: var(--primary-color);
-  color: white;
-  text-align: center;
-  padding: 20px 40px;
-  margin-top: 40px;
-}
-
-footer p {
-  color: var(--secondary-color);
-  margin: 0;
-}
-
-/* ===============================
-   Responsive
-=============================== */
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 2rem;
-  }
-
-  nav {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  main {
-    margin: 20px;
-  }
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticha Africa - Empowering African Educators</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background-color: #003366;
+            color: #FFD700;
+            text-align: center;
+            padding: 20px 10px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        header p {
+            margin: 5px 0 0;
+            font-size: 1.2em;
+        }
+        section {
+            padding: 30px 15px;
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #003366;
+            margin-bottom: 15px;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .highlight {
+            color: #228B22; /* Leaf green */
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #eee;
+            color: #666;
+            font-size: 0.9em;
+        }
+    </style>
 </head>
 <body>
 
 <header>
-  <h1>Africa's teachers have always been innovators. Now we're proving it to the world.</h1>
-  <p>We believe every African teacher carries wisdom that can transform education globally. 
-  Our mission: Build the first mobile-first AI curriculum designed <strong>BY African teachers, FOR African classrooms</strong>, guided by our values of human-first innovation and ethical technology.</p>
-  <a href="#join" class="cta">Join Our Mission (Free)</a>
+    <h1>Ticha Africa</h1>
+    <p>Empowering African Educators with AI</p>
 </header>
 
 <section>
-  <h2>Why This Mission Matters</h2>
-  <p>For too long, education technology was built without asking teachers what they need—especially African teachers creating miracles with minimal resources.</p>
-  <ul class="values-list">
-    <li><strong>Human-First:</strong> AI serves teachers and students, not the other way around.</li>
-    <li><strong>African-Led:</strong> Built from African classrooms for African contexts.</li>
-    <li><strong>Ethical:</strong> Guided by UNESCO standards and African Union principles.</li>
-    <li><strong>Accessible:</strong> Mobile-first, works on any device, completely free.</li>
-    <li><strong>Community-Driven:</strong> 200 teachers co-create, not just consume.</li>
-  </ul>
-</section>
+    <h2>Our Mission</h2>
+    <p>
+        Ticha Africa is dedicated to helping educators across Africa simplify their workflows and boost productivity. 
+        We integrate AI and digital tools to empower teachers in both rural and urban settings, helping them upskill 
+        and stay relevant in a rapidly evolving educational landscape.
+    </p>
 
-<section>
-  <h2>What We're Building Together</h2>
-  <p>Picture a future where:</p>
-  <ul class="vision-list">
-    <li>The teacher in rural Ghana influences AI teaching in urban Lagos.</li>
-    <li>Ancient storytelling methods guide modern technology design.</li>
-    <li>African languages and contexts form the foundation of AI education.</li>
-    <li>Teachers lead policy discussions instead of following them.</li>
-    <li>Your classroom innovations reach millions of children across the continent.</li>
-  </ul>
-</section>
+    <h2>Why We Exist</h2>
+    <p>
+        Education in Africa faces unique challenges, but with the right tools and training, teachers can become 
+        catalysts for transformation. Our mission is to provide those tools, skills, and support.
+    </p>
 
-<section class="newsletter">
-  <h2>Our Newsletter: Beyond the Blackboard</h2>
-  <p>Every week, we share real tools, success stories, and updates on how your insights are shaping Africa's first mobile-first AI curriculum.</p>
-  <form action="https://YOUR-SUBSTACK-URL" method="post">
-    <input type="email" name="email" placeholder="Enter your email" required>
-    <button type="submit">Subscribe</button>
-  </form>
-</section>
-
-<section id="join">
-  <h2>Join the Mission That's Changing Everything</h2>
-  <p>Right now, <strong>147 teachers across Africa</strong> are proving that African wisdom is leading global education innovation.</p>
-  <ul class="mission-list">
-    <li>Share your teaching story (5 minutes, 7 questions)</li>
-    <li>Help design curriculum that honors African contexts</li>
-    <li>Get free access to the training you helped create</li>
-    <li>Connect with 199 other mission-driven educators</li>
-    <li>Lead the conversation about ethical AI in education</li>
-  </ul>
-  <a href="https://YOUR-FORM-LINK" class="cta">JOIN OUR MISSION – SHAPE THE FUTURE</a>
-  <p>53 founding positions remaining. This generation of students can't wait.</p>
+    <h2 class="highlight">Join the Movement</h2>
+    <p>
+        Whether you're actively teaching or looking to regain your place in education, 
+        Ticha Africa is here to support you on your journey towards innovation and impact.
+    </p>
 </section>
 
 <footer>
-  <p>&copy; 2025 Ticha Africa – Empowering African Teachers with AI</p>
+    © 2025 Ticha Africa. All rights reserved.
 </footer>
 
 </body>
