@@ -17,6 +17,11 @@
       padding: 30px 20px;
       text-align: center;
     }
+    .logo {
+      max-width: 120px;
+      height: auto;
+      margin-bottom: 20px;
+    }
     header h1 {
       font-size: 2.8em;
       margin: 0;
@@ -68,26 +73,44 @@
       margin-top: 40px;
       color: #555;
     }
+    .footer-logo {
+      max-width: 60px;
+      height: auto;
+      margin-bottom: 10px;
+      opacity: 0.7;
+    }
+    /* Mobile responsiveness for logo */
+    @media (max-width: 768px) {
+      .logo {
+        max-width: 100px;
+      }
+      header h1 {
+        font-size: 2.2em;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
+    <img src="images/logo.png" alt="TichaAfrica Logo" class="logo">
     <h1>TichaAfrica: Where African Teachers Lead the AI Revolution</h1>
     <p>Empowering educators to thrive in the digital age, shape the future, and inspire change.</p>
   </header>
   <section>
     <h2>What We Do</h2>
-    <p>TichaAfrica is more than a platform – it’s a movement. We equip African educators with the tools, strategies, and support to <span class="highlight">integrate AI seamlessly into their classrooms</span>, elevate their teaching, and unlock new income opportunities beyond traditional boundaries.</p>
+    <p>TichaAfrica is more than a platform – it's a movement. We equip African educators with the tools, strategies, and support to <span class="highlight">integrate AI seamlessly into their classrooms</span>, elevate their teaching, and unlock new income opportunities beyond traditional boundaries.</p>
     
     <h2>How We Do It</h2>
     <p>Through mobile-first, self-paced courses, interactive resources, and a vibrant support community, we help teachers bridge the AI skills gap, prepare for upcoming upskilling requirements, and lead change in their schools and communities.</p>
     
     <h2>Why It Matters</h2>
-    <p>Africa's education system stands at a crossroads. As global teaching standards evolve, the question is: will African teachers be ready? TichaAfrica ensures they won’t just catch up – they’ll lead.</p>
+    <p>Africa's education system stands at a crossroads. As global teaching standards evolve, the question is: will African teachers be ready? TichaAfrica ensures they won't just catch up – they'll lead.</p>
     
     <a href="#" class="cta">Join the Movement</a>
   </section>
   <footer>
+    <img src="images/logo.png" alt="TichaAfrica Logo" class="footer-logo">
+    <br>
     &copy; 2025 TichaAfrica. All rights reserved.
   </footer>
 </body>
