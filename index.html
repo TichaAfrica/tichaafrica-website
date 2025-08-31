@@ -7,118 +7,340 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
       color: #333;
+      line-height: 1.6;
     }
+    
     header {
-      background-color: #003366;
+      background: linear-gradient(135deg, #003366 0%, #004080 100%);
       color: #fff;
-      padding: 30px 20px;
+      padding: 40px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('images/hero-image.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.1;
+      z-index: 0;
+    }
+    
+    .header-content {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .logo {
+      max-width: 140px;
+      height: auto;
+      margin-bottom: 25px;
+      background-color: #fff;
+      padding: 12px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    
+    header h1 {
+      font-size: 2.8em;
+      margin: 0 0 15px 0;
+      color: #ffd700;
+      font-weight: 700;
+    }
+    
+    header p {
+      font-size: 1.3em;
+      margin-bottom: 30px;
+      color: #e0e8f0;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .cta-primary {
+      display: inline-block;
+      padding: 15px 30px;
+      background: linear-gradient(45deg, #ffd700, #ffed4e);
+      color: #003366;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 1.1em;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+    }
+    
+    .cta-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+    }
+    
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .section {
+      margin: 60px auto;
+      padding: 40px 30px;
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    }
+    
+    .section h2 {
+      color: #003366;
+      margin-bottom: 20px;
+      font-size: 2.2em;
+      font-weight: 600;
+    }
+    
+    .section p {
+      margin-bottom: 20px;
+      font-size: 1.1em;
+    }
+    
+    .highlight {
+      color: #228B22;
+      font-weight: bold;
+      background-color: #f0f8f0;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    
+    .frameworks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+    
+    .framework-card {
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 10px;
+      border-left: 4px solid #ffd700;
+    }
+    
+    .framework-card h3 {
+      color: #003366;
+      margin-bottom: 15px;
+      font-size: 1.3em;
+    }
+    
+    .newsletter-signup {
+      background: linear-gradient(135deg, #228B22 0%, #32CD32 100%);
+      color: white;
       text-align: center;
     }
-    .logo {
-      max-width: 120px;
+    
+    .newsletter-signup h2 {
+      color: white;
+      margin-bottom: 15px;
+    }
+    
+    .signup-form {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .signup-form input[type="email"] {
+      flex: 1;
+      min-width: 250px;
+      padding: 12px 15px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+    }
+    
+    .signup-form button {
+      padding: 12px 25px;
+      background-color: #ffd700;
+      color: #003366;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1em;
+      transition: all 0.3s ease;
+    }
+    
+    .signup-form button:hover {
+      background-color: #e6c200;
+      transform: translateY(-1px);
+    }
+    
+    .insights-form {
+      background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+      color: white;
+      text-align: center;
+    }
+    
+    .insights-form h2 {
+      color: white;
+      margin-bottom: 15px;
+    }
+    
+    .insights-form p {
+      margin-bottom: 25px;
+      font-size: 1.1em;
+    }
+    
+    .form-button {
+      display: inline-block;
+      padding: 15px 30px;
+      background-color: #ffd700;
+      color: #003366;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 1.1em;
+      transition: all 0.3s ease;
+    }
+    
+    .form-button:hover {
+      background-color: #e6c200;
+      transform: translateY(-2px);
+    }
+    
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      margin-top: 60px;
+    }
+    
+    .footer-logo {
+      max-width: 80px;
       height: auto;
       margin-bottom: 20px;
       background-color: #fff;
       padding: 10px;
       border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     }
-    header h1 {
-      font-size: 2.8em;
-      margin: 0;
-      color: #ffd700;
-    }
-    header p {
-      font-size: 1.2em;
-      margin-top: 10px;
-      color: #e0e0e0;
-    }
-    section {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    section h2 {
-      color: #003366;
-      margin-bottom: 15px;
-    }
-    section p {
-      line-height: 1.6;
-      margin-bottom: 15px;
-    }
-    .highlight {
-      color: #228B22;
-      font-weight: bold;
-    }
-    .cta {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 25px;
-      background-color: #ffd700;
-      color: #003366;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-    }
-    .cta:hover {
-      background-color: #e6c200;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #e0e0e0;
-      margin-top: 40px;
-      color: #555;
-    }
-    .footer-logo {
-      max-width: 60px;
-      height: auto;
-      margin-bottom: 10px;
-      background-color: #fff;
-      padding: 8px;
-      border-radius: 8px;
-      opacity: 0.9;
-    }
-    /* Mobile responsiveness for logo */
+    
+    /* Mobile responsiveness */
     @media (max-width: 768px) {
       .logo {
-        max-width: 100px;
+        max-width: 120px;
       }
+      
       header h1 {
         font-size: 2.2em;
+      }
+      
+      .section {
+        margin: 30px auto;
+        padding: 25px 20px;
+      }
+      
+      .frameworks-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .signup-form {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .signup-form input[type="email"] {
+        min-width: auto;
+        width: 100%;
+        max-width: 300px;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="images/logo1.png" alt="TichaAfrica Logo" class="logo">
-    <h1>TichaAfrica: Where African Teachers Lead the AI Revolution</h1>
-    <p>Empowering educators to thrive in the digital age, shape the future, and inspire change.</p>
+    <div class="hero-background"></div>
+    <div class="header-content">
+      <img src="images/logo1.png" alt="TichaAfrica Logo" class="logo">
+      <h1>TichaAfrica: Where African Teachers Lead the AI Revolution</h1>
+      <p>Empowering educators with cutting-edge AI frameworks, evidence-based curricula, and practical tools to transform teaching across Africa.</p>
+      <a href="#insights" class="cta-primary">Start Your AI Teaching Journey</a>
+    </div>
   </header>
-  <section>
-    <h2>What We Do</h2>
-    <p>TichaAfrica is more than a platform – it's a movement. We equip African educators with the tools, strategies, and support to <span class="highlight">integrate AI seamlessly into their classrooms</span>, elevate their teaching, and unlock new income opportunities beyond traditional boundaries.</p>
-    
-    <h2>How We Do It</h2>
-    <p>Through mobile-first, self-paced courses, interactive resources, and a vibrant support community, we help teachers bridge the AI skills gap, prepare for upcoming upskilling requirements, and lead change in their schools and communities.</p>
-    
-    <h2>Why It Matters</h2>
-    <p>Africa's education system stands at a crossroads. As global teaching standards evolve, the question is: will African teachers be ready? TichaAfrica ensures they won't just catch up – they'll lead.</p>
-    
-    <a href="#" class="cta">Join the Movement</a>
-  </section>
+
+  <div class="container">
+    <section class="section">
+      <h2>What We Do</h2>
+      <p>TichaAfrica is more than a platform – it's a comprehensive educational ecosystem. We provide African educators with <span class="highlight">research-backed AI integration frameworks</span>, structured curricula, and practical tools to seamlessly blend artificial intelligence into their teaching practice, elevate student outcomes, and unlock new professional opportunities.</p>
+      
+      <h2>Our AI Teaching Frameworks</h2>
+      <div class="frameworks-grid">
+        <div class="framework-card">
+          <h3>🎯 SMART-AI Framework</h3>
+          <p>Specific, Measurable, Achievable, Relevant, and Time-bound AI integration strategies tailored for African classrooms.</p>
+        </div>
+        <div class="framework-card">
+          <h3>📚 Curriculum Enhancement Model</h3>
+          <p>Step-by-step guides to integrate AI tools into existing subjects without disrupting core learning objectives.</p>
+        </div>
+        <div class="framework-card">
+          <h3>⚡ Rapid Implementation Protocol</h3>
+          <p>Quick-start methods for immediate AI adoption, designed for busy educators with limited preparation time.</p>
+        </div>
+        <div class="framework-card">
+          <h3>📊 Assessment & Analytics Suite</h3>
+          <p>Data-driven frameworks to measure AI impact on student engagement, comprehension, and academic performance.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>How We Do It</h2>
+      <p>Through mobile-first, self-paced professional development programs, interactive curriculum modules, and a supportive educator community, we help teachers bridge the AI skills gap, meet evolving educational standards, and become change leaders in their schools and communities.</p>
+      
+      <p><strong>Our structured approach includes:</strong> Foundation courses in AI literacy, hands-on workshops with popular AI tools, curriculum mapping sessions, peer collaboration networks, and ongoing mentorship from AI-experienced educators across the continent.</p>
+    </section>
+
+    <section class="section">
+      <h2>Why It Matters</h2>
+      <p>Africa's education system stands at a pivotal moment. As global teaching standards evolve and AI becomes integral to modern pedagogy, the question isn't whether change is coming – it's whether African teachers will lead that change or be left behind.</p>
+      
+      <p>TichaAfrica ensures they don't just catch up – <span class="highlight">they pioneer the future of education</span>, setting the standard for AI-enhanced teaching worldwide.</p>
+    </section>
+
+    <section class="section insights-form" id="insights">
+      <h2>🔍 Share Your Teaching Insights</h2>
+      <p>Help us understand the unique challenges and opportunities facing African educators today. Your insights will shape our curriculum and ensure our frameworks meet real classroom needs.</p>
+      <a href="https://tally.so/r/3jrJG9" target="_blank" class="form-button">Complete Our Teaching Survey</a>
+      <p style="font-size: 0.9em; margin-top: 15px; opacity: 0.9;">Takes 3-5 minutes • Your responses help improve our programs</p>
+    </section>
+
+    <section class="section newsletter-signup">
+      <h2>📧 Beyond the Blackboard Newsletter</h2>
+      <p>Get weekly AI teaching tips, curriculum updates, success stories from African educators, and early access to new frameworks delivered straight to your inbox.</p>
+      
+      <form class="signup-form" action="https://tichaafrica.substack.com/subscribe" method="post">
+        <input type="email" name="email" placeholder="Enter your email address" required>
+        <button type="submit">Join 2,000+ Educators</button>
+      </form>
+      
+      <p style="font-size: 0.9em; margin-top: 20px; opacity: 0.9;">Weekly insights • Practical tips • Unsubscribe anytime</p>
+    </section>
+  </div>
+
   <footer>
     <img src="images/logo1.png" alt="TichaAfrica Logo" class="footer-logo">
-    <br>
-    &copy; 2025 TichaAfrica. All rights reserved.
+    <p>&copy; 2025 TichaAfrica. All rights reserved.</p>
+    <p style="font-size: 0.9em; opacity: 0.8;">Empowering African educators • Building the future of teaching</p>
   </footer>
 </body>
 </html>
