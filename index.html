@@ -4,383 +4,568 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TichaAfrica - Teach Smart. Lead Change.</title>
-    <!-- Replace with your actual logo for favicon -->
-    <link rel="icon" href="path/to/your-favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* CSS Variables - REPLACE THESE COLORS TO MATCH YOUR LOGO */
+        /* ===============================
+           Global Styles
+        =============================== */
         :root {
-            --color-primary: #2A5C3F;  /* Deep Green - for primary buttons and accents */
-            --color-secondary: #E9B44C; /* Golden Yellow - for secondary accents */
-            --color-accent: #9A2617;   /* Terracotta Red - for strong calls to action */
-            --color-light: #003366;    /* Cream - for light backgrounds */
-            --color-dark: #1a1d1a;     /* Near Black - for text */
-            --color-gray: #5C5C5C;     /* Gray - for secondary text */
-        }
-
-        /* Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            --primary-color: #003366;    /* Deep Navy Blue */
+            --secondary-color: #FFD700;  /* Gold */
+            --accent-color: #228B22;     /* Leaf Green */
+            --neutral-color: #808080;    /* Grey */
+            --background-color: #f9f9f9; /* Light background */
+            --font-family: 'Helvetica Neue', Arial, sans-serif;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-family);
+            color: var(--primary-color);
+            background-color: var(--background-color);
             line-height: 1.6;
-            color: var(--color-dark);
-            background-color: #fff;
-        }
-
-        h1, h2, h3, h4 {
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-        }
-
-        p {
-            margin-bottom: 1.5rem;
-        }
-
-        a {
-            text-decoration: none;
-            color: var(--color-primary);
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: var(--color-accent);
         }
 
         .container {
             width: 90%;
-            max-width: 1140px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem 0;
+            padding: 20px 0;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+
+        img {
+            max-width: 100%;
         }
 
         .text-center {
             text-align: center;
         }
 
-        /* Button Styles */
-        .btn {
-            display: inline-block;
-            padding: 0.9rem 1.8rem;
-            border-radius: 4px;
-            font-weight: 600;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin: 0.5rem;
+        .section-title {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding-bottom: 15px;
         }
 
-        .btn-primary {
-            background-color: var(--color-primary);
-            color: white;
-            border: 2px solid var(--color-primary);
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--secondary-color);
         }
 
-        .btn-primary:hover {
-            background-color: transparent;
-            color: var(--color-primary);
+        .text-center.section-title:after {
+            left: 50%;
+            transform: translateX(-50%);
         }
 
-        .btn-secondary {
-            background-color: var(--color-secondary);
-            color: var(--color-dark);
-            border: 2px solid var(--color-secondary);
-        }
-
-        .btn-secondary:hover {
-            background-color: transparent;
-            color: var(--color-dark);
-        }
-
-        .btn-accent {
-            background-color: var(--color-accent);
-            color: white;
-            border: 2px solid var(--color-accent);
-        }
-
-        .btn-accent:hover {
-            background-color: transparent;
-            color: var(--color-accent);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: var(--color-primary);
-            border: 2px solid var(--color-primary);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--color-primary);
-            color: white;
-        }
-
-        /* Header & Navigation */
+        /* ===============================
+           Header & Navigation
+        =============================== */
         header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #002244 100%);
+            color: white;
+            padding: 80px 20px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23FFD700" fill-opacity="0.1" d="M0,128L48,117.3C96,107,192,85,288,112C384,139,480,213,576,218.7C672,224,768,160,864,138.7C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1348,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: bottom;
+            opacity: 0.3;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===============================
+           Navigation
+        =============================== */
+        nav {
             background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
 
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 0;
+            padding: 15px 0;
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            font-weight: 800;
-            font-size: 1.5rem;
-            color: var(--color-primary);
+        .nav-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
         }
-        /* Replace with your logo. Set height as needed. */
-        .logo-img {
-            height: 40px;
-            margin-right: 10px;
+
+        .nav-logo span {
+            color: var(--secondary-color);
         }
 
         .nav-menu {
             display: flex;
             list-style: none;
+            margin: 0;
+            padding: 0;
         }
 
         .nav-menu li {
-            margin-left: 2rem;
+            margin-left: 30px;
         }
 
         .nav-menu a {
+            color: var(--primary-color);
             font-weight: 600;
-            color: var(--color-dark);
+            text-decoration: none;
+            transition: color 0.3s;
         }
 
         .nav-menu a:hover {
-            color: var(--color-primary);
+            color: var(--accent-color);
         }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--color-light) 0%, rgba(255,255,255,1) 100%);
-            padding: 5rem 0;
+        /* ===============================
+           Buttons
+        =============================== */
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin: 10px 5px;
             text-align: center;
         }
 
-        .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
+        .btn-primary {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            border: 2px solid var(--secondary-color);
         }
 
-        .hero p {
-            font-size: 1.3rem;
-            color: var(--color-gray);
-            max-width: 700px;
-            margin: 0 auto 2.5rem;
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--secondary-color);
         }
 
-        /* Section Styles */
-        .section {
-            padding: 5rem 0;
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        /* ===============================
+           Sections
+        =============================== */
+        section {
+            padding: 60px 20px;
         }
 
         .section-light {
             background-color: white;
         }
 
-        .section-alt {
-            background-color: var(--color-light);
+        .section-dark {
+            background-color: #f0f4f8;
         }
 
-        /* Problem/Solution Split Section */
+        /* ===============================
+           Problem/Solution Section
+        =============================== */
         .split-section {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-            gap: 3rem;
+            gap: 40px;
         }
 
-        .split-content, .split-image {
-            flex: 1 1 400px;
+        .split-content {
+            flex: 1 1 500px;
         }
-        /* Placeholder for an image. Replace with a relevant photo or illustration. */
+
         .split-image {
-            background-color: #ddd;
-            min-height: 300px;
-            border-radius: 8px;
+            flex: 1 1 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
-        /* Value Props */
-        .value-props {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 3rem;
+        .split-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* ===============================
+           Value Propositions
+        =============================== */
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
         }
 
         .value-card {
-            flex: 1 1 300px;
             background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
             text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
         }
 
         .value-card h3 {
-            color: var(--color-primary);
+            color: var(--primary-color);
+            margin-bottom: 15px;
         }
 
-        /* Audience Cards */
+        /* ===============================
+           Audience Cards
+        =============================== */
         .audience-cards {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
         }
 
         .audience-card {
-            flex: 1 1 300px;
             background: white;
-            padding: 2.5rem;
-            border-radius: 8px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            border-top: 4px solid var(--color-primary);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-top: 5px solid var(--primary-color);
         }
 
         .audience-card h3 {
-            color: var(--color-primary);
+            color: var(--primary-color);
+            margin-bottom: 15px;
         }
 
-        /* Final CTA */
+        .audience-card .btn {
+            margin-top: 20px;
+        }
+
+        /* ===============================
+           Final CTA
+        =============================== */
         .final-cta {
-            background: linear-gradient(135deg, var(--color-primary) 0%, #1c3c29 100%);
+            background: linear-gradient(135deg, var(--primary-color) 0%, #002244 100%);
             color: white;
-            padding: 5rem 0;
             text-align: center;
+            padding: 80px 20px;
         }
 
         .final-cta h2 {
             color: white;
+            margin-bottom: 20px;
         }
 
-        .final-cta .btn {
-            margin-top: 1.5rem;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--color-dark);
-            color: white;
-            padding: 3rem 0 2rem;
+        /* ===============================
+           Newsletter
+        =============================== */
+        .newsletter {
+            background: #fff8e1;
+            padding: 40px;
+            border-radius: 10px;
+            margin: 40px auto;
             text-align: center;
+            max-width: 800px;
         }
 
-        footer a {
-            color: var(--color-secondary);
+        .newsletter h3 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
         }
 
-        .footer-logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
+        .newsletter-form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .newsletter input[type="email"] {
+            flex: 1 1 300px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        .newsletter button {
+            padding: 15px 30px;
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .newsletter button:hover {
+            background: #e0b800;
+        }
+
+        /* ===============================
+           Footer
+        =============================== */
+        footer {
+            background: var(--primary-color);
             color: white;
+            padding: 40px 20px 20px;
         }
 
-        /* Responsive */
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--secondary-color);
+        }
+
+        .footer-column p, .footer-column a {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: var(--secondary-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            transition: background 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* ===============================
+           Responsive
+        =============================== */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.2rem;
+            header h1 {
+                font-size: 2rem;
             }
+            
+            .nav-container {
+                flex-direction: column;
+            }
+            
             .nav-menu {
-                display: none; /* For simplicity, add a hamburger menu here later */
+                margin-top: 20px;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-menu li {
+                margin: 10px 0;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter input[type="email"] {
+                margin-bottom: 10px;
+            }
+            
+            .split-section {
+                flex-direction: column;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header & Navigation -->
-    <header>
+    <!-- Navigation -->
+    <nav>
         <div class="container nav-container">
-            <a href="#" class="logo">
-                <img src="images/logo.png" alt="TichaAfrica Logo" class="logo-img">
-                <span>TichaAfrica</span>
-            </a>
+            <div class="nav-logo">Ticha<span>Africa</span></div>
             <ul class="nav-menu">
-                <li><a href="#for-teachers">For Teachers</a></li>
-                <li><a href="#for-partners">For Partners</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact" class="btn btn-outline">Contact Us</a></li>
+                <li><a href="#problem">The Challenge</a></li>
+                <li><a href="#solution">Our Solution</a></li>
+                <li><a href="#audience">Get Involved</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
-    </header>
+    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">Ticha<span>Africa</span></div>
             <h1>Teach Smart. Lead Change.</h1>
             <p>The AI Platform for African Teachers, Built by African Educators.<br>Aligned with Global Standards. Rooted in Local Reality.</p>
             <a href="#join" class="btn btn-primary">Start Teaching Smart</a>
             <a href="#learn-more" class="btn btn-outline">Learn More</a>
         </div>
-    </section>
+    </header>
 
-    <!-- Problem/Solution Section -->
-    <section class="section section-light">
+    <!-- Problem Section -->
+    <section id="problem" class="section-light">
         <div class="container split-section">
             <div class="split-content">
-                <h2>Your Classroom, Your Reality, Your Power.</h2>
+                <h2 class="section-title">Your Classroom, Your Reality, Your Power.</h2>
                 <p>Foreign edtech tools see a classroom. They miss the community. They see a challenge. They miss the context. For too long, "solutions" have been imported, not built—prescribing generic fixes for uniquely African realities.</p>
                 <p><strong>TichaAfrica ends that disconnect.</strong></p>
-                <p>We’re the first AI-powered platform co-created <em>with</em> you, not delivered <em>to</em> you. It’s how we ensure every feature tackles your real challenges: overcrowded classrooms, scarce resources, and the need for culturally resonant teaching.</p>
+                <p>We're the first AI-powered platform co-created <em>with</em> you, not delivered <em>to</em> you. It's how we ensure every feature tackles your real challenges: overcrowded classrooms, scarce resources, and the need for culturally resonant teaching.</p>
             </div>
             <div class="split-image">
-                <!-- REPLACE THIS DIV WITH AN IMAGE TAG FOR A RELEVANT PHOTO/ILLUSTRATION -->
-                <!-- <img src="path/to/hero-image.jpg" altAfrican teachers collaborating" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"> -->
+                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300' viewBox='0 0 500 300'><rect width='500' height='300' fill='%23003366' opacity='0.1'/><text x='250' y='150' font-family='Arial' font-size='20' fill='%23003366' text-anchor='middle'>African Classroom Image</text></svg>" alt="African classroom illustration">
             </div>
         </div>
     </section>
 
-    <!-- How It Works / Value Proposition -->
-    <section class="section section-alt text-center">
+    <!-- Solution Section -->
+    <section id="solution" class="section-dark">
         <div class="container">
-            <h2>This is how we empower you to <span style="color: var(--color-primary);">Teach Smart. Lead Change.</span></h2>
-            <div class="value-props">
+            <h2 class="section-title text-center">This is how we empower you to <span style="color: var(--secondary-color);">Teach Smart. Lead Change.</span></h2>
+            <div class="value-grid">
                 <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
                     <h3>Teach Smart with AI</h3>
                     <p>Get practical strategies that work here. Use AI to create lesson plans faster, manage large classes, and make the most of limited materials.</p>
                 </div>
                 <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
                     <h3>Lead Change in Your School</h3>
                     <p>Move from adapting to foreign tools to championing homegrown innovation. Establish yourself as a digital leader.</p>
                 </div>
                 <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
                     <h3>Shape the Future</h3>
-                    <p>Your voice directly influences our platform. This isn’t just a tool; it’s a partnership to redefine African education.</p>
+                    <p>Your voice directly influences our platform. This isn't just a tool; it's a partnership to redefine African education.</p>
                 </div>
             </div>
-            <p><em>Built on the foundation of UNESCO’s AI Competency Framework and the African Union’s Continental AI Strategy.</em></p>
+            <p class="text-center" style="margin-top: 40px;"><em>Built on the foundation of UNESCO's AI Competency Framework and the African Union's Continental AI Strategy.</em></p>
         </div>
     </section>
 
-    <!-- The Opportunity -->
-    <section class="section section-light text-center">
-        <div class="container">
-            <h2>The Digital Era is Here. Let's Define It, Not Just Adopt It.</h2>
+    <!-- Opportunity Section -->
+    <section class="section-light">
+        <div class="container text-center">
+            <h2 class="section-title" style="display: inline-block;">The Digital Era is Here. Let's Define It, Not Just Adopt It.</h2>
             <p>This is your chance to ensure the future of African education is shaped by African expertise. With TichaAfrica, you gain the skills to command the change, ensuring it lifts up our teachers and students instead of judging them by another's standard.</p>
         </div>
     </section>
 
-    <!-- For Whom? Audience Specific CTAs -->
-    <section id="join" class="section section-alt">
+    <!-- Audience Section -->
+    <section id="audience" class="section-dark">
         <div class="container">
-            <h2 class="text-center">Be Part of the Change</h2>
+            <h2 class="section-title text-center">Be Part of the Change</h2>
             <div class="audience-cards">
                 <div class="audience-card">
                     <h3>For the African Teacher</h3>
@@ -389,14 +574,28 @@
                 </div>
                 <div class="audience-card">
                     <h3>For Partners & Policymakers</h3>
-                    <p><strong>Back a Solution That Truly Scales.</strong> Partner with us to deploy a teacher empowerment platform that’s proven, strategic, and designed for sustainable impact.</p>
-                    <a href="#" class="btn btn-accent">Lead Change With Us →</a>
+                    <p><strong>Back a Solution That Truly Scales.</strong> Partner with us to deploy a teacher empowerment platform that's proven, strategic, and designed for sustainable impact.</p>
+                    <a href="#" class="btn btn-primary">Lead Change With Us →</a>
                 </div>
                 <div class="audience-card">
                     <h3>For Innovators & Visionaries</h3>
-                    <p><strong>Co-Create the Next Standard.</strong> Collaborate with Africa’s brightest educators to build tools that truly resonate. Your technology, powered by their genius.</p>
-                    <a href="#" class="btn btn-secondary">Build the Future →</a>
+                    <p><strong>Co-Create the Next Standard.</strong> Collaborate with Africa's brightest educators to build tools that truly resonate. Your technology, powered by their genius.</p>
+                    <a href="#" class="btn btn-primary">Build the Future →</a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="section-light">
+        <div class="container">
+            <div class="newsletter">
+                <h3>Stay Updated on Our Progress</h3>
+                <p>Join our newsletter to receive updates on our platform development and early access opportunities.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
             </div>
         </div>
     </section>
@@ -405,20 +604,45 @@
     <section class="final-cta">
         <div class="container">
             <h2>Join the Movement. Teach Smart. Lead Change.</h2>
-            <p>This is more than a platform. It’s a reclamation of your classroom, your profession, and your future.</p>
+            <p>This is more than a platform. It's a reclamation of your classroom, your profession, and your future.</p>
             <p><strong>Will you adapt to change, or will you lead it?</strong></p>
-            <a href="#" class="btn btn-secondary">I'm a Teacher - My Journey Starts Here</a>
-            <a href="#" class="btn btn-outline" style="border-color: white; color: white;">Partner With Us</a>
+            <a href="#" class="btn btn-outline">I'm a Teacher - My Journey Starts Here</a>
+            <a href="#" class="btn btn-primary">Partner With Us</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer id="contact">
         <div class="container">
-            <div class="footer-logo">TichaAfrica</div>
-            <p>Teach Smart. Lead Change.</p>
-            <p>Where African Teachers Shape the Future of Education.</p>
-            <p><small>© 2024 TichaAfrica. All rights reserved.</small></p>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About TichaAfrica</h3>
+                    <p>TichaAfrica is building Africa's first AI-driven teacher empowerment platform, crafted for the African teacher by African educators.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="#problem">The Challenge</a>
+                    <a href="#solution">Our Solution</a>
+                    <a href="#audience">Get Involved</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> info@ticha.africa</p>
+                    <p><i class="fas fa-phone"></i> +234 800 123 4567</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Lagos, Nigeria</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 TichaAfrica. All rights reserved. Teach Smart. Lead Change.</p>
+            </div>
         </div>
     </footer>
 </body>
