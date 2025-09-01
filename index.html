@@ -18,9 +18,13 @@
             --font-family: 'Helvetica Neue', Arial, sans-serif;
         }
 
-        body {
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
             font-family: var(--font-family);
             color: var(--primary-color);
             background-color: var(--background-color);
@@ -32,14 +36,6 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px 0;
-        }
-
-        h1, h2, h3 {
-            font-weight: 700;
-        }
-
-        img {
-            max-width: 100%;
         }
 
         .text-center {
@@ -92,15 +88,9 @@
             opacity: 0.3;
         }
 
-        .logo {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            display: inline-block;
-        }
-
-        .logo span {
-            color: var(--secondary-color);
+        .header-logo {
+            height: 80px;
+            margin-bottom: 1.5rem;
         }
 
         header h1 {
@@ -140,13 +130,7 @@
         }
 
         .nav-logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-
-        .nav-logo span {
-            color: var(--secondary-color);
+            height: 40px;
         }
 
         .nav-menu {
@@ -205,6 +189,17 @@
         .btn-outline:hover {
             background: white;
             color: var(--primary-color);
+        }
+
+        .btn-accent {
+            background: var(--accent-color);
+            color: white;
+            border: 2px solid var(--accent-color);
+        }
+
+        .btn-accent:hover {
+            background: transparent;
+            color: var(--accent-color);
         }
 
         /* ===============================
@@ -487,7 +482,7 @@
     <!-- Navigation -->
     <nav>
         <div class="container nav-container">
-            <div class="nav-logo">Ticha<span>Africa</span></div>
+            <img src="https://i.ibb.co/4T2y1c2/logo.png" alt="TichaAfrica Logo" class="nav-logo">
             <ul class="nav-menu">
                 <li><a href="#problem">The Challenge</a></li>
                 <li><a href="#solution">Our Solution</a></li>
@@ -500,7 +495,7 @@
     <!-- Header -->
     <header>
         <div class="container header-content">
-            <div class="logo">Ticha<span>Africa</span></div>
+            <img src="https://i.ibb.co/4T2y1c2/logo.png" alt="TichaAfrica Logo" class="header-logo">
             <h1>Teach Smart. Lead Change.</h1>
             <p>The AI Platform for African Teachers, Built by African Educators.<br>Aligned with Global Standards. Rooted in Local Reality.</p>
             <a href="#join" class="btn btn-primary">Start Teaching Smart</a>
@@ -512,13 +507,13 @@
     <section id="problem" class="section-light">
         <div class="container split-section">
             <div class="split-content">
-                <h2 class="section-title">Our Classroom, Our Reality, Our Power.</h2>
+                <h2 class="section-title">Your Classroom, Your Reality, Your Power.</h2>
                 <p>Foreign edtech tools see a classroom. They miss the community. They see a challenge. They miss the context. For too long, "solutions" have been imported, not built—prescribing generic fixes for uniquely African realities.</p>
                 <p><strong>TichaAfrica ends that disconnect.</strong></p>
                 <p>We're the first AI-powered platform co-created <em>with</em> you, not delivered <em>to</em> you. It's how we ensure every feature tackles your real challenges: overcrowded classrooms, scarce resources, and the need for culturally resonant teaching.</p>
             </div>
             <div class="split-image">
-                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300' viewBox='0 0 500 300'><rect width='500' height='300' fill='%23003366' opacity='0.1'/><text x='250' y='150' font-family='Arial' font-size='20' fill='%23003366' text-anchor='middle'>African Classroom Image</text></svg>" alt="African classroom illustration">
+                <img src="https://i.ibb.co/0Q6C2y0/Community.jpg" alt="TichaAfrica community of teachers">
             </div>
         </div>
     </section>
@@ -575,7 +570,7 @@
                 <div class="audience-card">
                     <h3>For Partners & Policymakers</h3>
                     <p><strong>Back a Solution That Truly Scales.</strong> Partner with us to deploy a teacher empowerment platform that's proven, strategic, and designed for sustainable impact.</p>
-                    <a href="#" class="btn btn-primary">Lead Change With Us →</a>
+                    <a href="#" class="btn btn-accent">Lead Change With Us →</a>
                 </div>
                 <div class="audience-card">
                     <h3>For Innovators & Visionaries</h3>
@@ -635,9 +630,9 @@
                 </div>
                 <div class="footer-column">
                     <h3>Contact Us</h3>
-                    <p><i class="fas fa-envelope"></i> contact@tichaafrica.com</p>
-                    <p><i class="fas fa-phone"></i> +234 8162039763</p>
-                    <p><i class="fas fa-map-marker-alt"></i>  Nigeria, West Africa</p>
+                    <p><i class="fas fa-envelope"></i> info@ticha.africa</p>
+                    <p><i class="fas fa-phone"></i> +234 800 123 4567</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Lagos, Nigeria</p>
                 </div>
             </div>
             <div class="copyright">
