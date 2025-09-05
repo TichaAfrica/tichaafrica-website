@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -13,278 +14,82 @@
       --muted: #f8f9fa;
       --white: #ffffff;
       --text: #003366;
-      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
     }
-
-    * { box-sizing: border-box; }
-
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       color: var(--text);
       background: var(--white);
       line-height: 1.6;
-      font-size: 16px;
-      opacity: 0;
-      transition: opacity 0.5s ease;
     }
-
     header {
       background: var(--white);
-      padding: 20px 40px;
-      border-bottom: 3px solid var(--leaf);
+      padding: 20px;
+      border-bottom: 2px solid var(--leaf);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: var(--shadow);
-      transition: all 0.3s ease;
     }
-
     header img {
-      height: 80px;
-      width: auto;
-      transition: transform 0.3s ease;
+      height: 50px;
     }
-
-    header img:hover { transform: scale(1.05); }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-    }
-
     nav a {
+      margin: 0 10px;
       color: var(--leaf);
       text-decoration: none;
-      font-weight: 600;
-      font-size: 16px;
-      padding: 8px 16px;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-      position: relative;
+      font-weight: bold;
     }
-
-    nav a:hover {
-      background: rgba(46, 154, 77, 0.1);
-      transform: translateY(-2px);
-    }
-
-    nav a::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: 2px;
-      left: 50%;
-      background-color: var(--gold);
-      transition: all 0.3s ease;
-      transform: translateX(-50%);
-    }
-
-    nav a:hover::after { width: 80%; }
-
     .hero {
       background: linear-gradient(135deg, var(--navy), var(--leaf));
       color: var(--white);
       text-align: center;
-      padding: 80px 40px;
-      position: relative;
-      overflow: hidden;
+      padding: 60px 20px;
     }
-
-    /* Animated dots background */
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background-image: radial-gradient(rgba(255,255,255,0.05) 2px, transparent 2px);
-      background-size: 60px 60px;
-      animation: floatDots 25s linear infinite;
-      z-index: 0;
-    }
-
-    @keyframes floatDots {
-      0% { transform: translate(0,0); }
-      50% { transform: translate(20px, -20px); }
-      100% { transform: translate(0,0); }
-    }
-
-    .hero h2, .hero p, .hero a, .hero img { position: relative; z-index: 1; }
-
-    .hero h2 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      margin-bottom: 20px;
-      font-weight: 700;
-    }
-
-    .hero p {
-      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-      margin-bottom: 30px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-      opacity: 0.95;
-    }
-
     .hero img {
       max-width: 100%;
       height: auto;
-      margin-top: 40px;
-      border-radius: 20px;
-      box-shadow: var(--shadow-hover);
-      transition: transform 0.3s ease;
+      margin-top: 20px;
+      border-radius: 10px;
     }
-
-    .hero img:hover { transform: scale(1.02); }
-
     .btn {
       display: inline-block;
       background: var(--gold);
       color: var(--navy);
-      padding: 16px 32px;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 16px;
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-weight: bold;
       text-decoration: none;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-      border: 2px solid transparent;
+      transition: background 0.3s ease;
     }
-
-    .btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-      transition: left 0.6s ease;
+    .btn:hover {
+      background: #e6c200;
     }
-
-    .btn:hover::before { left: 100%; }
-    .btn:hover { background: #e6c200; transform: translateY(-3px); box-shadow: var(--shadow-hover); border-color: var(--navy); }
-    .btn:active { transform: translateY(-1px); }
-
     section {
-      padding: 70px 40px;
-      max-width: 1000px;
+      padding: 50px 20px;
+      max-width: 900px;
       margin: 0 auto;
-      animation: fadeIn 0.8s ease-out;
     }
-
-    section h3 {
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
-      color: var(--navy);
-      margin-bottom: 20px;
-      font-weight: 700;
-      position: relative;
-    }
-
-    section h3::after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-      width: 60px;
-      height: 4px;
-      background: linear-gradient(90deg, var(--leaf), var(--gold));
-      border-radius: 2px;
-    }
-
-    section p {
-      font-size: 18px;
-      margin-bottom: 20px;
-      line-height: 1.8;
-      color: rgba(0, 51, 102, 0.9);
-    }
-
-    ul { list-style: none; padding: 0; margin: 30px 0; }
-    li {
-      background: var(--muted);
-      margin: 15px 0;
-      padding: 15px 20px;
-      border-radius: 12px;
-      border-left: 4px solid var(--leaf);
-      font-size: 16px;
-      transition: all 0.3s ease;
-      position: relative;
-    }
-    li:hover { background: rgba(46, 154, 77, 0.05); transform: translateX(5px); box-shadow: var(--shadow); }
-    li::before { content: '✓'; color: var(--leaf); font-weight: bold; margin-right: 10px; }
-
-    section:nth-child(even) { background: rgba(248, 249, 250, 0.6); }
-
     footer {
       background: var(--navy);
       color: var(--white);
       text-align: center;
-      padding: 40px 20px;
-      margin-top: 60px;
-      position: relative;
+      padding: 20px;
+      margin-top: 40px;
     }
-
-    footer::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--leaf), var(--gold), var(--leaf));
-    }
-
-    footer p { margin: 10px 0; font-size: 16px; }
     footer a {
       color: var(--gold);
       text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      padding: 2px 6px;
-      border-radius: 4px;
     }
-    footer a:hover { background: rgba(255, 215, 0, 0.2); transform: scale(1.05); }
-
-    @media (max-width: 768px) {
-      header { padding: 15px 20px; flex-direction: column; gap: 15px; }
-      header img { height: 70px; }
-      nav { gap: 20px; flex-wrap: wrap; justify-content: center; }
-      nav a { font-size: 14px; padding: 6px 12px; }
-      .hero { padding: 60px 20px; }
-      section { padding: 50px 20px; }
-      .btn { padding: 14px 24px; font-size: 14px; }
-    }
-
-    @media (max-width: 480px) {
-      header img { height: 60px; }
-      nav { gap: 15px; }
-      .hero { padding: 40px 15px; }
-      section { padding: 40px 15px; }
-    }
-
-    html { scroll-behavior: smooth; }
-
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body>
 
 <header>
-  <a href="/" aria-label="TichaAfrica Home">
+  <a href="/">
     <img src="images/logo.png" alt="TichaAfrica Logo">
   </a>
-  <nav role="navigation" aria-label="Main navigation">
+  <nav>
     <a href="#why">Why</a>
     <a href="#alliance">Alliance</a>
     <a href="#join">Join</a>
@@ -294,10 +99,36 @@
 <section class="hero">
   <h2>Teachers Deserve More Than Tools. They Deserve a Voice.</h2>
   <p>Africa’s first mobile-first AI training platform built with teachers’ insights, for real classrooms.</p>
-  <a href="https://tally.so/forms/3jrJG9/" class="btn" target="_blank" rel="noopener noreferrer">Fill the Insights Form</a>
-  <img src="images/hero.png" alt="TichaAfrica Hero" loading="lazy">
+  <a href="https://tally.so/forms/3jrJG9/" class="btn">Fill the Insights Form</a>
+  <img src="images/hero.png" alt="TichaAfrica Hero">
 </section>
 
 <section id="why">
   <h3>Why TichaAfrica Exists</h3>
-  <p>Across Africa, teachers create miracles every day—with limited tools, overcrowded classes, and little support. Yet, most AI tools are
+  <p>Across Africa, teachers create miracles every day—with limited tools, overcrowded classes, and little support. Yet, most AI tools are built far away, without their voices.</p>
+  <p>We believe teachers should lead the AI revolution in education.</p>
+</section>
+
+<section id="alliance">
+  <h3>Founding Teacher Alliance</h3>
+  <p>Be one of the first 200 teachers to shape Africa’s AI curriculum.</p>
+  <ul>
+    <li>Founding badge & recognition</li>
+    <li>Early access to training modules</li>
+    <li>Direct input into policies and tools</li>
+  </ul>
+  <a href="https://tally.so/forms/3jrJG9/" class="btn">Apply Now</a>
+</section>
+
+<section id="newsletter">
+  <h3>Stay Updated</h3>
+  <p>Join our newsletter: <a href="https://tichaafrica.substack.com/" target="_blank">Beyond the Blackboard</a></p>
+</section>
+
+<footer>
+  <p>Contact: <a href="mailto:contact@tichaafrica.com">contact@tichaafrica.com</a></p>
+  <p>© 2025 TichaAfrica – Human-First AI for Education</p>
+</footer>
+
+</body>
+</html>
