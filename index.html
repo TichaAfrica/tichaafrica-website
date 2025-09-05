@@ -26,13 +26,12 @@
       background: var(--white);
       padding: 20px;
       border-bottom: 2px solid var(--leaf);
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
     header img {
-      height: 60px;
-    }
-    nav {
-      margin-top: 10px;
+      height: 50px;
     }
     nav a {
       margin: 0 10px;
@@ -47,16 +46,10 @@
       padding: 60px 20px;
     }
     .hero img {
-      max-width: 200px;
-      margin-bottom: 20px;
-    }
-    .hero h2 {
-      font-size: 2.2rem;
-      margin-bottom: 15px;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
+      max-width: 100%;
+      height: auto;
+      margin-top: 20px;
+      border-radius: 10px;
     }
     .btn {
       display: inline-block;
@@ -76,14 +69,6 @@
       max-width: 900px;
       margin: 0 auto;
     }
-    section h3 {
-      color: var(--navy);
-      font-size: 1.8rem;
-      margin-bottom: 15px;
-    }
-    ul {
-      padding-left: 20px;
-    }
     footer {
       background: var(--navy);
       color: var(--white);
@@ -100,7 +85,9 @@
 <body>
 
 <header>
-  <img src="images/logo.png" alt="TichaAfrica Logo">
+  <a href="/">
+    <img src="images/logo.png" alt="TichaAfrica Logo">
+  </a>
   <nav>
     <a href="#why">Why</a>
     <a href="#alliance">Alliance</a>
@@ -109,26 +96,16 @@
 </header>
 
 <section class="hero">
-  <img src="images/hero.jpg" alt="TichaAfrica Hero">
   <h2>Teachers Deserve More Than Tools. They Deserve a Voice.</h2>
   <p>Africa’s first mobile-first AI training platform built with teachers’ insights, for real classrooms.</p>
-  <a href="#join" class="btn">Join the Founding Teacher Alliance</a>
+  <a href="https://tally.so/forms/3jrJG9/" class="btn">Fill the Insights Form</a>
+  <img src="images/hero.png" alt="TichaAfrica Hero">
 </section>
 
 <section id="why">
   <h3>Why TichaAfrica Exists</h3>
   <p>Across Africa, teachers create miracles every day—with limited tools, overcrowded classes, and little support. Yet, most AI tools are built far away, without their voices.</p>
   <p>We believe teachers should lead the AI revolution in education.</p>
-</section>
-
-<section id="what">
-  <h3>What We Do</h3>
-  <ul>
-    <li>Collect real teacher insights across Africa</li>
-    <li>Co-create AI training aligned with UNESCO AI CFT & AU Continental AI Strategy</li>
-    <li>Train teachers to use, teach, and shape AI ethically</li>
-    <li>Empower teachers as AI ambassadors & creators</li>
-  </ul>
 </section>
 
 <section id="alliance">
@@ -139,18 +116,12 @@
     <li>Early access to training modules</li>
     <li>Direct input into policies and tools</li>
   </ul>
-  <a href="#join" class="btn">Apply Now</a>
+  <a href="https://tally.so/forms/3jrJG9/" class="btn">Apply Now</a>
 </section>
 
-<section id="join">
-  <h3>Join the Movement</h3>
-  <p>Teachers, partners, policymakers—your role is critical.</p>
-  <p><strong>Start here:</strong></p>
-  <ul>
-    <li><a href="https://tally.so/forms/3jrJG9/" target="_blank">Fill the Insights Form</a></li>
-    <li><a href="https://tichaafrica.substack.com/" target="_blank">Subscribe to Beyond the Blackboard</a></li>
-    <li><a href="mailto:contact@tichaafrica.com">Collaborate with Us</a></li>
-  </ul>
+<section id="newsletter">
+  <h3>Stay Updated</h3>
+  <p>Join our newsletter: <a href="https://tichaafrica.substack.com/" target="_blank">Beyond the Blackboard</a></p>
 </section>
 
 <footer>
