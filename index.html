@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>TichaAfrica – Teach Smart. Lead Change.</title>
+  <title>TichaAfrica – Teachers Leading Africa’s AI Education</title>
   <meta name="description" content="TichaAfrica empowers teachers to lead Africa’s AI education revolution. Join the alliance shaping an inclusive, human-first future for learning." />
   <style>
     :root {
@@ -29,9 +29,22 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
     }
     header img {
-      height: 50px;
+      height: 70px; /* Increased size */
+    }
+    .slogan {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: var(--leaf);
+      max-width: 180px;
+      line-height: 1.2;
     }
     nav a {
       margin: 0 10px;
@@ -85,9 +98,12 @@
 <body>
 
 <header>
-  <a href="/">
-    <img src="images/logo1.png" alt="TichaAfrica Logo">
-  </a>
+  <div class="logo-container">
+    <a href="/">
+      <img src="images/logo1.png" alt="TichaAfrica Logo">
+    </a>
+    <div class="slogan">Teach Smart.<br>Lead Change.</div>
+  </div>
   <nav>
     <a href="#why">Why</a>
     <a href="#alliance">Alliance</a>
@@ -96,16 +112,16 @@
 </header>
 
 <section class="hero">
-  <h1>Teach Smart. Lead Change.</h1>
-  <p>We’re building Africa’s first teacher-led, mobile-first AI training platform — powered by teachers, for African classrooms.</p>
-  <a href="https://tally.so/forms/3jrJG9/" class="btn">I’m a Teacher — I’m Ready to Lead the Change</a>
+  <h2>Teachers Deserve More Than Tools. They Deserve a Voice.</h2>
+  <p>Africa’s first teacher-led, mobile-first AI training platform — built by teachers, for African classrooms.</p>
+  <a href="https://tally.so/forms/3jrJG9/" class="btn">I’m a Teacher — I’m Ready to Lead the Change.</a>
   <img src="images/hero4.jpg" alt="TichaAfrica Hero">
 </section>
 
 <section id="why">
   <h3>Why TichaAfrica Exists</h3>
-  <p>Across Africa, teachers perform daily miracles — shaping young minds with too few tools, overcrowded classes, and limited support. Yet most AI tools are designed far away, without their voices at the table.</p>
-  <p>TichaAfrica exists to change that. We believe the future of education must be <strong>shaped by teachers, not just for them</strong>. Guided by <strong>UNESCO’s AI Competency Framework for Teachers</strong> and the <strong>African Union Continental AI Strategy</strong>, we ensure global standards meet African realities — with teachers at the centre of innovation.</p>
+  <p>Across Africa, teachers create miracles every day — with limited tools, overcrowded classes, and little support. Yet, most AI tools are built far away, without their voices.</p>
+  <p>We believe teachers should lead the AI transformation in education. Guided by <strong>UNESCO’s AI Competency Framework for Teachers (AI CFT)</strong> and the <strong>African Union Continental AI Strategy</strong>, TichaAfrica ensures that global standards meet African realities through teacher wisdom and experience.</p>
 </section>
 
 <section id="alliance">
