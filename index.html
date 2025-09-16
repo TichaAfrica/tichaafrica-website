@@ -14,26 +14,22 @@
 
   <style>
     :root {
-      --navy: #003366;
-      --leaf: #2e9a4d;
-      --gold: #ffd700;
-      --muted: #f8f9fa;
+      --navy: #002147;
+      --leaf: #228B22;
+      --gold: #FFD700;
+      --muted: #f9f9fb;
       --white: #ffffff;
       --text: #1a1a1a;
       --shadow: rgba(0, 0, 0, 0.1);
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: "Poppins", sans-serif;
       line-height: 1.6;
       color: var(--text);
-      background: var(--white);
+      background: var(--muted);
       scroll-behavior: smooth;
     }
 
@@ -47,22 +43,27 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+      flex-wrap: wrap;
     }
 
     .logo-container {
-      display: flex;
-      flex-direction: column;
+      text-align: center;
+      flex: 1;
     }
 
-    header img {
-      height: 60px;
-    }
+    header img { height: 55px; }
 
     .slogan {
-      font-size: 0.8rem;
+      font-size: 0.65rem;
       font-style: italic;
       color: var(--gold);
-      margin-top: 2px;
+      margin-top: 4px;
+      text-align: center;
+    }
+
+    nav {
+      flex: 1;
+      text-align: right;
     }
 
     nav a {
@@ -73,9 +74,7 @@
       transition: color 0.3s;
     }
 
-    nav a:hover {
-      color: var(--navy);
-    }
+    nav a:hover { color: var(--navy); }
 
     /* Hero */
     .hero {
@@ -86,16 +85,8 @@
       animation: fadeIn 1.2s ease-in-out;
     }
 
-    .hero h1 {
-      font-size: 2.4rem;
-      font-weight: 700;
-      margin-bottom: 15px;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      margin-bottom: 30px;
-    }
+    .hero h1 { font-size: 2.2rem; margin-bottom: 15px; }
+    .hero p { font-size: 1.1rem; margin-bottom: 30px; }
 
     .hero img {
       max-width: 95%;
@@ -115,20 +106,24 @@
       font-weight: 600;
       text-decoration: none;
       transition: transform 0.3s ease, background 0.3s ease;
+      animation: pulse 2s infinite;
     }
 
     .btn:hover {
       background: #e6c200;
-      transform: translateY(-3px);
+      transform: translateY(-4px) scale(1.03);
     }
 
-    /* Sections */
+    /* Sections as animated cards */
     section {
-      padding: 60px 20px;
+      padding: 50px 20px;
       max-width: 1000px;
-      margin: auto;
+      margin: 40px auto;
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 4px 15px var(--shadow);
       opacity: 0;
-      transform: translateY(30px);
+      transform: translateY(40px);
       transition: opacity 0.8s ease, transform 0.8s ease;
     }
 
@@ -149,26 +144,17 @@
       text-align: center;
     }
 
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 20px 0;
-    }
-
+    ul { list-style: none; padding: 0; margin: 20px 0; }
     ul li {
       background: var(--muted);
       margin: 10px 0;
       padding: 12px 18px;
       border-radius: 8px;
-      box-shadow: 0 2px 5px var(--shadow);
+      box-shadow: 0 2px 6px var(--shadow);
       font-weight: 500;
     }
 
     /* Newsletter */
-    #newsletter p {
-      margin-bottom: 10px;
-    }
-
     #newsletter a {
       color: var(--leaf);
       font-weight: 600;
@@ -183,42 +169,33 @@
       margin-top: 40px;
     }
 
-    footer a {
-      color: var(--gold);
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    footer p {
-      margin: 8px 0;
-    }
+    footer a { color: var(--gold); text-decoration: none; font-weight: 600; }
+    footer p { margin: 8px 0; }
 
     /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
 
     /* Responsive */
     @media (max-width: 768px) {
-      nav {
-        margin-top: 10px;
-      }
-      nav a {
-        display: inline-block;
-        margin: 8px;
-      }
-      .hero h1 {
-        font-size: 1.9rem;
-      }
-      .hero p {
-        font-size: 1rem;
-      }
+      nav { text-align: center; margin-top: 10px; }
+      nav a { display: inline-block; margin: 6px; }
+      .hero h1 { font-size: 1.7rem; }
+      .hero p { font-size: 1rem; }
+    }
+
+    /* Highlight keywords */
+    .highlight {
+      color: var(--gold);
+      font-weight: 700;
     }
   </style>
 </head>
@@ -248,7 +225,7 @@
 <section id="why">
   <h2>Why TichaAfrica Exists</h2>
   <p>African teachers achieve the extraordinary daily—teaching overcrowded classes with scarce resources and little recognition. Yet, as AI reshapes global education, their voices are often missing from the table.</p>
-  <p><strong>TichaAfrica exists to change that.</strong> We align UNESCO’s AI Competency Framework for Teachers (AI CFT) with the African Union Continental AI Strategy, bridging global innovation with African realities—making teachers the driving force of AI in our classrooms.</p>
+  <p><strong>TichaAfrica exists to change that.</strong> We align <span class="highlight">UNESCO’s AI Competency Framework for Teachers (AI CFT)</span> with the <span class="highlight">African Union Continental AI Strategy</span>, bridging global innovation with African realities—making teachers the driving force of AI in our classrooms.</p>
 </section>
 
 <section id="alliance">
@@ -259,7 +236,7 @@
     <li>Early access to training modules</li>
     <li>Direct input into policies and tools</li>
   </ul>
-  <a href="https://tally.so/forms/3jrJG9/" class="btn">Join the Alliance</a>
+  <a href="https://tally.so/r/3jrJG9/" class="btn">Join the Alliance</a>
 </section>
 
 <section id="newsletter">
