@@ -38,19 +38,11 @@
       display: block;
     }
 
-    .hero-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: rgba(0, 51, 102, 0.6);
+    .hero-title {
+      text-align: center;
       padding: 20px;
-      border-radius: 8px;
-    }
-
-    .hero-text h1 {
-      margin: 0;
-      font-size: 2rem;
+      background: #003366;
+      color: #fff;
     }
 
     main {
@@ -100,19 +92,12 @@
       transition: width 0.4s ease;
     }
 
-    /* Thank You Screen */
-    .thank-you {
-      text-align: center;
-      padding: 50px 20px;
-      display: none;
-    }
-    .thank-you h2 {
+    .form-invite {
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+      font-style: italic;
       color: #2e9a4d;
-      font-size: 2rem;
-      margin-bottom: 15px;
-    }
-    .thank-you p {
-      font-size: 1.2rem;
+      text-align: center;
     }
   </style>
 </head>
@@ -126,15 +111,18 @@
   <!-- Hero Section -->
   <div class="hero">
     <img src="images/Alliance_hero.png" alt="Founding Teacher Alliance">
-    <div class="hero-text">
-      <h1>Join the Founding Teacher Alliance</h1>
-      <p>Help shape Africa’s first teacher-led AI curriculum.</p>
-    </div>
+  </div>
+  <div class="hero-title">
+    <h1>Join the Founding Teacher Alliance</h1>
+    <p>Help shape Africa’s first teacher-led AI curriculum.</p>
   </div>
 
   <!-- Main Content -->
   <main>
-    <p>Answer a few short questions. It will take less than 3 minutes.</p>
+    <p class="form-invite">
+      This is more than a form. It’s your voice in Africa’s future of learning.  
+      Share your story below — it will take less than 3 minutes.
+    </p>
 
     <!-- Progress Bar -->
     <div class="progress-container">
@@ -149,14 +137,14 @@
 
       <!-- Step 1 -->
       <div class="form-step active">
-        <label>What is your full name?</label><br>
+        <label>Let’s start with your name. What should we call you?</label><br>
         <input type="text" name="name" required>
         <button type="button" class="btn next">Next</button>
       </div>
 
       <!-- Step 2 -->
       <div class="form-step">
-        <label>Which country are you teaching in?</label><br>
+        <label>Which country are you teaching in? We’re building this together, across Africa.</label><br>
         <input type="text" name="country" required>
         <button type="button" class="btn prev">Back</button>
         <button type="button" class="btn next">Next</button>
@@ -164,7 +152,7 @@
 
       <!-- Step 3 -->
       <div class="form-step">
-        <label>Are you a rural or urban teacher?</label><br>
+        <label>Every context matters. Do you teach in a rural or urban school?</label><br>
         <select name="context" required>
           <option value="">Select</option>
           <option>Rural</option>
@@ -176,7 +164,7 @@
 
       <!-- Step 4 -->
       <div class="form-step">
-        <label>What is your biggest classroom challenge?</label><br>
+        <label>What is the biggest challenge in your classroom right now?</label><br>
         <textarea name="challenge" required></textarea>
         <button type="button" class="btn prev">Back</button>
         <button type="button" class="btn next">Next</button>
@@ -184,7 +172,7 @@
 
       <!-- Step 5 -->
       <div class="form-step">
-        <label>What innovation or strategy has worked well for you?</label><br>
+        <label>What innovation, habit, or strategy has worked well for you that others can learn from?</label><br>
         <textarea name="innovation" required></textarea>
         <button type="button" class="btn prev">Back</button>
         <button type="submit" class="btn">Submit</button>
@@ -192,7 +180,7 @@
     </form>
 
     <!-- Thank You Screen -->
-    <div class="thank-you" id="thank-you">
+    <div class="thank-you" id="thank-you" style="display:none; text-align:center; padding:40px;">
       <h2>🎉 Thank You!</h2>
       <p>Your voice will help shape the future of AI in African classrooms.</p>
       <p>You’ll now be redirected to <a href="https://tichaafrica.substack.com/" target="_blank">Beyond the Blackboard Newsletter</a> in 5 seconds.</p>
