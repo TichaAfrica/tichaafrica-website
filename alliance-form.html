@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Teacher Alliance Form — Ticha Africa</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      color: #003366;
+      line-height: 1.6;
+      padding: 20px;
+    }
+    .form-step { display: none; }
+    .form-step.active { display: block; }
+    .btn {
+      background: #2e9a4d;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+    .btn:hover { background: #24803d; }
+  </style>
+</head>
+<body>
+
+  <h1>Join the Founding Teacher Alliance</h1>
+  <p>Answer a few short questions. It will take less than 3 minutes.</p>
+
+  <form name="teacher-alliance" method="POST" data-netlify="true">
+    <!-- Netlify hidden input -->
+    <input type="hidden" name="form-name" value="teacher-alliance">
+
+    <!-- Step 1 -->
+    <div class="form-step active">
+      <label>What is your full name?</label><br>
+      <input type="text" name="name" required>
+      <button type="button" class="btn next">Next</button>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="form-step">
+      <label>Which country are you teaching in?</label><br>
+      <input type="text" name="country" required>
+      <button type="button" class="btn prev">Back</button>
+      <button type="button" class="btn next">Next</button>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="form-step">
+      <label>Are you a rural or urban teacher?</label><br>
+      <select name="context" required>
+        <option value="">Select</option>
+        <option>Rural</option>
+        <option>Urban</option>
+      </select>
+      <button type="button" class="btn prev">Back</button>
+      <button type="button" class="btn next">Next</button>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="form-step">
+      <label>What is your biggest classroom challenge?</label><br>
+      <textarea name="challenge" required></textarea>
+      <button type="button" class="btn prev">Back</button>
+      <button type="button" class="btn next">Next</button>
+    </div>
+
+    <!-- Step 5 -->
+    <div class="form-step">
+      <label>What innovation or strategy has worked well for you?</label><br>
+      <textarea name="innovation" required></textarea>
+      <button type="button" class="btn prev">Back</button>
+      <button type="submit" class="btn">Submit</button>
+    </div>
+  </form>
+
+  <script>
+    const steps = document.querySelectorAll(".form-step");
+    let currentStep = 0;
+
+    function showStep(step) {
+      steps.forEach((s, i) => s.classList.toggle("active", i === step));
+    }
+
+    document.querySelectorAll(".next").forEach(btn => {
+      btn.addEventListener("click", () => {
+        currentStep++;
+        showStep(currentStep);
+      });
+    });
+
+    document.querySelectorAll(".prev").forEach(btn => {
+      btn.addEventListener("click", () => {
+        currentStep--;
+        showStep(currentStep);
+      });
+    });
+  </script>
+
+</body>
+</html>
