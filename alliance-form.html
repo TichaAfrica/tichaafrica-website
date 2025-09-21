@@ -1,37 +1,25 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>TichaAfrica Founding Teacher Alliance</title>
-  <meta name="description" content="Join the TichaAfrica Founding Teacher Alliance and help shape Africa’s first teacher-led, mobile-first AI training for education." />
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Teacher Alliance Form — Ticha Africa</title>
   <style>
-    :root {
-      --navy: #003366;
-      --leaf: #2e9a4d;
-      --gold: #ffd700;
-      --muted: #f8f9fa;
-      --white: #ffffff;
-      --text: #003366;
-    }
-
     body {
-      font-family: 'Roboto', sans-serif;
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      color: #003366;
+      line-height: 1.6;
       margin: 0;
       padding: 0;
-      color: var(--text);
-      background: var(--white);
-      line-height: 1.6;
     }
 
     header {
-      background: var(--white);
-      padding: 16px 24px;
-      border-bottom: 2px solid var(--leaf);
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      padding: 15px 20px;
+      background: #ffffff;
+      border-bottom: 2px solid #2e9a4d;
     }
 
     header img {
@@ -39,93 +27,226 @@
     }
 
     .hero {
-      background: linear-gradient(135deg, var(--navy), var(--leaf));
-      color: var(--white);
+      position: relative;
       text-align: center;
-      padding: 60px 20px;
+      color: white;
     }
 
     .hero img {
-      max-width: 100%;
+      width: 100%;
       height: auto;
-      margin-top: 20px;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      display: block;
     }
 
-    h1, h2 {
-      font-family: 'Poppins', sans-serif;
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 51, 102, 0.6);
+      padding: 20px;
+      border-radius: 8px;
     }
 
-    .btn {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--navy);
-      padding: 14px 28px;
-      border-radius: 40px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      margin-top: 20px;
+    .hero-text h1 {
+      margin: 0;
+      font-size: 2rem;
     }
 
-    .btn:hover {
-      background: #e6c200;
-      transform: translateY(-2px);
-    }
-
-    section {
+    main {
+      padding: 20px;
       max-width: 800px;
       margin: 0 auto;
-      padding: 40px 20px;
     }
 
-    footer {
-      background: var(--navy);
-      color: var(--white);
+    .form-step { display: none; }
+    .form-step.active { display: block; }
+
+    .btn {
+      background: #2e9a4d;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+    .btn:hover { background: #24803d; }
+
+    /* Progress Bar */
+    .progress-container {
+      margin: 20px 0;
+    }
+
+    .progress-text {
+      font-weight: bold;
+      margin-bottom: 8px;
+      text-align: right;
+      color: #003366;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 12px;
+      background: #ddd;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0;
+      background: #2e9a4d;
+      transition: width 0.4s ease;
+    }
+
+    /* Thank You Screen */
+    .thank-you {
       text-align: center;
-      padding: 20px;
-      margin-top: 40px;
+      padding: 50px 20px;
+      display: none;
     }
-
-    footer a {
-      color: var(--gold);
-      text-decoration: none;
+    .thank-you h2 {
+      color: #2e9a4d;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+    .thank-you p {
+      font-size: 1.2rem;
     }
   </style>
 </head>
 <body>
 
-<header>
-  <a href="/">
+  <!-- Header -->
+  <header>
     <img src="images/logo.png" alt="TichaAfrica Logo">
-  </a>
-</header>
+  </header>
 
-<section class="hero">
-  <h1>Founding Teacher Alliance</h1>
-  <p>Be one of the 200 teachers shaping Africa’s first teacher-led AI training for education.</p>
-  <img src="images/Alliance_hero.png" alt="TichaAfrica Founding Teacher Alliance">
-  <a href="https://tally.so/r/3jrJG9" class="btn">Join the Alliance</a>
-</section>
+  <!-- Hero Section -->
+  <div class="hero">
+    <img src="images/Alliance_hero.png" alt="Founding Teacher Alliance">
+    <div class="hero-text">
+      <h1>Join the Founding Teacher Alliance</h1>
+      <p>Help shape Africa’s first teacher-led AI curriculum.</p>
+    </div>
+  </div>
 
-<section>
-  <h2>Why Join?</h2>
-  <p>Teachers across Africa make learning possible every day with limited tools and endless creativity. Now, with AI transforming education, it’s time for teachers to lead the change — not adapt to it.</p>
-  <p>By joining, you will:</p>
-  <ul>
-    <li>🌟 Gain recognition as a Founding Teacher</li>
-    <li>📘 Test and shape AI-powered learning tools</li>
-    <li>🗣️ Influence policies and training design</li>
-    <li>🤝 Mentor and inspire other educators across Africa</li>
-  </ul>
-  <a href="https://tally.so/r/3jrJG9" class="btn">Apply Now</a>
-</section>
+  <!-- Main Content -->
+  <main>
+    <p>Answer a few short questions. It will take less than 3 minutes.</p>
 
-<footer>
-  <p>Contact us: <a href="mailto:contact@tichaafrica.com">contact@tichaafrica.com</a></p>
-  <p>© 2025 TichaAfrica – Teachers Leading Africa’s AI Education</p>
-</footer>
+    <!-- Progress Bar -->
+    <div class="progress-container">
+      <div class="progress-text" id="progress-text">Step 1 of 5</div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+    </div>
+
+    <form name="teacher-alliance" method="POST" data-netlify="true" onsubmit="showThankYou(event)">
+      <input type="hidden" name="form-name" value="teacher-alliance">
+
+      <!-- Step 1 -->
+      <div class="form-step active">
+        <label>What is your full name?</label><br>
+        <input type="text" name="name" required>
+        <button type="button" class="btn next">Next</button>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="form-step">
+        <label>Which country are you teaching in?</label><br>
+        <input type="text" name="country" required>
+        <button type="button" class="btn prev">Back</button>
+        <button type="button" class="btn next">Next</button>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="form-step">
+        <label>Are you a rural or urban teacher?</label><br>
+        <select name="context" required>
+          <option value="">Select</option>
+          <option>Rural</option>
+          <option>Urban</option>
+        </select>
+        <button type="button" class="btn prev">Back</button>
+        <button type="button" class="btn next">Next</button>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="form-step">
+        <label>What is your biggest classroom challenge?</label><br>
+        <textarea name="challenge" required></textarea>
+        <button type="button" class="btn prev">Back</button>
+        <button type="button" class="btn next">Next</button>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="form-step">
+        <label>What innovation or strategy has worked well for you?</label><br>
+        <textarea name="innovation" required></textarea>
+        <button type="button" class="btn prev">Back</button>
+        <button type="submit" class="btn">Submit</button>
+      </div>
+    </form>
+
+    <!-- Thank You Screen -->
+    <div class="thank-you" id="thank-you">
+      <h2>🎉 Thank You!</h2>
+      <p>Your voice will help shape the future of AI in African classrooms.</p>
+      <p>You’ll now be redirected to <a href="https://tichaafrica.substack.com/" target="_blank">Beyond the Blackboard Newsletter</a> in 5 seconds.</p>
+    </div>
+  </main>
+
+  <script>
+    const steps = document.querySelectorAll(".form-step");
+    const progressText = document.getElementById("progress-text");
+    const progressFill = document.getElementById("progress-fill");
+    const totalSteps = steps.length;
+    let currentStep = 0;
+
+    function showStep(step) {
+      steps.forEach((s, i) => s.classList.toggle("active", i === step));
+      updateProgress(step);
+    }
+
+    function updateProgress(step) {
+      progressText.textContent = `Step ${step + 1} of ${totalSteps}`;
+      const progressPercent = ((step + 1) / totalSteps) * 100;
+      progressFill.style.width = progressPercent + "%";
+    }
+
+    document.querySelectorAll(".next").forEach(btn => {
+      btn.addEventListener("click", () => {
+        if (currentStep < steps.length - 1) {
+          currentStep++;
+          showStep(currentStep);
+        }
+      });
+    });
+
+    document.querySelectorAll(".prev").forEach(btn => {
+      btn.addEventListener("click", () => {
+        if (currentStep > 0) {
+          currentStep--;
+          showStep(currentStep);
+        }
+      });
+    });
+
+    function showThankYou(e) {
+      e.preventDefault();
+      document.querySelector("form").style.display = "none";
+      document.getElementById("thank-you").style.display = "block";
+      setTimeout(() => {
+        window.location.href = "https://tichaafrica.substack.com/";
+      }, 5000);
+    }
+
+    // Initialize progress bar
+    showStep(currentStep);
+  </script>
 
 </body>
 </html>
