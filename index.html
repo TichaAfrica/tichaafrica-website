@@ -160,6 +160,34 @@
       color: var(--gold);
       text-decoration: none;
     }
+
+    /* Floating buttons */
+    .floating-buttons {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 1000;
+    }
+
+    .floating-buttons a {
+      background: var(--leaf);
+      color: var(--white);
+      padding: 12px 18px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .floating-buttons a:hover {
+      background: var(--gold);
+      color: var(--navy);
+      transform: translateY(-3px);
+    }
   </style>
 </head>
 <body>
@@ -174,34 +202,45 @@
   <nav>
     <a href="#why">Why</a>
     <a href="#alliance">Alliance</a>
-    <a href="#join">Join</a>
+    <a href="#partners">Partners</a>
+    <a href="#newsletter">Newsletter</a>
   </nav>
 </header>
 
 <section class="hero" data-animate>
-  <h2>Teachers Deserve More Than Tools. They Deserve a Voice.</h2>
-  <p>Africa’s first teacher-led, mobile-first AI training platform — built by teachers, for African classrooms.</p>
-  <p><em>Now, it’s your turn to shape how Africa learns in the age of AI.</em></p>
-  <a href="https://tally.so/r/3jrJG9" class="btn">I’m a Teacher — I’m Ready to Lead the Change.</a>
+  <h2>AI is here — but who will shape it in Africa’s classrooms?</h2>
+  <p>TichaAfrica puts teachers at the centre of AI education. Africa’s first teacher-led, mobile-first AI training platform — built by teachers, for teachers.</p>
+  <a href="https://tally.so/r/3jrJG9" class="btn">Share Your Insights</a>
+  <a href="alliance.html" class="btn">Join the Alliance</a>
   <img src="images/hero4.jpg" alt="TichaAfrica Hero">
 </section>
 
 <section id="why" data-animate>
-  <h3>Why TichaAfrica Exists</h3>
-  <p>Every day, African teachers achieve the extraordinary—teaching overcrowded classes, with scarce resources, and little recognition. Yet, as AI reshapes global education, their voices are often missing from the table.</p>
-  <p>TichaAfrica exists to change that. We believe the future of learning must be built with teachers, not around them. By aligning with <strong>UNESCO’s AI Competency Framework for Teachers (AI CFT)</strong> and the <strong>African Union Continental AI Strategy</strong>, we bridge global innovation with African realities—turning teachers’ expertise into the driving force of AI in our classrooms.</p>
+  <h3>Why This Matters</h3>
+  <p><strong>Teachers in Exodus:</strong> Many African teachers are leaving the continent in search of better pay and conditions. Without them, classrooms risk losing their most vital resource.</p>
+  <p><strong>Digital Divide:</strong> Most teachers, especially in rural areas, lack AI training and digital literacy.</p>
+  <p><strong>Outdated Learning Models:</strong> Rote memorisation dominates, while creativity and problem-solving remain stifled.</p>
+  <p><strong>Wasted Teacher Talent:</strong> Daily classroom innovations remain invisible, undocumented, and unsupported.</p>
+  <p><strong>Youth Employment Crisis:</strong> Africa’s growing youth population cannot thrive without AI-ready teachers.</p>
+  <p><em>The risk is clear: if teachers don’t lead this transformation, Africa’s classrooms will be shaped by someone else’s vision.</em></p>
 </section>
 
 <section id="alliance" data-animate>
   <h3>Founding Teacher Alliance</h3>
-  <p>Be one of the first 200 teachers to shape Africa’s AI curriculum.</p>
+  <p>Be one of the first 200 teachers to shape Africa’s AI curriculum, guided by UNESCO’s AI Competency Framework and the African Union Continental AI Strategy.</p>
   <div class="alliance-benefits">
-    <div class="benefit-card">🌟 Founding badge & recognition</div>
-    <div class="benefit-card">📘 Early access to training modules</div>
-    <div class="benefit-card">🗣️ Direct input into policies and tools</div>
+    <div class="benefit-card">🌟 Recognition as a Founding Teacher</div>
+    <div class="benefit-card">📘 Early access to AI training modules</div>
+    <div class="benefit-card">🗣️ Influence policies and classroom tools</div>
   </div>
-  <p><em>Your contribution today sets the foundation for generations of learners tomorrow.</em></p>
+  <p><em>Your voice today will shape the future for generations of learners.</em></p>
   <a href="alliance.html" class="btn">Join the Alliance</a>
+</section>
+
+<section id="partners" data-animate>
+  <h3>Partner With Us</h3>
+  <p>Are you an EdTech innovator, NGO, policymaker, or global organisation? Partner with TichaAfrica to co-create tools, test solutions, and scale impact across Africa’s classrooms.</p>
+  <a href="mailto:partner@tichaafrica.com" class="btn">Let’s Collaborate</a>
 </section>
 
 <section id="newsletter" data-animate>
@@ -214,6 +253,12 @@
   <p>Contact: <a href="mailto:contact@tichaafrica.com">contact@tichaafrica.com</a></p>
   <p>© 2025 TichaAfrica – Human-First AI for Education</p>
 </footer>
+
+<!-- Floating buttons -->
+<div class="floating-buttons">
+  <a href="https://tally.so/r/3jrJG9">📝 Share Insights</a>
+  <a href="alliance.html">🤝 Join Alliance</a>
+</div>
 
 <script>
   // Animation on scroll
