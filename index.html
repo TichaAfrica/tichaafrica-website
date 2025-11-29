@@ -4,65 +4,54 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>TichaAfrica — Teach Smart, Lead Change</title>
-  <!-- Animations & Effects -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <style>
-    body {font-family: 'Inter', Arial, sans-serif; background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%); color: #fff; margin:0; overflow-x:hidden; line-height:1.6;}
-    header {background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 15px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.3); position: sticky; top: 0; z-index: 10;}
-    header img {height: 70px; transition: all 0.5s ease; filter: drop-shadow(0 0 10px #ffd700);}
-    header img:hover {transform: scale(1.1) rotate(360deg); filter: drop-shadow(0 0 20px #ff6b35);}
-    .hero {position: relative; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center; padding: 140px 20px 100px; overflow: hidden; min-height: 100vh; display: flex; align-items: center; justify-content: center;}
-    #particles-js {position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 1;}
-    .hero-content {position: relative; z-index: 2;}
-    .hero h1 {font-size: clamp(2.5rem, 6vw, 4rem); margin:0; line-height:1.1; text-shadow: 0 0 30px rgba(255,215,0,0.8); animation: heroGlow 3s ease-in-out infinite alternate;}
-    @keyframes heroGlow {0% {text-shadow: 0 0 20px #ffd700;} 100% {text-shadow: 0 0 40px #ffd700, 0 0 60px #ff6b35;}}
-    .motto {font-size: clamp(1.8rem, 5vw, 3rem); font-weight: 900; background: linear-gradient(45deg, #ffd700, #ff6b35, #4ecdc4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 20px 0; animation: mottoFloat 4s ease-in-out infinite;}
-    @keyframes mottoFloat {0%, 100% {transform: translateY(0px);} 50% {transform: translateY(-10px);}}
-    .btn {display: inline-block; padding: 20px 45px; background: linear-gradient(45deg, #ffd700, #ff6b35); color: #0f0f23; font-weight: bold; border-radius: 50px; text-decoration: none; margin: 15px; font-size: 1.3rem; box-shadow: 0 10px 30px rgba(255,215,0,0.4); transition: all 0.5s ease; position: relative; overflow: hidden;}
-    .btn::before {content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); transition: left 0.6s;}
-    .btn:hover::before {left: 100%;}
-    .btn:hover {transform: translateY(-10px) scale(1.05); box-shadow: 0 20px 50px rgba(255,107,53,0.6); animation: btnPulse 1s infinite;}
-    @keyframes btnPulse {0% {box-shadow: 0 0 0 0 rgba(255,107,53,0.7);} 70% {box-shadow: 0 0 0 20px rgba(255,107,53,0);} 100% {box-shadow: 0 0 0 0 rgba(255,107,53,0);}}
-    .btn-secondary {background: linear-gradient(45deg, #4ecdc4, #44a08d); color: #fff; border: none;}
-    .urgency {background: linear-gradient(90deg, #ff6b35 0%, #ffd700 50%, #4ecdc4 100%); color: #0f0f23; padding: 20px; text-align: center; font-weight: bold; font-size: 1.4rem; animation: urgencySlide 3s ease-in-out infinite; box-shadow: 0 5px 20px rgba(255,107,53,0.3);}
-    @keyframes urgencySlide {0%, 100% {transform: translateX(0);} 25% {transform: translateX(-10px);} 75% {transform: translateX(10px);}}
-    section {max-width: 1100px; margin: 80px auto; padding: 50px; background: rgba(255,255,255,0.1); backdrop-filter: blur(15px); border-radius: 25px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); border: 1px solid rgba(255,215,0,0.2);}
-    h2 {color: #ffd700; margin-bottom: 25px; font-size: 2.5rem; text-align: center; text-shadow: 0 0 10px rgba(255,215,0,0.5);}
-    .counter {font-size: clamp(3rem, 10vw, 5rem); font-weight: 900; background: linear-gradient(45deg, #4ecdc4, #ffd700); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-align: center; margin: 20px 0; animation: counterSpark 2s ease-out;}
-    @keyframes counterSpark {0% {opacity: 0; transform: scale(0.5);} 100% {opacity: 1; transform: scale(1);}}
-    ul {padding-left: 20px; max-width: 800px; margin: 0 auto;}
-    li {margin: 15px 0; font-size: 1.2rem; position: relative; padding-left: 15px; animation: liFade 0.5s ease forwards; opacity: 0;}
-    li:nth-child(1) {animation-delay: 0.1s;} li:nth-child(2) {animation-delay: 0.2s;} /* etc. */
-    @keyframes liFade {to {opacity: 1; transform: translateX(0);}}
-    li::before {content: '✨'; position: absolute; left: 0; color: #ff6b35; font-size: 1.5rem;}
-    footer {background: linear-gradient(135deg, #16213e, #0f0f23); color: #ffd700; text-align: center; padding: 40px; margin-top: 80px;}
-    footer a {color: #4ecdc4; text-decoration: none;}
-    .whatsapp-float {position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px; background: #25d366; color: #fff; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 0 5px 20px rgba(37,211,102,0.5); z-index: 100; transition: all 0.3s ease;}
-    .whatsapp-float:hover {transform: scale(1.1);}
-    @media (max-width: 768px) {.btn {margin: 10px 5px; padding: 15px 30px; font-size: 1.1rem;}}
+    * {margin:0;padding:0;box-sizing:border-box;}
+    body {font-family:'Inter',sans-serif;background:#0f0f23;color:#fff;overflow-x:hidden;}
+    header {position:fixed;top:0;left:0;right:0;background:rgba(15,15,35,0.95);backdrop-filter:blur(12px);padding:12px 20px;text-align:center;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,0.4);}
+    header img {height:60px;transition:all 0.4s;}
+    header img:hover {transform:scale(1.15) rotate(5deg);}
+    .hero {position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:140px 20px 80px;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);overflow:hidden;}
+    #particles-js {position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;}
+    .hero-content {position:relative;z-index:2;max-width:900px;padding:0 20px;}
+    .hero h1 {font-size:clamp(2.5rem,7vw,4.5rem);margin-bottom:20px;line-height:1.1;text-shadow:0 0 30px rgba(255,215,0,0.7);}
+    .hero p {font-size:1.35rem;max-width:700px;margin:0 auto 25px;opacity:0.95;line-height:1.6;}
+    .motto {font-size:clamp(2rem,6vw,3.5rem);font-weight:900;background:linear-gradient(45deg,#ffd700,#ff6b35,#4ecdc4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin:30px 0;}
+    .btn {display:inline-block;padding:18px 40px;margin:12px;background:linear-gradient(45deg,#ffd700,#ff6b35);color:#0f0f23;font-weight:bold;border-radius:50px;font-size:1.25rem;box-shadow:0 10px 30px rgba(255,107,53,0.4);transition:all 0.4s;}
+    .btn:hover {transform:translateY(-8px) scale(1.05);box-shadow:0 20px 40px rgba(255,107,53,0.6);}
+    .btn-secondary {background:linear-gradient(45deg,#4ecdc4,#44a08d);color:#fff;}
+    .urgency {background:linear-gradient(90deg,#ff6b35,#ffd700,#4ecdc4);color:#0f0f23;padding:16px;font-weight:bold;font-size:1.3rem;text-align:center;animation:pulse 2s infinite;}
+    @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
+    section {max-width:1100px;margin:80px auto;padding:50px 30px;background:rgba(255,255,255,0.08);backdrop-filter:blur(15px);border-radius:25px;border:1px solid rgba(255,215,0,0.2);}
+    h2 {font-size:2.5rem;text-align:center;color:#ffd700;margin-bottom:30px;}
+    .counter {font-size:clamp(3.5rem,10vw,6rem);font-weight:900;background:linear-gradient(45deg,#4ecdc4,#ffd700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-align:center;margin:20px 0;}
+    ul {list-style:none;max-width:800px;margin:40px auto;}
+    ul li {font-size:1.25rem;margin:20px 0;padding-left:50px;position:relative;line-height:1.6;}
+    ul li::before {content:"✔";position:absolute;left:0;top:2px;font-size:2rem;color:#4ecdc4;background:linear-gradient(45deg,#ffd700,#4ecdc4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    .final-cta {background:linear-gradient(135deg,#ff6b35,#ffd700);color:#0f0f23;padding:70px 30px;border-radius:30px;text-align:center;}
+    .whatsapp-float {position:fixed;bottom:30px;right:30px;width:60px;height:60px;background:#25d366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;box-shadow:0 5px 20px rgba(37,211,102,0.6);z-index:999;transition:all 0.3s;}
+    .whatsapp-float:hover {transform:scale(1.2);}
+    footer {background:#0f0f23;color:#ffd700;padding:40px;text-align:center;}
+    footer a {color:#4ecdc4;}
   </style>
 </head>
 <body>
 
-<div class="urgency animate__animated animate__bounceInDown">
-  🚀 The First 10,000 Teachers Will Shape Africa’s AI Future — Join Now!
-</div>
+<div class="urgency">The First 10,000 Teachers Will Shape Africa’s AI Future — Join Now!</div>
 
 <header data-aos="fade-down">
-  <img src="images/logo1.png" alt="TichaAfrica" data-aos="zoom-in">
+  <img src="images/logo1.png" alt="TichaAfrica">
 </header>
 
 <div class="hero" id="hero">
   <div id="particles-js"></div>
   <div class="hero-content">
-    <h1 data-aos="fade-down" data-aos-duration="1500">African Teachers Are Rising<br>to Lead the AI Revolution</h1>
-    <p data-aos="fade-up" data-aos-delay="400" style="font-size:1.4rem; max-width:600px; margin:0 auto 25px;">The continent’s first teacher-led, mobile-first AI training movement — built by teachers, for teachers.</p>
-    <div class="motto" data-aos="zoom-in" data-aos-delay="700">Teach Smart, Lead Change</div>
-    <div data-aos="fade-up" data-aos-delay="1000">
+    <h1 data-aos="fade-up">African Teachers Are Rising<br>to Lead the AI Revolution</h1>
+    <p data-aos="fade-up" data-aos-delay="200">The continent’s first teacher-led, mobile-first AI training movement — built by African teachers, for African teachers.</p>
+    <div class="motto" data-aos="zoom-in" data-aos-delay="400">Teach Smart, Lead Change</div>
+    <div data-aos="fade-up" data-aos-delay="600">
       <a href="YOUR_ALLIANCE_FORM_LINK" class="btn">Join Free Now (60s)</a>
       <a href="YOUR_INSIGHTS_FORM_LINK" class="btn btn-secondary">Share Insights (2min)</a>
     </div>
@@ -72,18 +61,24 @@
 <section data-aos="fade-up">
   <h2>Founding Teachers So Far</h2>
   <div class="counter" id="counter">0</div>
-  <p style="text-align:center; font-size:1.3rem; color:#ffd700;">...and growing every hour. Be next!</p>
+  <p style="text-align:center;font-size:1.3rem;color:#ffd700;">…and growing every minute. Be part of history!</p>
 </section>
 
-<section data-aos="fade-right">
+<section data-aos="fade-up">
   <h2>The Problem</h2>
-  <p style="font-size:1.3rem; text-align:center; max-width:700px; margin:0 auto 30px;">Foreign AI tools are flooding African classrooms. They ignore our languages, cultures, and realities. <strong style="color:#ff6b35;">They were designed without a single African teacher in the room.</strong></p>
-  <p style="text-align:center; font-size:1.5rem; font-weight:bold; color:#4ecdc4;">That future ends now.</p>
+  <p style="text-align:center;font-size:1.4rem;max-width:800px;margin:0 auto 30px;">
+    Foreign AI tools are flooding our classrooms.<br>
+    They ignore our languages, our cultures, and our realities.<br>
+    <strong style="color:#ff6b35;">They were designed without a single African teacher in the room.</strong>
+  </p>
+  <p style="text-align:center;font-size:1.8rem;color:#4ecdc4;font-weight:bold;">That future ends now.</p>
 </section>
 
-<section data-aos="fade-left">
+<section data-aos="fade-up">
   <h2>The Solution — Led by You</h2>
-  <p style="font-size:1.3rem; text-align:center; max-width:700px; margin:0 auto 30px;">We are building the first truly African AI curriculum and tools, together:</p>
+  <p style="text-align:center;font-size:1.3rem;max-width:700px;margin:0 auto 30px;">
+    Together we are building the first truly African AI curriculum and tools:
+  </p>
   <ul>
     <li>100% teacher-led from day one</li>
     <li>Mobile-first — works on any phone, any network</li>
@@ -91,32 +86,30 @@
     <li>Fully aligned with UNESCO AI Competency Framework for Teachers</li>
     <li>Fully aligned with African Union Continental AI Strategy</li>
   </ul>
-  <div style="text-align:center; margin-top:30px;">
-    <div class="motto">Teach Smart, Lead Change</div>
-  </div>
+  <div class="motto" style="margin-top:40px;">Teach Smart, Lead Change</div>
 </section>
 
 <section data-aos="fade-up">
   <h2>What Founding Teachers Gain</h2>
   <ul>
-    <li>Shape the curriculum and tools used by millions of African learners</li>
-    <li>Exclusive Founding Teacher digital badge & certificate</li>
-    <li>Direct mentorship and collaboration with teachers across 54 countries</li>
-    <li>Early access to new AI teaching tools before anyone else</li>
-    <li>Be recognised by UNESCO, African Union, and global partners</li>
-    <li>Leave a legacy: your name in the history of African education</li>
+    <li>Shape the curriculum used by millions of African learners</li>
+    <li>Exclusive digital badge & certificate</li>
+    <li>Direct collaboration with teachers across 54 countries</li>
+    <li>Early access to brand-new AI teaching tools</li>
+    <li>Recognition from UNESCO, African Union & global partners</li>
+    <li>Leave a legacy in the history of African education</li>
   </ul>
 </section>
 
-<section style="text-align:center; background: linear-gradient(135deg, #ff6b35, #ffd700); color:#0f0f23; border-radius:25px; margin:80px auto; padding:60px;" data-aos="zoom-in">
-  <h2 style="color:#fff; font-size:3rem;">The First 10,000 Teachers Own This Movement</h2>
-  <p style="font-size:1.4rem; max-width:600px; margin:20px auto;">After that, the Founding Alliance closes forever.</p>
-  <a href="YOUR_ALLIANCE_FORM_LINK" class="btn" style="background: linear-gradient(45deg, #4ecdc4, #fff); color:#0f0f23; font-size:1.5rem; padding:22px 55px; display:inline-block;">
+<section class="final-cta" data-aos="zoom-in">
+  <h2 style="font-size:3rem;color:#fff;">The First 10,000 Teachers Own This Movement</h2>
+  <p style="font-size:1.5rem;max-width:600px;margin:25px auto;">After that, the Founding Alliance closes forever.</p>
+  <a href="YOUR_ALLIANCE_FORM_LINK" class="btn" style="background:#fff;color:#0f0f23;font-size:1.5rem;padding:22px 60px;">
     Yes, I’m In — Claim My Spot Now
   </a>
 </section>
 
-<a href="https://wa.me/YOUR_WHATSAPP_NUMBER?text=Hi%20TichaAfrica!" class="whatsapp-float" title="Chat on WhatsApp">💬</a>
+<a href="https://wa.me/254700000000?text=Hi%20TichaAfrica!" class="whatsapp-float" target="_blank">WhatsApp</a>
 
 <footer data-aos="fade-up">
   <p>TichaAfrica © 2025 • <strong>Teach Smart, Lead Change</strong></p>
@@ -125,33 +118,14 @@
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  AOS.init({once:true, duration:1200, offset:100});
+  AOS.init({once:true,duration:1000});
+  particlesJS('particles-js',{particles:{number:{value:90},color:{value:'#ffd700'},opacity:{value:0.6},size:{value:3},move:{speed:1.5}},interactivity:{events:{onhover:{enable:true,mode:'repulse'}}}});
   
-  // Particles in hero
-  particlesJS('particles-js', {
-    particles: {number: {value: 80}, color: {value: '#ffd700'}, shape: {type: 'circle'}, opacity: {value: 0.5}, size: {value: 3}, move: {speed: 2}},
-    interactivity: {events: {onhover: {enable: true, mode: 'repulse'}}}
-  });
-  
-  // Parallax with GSAP
-  gsap.to(".hero", {yPercent: -50, ease: "none", scrollTrigger: {trigger: "body", start: "top top", end: "bottom top", scrub: true}});
-  
-  // Animated counter
-  let count = 0;
-  const target = 1247; // Update to your real number!
-  const duration = 3000;
-  const increment = target / (duration / 16);
-  const startTime = Date.now();
-  function updateCounter() {
-    const elapsed = Date.now() - startTime;
-    count = Math.min(elapsed * increment, target);
-    document.getElementById('counter').innerText = Math.floor(count).toLocaleString();
-    if (count < target) requestAnimationFrame(updateCounter);
-  }
-  updateCounter();
-  
-  // Stagger list items
-  gsap.from("li", {duration: 0.8, x: -50, opacity: 0, stagger: 0.2, ease: "power2.out"});
+  // Counter
+  let count=0,target=1247; // ← change 1247 to your real number anytime
+  const counterEl=document.getElementById('counter');
+  const increment=target/100;
+  const timer=setInterval(()=>{count+=increment;if(count>=target){counterEl.textContent=target.toLocaleString();clearInterval(timer);}else counterEl.textContent=Math.floor(count).toLocaleString();},30);
 </script>
 </body>
 </html>
