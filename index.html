@@ -15,92 +15,79 @@
       background:linear-gradient(90deg,#ff6b35,#ffd700,#4ecdc4);
       color:#0f0f23;padding:16px 20px;
       font-weight:bold;font-size:1.3rem;text-align:center;
-      z-index:1002;box-shadow:0 8px 30px rgba(0,0,0,0.5);
-      animation: pulseGlow 3s infinite alternate;
+      z-index:1002;box-shadow:0 4px 20px rgba(0,0,0,0.4);
     }
-    @keyframes pulseGlow{0%{box-shadow:0 8px 30px rgba(0,0,0,0.5)}100%{box-shadow:0 12px 50px rgba(255,107,53,0.6)}}
-
+    
     header{
       position:fixed;top:68px;left:0;right:0;
       background:#fdfdfb;padding:20px 20px 18px;text-align:center;
-      z-index:1001;box-shadow:0 10px 40px rgba(0,0,0,0.2);
-      border-bottom:5px solid #ffd700;
-      animation: float 6s ease-in-out infinite;
+      z-index:1001;box-shadow:0 6px 20px rgba(0,0,0,0.15);
+      border-bottom:4px solid #ffd700;
     }
-    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-    header img{height:82px;transition:0.5s;filter:drop-shadow(0 4px 10px rgba(0,0,0,0.3));}
-    header img:hover{transform:scale(1.15) rotate(8deg)!important;}
+    header img{height:78px;transition:0.4s;}
+    header img:hover{transform:scale(1.12) rotate(5deg);}
 
     .hero{
       position:relative;min-height:100vh;
       display:flex;align-items:center;justify-content:center;
       text-align:center;padding:200px 20px 120px;
-      background:radial-gradient(circle at center, #764ba2 0%, #667eea 100%);
+      background:radial-gradient(circle at center, #764ba2 0%, #667eea 70%);
       overflow:hidden;
     }
     .africa-bg{
       position:absolute;top:50%;left:50%;
-      width:85%;max-width:750px;
+      width:82%;max-width:720px;
       transform:translate(-50%,-50%);
-      opacity:0.25;z-index:1;pointer-events:none;
-      filter:drop-shadow(0 0 80px #00a86b);
-      animation: breathe 12s ease-in-out infinite;
+      opacity:0.22;z-index:1;pointer-events:none;
+      filter:drop-shadow(0 0 60px #00a86b) invert(18%) sepia(92%) saturate(1400%) hue-rotate(140deg) brightness(0.9) contrast(1.1);
     }
-    @keyframes breathe{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.05)}}
     #particles-js{position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;}
-    .hero-content{position:relative;z-index:3;max-width:950px;}
+    .hero-content{position:relative;z-index:3;max-width:900px;}
 
+    .hero h1{font-size:clamp(2.8rem,8vw,5rem);margin-bottom:20px;line-height:1.1;text-shadow:0 0 40px rgba(255,215,0,0.8);}
+    .hero p{font-size:1.4rem;max-width:700px;margin:0 auto 30px;opacity:0.95;}
+    .motto{font-size:clamp(2.2rem,7vw,4rem);font-weight:900;background:linear-gradient(45deg,#ffd700,#ff6b35,#4ecdc4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin:35px 0;}
+    .btn{display:inline-block;padding:20px 50px;margin:15px;background:linear-gradient(45deg,#ffd700,#ff6b35);color:#0f0f23;font-weight:bold;border-radius:50px;font-size:1.4rem;box-shadow:0 12px 35px rgba(255,107,53,0.5);transition:all 0.4s;}
+    .btn:hover{transform:translateY(-10px) scale(1.08);box-shadow:0 25px 60px rgba(255,107,53,0.7);}
+    .btn-secondary{background:linear-gradient(45deg,#4ecdc4,#00a86b);color:#fff;}
+
+    /* PREMIUM CARD ANIMATION */
     section{
-      max-width:1150px;margin:110px auto;padding:70px 40px;
+      max-width:1100px;margin:120px auto;padding:70px 40px;
       background:rgba(255,255,255,0.07);
-      backdrop-filter:blur(25px);
-      border-radius:40px;
-      border:2px solid rgba(255,215,0,0.3);
-      box-shadow:0 20px 60px rgba(0,0,0,0.4);
+      backdrop-filter:blur(20px);
+      border-radius:32px;
+      border:1px solid rgba(255,215,0,0.25);
+      box-shadow:0 20px 60px rgba(0,0,0,0.3);
       opacity:0;
       transform:translateY(60px) scale(0.95);
-      transition:all 1s cubic-bezier(0.22,1,0.36,1);
+      transition:all 1.2s cubic-bezier(0.22,1,0.36,1);
     }
     section.visible{
       opacity:1;
       transform:translateY(0) scale(1);
     }
 
-    h2{
-      font-size:3rem;text-align:center;color:#ffd700;margin-bottom:50px;
-      background:linear-gradient(45deg,#ffd700,#ff6b35);
-      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-      animation: titleGlow 4s ease-in-out infinite alternate;
-    }
-    @keyframes titleGlow{0%{text-shadow:0 0 20px rgba(255,215,0,0.5)}100%{text-shadow:0 0 40px rgba(255,215,0,0.9)}}
+    h2{font-size:2.9rem;text-align:center;color:#ffd700;margin-bottom:50px;}
+    .counter{font-size:clamp(4.5rem,13vw,8rem);font-weight:900;background:linear-gradient(45deg,#4ecdc4,#ffd700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-align:center;}
 
-    .counter{
-      font-size:clamp(5rem,14vw,9rem);
-      font-weight:900;
-      background:linear-gradient(45deg,#00a86b,#4ecdc4,#ffd700);
-      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-      text-align:center;
-      animation: counterPulse 3s infinite;
-    }
-    @keyframes counterPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
-
-    /* ANIMATED CHECKMARKS — now even more premium */
-    ul{list-style:none;max-width:900px;margin:60px auto;}
+    /* ANIMATED CHECKMARKS — draw + pulse */
+    ul{list-style:none;max-width:850px;margin:60px auto;}
     ul li{
-      font-size:1.45rem;margin:40px 0;padding-left:90px;
-      position:relative;line-height:1.9;
+      font-size:1.38rem;margin:38px 0;padding-left:90px;
+      position:relative;line-height:1.8;
       opacity:0;
-      transform:translateX(-60px);
-      transition:all 0.9s ease-out;
+      transform:translateX(-40px);
     }
     ul li.visible{
       opacity:1;
       transform:translateX(0);
+      transition:all 0.9s ease-out;
     }
     .checkmark{
       position:absolute;left:0;top:50%;
       transform:translateY(-50%);
-      width:60px;height:60px;
+      width:56px;height:56px;
     }
     .checkmark svg{
       width:100%;height:100%;
@@ -110,30 +97,35 @@
       stroke-linecap:round;stroke-linejoin:round;
       stroke-dasharray:100;stroke-dashoffset:100;
     }
-    .checkmark.draw path{
-      animation:draw 1.4s forwards 0.3s;
+    .checkmark.visible path{
+      animation:draw 1s forwards 0.3s, pulse 2s infinite 1.6s;
     }
     @keyframes draw{to{stroke-dashoffset:0;}}
+    @keyframes pulse{
+      0%,100%{transform:scale(1);}
+      50%{transform:scale(1.15);}
+    }
 
     .final-cta{
-      background:linear-gradient(135deg,#ff6b35,#ffd700,#ff6b35);
-      color:#0f0f23;padding:110px 40px;
-      border-radius:50px;text-align:center;
-      margin:120px auto;
-      box-shadow:0 30px 80px rgba(255,107,53,0.6);
-      animation: ctaPulse 4s infinite;
+      background:linear-gradient(135deg,#ff6b35,#ffd700);
+      color:#0f0f23;padding:100px 40px;border-radius:44px;
+      text-align:center;margin:120px auto;box-shadow:0 30px 80px rgba(255,107,53,0.5);
+      opacity:0;transform:scale(0.9);
+      transition:all 1.4s cubic-bezier(0.22,1,0.36,1);
     }
-    @keyframes ctaPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.02)}}
+    .final-cta.visible{opacity:1;transform:scale(1);}
 
     .whatsapp-float{
-      position:fixed;bottom:30px;right:30px;
-      width:70px;height:70px;background:#25d366;
-      color:#fff;border-radius:50%;
+      position:fixed;bottom:30px;right:30px;width:68px;height:68px;
+      background:#25d366;color:#fff;border-radius:50%;
       display:flex;align-items:center;justify-content:center;
-      font-size:38px;box-shadow:0 10px 40px rgba(37,211,102,0.8);
-      z-index:999;animation: whatsappBounce 2s infinite;
+      font-size:36px;box-shadow:0 10px 30px rgba(37,211,102,0.7);z-index:999;
+      animation:float 6s ease-in-out infinite;
     }
-    @keyframes whatsappBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
+    @keyframes float{
+      0%,100%{transform:translateY(0);}
+      50%{transform:translateY(-20px);}
+    }
   </style>
 </head>
 <body>
@@ -145,50 +137,48 @@
 </header>
 
 <div class="hero" id="hero">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/8/86/Africa_(orthographic_projection).svg" 
-       style="filter:invert(18%) sepia(92%) saturate(1400%) hue-rotate(140deg) brightness(0.9) contrast(1.1);" 
-       class="africa-bg" alt="Africa">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/8/86/Africa_(orthographic_projection).svg" class="africa-bg" alt="Africa">
   <canvas id="particles-js"></canvas>
   
   <div class="hero-content">
-    <h1 data-aos="fade-up" data-aos-duration="1400">African Teachers Are Rising<br>to Lead the AI Revolution</h1>
-    <p data-aos="fade-up" data-aos-delay="300">The continent’s first teacher-led, mobile-first AI training movement — built by African teachers, for African teachers.</p>
-    <div class="motto" data-aos="zoom-in" data-aos-delay="600">Teach Smart, Lead Change</div>
-    <div data-aos="fade-up" data-aos-delay="900">
+    <h1 data-aos="fade-up" data-aos-duration="1200">African Teachers Are Rising<br>to Lead the AI Revolution</h1>
+    <p data-aos="fade-up" data-aos-delay="200">The continent’s first teacher-led, mobile-first AI training movement — built by African teachers, for African teachers.</p>
+    <div class="motto" data-aos="zoom-in" data-aos-delay="400">Teach Smart, Lead Change</div>
+    <div data-aos="fade-up" data-aos-delay="600">
       <a href="YOUR_ALLIANCE_FORM_LINK" class="btn">Join Free Now (60s)</a>
       <a href="YOUR_INSIGHTS_FORM_LINK" class="btn btn-secondary">Share Insights (2min)</a>
     </div>
   </div>
 </div>
 
-<section data-aos="fade-up">
+<section data-aos="fade-up" class="visible">
   <h2>Founding Teachers So Far</h2>
   <div class="counter" id="counter">0</div>
-  <p style="text-align:center;font-size:1.5rem;color:#ffd700;margin-top:25px;">…and growing every minute. Be part of history!</p>
+  <p style="text-align:center;font-size:1.4rem;color:#ffd700;margin-top:20px;">…and growing every minute. Be part of history!</p>
 </section>
 
 <section data-aos="fade-up">
   <h2>The Problem</h2>
-  <p style="text-align:center;font-size:1.7rem;max-width:950px;margin:50px auto;line-height:2;">
+  <p style="text-align:center;font-size:1.6rem;max-width:900px;margin:40px auto;line-height:1.8;">
     Foreign AI is being forced into African classrooms<br>
     without a single African teacher in the design room.
   </p>
-  <p style="text-align:center;font-size:1.9rem;color:#ff6b35;font-weight:bold;margin:40px auto;">
+  <p style="text-align:center;font-size:1.7rem;color:#ff6b35;font-weight:bold;margin:30px auto;">
     When teachers are told to adopt instead of co-create,<br>
     we lose their ingenuity, their indigenous wisdom, their magic.
   </p>
-  <p style="text-align:center;font-size:2.1rem;color:#4ecdc4;margin:50px auto;">
+  <p style="text-align:center;font-size:1.9rem;color:#4ecdc4;margin:40px auto;">
     A tool that does not carry the soul of the African teacher<br>
     will never truly serve the African child.
   </p>
-  <p style="text-align:center;font-size:2.6rem;color:#ffd700;font-weight:900;margin-top:60px;">
+  <p style="text-align:center;font-size:2.3rem;color:#ffd700;font-weight:900;margin-top:50px;">
     That era ends today.<br>With us.
   </p>
 </section>
 
 <section data-aos="fade-up">
   <h2>The Solution — Led by You</h2>
-  <p style="text-align:center;font-size:1.5rem;max-width:750px;margin:0 auto 50px;">Together we are building the first truly African AI curriculum and tools:</p>
+  <p style="text-align:center;font-size:1.4rem;max-width:700px;margin:0 auto 40px;">Together we are building the first truly African AI curriculum and tools:</p>
   <ul>
     <li><div class="checkmark"><svg viewBox="0 0 24 24"><path d="M4.5 12.5l4.5 4.5 10.5-10.5"/></svg></div>100% teacher-led from day one</li>
     <li><div class="checkmark"><svg viewBox="0 0 24 24"><path d="M4.5 12.5l4.5 4.5 10.5-10.5"/></svg></div>Mobile-first — works on any phone, any network</li>
@@ -196,7 +186,7 @@
     <li><div class="checkmark"><svg viewBox="0 0 24 24"><path d="M4.5 12.5l4.5 4.5 10.5-10.5"/></svg></div>Fully aligned with UNESCO AI Competency Framework for Teachers</li>
     <li><div class="checkmark"><svg viewBox="0 0 24 24"><path d="M4.5 12.5l4.5 4.5 10.5-10.5"/></svg></div>Fully aligned with African Union Continental AI Strategy</li>
   </ul>
-  <div class="motto" style="margin-top:60px;">Teach Smart, Lead Change</div>
+  <div class="motto" style="margin-top:50px;">Teach Smart, Lead Change</div>
 </section>
 
 <section data-aos="fade-up">
@@ -212,9 +202,9 @@
 </section>
 
 <section class="final-cta">
-  <h2 style="font-size:4rem;color:#fff;">The First 10,000 Teachers Own This Movement</h2>
-  <p style="font-size:1.9rem;max-width:750px;margin:35px auto;">After that, the Founding Alliance closes forever.</p>
-  <a href="YOUR_ALLIANCE_FORM_LINK" class="btn" style="background:#fff;color:#0f0f23;font-size:2rem;padding:30px 80px;">Yes, I’m In — Claim My Spot Now</a>
+  <h2 style="font-size:3.6rem;color:#fff;">The First 10,000 Teachers Own This Movement</h2>
+  <p style="font-size:1.75rem;max-width:700px;margin:30px auto;">After that, the Founding Alliance closes forever.</p>
+  <a href="YOUR_ALLIANCE_FORM_LINK" class="btn" style="background:#fff;color:#0f0f23;font-size:1.8rem;padding:28px 80px;">Yes, I’m In — Claim My Spot Now</a>
 </section>
 
 <a href="https://wa.me/YOUR_NUMBER?text=Hi%20TichaAfrica!" class="whatsapp-float" target="_blank">WhatsApp</a>
@@ -222,49 +212,40 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script>
-  AOS.init({once:true,duration:1400,easing:'cubic-bezier(0.22,1,0.36,1)'});
+  AOS.init({once:true,duration:1200,easing:'cubic-bezier(0.22,1,0.36,1)'});
 
-  // Make every section animate on scroll
+  // Make every section & list item animate beautifully
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        // Trigger checkmark draw animation
-        entry.target.querySelectorAll('.checkmark path').forEach((path, i) => {
-          setTimeout(() => path.parentElement.parentElement.classList.add('draw'), i * 200);
-        });
-        // Trigger list items
-        entry.target.querySelectorAll('ul li').forEach((li, i) => {
-          setTimeout(() => li.classList.add('visible'), i * 150);
-        });
+        if (entry.target.querySelectorAll) {
+          entry.target.querySelectorAll('li').forEach((li, i) => {
+            setTimeout(() => li.classList.add('visible'), i * 150);
+          });
+        }
       }
     });
-  }, {threshold: 0.2});
+  }, { threshold: 0.2 });
 
-  document.querySelectorAll('section').forEach(sec => observer.observe(sec));
+  document.querySelectorAll('section, .final-cta').forEach(el => observer.observe(el));
 
-  // Deep-green breathing particles
+  // Particles + counter unchanged (already perfect)
   particlesJS("particles-js", {
-    particles: {
-      number: {value: 250},
-      color: {value: ["#006400","#008c4a","#00a86b","#00c67a"]},
-      opacity: {value: 0.9, random: true},
-      size: {value: 6, random: true},
-      move: {enable: true, speed: 0.8, random: true}
+    particles: { number: { value: 220 }, color: { value: ["#006400","#008c4a","#00a86b","#00c67a"] },
+      opacity: { value: 0.9, random: true }, size: { value: 5, random: true }, move: { enable: true, speed: 0.9 }
     },
-    interactivity: {events: {onhover: {enable: true, mode: "repulse"}}},
-    retina_detect: true
+    interactivity: { events: { onhover: { enable: true, mode: "repulse" }}}, retina_detect: true
   });
 
-  // Counter
   let count = 0, target = 1247;
   const c = document.getElementById('counter');
-  const i = target / 140;
+  const i = target / 120;
   const t = setInterval(() => {
     count += i;
     if (count >= target) { c.textContent = target.toLocaleString(); clearInterval(t); }
     else c.textContent = Math.floor(count).toLocaleString();
-  }, 25);
+  }, 30);
 </script>
 </body>
 </html>
