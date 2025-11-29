@@ -19,29 +19,27 @@
     }
     
     header{
-      position:fixed;left:0;right:0;top:0;
-      background:#fdfdfb;
-      padding:18px 20px;text-align:center;
-      z-index:1001;
-      box-shadow:0 6px 20px rgba(0,0,0,0.15);
+      position:fixed;top:68px;left:0;right:0;
+      background:#fdfdfb;padding:20px 20px 18px;text-align:center;
+      z-index:1001;box-shadow:0 6px 20px rgba(0,0,0,0.15);
       border-bottom:4px solid #ffd700;
     }
-    header img{height:74px;transition:0.4s;}
-    header img:hover{transform:scale(1.1) rotate(5deg);}
+    header img{height:78px;transition:0.4s;}
+    header img:hover{transform:scale(1.12) rotate(5deg);}
 
     .hero{
       position:relative;min-height:100vh;
       display:flex;align-items:center;justify-content:center;
-      text-align:center;padding:180px 20px 120px;
+      text-align:center;padding:200px 20px 120px;
       background:radial-gradient(circle at center, #764ba2 0%, #667eea 70%);
       overflow:hidden;
     }
     .africa-bg{
       position:absolute;top:50%;left:50%;
-      width:80%;max-width:700px;
+      width:82%;max-width:720px;
       transform:translate(-50%,-50%);
-      opacity:0.15;z-index:1;pointer-events:none;
-      filter:drop-shadow(0 0 40px #ffd700);
+      opacity:0.22;z-index:1;pointer-events:none;
+      filter:drop-shadow(0 0 60px #00a86b) invert(18%) sepia(92%) saturate(1400%) hue-rotate(140deg) brightness(0.9) contrast(1.1);
     }
     #particles-js{position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;}
     .hero-content{position:relative;z-index:3;max-width:900px;}
@@ -49,18 +47,27 @@
     .hero h1{font-size:clamp(2.8rem,8vw,5rem);margin-bottom:20px;line-height:1.1;text-shadow:0 0 40px rgba(255,215,0,0.8);}
     .hero p{font-size:1.4rem;max-width:700px;margin:0 auto 30px;opacity:0.95;}
     .motto{font-size:clamp(2.2rem,7vw,4rem);font-weight:900;background:linear-gradient(45deg,#ffd700,#ff6b35,#4ecdc4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin:35px 0;}
-    
     .btn{display:inline-block;padding:20px 50px;margin:15px;background:linear-gradient(45deg,#ffd700,#ff6b35);color:#0f0f23;font-weight:bold;border-radius:50px;font-size:1.4rem;box-shadow:0 12px 35px rgba(255,107,53,0.5);transition:0.4s;}
     .btn:hover{transform:translateY(-10px) scale(1.08);}
-    .btn-secondary{background:linear-gradient(45deg,#4ecdc4,#44a08d);color:#fff;}
+    .btn-secondary{background:linear-gradient(45deg,#4ecdc4,#00a86b);color:#fff;}
 
     section{max-width:1100px;margin:100px auto;padding:60px 30px;background:rgba(255,255,255,0.08);backdrop-filter:blur(20px);border-radius:30px;border:1px solid rgba(255,215,0,0.25);}
     h2{font-size:2.8rem;text-align:center;color:#ffd700;margin-bottom:40px;}
     .counter{font-size:clamp(4rem,12vw,7rem);font-weight:900;background:linear-gradient(45deg,#4ecdc4,#ffd700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-align:center;}
-    
+
+    /* REAL ICON CHECKMARKS */
     ul{list-style:none;max-width:800px;margin:50px auto;}
-    ul li{font-size:1.35rem;margin:25px 0;padding-left:60px;position:relative;line-height:1.7;}
-    ul li::before{content:"✓";position:absolute;left:0;top:-4px;font-size:2.8rem;color:#4ecdc4;font-weight:bold;}
+    ul li{
+      font-size:1.35rem;margin:30px 0;padding-left:70px;
+      position:relative;line-height:1.7;
+    }
+    ul li::before{
+      content:"";
+      position:absolute;left:0;top:50%;
+      transform:translateY(-50%);
+      width:44px;height:44px;
+      background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300a86b"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>') center/contain no-repeat;
+    }
 
     .final-cta{background:linear-gradient(135deg,#ff6b35,#ffd700);color:#0f0f23;padding:90px 30px;border-radius:40px;text-align:center;margin:100px auto;}
     .whatsapp-float{position:fixed;bottom:30px;right:30px;width:65px;height:65px;background:#25d366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:35px;box-shadow:0 8px 25px rgba(37,211,102,0.7);z-index:999;}
@@ -89,13 +96,13 @@
   </div>
 </div>
 
+<!-- Your sections (only changed the checkmarks) -->
 <section data-aos="fade-up">
   <h2>Founding Teachers So Far</h2>
   <div class="counter" id="counter">0</div>
   <p style="text-align:center;font-size:1.4rem;color:#ffd700;margin-top:20px;">…and growing every minute. Be part of history!</p>
 </section>
 
-<!-- REFINED PROBLEM SECTION – concise, coherent, powerful -->
 <section data-aos="fade-up">
   <h2>The Problem</h2>
   <p style="text-align:center;font-size:1.6rem;max-width:900px;margin:40px auto;line-height:1.8;">
@@ -153,14 +160,14 @@
 <script>
   AOS.init({once:true,duration:1200});
 
-  // Golden particles over Africa silhouette
+  // Deep-green particles
   particlesJS("particles-js", {
     particles: {
       number: { value: 220 },
-      color: { value: ["#ffd700", "#ff6b35", "#ff8c42"] },
-      opacity: { value: 0.85, random: true },
+      color: { value: ["#006400","#008c4a","#00a86b","#00c67a"] },
+      opacity: { value: 0.9, random: true },
       size: { value: 5, random: true },
-      move: { enable: true, speed: 0.8 }
+      move: { enable: true, speed: 0.9 }
     },
     interactivity: { events: { onhover: { enable: true, mode: "repulse" }}},
     retina_detect: true
