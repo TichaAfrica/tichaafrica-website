@@ -9,24 +9,40 @@
   <style>
     *{margin:0;padding:0;box-sizing:border-box;}
     body{font-family:'Inter',sans-serif;background:#0f0f23;color:#fff;overflow-x:hidden;}
+    
+    /* Urgency banner — fixed height, never hides logo */
     .urgency{
       position:fixed;top:0;left:0;right:0;
       background:linear-gradient(90deg,#ff6b35,#ffd700,#4ecdc4);
-      color:#0f0f23;padding:16px 20px;font-weight:bold;font-size:1.3rem;text-align:center;
-      z-index:1001;box-shadow:0 4px 15px rgba(0,0,0,0.3);
-      animation:pulse 2s infinite;
+      color:#0f0f23;padding:14px 20px;
+      font-weight:bold;font-size:1.25rem;text-align:center;
+      z-index:1002;box-shadow:0 4px 15px rgba(0,0,0,0.4);
     }
-    @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
+    
+    /* Header starts exactly below urgency banner */
     header{
-      position:fixed;top:58px;left:0;right:0;
+      position:fixed;
+      top:54px; /* exact height of urgency banner */
+      left:0;right:0;
       background:linear-gradient(135deg,#fdfdfb 0%,#f0f0ef 100%);
-      padding:14px 20px;text-align:center;z-index:1000;
+      padding:16px 20px;text-align:center;
+      z-index:1001;
       box-shadow:0 4px 15px rgba(0,0,0,0.15);
-      border-bottom:2px solid #ffd700;
+      border-bottom:3px solid #ffd700;
     }
-    header img{height:62px;transition:all 0.4s;}
+    header img{height:68px;transition:all 0.4s;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.2));}
     header img:hover{transform:scale(1.15) rotate(6deg);}
-    .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:180px 20px 80px;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);overflow:hidden;}
+
+    /* Hero starts lower so nothing is hidden */
+    .hero{
+      position:relative;
+      min-height:100vh;
+      display:flex;align-items:center;justify-content:center;
+      text-align:center;
+      padding:200px 20px 100px;
+      background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+      overflow:hidden;
+    }
     #particles-js{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;}
     .hero-content{position:relative;z-index:2;max-width:900px;}
     .hero h1{font-size:clamp(2.5rem,7vw,4.5rem);margin-bottom:20px;line-height:1.1;text-shadow:0 0 30px rgba(255,215,0,0.7);}
@@ -40,7 +56,7 @@
     .counter{font-size:clamp(3.5rem,10vw,6rem);font-weight:900;background:linear-gradient(45deg,#4ecdc4,#ffd700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-align:center;margin:20px 0;}
     ul{list-style:none;max-width:800px;margin:40px auto;}
     ul li{font-size:1.25rem;margin:20px 0;padding-left:50px;position:relative;line-height:1.6;}
-    ul li::before{content:"Checkmark";position:absolute;left:0;top:2px;font-size:2rem;background:linear-gradient(45deg,#ffd700,#4ecdc4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    ul li::before{content:"✔";position:absolute;left:0;top:2px;font-size:2rem;background:linear-gradient(45deg,#ffd700,#4ecdc4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
     .final-cta{background:linear-gradient(135deg,#ff6b35,#ffd700);color:#0f0f23;padding:70px 30px;border-radius:30px;text-align:center;}
     .whatsapp-float{position:fixed;bottom:30px;right:30px;width:60px;height:60px;background:#25d366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;box-shadow:0 5px 20px rgba(37,211,102,0.6);z-index:999;transition:all 0.3s;}
     .whatsapp-float:hover{transform:scale(1.2);}
@@ -59,7 +75,7 @@
 </header>
 
 <div class="hero" id="hero">
-  <div id="particles-js"></div>
+  <canvas id="particles-js"></canvas>
   <div class="hero-content">
     <h1 data-aos="fade-up">African Teachers Are Rising<br>to Lead the AI Revolution</h1>
     <p data-aos="fade-up" data-aos-delay="200">The continent’s first teacher-led, mobile-first AI training movement — built by African teachers, for African teachers.</p>
@@ -71,32 +87,11 @@
   </div>
 </div>
 
-<!-- All your sections below stay exactly the same -->
-<section data-aos="fade-up">
-  <h2>Founding Teachers So Far</h2>
-  <div class="counter" id="counter">0</div>
-  <p style="text-align:center;font-size:1.3rem;color:#ffd700;">…and growing every minute. Be part of history!</p>
-</section>
+<!-- All sections unchanged — just here for completeness -->
+<section data-aos="fade-up"><h2>Founding Teachers So Far</h2><div class="counter" id="counter">0</div><p style="text-align:center;font-size:1.3rem;color:#ffd700;">…and growing every minute. Be part of history!</p></section>
 
-<section data-aos="fade-up">
-  <h2>The Problem</h2>
-  <p style="text-align:center;font-size:1.45rem;max-width:850px;margin:0 auto 35px;line-height:1.7;">
-    Right now, foreign AI is rushing straight into African classrooms — <br>skipping the teacher completely.
-  </p>
-  <p style="text-align:center;font-size:1.45rem;max-width:850px;margin:0 auto 35px;line-height:1.7;color:#ff6b35;font-weight:bold;">
-    That is backwards.<br>The teacher must come first.
-  </p>
-  <p style="text-align:center;font-size:1.6rem;max-width:800px;margin:35px auto;line-height:1.7;color:#4ecdc4;">
-    No AI should ever enter an African classroom<br>
-    before it has been shaped, tested, and blessed<br>
-    by African teachers themselves.
-  </p>
-  <p style="text-align:center;font-size:1.9rem;margin-top:40px;color:#ffd700;font-weight:900;">
-    That future ends now.<br>With us.
-  </p>
-</section>
+<section data-aos="fade-up"><h2>The Problem</h2><p style="text-align:center;font-size:1.45rem;max-width:850px;margin:0 auto 35px;line-height:1.7;">Right now, foreign AI is rushing straight into African classrooms — <br>skipping the teacher completely.</p><p style="text-align:center;font-size:1.45rem;max-width:850px;margin:0 auto 35px;line-height:1.7;color:#ff6b35;font-weight:bold;">That is backwards.<br>The teacher must come first.</p><p style="text-align:center;font-size:1.6rem;max-width:800px;margin:35px auto;line-height:1.7;color:#4ecdc4;">No AI should ever enter an African classroom<br>before it has been shaped, tested, and blessed<br>by African teachers themselves.</p><p style="text-align:center;font-size:1.9rem;margin-top:40px;color:#ffd700;font-weight:900;">That future ends now.<br>With us.</p></section>
 
-<!-- (Solution, Benefits, CTA, Footer — unchanged, just here for completeness) -->
 <section data-aos="fade-up"><h2>The Solution — Led by You</h2><p style="text-align:center;font-size:1.3rem;max-width:700px;margin:0 auto 30px;">Together we are building the first truly African AI curriculum and tools:</p><ul><li>100% teacher-led from day one</li><li>Mobile-first — works on any phone, any network</li><li>Free core training forever</li><li>Fully aligned with UNESCO AI Competency Framework for Teachers</li><li>Fully aligned with African Union Continental AI Strategy</li></ul><div class="motto" style="margin-top:40px;">Teach Smart, Lead Change</div></section>
 
 <section data-aos="fade-up"><h2>What Founding Teachers Gain</h2><ul><li>Shape the curriculum used by millions of African learners</li><li>Exclusive digital badge & certificate</li><li>Direct collaboration with teachers across 54 countries</li><li>Early access to brand-new AI teaching tools</li><li>Recognition from UNESCO, African Union & global partners</li><li>Leave a legacy in the history of African education</li></ul></section>
@@ -115,44 +110,46 @@
 </footer>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script>
-// AOS
-AOS.init({once:true,duration:1000});
+  AOS.init({once:true,duration:1000});
 
-// AFRICA-SHAPED PARTICLES (golden-orange)
-particlesJS('particles-js', {
-  "particles": {
-    "number": { "value": 120, "density": { "enable": true, "value_area": 800 } },
-    "color": { "value": ["#ff6b35", "#ffd700", "#ff8c42"] },
-    "shape": { "type": "circle" },
-    "opacity": { "value": 0.7, "random": true },
-    "size": { "value": 4, "random": true },
-    "line_linked": { "enable": false },
-    "move": { "enable": true, "speed": 0.6, "direction": "none", "random": false, "straight": false, "out_mode": "out" }
-  },
-  "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "repulse" } } },
-  "retina_detect": true,
-  "config_demo": {
+  // AFRICA MAP PARTICLES — golden-orange, clearly visible
+  particlesJS("particles-js", {
     "particles": {
-      "move": {
-        "attract": { "enable": true, "rotateX": 600, "rotateY": 1200 }
-      }
+      "number": { "value": 150 },
+      "color": { "value": ["#ff6b35", "#ffd700", "#ff8c42"] },
+      "shape": { "type": "circle" },
+      "opacity": { "value": 0.8, "random": true },
+      "size": { "value": 4, "random": true },
+      "move": { "enable": true, "speed": 0.8, "direction": "none", "random": false, "straight": false }
     },
-    "shapes": [
-      {
+    "interactivity": { "events": { "onhover": { "enable": true, "mode": "repulse" }}},
+    "retina_detect": true,
+    "config_demo": {
+      "hide_card": true,
+      "background_color": "transparent",
+      "particles": {
+        "move": {
+          "attract": { "enable": true, "rotateX": 600, "rotateY": 1200 }
+        }
+      },
+      "shape": {
         "type": "image",
         "image": {
-          "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTk4LDEwMUMxNzgsMTIwIDE2MCwxNTAgMTYwLDE4MGgtNDBjLTIsMjAgMCw0MCAwLDYwYzAsMjAgMTAsNDAgMjUsNjBjMTUsMjAgMzUsNDAgNjAsNjBjMjUsMjAgNTUsNDAgODUsNjBjMzAsMjAgNjAsNDAgOTAsNjBjMzAsMjAgNjAsNDAgOTAsNjBjMzAsMjAgNjAsNDAgOTAsNjBjMCwyMCAwLDQgMCw2YzAsMjAgMTUsNDAgMzUsNjBjMjAsMjAgNDUsNDAgNzAsNjBjMjUsMjAgNTAsNDAgNzUsNjBjMjUsMjAgNTAsNDAgNzUsNjBjMCwyMCAwLDQgMCw2YzAsMjAgMTUsNDAgMzUsNjBjMjAsMjAgNDUsNDAgNzAsNjBjMjUsMjAgNTAsNDAgNzUsNjBjMjUsMjAgNTAsNDAgNzUsNjBjMCwyMCAwLDQgMCw2YzAsMjAgMTUsNDAgMzUsNjBjMjAsMjAgNDUsNDAgNzAsNjBjMjUsMjAgNTAsNDAgNzUsNjBjMjUsMjAgNTAsNDAgNzUsNjBjMCwyMCAwLDQgMCw2YzAsMjAgMTUsNDAgMzUsNjBjMjAsMjAgNDUsNDAgNzAsNjBjMjUsMjAgNTAsNDAgNzUsNjBjMjUsMjAgNTAsNDAgNzUsNjBjMCwyMCAwLDQgMCw2YzAsMjAgMTUsNDAgMzUsNjBjMjAsMjAgNDUsNDAgNzAsNjBjMjUsMjAgNTAsNDAgNzUsNjBjMjUsMjAgNTAsNDAgNzUsNjAiIGZpbGw9InRyYW5zcGFyZW50IiBzdHJva2U9IiNmZjZiMzUiIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPg==", 
-          "width": 400,
-          "height": 600
+          "src": "https://raw.githubusercontent.com/higordiego/africa-svg/master/africa.svg",
+          "width": 800,
+          "height": 900
         }
       }
-    ]
-  }
-});
+    }
+  });
 
-// Counter
-let count=0,target=1247;const c=document.getElementById('counter');const i=target/100;const t=setInterval(()=>{count+=i;if(count>=target){c.textContent=target.toLocaleString();clearInterval(t);}else c.textContent=Math.floor(count).toLocaleString();},30);
+  // Counter
+  let count=0, target=1247;
+  const c=document.getElementById('counter');
+  const i=target/100;
+  const t=setInterval(()=>{count+=i;if(count>=target){c.textContent=target.toLocaleString();clearInterval(t);}else c.textContent=Math.floor(count).toLocaleString();},30);
 </script>
 </body>
 </html>
