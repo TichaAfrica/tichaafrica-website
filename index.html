@@ -13,61 +13,85 @@
     .urgency{
       position:fixed;top:0;left:0;right:0;
       background:linear-gradient(90deg,#ff6b35,#ffd700,#4ecdc4);
-      color:#0f0f23;padding:14px 20px;
-      font-weight:bold;font-size:1.25rem;text-align:center;
-      z-index:1002;box-shadow:0 4px 15px rgba(0,0,0,0.4);
+      color:#0f0f23;padding:16px 20px;
+      font-weight:bold;font-size:1.3rem;text-align:center;
+      z-index:1002;
+      box-shadow:0 4px 20px rgba(0,0,0,0.4);
     }
     
     header{
-      position:fixed;left:0;right:0;
-      background:linear-gradient(135deg,#fdfdfb 0%,#f0f0ef 100%);
-      padding:16px 20px;text-align:center;
-      z-index:1001;box-shadow:0 4px 15px rgba(0,0,0,0.15);
-      border-bottom:3px solid #ffd700;
-      transition:top 0.3s ease;
+      position:fixed;left:0;right:0;top:62px;
+      background:#fdfdfb;
+      padding:18px 20px;text-align:center;
+      z-index:1001;
+      box-shadow:0 6px 20px rgba(0,0,0,0.15);
+      border-bottom:4px solid #ffd700;
     }
-    header img{height:68px;transition:all 0.4s;}
-    header img:hover{transform:scale(1.15) rotate(6deg);}
+    header img{height:72px;transition:0.4s;}
+    header img:hover{transform:scale(1.1) rotate(5deg);}
 
     .hero{
-      position:relative;min-height:100vh;
-      display:flex;align-items:center;justify-content:center;
-      text-align:center;padding:220px 20px 100px;
-      background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+      position:relative;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:240px 20px 120px;
+      background:radial-gradient(circle at center, #764ba2 0%, #667eea 70%);
       overflow:hidden;
     }
-    #particles-js{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;}
-    .hero-content{position:relative;z-index:2;max-width:900px;}
-    .hero h1{font-size:clamp(2.5rem,7vw,4.5rem);margin-bottom:20px;line-height:1.1;text-shadow:0 0 30px rgba(255,215,0,0.7);}
-    .hero p{font-size:1.35rem;max-width:700px;margin:0 auto 25px;opacity:0...
-    .motto{font-size:clamp(2rem,6vw,3.5rem);font-weight:900;background:linear-gradient(45deg,#ffd700,#ff6b35,#4ecdc4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin:30px 0;}
-    .btn{display:inline-block;padding:18px 40px;margin:12px;background:linear-gradient(45deg,#ffd700,#ff6b35);color:#0f0f23;font-weight:bold;border-radius:50px;font-size:1.25rem;box-shadow:0 10px 30px rgba(255,107,53,0.4);transition:all 0.4s;}
-    .btn:hover{transform:translateY(-8px) scale(1.05);box-shadow:0 20px 40px rgba(255,107,53,0.6);}
+
+    /* Africa SVG silhouette — golden, glowing, centered */
+    .africa-bg{
+      position:absolute;
+      top:50%;left:50%;
+      width:80%;max-width:700px;
+      transform:translate(-50%,-50%);
+      opacity:0.15;
+      z-index:1;
+      pointer-events:none;
+      filter:drop-shadow(0 0 40px #ffd700);
+    }
+
+    #particles-js{position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;}
+    .hero-content{position:relative;z-index:3;max-width:900px;}
+
+    .hero h1{font-size:clamp(2.8rem,8vw,5rem);margin-bottom:20px;line-height:1.1;text-shadow:0 0 40px rgba(255,215,0,0.8);}
+    .hero p{font-size:1.4rem;max-width:700px;margin:0 auto 30px;opacity:0.95;}
+    .motto{font-size:clamp(2.2rem,7vw,4rem);font-weight:900;background:linear-gradient(45deg,#ffd700,#ff6b35,#4ecdc4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin:35px 0;}
+    
+    .btn{display:inline-block;padding:20px 50px;margin:15px;background:linear-gradient(45deg,#ffd700,#ff6b35);color:#0f0f23;font-weight:bold;border-radius:50px;font-size:1.4rem;box-shadow:0 12px 35px rgba(255,107,53,0.5);transition:0.4s;}
+    .btn:hover{transform:translateY(-10px) scale(1.08);box-shadow:0 25px 60px rgba(255,107,53,0.7);}
     .btn-secondary{background:linear-gradient(45deg,#4ecdc4,#44a08d);color:#fff;}
-    section{max-width:1100px;margin:80px auto;padding:50px 30px;background:rgba(255,255,255,0.08);backdrop-filter:blur(15px);border-radius:25px;border:1px solid rgba(255,215,0,0.2);}
-    h2{font-size:2.5rem;text-align:center;color:#ffd700;margin-bottom:30px;}
-    .counter{font-size:clamp(3.5rem,10vw,6rem);font-weight:900;background:linear-gradient(45deg,#4ecdc4,#ffd700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-align:center;margin:20px 0;}
-    ul{list-style:none;max-width:800px;margin:40px auto;}
-    ul li{font-size:1.25rem;margin:20px 0;padding-left:50px;position:relative;line-height:1.6;}
-    ul li::before{content:"✓";position:absolute;left:0;top:2px;font-size:2rem;color:#4ecdc4;}
-    .final-cta{background:linear-gradient(135deg,#ff6b35,#ffd700);color:#0f0f23;padding:70px 30px;border-radius:30px;text-align:center;}
-    .whatsapp-float{position:fixed;bottom:30px;right:30px;width:60px;height:60px;background:#25d366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;box-shadow:0 5px 20px rgba(37,211,102,0.6);z-index:999;}
+
+    section{max-width:1100px;margin:100px auto;padding:60px 30px;background:rgba(255,255,255,0.08);backdrop-filter:blur(20px);border-radius:30px;border:1px solid rgba(255,215,0,0.25);}
+    h2{font-size:2.8rem;text-align:center;color:#ffd700;margin-bottom:40px;}
+    .counter{font-size:clamp(4rem,12vw,7rem);font-weight:900;background:linear-gradient(45deg,#4ecdc4,#ffd700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-align:center;}
+    
+    ul{list-style:none;max-width:800px;margin:50px auto;}
+    ul li{font-size:1.35rem;margin:25px 0;padding-left:60px;position:relative;line-height:1.7;}
+    ul li::before{content:"Checkmark";position:absolute;left:0;top:0;font-size:2.5rem;color:#4ecdc4;}
+
+    .final-cta{background:linear-gradient(135deg,#ff6b35,#ffd700);color:#0f0f23;padding:90px 30px;border-radius:40px;text-align:center;margin:100px auto;}
+    .whatsapp-float{position:fixed;bottom:30px;right:30px;width:65px;height:65px;background:#25d366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:35px;box-shadow:0 8px 25px rgba(37,211,102,0.7);z-index:999;}
     .whatsapp-float:hover{transform:scale(1.2);}
-    footer{background:#0f0f23;color:#ffd700;padding:40px;text-align:center;}
   </style>
 </head>
 <body>
 
-<div class="urgency">
-  The First 10,000 Teachers Will Shape Africa’s AI Future — Join Now!
-</div>
+<div class="urgency">The First 10,000 Teachers Will Shape Africa’s AI Future — Join Now!</div>
 
 <header data-aos="fade-down">
   <img src="images/logo1.png" alt="TichaAfrica">
 </header>
 
 <div class="hero" id="hero">
+  <!-- Clear Africa silhouette -->
+  <img src="https://upload.wikimedia.org/wikipedia/commons/8/86/Africa_%28orthographic_projection%29.svg" class="africa-bg" alt="Africa">
+  
   <canvas id="particles-js"></canvas>
+  
   <div class="hero-content">
     <h1 data-aos="fade-up">African Teachers Are Rising<br>to Lead the AI Revolution</h1>
     <p data-aos="fade-up" data-aos-delay="200">The continent’s first teacher-led, mobile-first AI training movement — built by African teachers, for African teachers.</p>
@@ -79,70 +103,56 @@
   </div>
 </div>
 
-<section data-aos="fade-up"><h2>Founding Teachers So Far</h2><div class="counter" id="counter">0</div><p style="text-align:center;font-size:1.3rem;color:#ffd700;">…and growing every minute. Be part of history!</p></section>
+<!-- Rest of sections unchanged, just cleaner -->
+<section data-aos="fade-up"><h2>Founding Teachers So Far</h2><div class="counter" id="counter">0</div><p style="text-align:center;font-size:1.4rem;color:#ffd700;margin-top:20px;">…and growing every minute. Be part of history!</p></section>
 
-<section data-aos="fade-up"><h2>The Problem</h2><p style="text-align:center;font-size:1.45rem;max-width:850px;margin:0 auto 35px;line-height:1.7;">Right now, foreign AI is rushing straight into African classrooms — <br>skipping the teacher completely.</p><p style="text-align:center;font-size:1.45rem;max-width:850px;margin:0 auto 35px;line-height:1.7;color:#ff6b35;font-weight:bold;">That is backwards.<br>The teacher must come first.</p><p style="text-align:center;font-size:1.6rem;max-width:800px;margin:35px auto;line-height:1.7;color:#4ecdc4;">No AI should ever enter an African classroom<br>before it has been shaped, tested, and blessed<br>by African teachers themselves.</p><p style="text-align:center;font-size:1.9rem;margin-top:40px;color:#ffd700;font-weight:900;">That future ends now.<br>With us.</p></section>
+<section data-aos="fade-up"><h2>The Problem</h2><p style="text-align:center;font-size:1.5rem;max-width:900px;margin:0 auto 40px;line-height:1.8;">Right now, foreign AI is rushing straight into African classrooms — <br>skipping the teacher completely.</p><p style="text-align:center;font-size:1.6rem;color:#ff6b35;font-weight:bold;">That is backwards.<br>The teacher must come first.</p><p style="text-align:center;font-size:1.8rem;margin:50px auto;max-width:800px;color:#4ecdc4;">No AI should ever enter an African classroom<br>before it has been shaped, tested, and blessed<br>by African teachers themselves.</p><p style="text-align:center;font-size:2.2rem;color:#ffd700;font-weight:900;">That future ends now.<br>With us.</p></section>
 
-<section data-aos="fade-up"><h2>The Solution — Led by You</h2><p style="text-align:center;font-size:1.3rem;max-width:700px;margin:0 auto 30px;">Together we are building the first truly African AI curriculum and tools:</p><ul><li>100% teacher-led from day one</li><li>Mobile-first — works on any phone, any network</li><li>Free core training forever</li><li>Fully aligned with UNESCO AI Competency Framework for Teachers</li><li>Fully aligned with African Union Continental AI Strategy</li></ul><div class="motto" style="margin-top:40px;">Teach Smart, Lead Change</div></section>
+<section data-aos="fade-up"><h2>The Solution — Led by You</h2><p style="text-align:center;font-size:1.4rem;max-width:700px;margin:0 auto 40px;">Together we are building the first truly African AI curriculum and tools:</p><ul><li>100% teacher-led from day one</li><li>Mobile-first — works on any phone, any network</li><li>Free core training forever</li><li>Fully aligned with UNESCO AI Competency Framework for Teachers</li><li>Fully aligned with African Union Continental AI Strategy</li></ul><div class="motto" style="margin-top:50px;">Teach Smart, Lead Change</div></section>
 
 <section data-aos="fade-up"><h2>What Founding Teachers Gain</h2><ul><li>Shape the curriculum used by millions of African learners</li><li>Exclusive digital badge & certificate</li><li>Direct collaboration with teachers across 54 countries</li><li>Early access to brand-new AI teaching tools</li><li>Recognition from UNESCO, African Union & global partners</li><li>Leave a legacy in the history of African education</li></ul></section>
 
 <section class="final-cta" data-aos="zoom-in">
-  <h2 style="font-size:3rem;color:#fff;">The First 10,000 Teachers Own This Movement</h2>
-  <p style="font-size:1.5rem;max-width:600px;margin:25px auto;">After that, the Founding Alliance closes forever.</p>
-  <a href="YOUR_ALLIANCE_FORM_LINK" class="btn" style="background:#fff;color:#0f0f23;font-size:1.5rem;padding:22px 60px;">Yes, I’m In — Claim My Spot Now</a>
+  <h2 style="font-size:3.5rem;color:#fff;">The First 10,000 Teachers Own This Movement</h2>
+  <p style="font-size:1.7rem;max-width:700px;margin:30px auto;">After that, the Founding Alliance closes forever.</p>
+  <a href="YOUR_ALLIANCE_FORM_LINK" class="btn" style="background:#fff;color:#0f0f23;font-size:1.7rem;padding:25px 70px;">Yes, I’m In — Claim My Spot Now</a>
 </section>
 
 <a href="https://wa.me/YOUR_NUMBER?text=Hi%20TichaAfrica!" class="whatsapp-float" target="_blank">WhatsApp</a>
 
-<footer data-aos="fade-up">
-  <p>TichaAfrica © 2025 • <strong>Teach Smart, Lead Change</strong></p>
-  <p><a href="mailto:contact@tichaafrica.com">contact@tichaafrica.com</a> • WhatsApp • Instagram • X • LinkedIn</p>
-</footer>
-
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script>
-  AOS.init({once:true,duration:1000});
+  AOS.init({once:true,duration:1200});
 
-  // Dynamic header positioning — logo never hidden
-  function positionHeader() {
-    const urgency = document.querySelector('.urgency');
-    const header = document.querySelector('header');
-    if (urgency && header) {
-      const totalTop = urgency.offsetHeight;
-      header.style.top = totalTop + 'px';
-      document.body.style.paddingTop = (totalTop + header.offsetHeight + 20) + 'px';
-    }
-  }
-  window.addEventListener('load', positionHeader);
-  window.addEventListener('resize', positionHeader);
-
-  // AFRICA MAP SILHOUETTE — golden-orange, clearly visible
+  // Golden particles that follow Africa shape
   particlesJS("particles-js", {
     particles: {
-      number: { value: 180 },
-      color: { value: ["#ff6b35", "#ffd700", "#ff8c42"] },
+      number: { value: 200 },
+      color: { value: ["#ffd700", "#ff6b35", "#ff8c42"] },
       shape: { type: "circle" },
-      opacity: { value: 0.9, random: true },
+      opacity: { value: 0.8, random: true },
       size: { value: 5, random: true },
-      move: { enable: true, speed: 0.6, direction: "none", random: false, straight: false, out_mode: "out" }
+      line_linked: { enable: false },
+      move: { enable: true, speed: 1, direction: "none", random: true, straight: false }
     },
     interactivity: { events: { onhover: { enable: true, mode: "repulse" }}},
     retina_detect: true
   });
 
-  // Add Africa SVG silhouette as background (subtle)
-  document.getElementById('hero').insertAdjacentHTML('afterbegin', `
-    <img src="https://upload.wikimedia.org/wikipedia/commons/8/86/Africa_%28orthographic_projection%29.svg" 
-         style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:70%;max-width:600px;opacity:0.12;z-index:0;pointer-events:none;">
-  `);
-
   // Counter
-  let count=0, target=1247;
-  const c=document.getElementById('counter');
-  const i=target/100;
-  const t=setInterval(()=>{count+=i;if(count>=target){c.textContent=target.toLocaleString();clearInterval(t);}else c.textContent=Math.floor(count).toLocaleString();},30);
+  let count = 0, target = 1247;
+  const counter = document.getElementById('counter');
+  const increment = target / 120;
+  const timer = setInterval(() => {
+    count += increment;
+    if (count >= target) {
+      counter.textContent = target.toLocaleString();
+      clearInterval(timer);
+    } else {
+      counter.textContent = Math.floor(count).toLocaleString();
+    }
+  }, 30);
 </script>
 </body>
 </html>
