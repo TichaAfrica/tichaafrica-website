@@ -10,44 +10,36 @@
     *{margin:0;padding:0;box-sizing:border-box;}
     body{font-family:'Inter',sans-serif;background:#0f0f23;color:#fff;overflow-x:hidden;}
     
-    /* Urgency banner — fixed at top */
     .urgency{
       position:fixed;top:0;left:0;right:0;
       background:linear-gradient(90deg,#ff6b35,#ffd700,#4ecdc4);
       color:#0f0f23;padding:14px 20px;
       font-weight:bold;font-size:1.25rem;text-align:center;
       z-index:1002;box-shadow:0 4px 15px rgba(0,0,0,0.4);
-      transition: all 0.3s ease;
     }
     
-    /* Header — dynamically positioned */
     header{
-      position:fixed;
-      left:0;right:0;
+      position:fixed;left:0;right:0;
       background:linear-gradient(135deg,#fdfdfb 0%,#f0f0ef 100%);
       padding:16px 20px;text-align:center;
-      z-index:1001;
-      box-shadow:0 4px 15px rgba(0,0,0,0.15);
+      z-index:1001;box-shadow:0 4px 15px rgba(0,0,0,0.15);
       border-bottom:3px solid #ffd700;
-      transition: top 0.3s ease;
+      transition:top 0.3s ease;
     }
-    header img{height:68px;transition:all 0.4s;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.2));}
+    header img{height:68px;transition:all 0.4s;}
     header img:hover{transform:scale(1.15) rotate(6deg);}
 
-    /* Hero starts below both */
     .hero{
-      position:relative;
-      min-height:100vh;
+      position:relative;min-height:100vh;
       display:flex;align-items:center;justify-content:center;
-      text-align:center;
-      padding:220px 20px 100px;
+      text-align:center;padding:220px 20px 100px;
       background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
       overflow:hidden;
     }
     #particles-js{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;}
     .hero-content{position:relative;z-index:2;max-width:900px;}
     .hero h1{font-size:clamp(2.5rem,7vw,4.5rem);margin-bottom:20px;line-height:1.1;text-shadow:0 0 30px rgba(255,215,0,0.7);}
-    .hero p{font-size:1.35rem;max-width:700px;margin:0 auto 25px;opacity:0.95;line-height:1.6;}
+    .hero p{font-size:1.35rem;max-width:700px;margin:0 auto 25px;opacity:0...
     .motto{font-size:clamp(2rem,6vw,3.5rem);font-weight:900;background:linear-gradient(45deg,#ffd700,#ff6b35,#4ecdc4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin:30px 0;}
     .btn{display:inline-block;padding:18px 40px;margin:12px;background:linear-gradient(45deg,#ffd700,#ff6b35);color:#0f0f23;font-weight:bold;border-radius:50px;font-size:1.25rem;box-shadow:0 10px 30px rgba(255,107,53,0.4);transition:all 0.4s;}
     .btn:hover{transform:translateY(-8px) scale(1.05);box-shadow:0 20px 40px rgba(255,107,53,0.6);}
@@ -57,12 +49,11 @@
     .counter{font-size:clamp(3.5rem,10vw,6rem);font-weight:900;background:linear-gradient(45deg,#4ecdc4,#ffd700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-align:center;margin:20px 0;}
     ul{list-style:none;max-width:800px;margin:40px auto;}
     ul li{font-size:1.25rem;margin:20px 0;padding-left:50px;position:relative;line-height:1.6;}
-    ul li::before{content:"Checkmark";position:absolute;left:0;top:2px;font-size:2rem;background:linear-gradient(45deg,#ffd700,#4ecdc4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    ul li::before{content:"✓";position:absolute;left:0;top:2px;font-size:2rem;color:#4ecdc4;}
     .final-cta{background:linear-gradient(135deg,#ff6b35,#ffd700);color:#0f0f23;padding:70px 30px;border-radius:30px;text-align:center;}
-    .whatsapp-float{position:fixed;bottom:30px;right:30px;width:60px;height:60px;background:#25d366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;box-shadow:0 5px 20px rgba(37,211,102,0.6);z-index:999;transition:all 0.3s;}
+    .whatsapp-float{position:fixed;bottom:30px;right:30px;width:60px;height:60px;background:#25d366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;box-shadow:0 5px 20px rgba(37,211,102,0.6);z-index:999;}
     .whatsapp-float:hover{transform:scale(1.2);}
     footer{background:#0f0f23;color:#ffd700;padding:40px;text-align:center;}
-    footer a{color:#4ecdc4;}
   </style>
 </head>
 <body>
@@ -88,7 +79,6 @@
   </div>
 </div>
 
-<!-- Rest of your sections (unchanged) -->
 <section data-aos="fade-up"><h2>Founding Teachers So Far</h2><div class="counter" id="counter">0</div><p style="text-align:center;font-size:1.3rem;color:#ffd700;">…and growing every minute. Be part of history!</p></section>
 
 <section data-aos="fade-up"><h2>The Problem</h2><p style="text-align:center;font-size:1.45rem;max-width:850px;margin:0 auto 35px;line-height:1.7;">Right now, foreign AI is rushing straight into African classrooms — <br>skipping the teacher completely.</p><p style="text-align:center;font-size:1.45rem;max-width:850px;margin:0 auto 35px;line-height:1.7;color:#ff6b35;font-weight:bold;">That is backwards.<br>The teacher must come first.</p><p style="text-align:center;font-size:1.6rem;max-width:800px;margin:35px auto;line-height:1.7;color:#4ecdc4;">No AI should ever enter an African classroom<br>before it has been shaped, tested, and blessed<br>by African teachers themselves.</p><p style="text-align:center;font-size:1.9rem;margin-top:40px;color:#ffd700;font-weight:900;">That future ends now.<br>With us.</p></section>
@@ -103,7 +93,7 @@
   <a href="YOUR_ALLIANCE_FORM_LINK" class="btn" style="background:#fff;color:#0f0f23;font-size:1.5rem;padding:22px 60px;">Yes, I’m In — Claim My Spot Now</a>
 </section>
 
-<a href="https://wa.me/YOUR_WHATSAPP_NUMBER?text=Hi%20TichaAfrica!" class="whatsapp-float" target="_blank">WhatsApp</a>
+<a href="https://wa.me/YOUR_NUMBER?text=Hi%20TichaAfrica!" class="whatsapp-float" target="_blank">WhatsApp</a>
 
 <footer data-aos="fade-up">
   <p>TichaAfrica © 2025 • <strong>Teach Smart, Lead Change</strong></p>
@@ -115,45 +105,38 @@
 <script>
   AOS.init({once:true,duration:1000});
 
-  // DYNAMIC POSITIONING — THIS IS THE MAGIC
+  // Dynamic header positioning — logo never hidden
   function positionHeader() {
     const urgency = document.querySelector('.urgency');
     const header = document.querySelector('header');
     if (urgency && header) {
-      const urgencyHeight = urgency.offsetHeight;
-      header.style.top = urgencyHeight + 'px';
-      document.body.style.paddingTop = (urgencyHeight + header.offsetHeight) + 'px';
+      const totalTop = urgency.offsetHeight;
+      header.style.top = totalTop + 'px';
+      document.body.style.paddingTop = (totalTop + header.offsetHeight + 20) + 'px';
     }
   }
-
-  // Run on load and resize
   window.addEventListener('load', positionHeader);
   window.addEventListener('resize', positionHeader);
 
-  // Africa-shaped particles (golden-orange)
+  // AFRICA MAP SILHOUETTE — golden-orange, clearly visible
   particlesJS("particles-js", {
-    "particles": {
-      "number": { "value": 150 },
-      "color": { "value": ["#ff6b35", "#ffd700", "#ff8c42"] },
-      "shape": { "type": "circle" },
-      "opacity": { "value": 0.8 },
-      "size": { "value": 4 },
-      "move": { "enable": true, "speed": 0.8 }
+    particles: {
+      number: { value: 180 },
+      color: { value: ["#ff6b35", "#ffd700", "#ff8c42"] },
+      shape: { type: "circle" },
+      opacity: { value: 0.9, random: true },
+      size: { value: 5, random: true },
+      move: { enable: true, speed: 0.6, direction: "none", random: false, straight: false, out_mode: "out" }
     },
-    "interactivity": { "events": { "onhover": { "enable": true, "mode": "repulse" }}},
-    "retina_detect": true,
-    "config_demo": {
-      "hide_card": true,
-      "shape": {
-        "type": "image",
-        "image": {
-          "src": "https://upload.wikimedia.org/wikipedia/commons/8/86/Africa_%28orthographic_projection%29.svg",
-          "width": 800,
-          "height": 800
-        }
-      }
-    }
+    interactivity: { events: { onhover: { enable: true, mode: "repulse" }}},
+    retina_detect: true
   });
+
+  // Add Africa SVG silhouette as background (subtle)
+  document.getElementById('hero').insertAdjacentHTML('afterbegin', `
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/86/Africa_%28orthographic_projection%29.svg" 
+         style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:70%;max-width:600px;opacity:0.12;z-index:0;pointer-events:none;">
+  `);
 
   // Counter
   let count=0, target=1247;
