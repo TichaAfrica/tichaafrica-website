@@ -1,306 +1,318 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>TichaAfrica — Teach Smart, Lead Change</title>
-  <meta name="description" content="TichaAfrica — a teacher-led AI education movement. Built by TheTextArtisan. Join the Founding Alliance." />
-  <!-- Google font (Inter). If you prefer local fonts, swap this with a local @font-face. -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <meta name="description" content="Africa’s first teacher-led AI education movement. Co-creating the future of learning with African wisdom at the center.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg1:#dfeef7;       /* powder blue-ish */
-      --bg2:#ebe2d6;       /* silver/beige */
-      --accent:#003366;    /* deep navy accent */
-      --mustard:#ffd700;   /* mustard / highlight */
-      --gold:#d4af37;      /* border gold */
-      --muted:#2f2f2f;
-      --card-bg: rgba(255,255,255,0.86);
-      --max-width:1100px;
+    :root {
+      --bg: #f8f9fc;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --accent: #0d5c63;
+      --gold: #ca8a04;
+      --gold-light: #facc15;
+      --border: rgba(0,0,0,0.08);
+      --shadow: 0 20px 40px rgba(0,0,0,0.06);
+      --radius: 24px;
+      --transition: all 0.32s cubic-bezier(0.16,1,0.3,1);
     }
-    /* Reset + base */
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%}
+    *,*::before,*::after{box-sizing:border-box}
     body{
-      font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      color:var(--muted);
-      background:linear-gradient(120deg,var(--bg1) 0%, var(--bg2) 60%);
-      line-height:1.45;
-      -webkit-text-size-adjust:100%;
+      margin:0;font-family:"Inter",system-ui,sans-serif;
+      background:var(--bg);color:var(--text);
+      line-height:1.6;-webkit-font-smoothing:antialiased;
     }
-    /* Container */
-    .wrap{max-width:var(--max-width);margin:36px auto;padding:28px;border-radius:16px;background:linear-gradient(180deg,rgba(255,255,255,0.96),rgba(255,255,255,0.92));box-shadow:0 12px 40px rgba(12,22,60,0.12);border:6px solid var(--gold);}
-
-    /* Header */
-    header{display:flex;align-items:center;gap:18px;padding:10px 6px 22px;}
-    .logos{display:flex;gap:18px;align-items:center}
-    .logo-wrap{display:flex;flex-direction:column;align-items:center;gap:6px}
-    .logo-title{font-weight:700;color:var(--accent);letter-spacing:0.6px}
-    /* If you want to use your own image file, uncomment the <img> lines and remove the inline SVGs */
-    .logo-img{width:86px;height:86px;display:block}
-
-    /* Hero */
-    .hero{display:grid;grid-template-columns:1fr;gap:18px;align-items:center;padding:10px 6px 28px;text-align:center}
-    @media(min-width:880px){ .hero{grid-template-columns:1fr 520px;text-align:left} }
-    .hero-left{padding:10px}
-    .eyebrow{display:inline-block;background:linear-gradient(90deg,var(--mustard),var(--accent));color:#041625;padding:6px 12px;border-radius:999px;font-weight:700;margin-bottom:12px}
-    h1{font-size:clamp(1.6rem,3.2vw,2.9rem);line-height:1.05;color:var(--accent);margin-bottom:8px}
-    p.lead{font-size:1.05rem;color:#223;opacity:0.9;margin-bottom:18px;max-width:58ch}
-    .motto{display:inline-block;padding:8px 14px;border-radius:12px;background:linear-gradient(90deg,var(--mustard),#ff8b3d);color:#041625;font-weight:800;margin-bottom:18px}
-    .cta-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-    @media(min-width:880px){ .cta-row{justify-content:flex-start} }
-
+    .container{
+      max-width:1280px;margin:0 auto;padding:0 20px;
+    }
+    header{
+      padding:24px 0;text-align:center;
+    }
+    .logo{
+      height:68px;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.1));
+      transition:var(--transition);
+    }
+    .logo:hover{transform:scale(1.05);}
+    
+    /* HERO */
+    .hero{
+      padding:100px 0 140px;text-align:center;
+      background:linear-gradient(to bottom, #f0f9ff 0%, #e0f2fe 100%);
+    }
+    .badge{
+      display:inline-block;background:var(--accent);color:white;
+      padding:8px 20px;border-radius:999px;font-size:0.95rem;font-weight:600;
+      margin-bottom:20px;letter-spacing:0.5px;
+    }
+    h1{
+      font-size:clamp(2.8rem,8vw,4.8rem);font-weight:900;
+      line-height:1.05;margin:0 0 24px 0;
+      background:linear-gradient(135deg,#1e293b,#0d5c63);
+      -webkit-background-clip:text;background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+    .lead{
+      font-size:clamp(1.15rem,4vw,1.4rem);max-width:760px;margin:0 auto 32px;
+      color:var(--text-muted);line-height:1.7;
+    }
+    .motto{
+      font-size:clamp(1.8rem,6vw,3.2rem);font-weight:900;
+      background:linear-gradient(90deg,#ca8a04,#facc15);
+      -webkit-background-clip:text;background-clip:text;
+      -webkit-text-fill-color:transparent;
+      margin:40px 0 48px;display:block;
+    }
+    .cta-group{
+      display:flex;gap:16px;flex-wrap:wrap;justify-content:center;
+    }
     .btn{
-      display:inline-flex;align-items:center;gap:12px;
-      padding:14px 20px;border-radius:999px;text-decoration:none;font-weight:700;border:none;
-      box-shadow:0 8px 20px rgba(2,24,56,0.08);cursor:pointer;
+      padding:18px 36px;border-radius:999px;font-weight:700;
+      font-size:1.1rem;text-decoration:none;display:inline-flex;
+      align-items:center;gap:12px;transition:var(--transition);
+      box-shadow:0 12px 32px rgba(0,0,0,0.1);
     }
-    .btn-primary{background:var(--mustard);color:#041625}
-    .btn-secondary{background:var(--accent);color:#fff}
+    .btn-primary{
+      background:var(--gold-light);color:#1e293b;
+    }
+    .btn-primary:hover{
+      transform:translateY(-6px);box-shadow:0 20px 50px rgba(202,138,4,0.3);
+    }
+    .btn-secondary{
+      background:var(--accent);color:white;
+    }
+    .btn-secondary:hover{
+      transform:translateY(-6px);box-shadow:0 20px 50px rgba(13,92,99,0.4);
+    }
 
-    /* Hero right: image / key numbers */
-    .hero-right{display:flex;flex-direction:column;align-items:center;gap:14px;padding:14px}
-    .stat{background:linear-gradient(180deg,rgba(255,255,255,0.98),rgba(255,255,255,0.95));border-radius:12px;padding:18px 22px;width:100%;box-shadow:0 8px 30px rgba(0,22,40,0.06);border:1px solid rgba(0,0,0,0.04)}
-    .stat .value{font-size:2.4rem;font-weight:900;color:var(--accent)}
-    .stat .label{font-size:0.95rem;color:#42505a;margin-top:6px}
+    /* Stats */
+    .stats{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:32px;margin:120px auto;max-width:960px;
+    }
+    .stat{
+      background:white;padding:40px 32px;border-radius:24px;
+      box-shadow:0 20px 50px rgba(0,0,0,0.08);text-align:center;
+      transition:var(--transition);
+    }
+    .stat:hover{transform:translateY(-12px);}
+    .stat-value{
+      font-size:3.2rem;font-weight:900;color:var(--accent);
+      line-height:1;margin-bottom:8px;
+    }
+    .stat-label{
+      font-size:1.1rem;color:var(--text-muted);font-weight:500;
+    }
 
-    /* Sections */
-    section{margin:20px 0;padding:20px;border-radius:12px}
-    .card{background:var(--card-bg);padding:22px;border-radius:12px;border:1px solid rgba(0,0,0,0.03)}
-    h2{color:var(--accent);font-size:1.35rem;margin-bottom:12px}
-    ul{list-style:none;padding-left:0;margin-top:12px}
-    li{padding:10px 0;border-bottom:1px dashed rgba(0,0,0,0.04);display:flex;gap:12px;align-items:flex-start}
-    li:last-child{border-bottom:none}
-    .dot{width:12px;height:12px;border-radius:50%;background:var(--mustard);margin-top:8px;flex:0 0 12px}
+    /* Cards */
+    section{margin:140px 0;}
+    .section-title{
+      font-size:2.6rem;font-weight:900;text-align:center;
+      margin-bottom:80px;color:var(--text);
+    }
+    .cards{
+      display:grid;gap:40px;max-width:1000px;margin:0 auto;
+    }
+    .card{
+      background:white;padding:48px;border-radius:28px;
+      box-shadow:0 25px 60px rgba(0,0,0,0.08);
+      transition:var(--transition);border:1px solid var(--border);
+    }
+    .card:hover{transform:translateY(-12px);box-shadow:0 40px 90px rgba(0,0,0,0.14);}
+    .card h3{
+      font-size:1.9rem;font-weight:800;color:var(--accent);margin-bottom:20px;
+    }
+    .card p{
+      font-size:1.18rem;color:var(--text-muted);line-height:1.75;
+      margin-bottom:24px;
+    }
+    .list{
+      list-style:none;padding:0;
+    }
+    .list li{
+      padding:16px 0;display:flex;gap:20px;align-items:flex-start;
+      border-bottom:1px solid rgba(0,0,0,0.06);
+    }
+    .list li:last-child{border:none;}
+    .list li::before{
+      content:"✓";font-size:2rem;font-weight:bold;
+      color:var(--gold-light);flex-shrink:0;margin-top:4px;
+    }
+
+    /* Final CTA */
+    .final-cta{
+      background:linear-gradient(135deg,#0d5c63,#1e293b);
+      color:white;padding:120px 40px;border-radius:40px;
+      text-align:center;margin:160px auto 0;max-width:1000px;
+      box-shadow:0 40px 100px rgba(0,0,0,0.3);
+    }
+    .final-cta h2{
+      font-size:3.6rem;font-weight:900;margin-bottom:32px;
+      background:linear-gradient(90deg,#facc15,#ffd700);
+      -webkit-background-clip:text;background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+    .final-cta p{
+      font-size:1.7rem;max-width:720px;margin:0 auto 48px;opacity:0.95;line-height:1.7;
+    }
 
     /* Footer */
-    footer{margin-top:20px;text-align:center;padding:18px 6px;color:#223;font-size:0.95rem}
-    footer a{color:var(--accent);text-decoration:none;font-weight:600}
+    footer{
+      padding:80px 20px 40px;text-align:center;color:var(--text-muted);
+      font-size:1rem;
+    }
+    footer a{color:var(--accent);text-decoration:none;font-weight:600;}
+    footer a:hover{color:var(--gold-light);}
 
-    /* subtle animations */
-    .fade-me{opacity:0;transform:translateY(8px);transition:all .6s ease}
-    .in-view{opacity:1;transform:none}
-    /* Logo sizes */
-    .svg-logo{width:86px;height:86px}
-    .ticha-logo{width:120px;height:60px}
-
-    /* Accessibility focus */
-    a:focus{outline:3px solid rgba(0,51,102,0.14);outline-offset:3px}
+    /* Mobile first perfection */
+    @media (max-width:640px){
+      .hero{padding:120px 0 100px;}
+      .stats{grid-template-columns:1fr;gap:24px;}
+      section{margin:100px 0;}
+      .section-title{font-size:2.3rem;margin-bottom:60px;}
+      .card{padding:40px 28px;}
+      .final-cta{padding:90px 28px;}
+      .final-cta h2{font-size:3rem;}
+    }
   </style>
 </head>
 <body>
-  <div class="wrap" role="main" aria-labelledby="pageTitle">
-    <header>
-      <div class="logos" aria-hidden="false">
-        <!-- TheTextArtisan logo (inline SVG placeholder). Replace with <img src="images/logo-thetextartisan.png" alt="TheTextArtisan logo"> if you have your asset -->
-        <div class="logo-wrap" style="align-items:center">
-          <svg class="svg-logo" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
-            <defs>
-              <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
-                <stop offset="0" stop-color="#ffd700"/>
-                <stop offset="1" stop-color="#ff8b3d"/>
-              </linearGradient>
-            </defs>
-            <rect width="100" height="100" rx="18" fill="#fff" />
-            <g transform="translate(20,18)">
-              <path d="M10 6 L30 6 L20 44 Z" fill="#003366" />
-              <path d="M20 10 L24 36 L16 36 Z" fill="url(#g1)"/>
-              <circle cx="22" cy="4" r="6" fill="#ffd700"/>
-            </g>
-          </svg>
-          <div class="logo-title">THE TEXT ARTISAN</div>
-        </div>
 
-        <!-- TichaAfrica logo (inline SVG placeholder) - replace with <img src="images/logo-tichaafrica.png"> if you have asset -->
-        <div class="logo-wrap" style="margin-left:8px">
-          <svg class="ticha-logo" viewBox="0 0 300 140" aria-hidden="true" focusable="false">
-            <g transform="translate(4,6)">
-              <path d="M12 8 L60 8 L60 62 L12 62 Z" fill="#0b5a2b" stroke="#0b5a2b" />
-              <path d="M70 10 L200 10 L200 64 L70 64 Z" fill="none" />
-              <text x="76" y="36" font-family="Inter, Arial" font-weight="700" font-size="28" fill="#0b5a2b">Ticha</text>
-              <text x="76" y="64" font-family="Inter, Arial" font-weight="700" font-size="28" fill="#0b5a2b">Africa</text>
-            </g>
-          </svg>
-        </div>
+<div class="container">
+
+  <header>
+    <img src="images/logo1.png" alt="TichaAfrica" class="logo" loading="eager">
+  </header>
+
+  <section class="hero">
+    <div class="badge">Founding Alliance</div>
+    <h1>African teachers leading<br>the AI revolution</h1>
+    <p class="lead">
+      A teacher-led, mobile-first movement — built by African teachers, for African teachers. 
+      We co-create curriculum, tools and policy-aligned resources that keep African knowledge at the centre.
+    </p>
+    <div class="motto">Teach Smart, Lead Change</div>
+    
+    <div class="cta-group">
+      <a href="YOUR_ALLIANCE_FORM_LINK" class="btn btn-primary">Join Alliance — 60s</a>
+      <a href="YOUR_INSIGHTS_FORM_LINK" class="btn btn-secondary">Share Insights — 2 min</a>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-value" id="counter">1,247</div>
+        <div class="stat-label">Founding teachers</div>
       </div>
-    </header>
+      <div class="stat">
+        <div class="stat-value">38</div>
+        <div class="stat-label">African countries</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">UNESCO • AU</div>
+        <div class="stat-label">Global standards aligned</div>
+      </div>
+    </div>
+  </section>
 
-    <!-- HERO -->
-    <main id="pageContent">
-      <section class="hero" aria-labelledby="pageTitle">
-        <div class="hero-left">
-          <div class="eyebrow">Founding Alliance</div>
-          <h1 id="pageTitle">African teachers leading the AI revolution</h1>
-          <p class="lead">A teacher-led, mobile-first movement — built by African teachers, for African teachers. We co-create curriculum, tools and policy-aligned resources that keep African knowledge at the centre.</p>
-          <div class="motto">Teach Smart, Lead Change</div>
+  <section>
+    <h2 class="section-title">The problem</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>AI tools are entering classrooms faster than teachers are prepared</h3>
+        <p>
+          If teachers are not first in the design room, decades of indigenous wisdom risk being lost. 
+          TichaAfrica ensures teachers lead the transition.
+        </p>
+      </div>
+    </div>
+  </section>
 
-          <div class="cta-row" style="margin-top:18px">
-            <!-- Replace hrefs with your real forms -->
-            <a class="btn btn-primary" href="#" id="joinAlliance">Join Alliance — 60s</a>
-            <a class="btn btn-secondary" href="#" id="shareInsights">Share Insights — 2 min</a>
-          </div>
-        </div>
-
-        <div class="hero-right">
-          <div class="stat" aria-hidden="false">
-            <div class="value" style="display:flex;align-items:center;gap:8px;justify-content:space-between">
-              <span class="value-number" aria-live="polite">1,247</span>
-              <small style="font-size:0.85rem;color:#667">Founding teachers</small>
-            </div>
-            <div class="label">Join the first cohort shaping Africa’s curriculum</div>
-          </div>
-
-          <div class="stat" style="margin-top:12px">
-            <div style="display:flex;justify-content:space-between;align-items:center">
-              <strong style="font-size:1.05rem">Aligned to global standards</strong>
-              <span style="font-size:0.95rem;color:#5a6b70;font-weight:700">UNESCO • AU</span>
-            </div>
-            <div style="margin-top:8px;color:#455">Practical • Ethical • Contextual</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Problem -->
-      <section class="card fade-me" id="problem">
-        <h2>The problem</h2>
-        <p>AI tools are entering classrooms faster than teachers are prepared. If teachers are not first in the design room, decades of indigenous wisdom risk being lost. TichaAfrica ensures teachers lead the transition.</p>
-      </section>
-
-      <!-- Solution bullets -->
-      <section class="card fade-me" id="solution">
-        <h2>The solution — led by teachers</h2>
-        <ul>
-          <li><span class="dot" aria-hidden="true"></span><div><strong>Teacher-led design.</strong> Every module starts with teacher insight.</div></li>
-          <li><span class="dot" aria-hidden="true"></span><div><strong>Mobile-first delivery.</strong> Simple, low-bandwidth learning for every phone.</div></li>
-          <li><span class="dot" aria-hidden="true"></span><div><strong>Free core training.</strong> Open access to foundational resources.</div></li>
-          <li><span class="dot" aria-hidden="true"></span><div><strong>Policy-aligned.</strong> Mapped to UNESCO AI CFT and AU Continental AI Strategy.</div></li>
+  <section>
+    <h2 class="section-title">The solution — led by teachers</h2>
+    <div class="cards">
+      <div class="card">
+        <ul class="list">
+          <li>Teacher-led design. Every module starts with teacher insight.</li>
+          <li>Mobile-first delivery. Simple, low-bandwidth learning for every phone.</li>
+          <li>Free core training. Open access to foundational resources.</li>
+          <li>Policy-aligned. Mapped to UNESCO AI CFT and AU Continental AI Strategy.</li>
         </ul>
-      </section>
+      </div>
+    </div>
+  </section>
 
-      <!-- What Founding Teachers gain -->
-      <section class="card fade-me" id="benefits" aria-labelledby="benefitHeading">
-        <h2 id="benefitHeading">What founding teachers gain</h2>
-        <ul>
-          <li><span class="dot"></span><div>Shape the continent’s first teacher co-created AI curriculum</div></li>
-          <li><span class="dot"></span><div>Earn a Founding Teacher digital badge and certificate</div></li>
-          <li><span class="dot"></span><div>Early access to tools, templates and micro-courses</div></li>
-          <li><span class="dot"></span><div>Be part of research and policy conversations with partners</div></li>
+  <section>
+    <h2 class="section-title">What founding teachers gain</h2>
+    <div class="cards">
+      <div class="card">
+        <ul class="list">
+          <li>Shape the continent’s first teacher co-created AI curriculum</li>
+          <li>Earn a Founding Teacher digital badge and certificate</li>
+          <li>Early access to tools, templates and micro-courses</li>
+          <li>Be part of research and policy conversations with partners</li>
         </ul>
-      </section>
+      </div>
+    </div>
+  </section>
 
-      <!-- CTA block -->
-      <section class="card fade-me" id="cta">
-        <h2>Join the founding alliance</h2>
-        <p>We invite the first 10,000 teachers to co-create the curriculum and define how AI is used in African classrooms.</p>
-        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
-          <a class="btn btn-primary" href="#" id="cta-join">Yes — claim my spot</a>
-          <a class="btn btn-secondary" href="#" id="cta-insights">Share quick insight</a>
-        </div>
-      </section>
+  <section class="final-cta">
+    <h2>Join the founding alliance</h2>
+    <p>
+      We invite the first 10,000 teachers to co-create the curriculum and define how AI is used in African classrooms.
+    </p>
+    <div class="cta-group" style="margin-top:40px;">
+      <a href="YOUR_ALLIANCE_FORM_LINK" class="btn btn-primary" style="font-size:1.8rem;padding:28px 80px;background:#facc15;color:#1e293b;">
+        Yes — claim my spot
+      </a>
+    </div>
+  </section>
 
-    </main>
+</div>
 
-    <footer>
-      <div>© <span id="year"></span> TichaAfrica • <strong style="color:var(--mustard)">Teach Smart, Lead Change</strong></div>
-      <div style="margin-top:8px;font-size:0.95rem">Contact: <a href="mailto:contact@tichaafrica.com">contact@tichaafrica.com</a> • <a href="#" id="waLink">WhatsApp</a></div>
-    </footer>
-  </div>
+<footer>
+  <p>© 2025 TichaAfrica • <strong style="color:#ca8a04;">Teach Smart, Lead Change</strong></p>
+  <p style="margin-top:12px;">
+    <a href="mailto:contact@tichaafrica.com">contact@tichaafrica.com</a> • 
+    <a href="#">WhatsApp</a> • <a href="#">Instagram</a> • <a href="#">X</a> • <a href="#">LinkedIn</a>
+  </p>
+</footer>
 
-  <script>
-    // SAFEGUARDS: make sure code doesn't break render if something unexpected happens
-    (function(){
-      // simple in-view animation (no external lib)
-      function onVisible(entries){
-        entries.forEach(entry => {
-          if(entry.isIntersecting) entry.target.classList.add('in-view');
-        });
+<script>
+  // Lightweight counter animation
+  const counter = document.getElementById('counter');
+  let count = 0;
+  const target = 1247;
+  const increment = Math.ceil(target / 80);
+  const timer = setInterval(() => {
+    count += increment;
+    if (count >= target) {
+      counter.textContent = target.toLocaleString();
+      clearInterval(timer);
+    } else {
+      counter.textContent = count.toLocaleString();
+    }
+  }, 40);
+
+  // Subtle scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
       }
-      const observer = new IntersectionObserver(onVisible, {threshold:0.12});
-      document.querySelectorAll('.fade-me').forEach(el => observer.observe(el));
+    });
+  }, { threshold: 0.1 });
 
-      // Simple lightweight particle "sparkle" for progressive enhancement
-      // Only create if canvas is visible and device isn't low-powered
-      function lightweightParticles(){
-        try{
-          const canvas = document.createElement('canvas');
-          canvas.style.position='absolute';
-          canvas.style.pointerEvents='none';
-          canvas.style.left=0; canvas.style.top=0;
-          canvas.width = window.innerWidth;
-          canvas.height = window.innerHeight;
-          document.body.appendChild(canvas);
-          const ctx = canvas.getContext('2d');
-          const parts = Array.from({length:70}).map(()=>({
-            x: Math.random()*canvas.width, y: Math.random()*canvas.height,
-            vx:(Math.random()-0.5)*0.4, vy:(Math.random()-0.5)*0.4,
-            r: Math.random()*1.6+0.6, col: (Math.random()>0.6? '#ffd700' : '#003366')
-          }));
-          function frame(){
-            ctx.clearRect(0,0,canvas.width,canvas.height);
-            parts.forEach(p=>{
-              ctx.beginPath(); ctx.fillStyle=p.col; ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fill();
-              p.x += p.vx; p.y += p.vy;
-              if(p.x<0) p.x = canvas.width; if(p.x>canvas.width) p.x=0;
-              if(p.y<0) p.y = canvas.height; if(p.y>canvas.height) p.y=0;
-            });
-            requestAnimationFrame(frame);
-          }
-          frame();
-          window.addEventListener('resize',()=>{canvas.width=window.innerWidth; canvas.height=window.innerHeight;});
-        }catch(e){ /* ignore if canvas fails */ }
-      }
-
-      // run particles only on non-low-end devices
-      if(window.devicePixelRatio > 0.8 && (navigator.hardwareConcurrency || 4) >= 2){
-        lightweightParticles();
-      }
-
-      // small interactions & default dynamic content
-      document.getElementById('year').textContent = new Date().getFullYear();
-
-      // update count animation (demo)
-      const elCount = document.querySelector('.value-number');
-      let count = parseInt(elCount.textContent,10) || 0;
-      const animateCount = (target, from=1000, step=1) => {
-        let v = from;
-        const interval = setInterval(()=>{
-          v += Math.max(1, Math.round((target - v) * 0.12));
-          elCount.textContent = v.toLocaleString();
-          if(Math.abs(target - v) <= 3) { elCount.textContent = target.toLocaleString(); clearInterval(interval); }
-        }, 60);
-      };
-      animateCount(1247, 700);
-
-      // CTA link placeholders: update to your live Tally/Netlify forms
-      const joinLinks = ['#','YOUR_ALLIANCE_FORM_LINK'];
-      const insightsLinks = ['#','YOUR_INSIGHTS_FORM_LINK'];
-      ['joinAlliance','cta-join'].forEach(id => {
-        const a = document.getElementById(id);
-        if(a){ a.addEventListener('click', e => {
-          e.preventDefault();
-          // Try the first valid real link in the array, otherwise show a gentle alert
-          const url = joinLinks.find(u=>u && !u.includes('#')) || joinLinks[0];
-          if(url && !url.includes('#')) window.open(url,'_blank');
-          else alert('Please replace the join link (YOUR_ALLIANCE_FORM_LINK) in the HTML with your live form URL.');
-        }) }
-      });
-      ['shareInsights','cta-insights'].forEach(id => {
-        const a = document.getElementById(id);
-        if(a){ a.addEventListener('click', e => {
-          e.preventDefault();
-          const url = insightsLinks.find(u=>u && !u.includes('#')) || insightsLinks[0];
-          if(url && !url.includes('#')) window.open(url,'_blank');
-          else alert('Please replace the insights link (YOUR_INSIGHTS_FORM_LINK) in the HTML with your live form URL.');
-        }) }
-      });
-
-      // whatsapp link (edit to your phone)
-      const wa = document.getElementById('waLink');
-      if(wa) wa.setAttribute('href','https://wa.me/YOUR_NUMBER?text=Hi%20TichaAfrica%20team');
-
-    })();
-  </script>
+  document.querySelectorAll('section > *:not(.final-cta)').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(40px)';
+    el.style.transition = 'all 1s cubic-bezier(0.16,1,0.3,1)';
+    observer.observe(el);
+  });
+</script>
 </body>
 </html>
