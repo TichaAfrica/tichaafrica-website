@@ -1,306 +1,197 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>TichaAfrica — Teach Smart, Lead Change</title>
-  <meta name="description" content="TichaAfrica — a teacher-led AI education movement. Built by TheTextArtisan. Join the Founding Alliance." />
-  <!-- Google font (Inter). If you prefer local fonts, swap this with a local @font-face. -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg1:#dfeef7;       /* powder blue-ish */
-      --bg2:#ebe2d6;       /* silver/beige */
-      --accent:#003366;    /* deep navy accent */
-      --mustard:#ffd700;   /* mustard / highlight */
-      --gold:#d4af37;      /* border gold */
-      --muted:#2f2f2f;
-      --card-bg: rgba(255,255,255,0.86);
-      --max-width:1100px;
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Inter',sans-serif;background:#0f0f23;color:#fff;overflow-x:hidden;}
+    
+    .urgency{
+      position:fixed;top:0;left:0;right:0;
+      background:linear-gradient(90deg,#ff6b35,#ffd700,#4ecdc4);
+      color:#0f0f23;padding:16px 20px;
+      font-weight:bold;font-size:1.3rem;text-align:center;
+      z-index:1002;box-shadow:0 4px 20px rgba(0,0,0,0.4);
     }
-    /* Reset + base */
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%}
-    body{
-      font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      color:var(--muted);
-      background:linear-gradient(120deg,var(--bg1) 0%, var(--bg2) 60%);
-      line-height:1.45;
-      -webkit-text-size-adjust:100%;
+    
+    header{
+      position:fixed;top:68px;left:0;right:0;
+      background:#fdfdfb;padding:20px 20px 18px;text-align:center;
+      z-index:1001;box-shadow:0 6px 20px rgba(0,0,0,0.15);
+      border-bottom:4px solid #ffd700;
     }
-    /* Container */
-    .wrap{max-width:var(--max-width);margin:36px auto;padding:28px;border-radius:16px;background:linear-gradient(180deg,rgba(255,255,255,0.96),rgba(255,255,255,0.92));box-shadow:0 12px 40px rgba(12,22,60,0.12);border:6px solid var(--gold);}
+    header img{height:78px;transition:0.4s;}
+    header img:hover{transform:scale(1.12) rotate(5deg);}
 
-    /* Header */
-    header{display:flex;align-items:center;gap:18px;padding:10px 6px 22px;}
-    .logos{display:flex;gap:18px;align-items:center}
-    .logo-wrap{display:flex;flex-direction:column;align-items:center;gap:6px}
-    .logo-title{font-weight:700;color:var(--accent);letter-spacing:0.6px}
-    /* If you want to use your own image file, uncomment the <img> lines and remove the inline SVGs */
-    .logo-img{width:86px;height:86px;display:block}
-
-    /* Hero */
-    .hero{display:grid;grid-template-columns:1fr;gap:18px;align-items:center;padding:10px 6px 28px;text-align:center}
-    @media(min-width:880px){ .hero{grid-template-columns:1fr 520px;text-align:left} }
-    .hero-left{padding:10px}
-    .eyebrow{display:inline-block;background:linear-gradient(90deg,var(--mustard),var(--accent));color:#041625;padding:6px 12px;border-radius:999px;font-weight:700;margin-bottom:12px}
-    h1{font-size:clamp(1.6rem,3.2vw,2.9rem);line-height:1.05;color:var(--accent);margin-bottom:8px}
-    p.lead{font-size:1.05rem;color:#223;opacity:0.9;margin-bottom:18px;max-width:58ch}
-    .motto{display:inline-block;padding:8px 14px;border-radius:12px;background:linear-gradient(90deg,var(--mustard),#ff8b3d);color:#041625;font-weight:800;margin-bottom:18px}
-    .cta-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-    @media(min-width:880px){ .cta-row{justify-content:flex-start} }
-
-    .btn{
-      display:inline-flex;align-items:center;gap:12px;
-      padding:14px 20px;border-radius:999px;text-decoration:none;font-weight:700;border:none;
-      box-shadow:0 8px 20px rgba(2,24,56,0.08);cursor:pointer;
+    .hero{
+      position:relative;min-height:100vh;
+      display:flex;align-items:center;justify-content:center;
+      text-align:center;padding:200px 20px 120px;
+      background:radial-gradient(circle at center, #764ba2 0%, #667eea 70%);
+      overflow:hidden;
     }
-    .btn-primary{background:var(--mustard);color:#041625}
-    .btn-secondary{background:var(--accent);color:#fff}
+    .africa-bg{
+      position:absolute;top:50%;left:50%;
+      width:82%;max-width:720px;
+      transform:translate(-50%,-50%);
+      opacity:0.22;z-index:1;pointer-events:none;
+      filter:drop-shadow(0 0 60px #00a86b) invert(18%) sepia(92%) saturate(1400%) hue-rotate(140deg) brightness(0.9) contrast(1.1);
+    }
+    #particles-js{position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;}
+    .hero-content{position:relative;z-index:3;max-width:900px;}
 
-    /* Hero right: image / key numbers */
-    .hero-right{display:flex;flex-direction:column;align-items:center;gap:14px;padding:14px}
-    .stat{background:linear-gradient(180deg,rgba(255,255,255,0.98),rgba(255,255,255,0.95));border-radius:12px;padding:18px 22px;width:100%;box-shadow:0 8px 30px rgba(0,22,40,0.06);border:1px solid rgba(0,0,0,0.04)}
-    .stat .value{font-size:2.4rem;font-weight:900;color:var(--accent)}
-    .stat .label{font-size:0.95rem;color:#42505a;margin-top:6px}
+    .hero h1{font-size:clamp(2.8rem,8vw,5rem);margin-bottom:20px;line-height:1.1;text-shadow:0 0 40px rgba(255,215,0,0.8);}
+    .hero p{font-size:1.4rem;max-width:700px;margin:0 auto 30px;opacity:0.95;}
+    .motto{font-size:clamp(2.2rem,7vw,4rem);font-weight:900;background:linear-gradient(45deg,#ffd700,#ff6b35,#4ecdc4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin:35px 0;}
+    .btn{display:inline-block;padding:20px 50px;margin:15px;background:linear-gradient(45deg,#ffd700,#ff6b35);color:#0f0f23;font-weight:bold;border-radius:50px;font-size:1.4rem;box-shadow:0 12px 35px rgba(255,107,53,0.5);transition:0.4s;}
+    .btn:hover{transform:translateY(-10px) scale(1.08);}
+    .btn-secondary{background:linear-gradient(45deg,#4ecdc4,#00a86b);color:#fff;}
 
-    /* Sections */
-    section{margin:20px 0;padding:20px;border-radius:12px}
-    .card{background:var(--card-bg);padding:22px;border-radius:12px;border:1px solid rgba(0,0,0,0.03)}
-    h2{color:var(--accent);font-size:1.35rem;margin-bottom:12px}
-    ul{list-style:none;padding-left:0;margin-top:12px}
-    li{padding:10px 0;border-bottom:1px dashed rgba(0,0,0,0.04);display:flex;gap:12px;align-items:flex-start}
-    li:last-child{border-bottom:none}
-    .dot{width:12px;height:12px;border-radius:50%;background:var(--mustard);margin-top:8px;flex:0 0 12px}
+    section{max-width:1100px;margin:100px auto;padding:60px 30px;background:rgba(255,255,255,0.08);backdrop-filter:blur(20px);border-radius:30px;border:1px solid rgba(255,215,0,0.25);}
+    
+    /* ONLY CHANGE #1 — First card (Founding Teachers So Far) now has high-contrast deep navy */
+    section:nth-of-type(1){
+      background:linear-gradient(135deg,#0d1b2a,#1b263b) !important;
+      border:2px solid #ffd700;
+      color:#ffffff !important;
+    }
+    section:nth-of-type(1) .counter,
+    section:nth-of-type(1) p{color:#ffd700 !important;}
 
-    /* Footer */
-    footer{margin-top:20px;text-align:center;padding:18px 6px;color:#223;font-size:0.95rem}
-    footer a{color:var(--accent);text-decoration:none;font-weight:600}
+    h2{font-size:2.8rem;text-align:center;color:#ffd700;margin-bottom:40px;}
+    .counter{font-size:clamp(4rem,12vw,7rem);font-weight:900;background:linear-gradient(45deg,#4ecdc4,#ffd700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-align:center;}
 
-    /* subtle animations */
-    .fade-me{opacity:0;transform:translateY(8px);transition:all .6s ease}
-    .in-view{opacity:1;transform:none}
-    /* Logo sizes */
-    .svg-logo{width:86px;height:86px}
-    .ticha-logo{width:120px;height:60px}
+    ul{list-style:none;max-width:800px;margin:50px auto;}
+    ul li{font-size:1.35rem;margin:30px 0;padding-left:70px;position:relative;line-height:1.7;}
+    ul li::before{
+      content:"";
+      position:absolute;left:0;top:50%;
+      transform:translateY(-50%);
+      width:44px;height:44px;
+      background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300a86b"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>') center/contain no-repeat;
+    }
 
-    /* Accessibility focus */
-    a:focus{outline:3px solid rgba(0,51,102,0.14);outline-offset:3px}
+    .final-cta{background:linear-gradient(135deg,#ff6b35,#ffd700);color:#0f0f23;padding:90px 30px;border-radius:40px;text-align:center;margin:100px auto;}
+    .whatsapp-float{position:fixed;bottom:30px;right:30px;width:65px;height:65px;background:#25d366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:35px;box-shadow:0 8px 25px rgba(37,211,102,0.7);z-index:999;}
+    footer{background:#0f0f23;padding:60px 20px;text-align:center;color:#888;font-size:1rem;border-top:1px solid rgba(255,215,0,0.2);}
+    footer a{color:#4ecdc4;margin:0 10px;text-decoration:none;}
+    footer a:hover{color:#ffd700;}
   </style>
 </head>
 <body>
-  <div class="wrap" role="main" aria-labelledby="pageTitle">
-    <header>
-      <div class="logos" aria-hidden="false">
-        <!-- TheTextArtisan logo (inline SVG placeholder). Replace with <img src="images/logo-thetextartisan.png" alt="TheTextArtisan logo"> if you have your asset -->
-        <div class="logo-wrap" style="align-items:center">
-          <svg class="svg-logo" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
-            <defs>
-              <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
-                <stop offset="0" stop-color="#ffd700"/>
-                <stop offset="1" stop-color="#ff8b3d"/>
-              </linearGradient>
-            </defs>
-            <rect width="100" height="100" rx="18" fill="#fff" />
-            <g transform="translate(20,18)">
-              <path d="M10 6 L30 6 L20 44 Z" fill="#003366" />
-              <path d="M20 10 L24 36 L16 36 Z" fill="url(#g1)"/>
-              <circle cx="22" cy="4" r="6" fill="#ffd700"/>
-            </g>
-          </svg>
-          <div class="logo-title">THE TEXT ARTISAN</div>
-        </div>
 
-        <!-- TichaAfrica logo (inline SVG placeholder) - replace with <img src="images/logo-tichaafrica.png"> if you have asset -->
-        <div class="logo-wrap" style="margin-left:8px">
-          <svg class="ticha-logo" viewBox="0 0 300 140" aria-hidden="true" focusable="false">
-            <g transform="translate(4,6)">
-              <path d="M12 8 L60 8 L60 62 L12 62 Z" fill="#0b5a2b" stroke="#0b5a2b" />
-              <path d="M70 10 L200 10 L200 64 L70 64 Z" fill="none" />
-              <text x="76" y="36" font-family="Inter, Arial" font-weight="700" font-size="28" fill="#0b5a2b">Ticha</text>
-              <text x="76" y="64" font-family="Inter, Arial" font-weight="700" font-size="28" fill="#0b5a2b">Africa</text>
-            </g>
-          </svg>
-        </div>
-      </div>
-    </header>
+<div class="urgency">The First 10,000 Teachers Will Shape Africa’s AI Future — Join Now!</div>
 
-    <!-- HERO -->
-    <main id="pageContent">
-      <section class="hero" aria-labelledby="pageTitle">
-        <div class="hero-left">
-          <div class="eyebrow">Founding Alliance</div>
-          <h1 id="pageTitle">African teachers leading the AI revolution</h1>
-          <p class="lead">A teacher-led, mobile-first movement — built by African teachers, for African teachers. We co-create curriculum, tools and policy-aligned resources that keep African knowledge at the centre.</p>
-          <div class="motto">Teach Smart, Lead Change</div>
+<header data-aos="fade-down">
+  <img src="images/logo1.png" alt="TichaAfrica">
+</header>
 
-          <div class="cta-row" style="margin-top:18px">
-            <!-- Replace hrefs with your real forms -->
-            <a class="btn btn-primary" href="#" id="joinAlliance">Join Alliance — 60s</a>
-            <a class="btn btn-secondary" href="#" id="shareInsights">Share Insights — 2 min</a>
-          </div>
-        </div>
-
-        <div class="hero-right">
-          <div class="stat" aria-hidden="false">
-            <div class="value" style="display:flex;align-items:center;gap:8px;justify-content:space-between">
-              <span class="value-number" aria-live="polite">1,247</span>
-              <small style="font-size:0.85rem;color:#667">Founding teachers</small>
-            </div>
-            <div class="label">Join the first cohort shaping Africa’s curriculum</div>
-          </div>
-
-          <div class="stat" style="margin-top:12px">
-            <div style="display:flex;justify-content:space-between;align-items:center">
-              <strong style="font-size:1.05rem">Aligned to global standards</strong>
-              <span style="font-size:0.95rem;color:#5a6b70;font-weight:700">UNESCO • AU</span>
-            </div>
-            <div style="margin-top:8px;color:#455">Practical • Ethical • Contextual</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Problem -->
-      <section class="card fade-me" id="problem">
-        <h2>The problem</h2>
-        <p>AI tools are entering classrooms faster than teachers are prepared. If teachers are not first in the design room, decades of indigenous wisdom risk being lost. TichaAfrica ensures teachers lead the transition.</p>
-      </section>
-
-      <!-- Solution bullets -->
-      <section class="card fade-me" id="solution">
-        <h2>The solution — led by teachers</h2>
-        <ul>
-          <li><span class="dot" aria-hidden="true"></span><div><strong>Teacher-led design.</strong> Every module starts with teacher insight.</div></li>
-          <li><span class="dot" aria-hidden="true"></span><div><strong>Mobile-first delivery.</strong> Simple, low-bandwidth learning for every phone.</div></li>
-          <li><span class="dot" aria-hidden="true"></span><div><strong>Free core training.</strong> Open access to foundational resources.</div></li>
-          <li><span class="dot" aria-hidden="true"></span><div><strong>Policy-aligned.</strong> Mapped to UNESCO AI CFT and AU Continental AI Strategy.</div></li>
-        </ul>
-      </section>
-
-      <!-- What Founding Teachers gain -->
-      <section class="card fade-me" id="benefits" aria-labelledby="benefitHeading">
-        <h2 id="benefitHeading">What founding teachers gain</h2>
-        <ul>
-          <li><span class="dot"></span><div>Shape the continent’s first teacher co-created AI curriculum</div></li>
-          <li><span class="dot"></span><div>Earn a Founding Teacher digital badge and certificate</div></li>
-          <li><span class="dot"></span><div>Early access to tools, templates and micro-courses</div></li>
-          <li><span class="dot"></span><div>Be part of research and policy conversations with partners</div></li>
-        </ul>
-      </section>
-
-      <!-- CTA block -->
-      <section class="card fade-me" id="cta">
-        <h2>Join the founding alliance</h2>
-        <p>We invite the first 10,000 teachers to co-create the curriculum and define how AI is used in African classrooms.</p>
-        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
-          <a class="btn btn-primary" href="#" id="cta-join">Yes — claim my spot</a>
-          <a class="btn btn-secondary" href="#" id="cta-insights">Share quick insight</a>
-        </div>
-      </section>
-
-    </main>
-
-    <footer>
-      <div>© <span id="year"></span> TichaAfrica • <strong style="color:var(--mustard)">Teach Smart, Lead Change</strong></div>
-      <div style="margin-top:8px;font-size:0.95rem">Contact: <a href="mailto:contact@tichaafrica.com">contact@tichaafrica.com</a> • <a href="#" id="waLink">WhatsApp</a></div>
-    </footer>
+<div class="hero" id="hero">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/8/86/Africa_(orthographic_projection).svg" class="africa-bg" alt="Africa">
+  <canvas id="particles-js"></canvas>
+  
+  <div class="hero-content">
+    <h1 data-aos="fade-up">African Teachers Are Rising<br>to Lead the AI Revolution</h1>
+    <p data-aos="fade-up" data-aos-delay="200">The continent’s first teacher-led, mobile-first AI training movement — built by African teachers, for African teachers.</p>
+    <div class="motto" data-aos="zoom-in" data-aos-delay="400">Teach Smart, Lead Change</div>
+    <div data-aos="fade-up" data-aos-delay="600">
+      <a href="YOUR_ALLIANCE_FORM_LINK" class="btn">Join Free Now (60s)</a>
+      <a href="YOUR_INSIGHTS_FORM_LINK" class="btn btn-secondary">Share Insights (2min)</a>
+    </div>
   </div>
+</div>
 
-  <script>
-    // SAFEGUARDS: make sure code doesn't break render if something unexpected happens
-    (function(){
-      // simple in-view animation (no external lib)
-      function onVisible(entries){
-        entries.forEach(entry => {
-          if(entry.isIntersecting) entry.target.classList.add('in-view');
-        });
-      }
-      const observer = new IntersectionObserver(onVisible, {threshold:0.12});
-      document.querySelectorAll('.fade-me').forEach(el => observer.observe(el));
+<!-- 1. Founding Teachers So Far — now high-contrast -->
+<section data-aos="fade-up">
+  <h2>The Founding Teacher Alliance</h2>
+  <div class="counter" id="counter">1,247</div>
+  <p style="text-align:center;font-size:1.4rem;color:#ffd700;margin-top:20px;">…and growing every minute. Be part of history!</p>
+</section>
 
-      // Simple lightweight particle "sparkle" for progressive enhancement
-      // Only create if canvas is visible and device isn't low-powered
-      function lightweightParticles(){
-        try{
-          const canvas = document.createElement('canvas');
-          canvas.style.position='absolute';
-          canvas.style.pointerEvents='none';
-          canvas.style.left=0; canvas.style.top=0;
-          canvas.width = window.innerWidth;
-          canvas.height = window.innerHeight;
-          document.body.appendChild(canvas);
-          const ctx = canvas.getContext('2d');
-          const parts = Array.from({length:70}).map(()=>({
-            x: Math.random()*canvas.width, y: Math.random()*canvas.height,
-            vx:(Math.random()-0.5)*0.4, vy:(Math.random()-0.5)*0.4,
-            r: Math.random()*1.6+0.6, col: (Math.random()>0.6? '#ffd700' : '#003366')
-          }));
-          function frame(){
-            ctx.clearRect(0,0,canvas.width,canvas.height);
-            parts.forEach(p=>{
-              ctx.beginPath(); ctx.fillStyle=p.col; ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fill();
-              p.x += p.vx; p.y += p.vy;
-              if(p.x<0) p.x = canvas.width; if(p.x>canvas.width) p.x=0;
-              if(p.y<0) p.y = canvas.height; if(p.y>canvas.height) p.y=0;
-            });
-            requestAnimationFrame(frame);
-          }
-          frame();
-          window.addEventListener('resize',()=>{canvas.width=window.innerWidth; canvas.height=window.innerHeight;});
-        }catch(e){ /* ignore if canvas fails */ }
-      }
+<section data-aos="fade-up">
+  <h2>The Problem</h2>
+  <p style="text-align:center;font-size:1.6rem;max-width:900px;margin:40px auto;line-height:1.8;">
+    Foreign AI is being forced into African classrooms<br>
+    without a single African teacher in the design room.
+  </p>
+  <p style="text-align:center;font-size:1.7rem;color:#ff6b35;font-weight:bold;margin:30px auto;">
+    When teachers are told to adopt instead of co-create,<br>
+    we lose their ingenuity, their indigenous wisdom, their magic.
+  </p>
+  <p style="text-align:center;font-size:1.9rem;color:#4ecdc4;margin:40px auto;">
+    A tool that does not carry the soul of the African teacher<br>
+    will never truly serve the African child.
+  </p>
+  <p style="text-align:center;font-size:2.3rem;color:#ffd700;font-weight:900;margin-top:50px;">
+    That era ends today.<br>With us.
+  </p>
+</section>
 
-      // run particles only on non-low-end devices
-      if(window.devicePixelRatio > 0.8 && (navigator.hardwareConcurrency || 4) >= 2){
-        lightweightParticles();
-      }
+<section data-aos="fade-up">
+  <h2>The Solution — Led by You</h2>
+  <p style="text-align:center;font-size:1.4rem;max-width:700px;margin:0 auto 40px;">Together we are building the first truly African AI curriculum and tools:</p>
+  <ul>
+    <li>100% teacher-led from day one</li>
+    <li>Mobile-first — works on any phone, any network</li>
+    <li>Free core training forever</li>
+    <li>Fully aligned with UNESCO AI Competency Framework for Teachers</li>
+    <li>Fully aligned with African Union Continental AI Strategy</li>
+  </ul>
+  <div class="motto" style="margin-top:50px;">Teach Smart, Lead Change</div>
+</section>
 
-      // small interactions & default dynamic content
-      document.getElementById('year').textContent = new Date().getFullYear();
+<section data-aos="fade-up">
+  <h2>What Founding Teachers Gain</h2>
+  <ul>
+    <li>Shape the curriculum used by millions of African learners</li>
+    <li>Exclusive digital badge & certificate</li>
+    <li>Direct collaboration with teachers across 54 countries</li>
+    <li>Early access to brand-new AI teaching tools</li>
+    <li>Recognition from UNESCO, African Union & global partners</li>
+    <li>Leave a legacy in the history of African education</li>
+  </ul>
+</section>
 
-      // update count animation (demo)
-      const elCount = document.querySelector('.value-number');
-      let count = parseInt(elCount.textContent,10) || 0;
-      const animateCount = (target, from=1000, step=1) => {
-        let v = from;
-        const interval = setInterval(()=>{
-          v += Math.max(1, Math.round((target - v) * 0.12));
-          elCount.textContent = v.toLocaleString();
-          if(Math.abs(target - v) <= 3) { elCount.textContent = target.toLocaleString(); clearInterval(interval); }
-        }, 60);
-      };
-      animateCount(1247, 700);
+<section class="final-cta" data-aos="zoom-in">
+  <h2 style="font-size:3.5rem;color:#fff;">The First 10,000 Teachers Own This Movement</h2>
+  <p style="font-size:1.7rem;max-width:700px;margin:30px auto;">After that, the Founding Teacher Alliance closes forever.</p>
+  <a href="YOUR_ALLIANCE_FORM_LINK" class="btn" style="background:#fff;color:#0f0f23;font-size:1.7rem;padding:25px 70px;">Yes, I’m In — Claim My Spot Now</a>
+</section>
 
-      // CTA link placeholders: update to your live Tally/Netlify forms
-      const joinLinks = ['#','YOUR_ALLIANCE_FORM_LINK'];
-      const insightsLinks = ['#','YOUR_INSIGHTS_FORM_LINK'];
-      ['joinAlliance','cta-join'].forEach(id => {
-        const a = document.getElementById(id);
-        if(a){ a.addEventListener('click', e => {
-          e.preventDefault();
-          // Try the first valid real link in the array, otherwise show a gentle alert
-          const url = joinLinks.find(u=>u && !u.includes('#')) || joinLinks[0];
-          if(url && !url.includes('#')) window.open(url,'_blank');
-          else alert('Please replace the join link (YOUR_ALLIANCE_FORM_LINK) in the HTML with your live form URL.');
-        }) }
-      });
-      ['shareInsights','cta-insights'].forEach(id => {
-        const a = document.getElementById(id);
-        if(a){ a.addEventListener('click', e => {
-          e.preventDefault();
-          const url = insightsLinks.find(u=>u && !u.includes('#')) || insightsLinks[0];
-          if(url && !url.includes('#')) window.open(url,'_blank');
-          else alert('Please replace the insights link (YOUR_INSIGHTS_FORM_LINK) in the HTML with your live form URL.');
-        }) }
-      });
+<a href="https://wa.me/YOUR_NUMBER?text=Hi%20TichaAfrica!" class="whatsapp-float" target="_blank">WhatsApp</a>
 
-      // whatsapp link (edit to your phone)
-      const wa = document.getElementById('waLink');
-      if(wa) wa.setAttribute('href','https://wa.me/YOUR_NUMBER?text=Hi%20TichaAfrica%20team');
+<footer>
+  <p>© 2025 TichaAfrica • <strong style="color:#ffd700;">Teach Smart, Lead Change</strong></p>
+  <p style="margin-top:12px;">
+    <a href="mailto:contact@tichaafrica.com">contact@tichaafrica.com</a> • 
+    <a href="#">WhatsApp</a> • <a href="#">Instagram</a> • <a href="#">X</a> • <a href="#">LinkedIn</a>
+  </p>
+</footer>
 
-    })();
-  </script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+  AOS.init({once:true,duration:1200});
+
+  // Deep-green particles
+  particlesJS("particles-js", {
+    particles: {
+      number: { value: 220 },
+      color: { value: ["#006400","#008c4a","#00a86b","#00c67a"] },
+      opacity: { value: 0.9, random: true },
+      size: { value: 5, random: true },
+      move: { enable: true, speed: 0.9 }
+    },
+    interactivity: { events: { onhover: { enable: true, mode: "repulse" }}},
+    retina_detect: true
+  });
+
+  // Counter starts at 1,247
+  document.getElementById('counter').textContent = '1,247';
+</script>
 </body>
 </html>
