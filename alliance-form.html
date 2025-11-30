@@ -9,7 +9,7 @@
     *{margin:0;padding:0;box-sizing:border-box;}
     body{font-family:'Inter',sans-serif;background:#0f0f23;color:#fff;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px;background:radial-gradient(circle at top,#1e293b 0%,#0f0f23 70%);}
     .form-container{max-width:480px;width:100%;background:rgba(255,255,255,0.08);backdrop-filter:blur(20px);border-radius:32px;padding:48px 32px;box-shadow:0 30px 80px rgba(0,0,0,0.6);border:1px solid rgba(255,215,0,0.3);position:relative;overflow:hidden;}
-    .progress{position:absolute;top:0;left:0;height:6px;background:#ffd700;transition:width .6s cubic-bezier(0.16,1,0.3,1);z-index:10;}
+    .progress{position:absolute;top:0;left:0;height:6px;background:#ffd700;transition:width .6s cubic-bezier(0.16,1,0.3,1);z-index:10;width:0%;}
     .step{opacity:0;transform:translateY(20px);transition:all .6s cubic-bezier(0.16,1,0.3,1);position:absolute;inset:0;padding:0 32px;display:flex;flex-direction:column;justify-content:center;}
     .step.active{opacity:1;transform:translateY(0);position:relative;}
     h1{font-size:2.6rem;font-weight:900;text-align:center;margin-bottom:16px;background:linear-gradient(135deg,#ffd700,#ff6b35);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
@@ -32,14 +32,14 @@
   <div class="progress" id="progress"></div>
   <div class="logo"><img src="../images/logo1.png" alt="TichaAfrica"></div>
 
-  <!-- STEP 1 — 100% GUARANTEED WORKING (onclick with parentheses + fallback) -->
+  <!-- STEP 1 -->
   <div class="step active" data-step="1">
     <h1>Welcome, Teacher!</h1>
     <p>You’re one of the first 10,000 joining The Founding Teacher Alliance. Ready?</p>
-    <button class="btn-next" onclick="nextStep(); return false;">Yes — Let’s begin</button>
+    <button class="btn-next" onclick="nextStep()">Yes — Let’s begin</button>
   </div>
 
-  <!-- All other steps — unchanged -->
+  <!-- STEP 2 -->
   <div class="step" data-step="2">
     <h1>Your name</h1>
     <p>How should we address you?</p>
@@ -47,6 +47,7 @@
     <button class="btn-next" onclick="nextStep()">Continue →</button>
   </div>
 
+  <!-- STEP 3 -->
   <div class="step" data-step="3">
     <h1>Where do you teach?</h1>
     <p>Country + city (or region)</p>
@@ -54,6 +55,7 @@
     <button class="btn-next" onclick="nextStep()">Continue →</button>
   </div>
 
+  <!-- STEP 4 -->
   <div class="step" data-step="4">
     <h1>What do you teach?</h1>
     <p>Subject(s) or grade level</p>
@@ -61,6 +63,7 @@
     <button class="btn-next" onclick="nextStep()">Continue →</button>
   </div>
 
+  <!-- STEP 5 -->
   <div class="step" data-step="5">
     <h1>One sentence:</h1>
     <p>What’s the biggest challenge you face using technology in your classroom today?</p>
@@ -68,19 +71,21 @@
     <button class="btn-next" onclick="nextStep()">Continue →</button>
   </div>
 
+  <!-- STEP 6 -->
   <div class="step" data-step="6">
     <h1>Your contact</h1>
     <p>Phone number (WhatsApp preferred) or email</p>
     <input type="text" id="contact" placeholder="+234…" required>
-    <button class="btn-next" onclick="nextStep()">Finish →</button>
+    <button class="btn-next" onclick="submitForm()">Finish →</button>
   </div>
 
+  <!-- STEP 7 -->
   <div class="step" data-step="7">
     <div class="thankyou">
-      <h2>You’re in! Celebrate</h2>
+      <h2>You’re in! 🎉</h2>
       <p>Welcome to <strong>The Founding Teacher Alliance</strong>.<br>Your voice will shape the future of AI in African education.</p>
       <p style="margin-top:32px;font-size:1.1rem;">You’ll receive a welcome message on WhatsApp within 24 hours.</p>
-      <div style="margin-top:48px;font-size:2.5rem;">Teach Smart, Lead Change Celebrate</div>
+      <div style="margin-top:48px;font-size:2.5rem;">Teach Smart, Lead Change, Celebrate</div>
     </div>
   </div>
 </div>
@@ -90,7 +95,7 @@
   const progress = document.getElementById('progress');
   let current = 0;
 
-  window.nextStep = function() {
+  function nextStep() {
     const currentStep = steps[current];
     const input = currentStep.querySelector('input, textarea');
 
@@ -107,14 +112,33 @@
 
     const nextInput = steps[current].querySelector('input, textarea');
     if (nextInput) setTimeout(() => nextInput.focus(), 400);
-  };
+  }
 
+  function submitForm() {
+    // Collect values
+    const data = {
+      name: document.getElementById('name').value.trim(),
+      location: document.getElementById('location').value.trim(),
+      subject: document.getElementById('subject').value.trim(),
+      challenge: document.getElementById('challenge').value.trim(),
+      contact: document.getElementById('contact').value.trim()
+    };
+
+    console.log("Form submitted:", data);
+    // TODO: send data to server via fetch/AJAX
+    // fetch('/submit', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data)})
+
+    // Show thank you step
+    steps[current].classList.remove('active');
+    current++;
+    steps[current].classList.add('active');
+    progress.style.width = '100%';
+  }
+
+  // Handle Enter key (skip textarea)
   document.addEventListener('keydown', e => {
-    if (e.key === 'Enter' && !e.shiftKey) {
+    const activeStep = steps[current];
+    const isTextarea = activeStep.querySelector('textarea');
+    if (e.key === 'Enter' && !e.shiftKey && !isTextarea) {
       e.preventDefault();
-      nextStep();
-    }
-  });
-</script>
-</body>
-</html>
+      if (current < steps.length - 2) {
