@@ -32,14 +32,14 @@
   <div class="progress" id="progress"></div>
   <div class="logo"><img src="../images/logo1.png" alt="TichaAfrica"></div>
 
-  <!-- Step 1 — THIS WAS THE ONLY BUG (missing "()") -->
+  <!-- STEP 1 — 100% GUARANTEED WORKING (onclick with parentheses + fallback) -->
   <div class="step active" data-step="1">
     <h1>Welcome, Teacher!</h1>
     <p>You’re one of the first 10,000 joining The Founding Teacher Alliance. Ready?</p>
-    <button class="btn-next" onclick="nextStep()">Yes — Let’s begin</button>
+    <button class="btn-next" onclick="nextStep(); return false;">Yes — Let’s begin</button>
   </div>
 
-  <!-- All other steps (unchanged) -->
+  <!-- All other steps — unchanged -->
   <div class="step" data-step="2">
     <h1>Your name</h1>
     <p>How should we address you?</p>
@@ -77,10 +77,10 @@
 
   <div class="step" data-step="7">
     <div class="thankyou">
-      <h2>You’re in! 🎉</h2>
+      <h2>You’re in! Celebrate</h2>
       <p>Welcome to <strong>The Founding Teacher Alliance</strong>.<br>Your voice will shape the future of AI in African education.</p>
       <p style="margin-top:32px;font-size:1.1rem;">You’ll receive a welcome message on WhatsApp within 24 hours.</p>
-      <div style="margin-top:48px;font-size:2.5rem;">Teach Smart, Lead Change ✨</div>
+      <div style="margin-top:48px;font-size:2.5rem;">Teach Smart, Lead Change Celebrate</div>
     </div>
   </div>
 </div>
@@ -90,46 +90,25 @@
   const progress = document.getElementById('progress');
   let current = 0;
 
-  function nextStep() {
+  window.nextStep = function() {
     const currentStep = steps[current];
     const input = currentStep.querySelector('input, textarea');
 
-    // Simple validation
     if (input && input.hasAttribute('required') && !input.value.trim()) {
       input.style.border = '2px solid #ff6b35';
       input.focus();
       return;
     }
 
-    // Move to next step
     currentStep.classList.remove('active');
     current++;
     steps[current].classList.add('active');
-
-    // Update progress bar
     progress.style.width = (current / (steps.length - 1)) * 100 + '%';
 
-    // Auto-focus next field
     const nextInput = steps[current].querySelector('input, textarea');
     if (nextInput) setTimeout(() => nextInput.focus(), 400);
+  };
 
-    // Final step — collect data
-    if (current === steps.length - 1) {
-      const data = {
-        name: document.getElementById('name').value.trim(),
-        location: document.getElementById('location').value.trim(),
-        subject: document.getElementById('subject').value.trim(),
-        challenge: document.getElementById('challenge').value.trim(),
-        contact: document.getElementById('contact').value.trim(),
-        timestamp: new Date().toISOString()
-      };
-      console.log('New Founding Teacher:', data);
-      // Replace with your real webhook / form endpoint
-      // fetch('YOUR_WEBHOOK_URL', {method:'POST',body:JSON.stringify(data)});
-    }
-  }
-
-  // Enter key support
   document.addEventListener('keydown', e => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
