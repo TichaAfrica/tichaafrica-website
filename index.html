@@ -38,9 +38,8 @@
       z-index: 1000;
       transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
     }
-    /* Larger, more prominent logo */
     .logo{
-      height: 140px;               /* ← Much larger */
+      height: 140px;
       filter:drop-shadow(0 4px 12px rgba(0,0,0,0.1));
       transition:var(--transition);
     }
@@ -74,8 +73,38 @@
       -webkit-text-fill-color:transparent;
       margin:40px 0 48px;display:block;
     }
+
+    /* NEW URGENCY BANNER */
+    .urgency-banner{
+      background:linear-gradient(135deg,#ca8a04,#facc15);
+      color:#1e293b;
+      padding:28px 40px;
+      border-radius:20px;
+      max-width:900px;
+      margin:0 auto 60px;
+      box-shadow:0 20px 40px rgba(202,138,4,0.25);
+      font-weight:700;
+      font-size:1.4rem;
+      line-height:1.5;
+    }
+    .urgency-banner strong{
+      font-size:2rem;
+      display:block;
+      margin-bottom:16px;
+    }
+    .urgency-banner ul{
+      margin:20px 0 0;
+      padding-left:20px;
+      text-align:left;
+      font-size:1.15rem;
+      line-height:1.8;
+    }
+    .urgency-banner li{
+      margin-bottom:8px;
+    }
+
     .cta-group{
-      display:flex;gap:16px;gap:16px;flex-wrap:wrap;justify-content:center;
+      display:flex;gap:16px;flex-wrap:wrap;justify-content:center;
     }
     .btn{
       padding:18px 36px;border-radius:999px;font-weight:700;
@@ -146,7 +175,7 @@
     }
     .list li:last-child{border:none;}
     .list li::before{
-      content:"✓";font-size:2rem;font-weight:bold;
+      content:"Checkmark";font-size:2rem;font-weight:bold;
       color:var(--gold-light);flex-shrink:0;margin-top:4px;
     }
 
@@ -184,7 +213,12 @@
       .card{padding:40px 28px;}
       .final-cta{padding:90px 28px;}
       .final-cta h2{font-size:3rem;}
-      .logo { height: 110px; } /* still big on mobile */
+      .logo { height: 110px; }
+      .urgency-banner{
+        padding:24px 20px;
+        font-size:1.2rem;
+      }
+      .urgency-banner strong{font-size:1.7rem;}
     }
   </style>
 </head>
@@ -199,10 +233,21 @@
   <section class="hero">
     <div class="badge">Join The Founding Teacher Alliance</div>
     <h1>African teachers leading<br>the AI revolution</h1>
-    <p class="lead">
-      Africa's first, teacher-led, mobile-first AI curriculum — built by African teachers, for African teachers. 
-      We are co-creating the curriculum, tools and policy-aligned resources that keep African knowledge at the centre.
-    </p>
+
+    <!-- NEW URGENCY BANNER -->
+    <div class="urgency-banner">
+      <strong>We’re inviting the first 10,000 teachers to co-create Africa’s future of AI education — together.</strong>
+      In the next 90 days we will build:
+      <ul>
+        <li>A complete teacher-led AI curriculum rooted in African knowledge systems</li>
+        <li>Mobile-first micro-courses that work on any phone, even offline</li>
+        <li>Ready-to-use lesson plans, prompts and assessment tools</li>
+        <li>Policy recommendations submitted to UNESCO and the African Union</li>
+        <li>A permanent Founding Teacher Alliance that shapes the continent’s AI education strategy</li>
+      </ul>
+    </div>
+    <!-- END NEW BANNER -->
+
     <div class="motto">Teach Smart, Lead Change</div>
     
     <div class="cta-group">
@@ -226,6 +271,7 @@
     </div>
   </section>
 
+  <!-- rest of your sections unchanged -->
   <section>
     <h2 class="section-title">The problem</h2>
     <div class="cards">
@@ -290,7 +336,6 @@
 </footer>
 
 <script>
-  // Lightweight counter animation
   const counter = document.getElementById('counter');
   let count = 0;
   const target = 1247;
@@ -305,7 +350,6 @@
     }
   }, 40);
 
-  // Subtle scroll animations
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
