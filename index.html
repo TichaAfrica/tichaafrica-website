@@ -1,562 +1,480 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>TichaAfrica — Teach Smart, Lead Change</title>
-  <meta name="description" content="Africa’s first teacher-led AI education movement. Co-creating the future of learning with African wisdom at the center.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+  <meta name="description" content="TichaAfrica — teachers co-create AI curriculum & tools for African classrooms. Join the Founding Alliance." />
+  <meta name="theme-color" content="#003366"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #f8f9fc;
-      --surface: #ffffff;
-      --text: #0f172a;
-      --text-muted: #475569;
-      --accent: #0d5c63;
-      --gold: #ca8a04;
-      --gold-light: #facc15;
-      --border: rgba(0,0,0,0.08);
-      --shadow: 0 20px 40px rgba(0,0,0,0.06);
-      --radius: 24px;
-      --transition: all 0.32s cubic-bezier(0.16,1,0.3,1);
+    /* --------------------
+       Brand palette & tokens
+       -------------------- */
+    :root{
+      --navy: #003366;
+      --mustard: #ffd700;
+      --olive: #0b5a2b; /* leaf/olive */
+      --powder: #f1f6fb; /* powder-blue / beige blend */
+      --clay: #efe8dd; /* warm clay/beige */
+      --muted: #324048;
+      --card: rgba(255,255,255,0.95);
+      --glass: rgba(255,255,255,0.18);
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --shadow-1: 0 6px 24px rgba(2,10,36,0.12);
+      --shadow-2: 0 18px 50px rgba(2,10,36,0.12);
+      --max: 1180px;
+      --trans: 300ms cubic-bezier(.16,1,.3,1);
     }
 
-    *,*::before,*::after{box-sizing:border-box}
+    /* --------------------
+       Reset & base
+       -------------------- */
+    *{box-sizing:border-box}
+    html,body{height:100%}
     body{
       margin:0;
-      font-family:"Inter",system-ui,sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.6;
+      font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial;
       -webkit-font-smoothing:antialiased;
+      background: linear-gradient(180deg,var(--powder),var(--clay));
+      color:var(--muted);
+      line-height:1.5;
+      -webkit-text-size-adjust:100%;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;height:auto;display:block}
+
+    /* --------------------
+       Layout container
+       -------------------- */
+    .site {
+      max-width:var(--max);
+      margin:28px auto;
+      padding:20px;
     }
 
-    .container{max-width:1280px;margin:0 auto;padding:0 20px;}
-
-    /* Sticky header */
-    header{
-      padding:32px 0;text-align:center;
-      position:sticky;top:0;background:var(--bg);z-index:1000;
-      transition:all 0.4s cubic-bezier(0.16,1,0.3,1);
-    }
-    .logo{
-      height:140px;
-      filter:drop-shadow(0 4px 12px rgba(0,0,0,0.1));
-      transition:var(--transition);
-    }
-    .logo:hover{transform:scale(1.05);}
-
-    /* HERO */
-    .hero{
-      padding:100px 0 140px;
-      text-align:center;
-      background:linear-gradient(to bottom, #f0f9ff 0%, #e0f2fe 100%);
-    }
-
-    .badge{
-      display:inline-block;
-      background:var(--accent);
-      color:white;
-      padding:8px 20px;
-      border-radius:999px;
-      font-size:0.95rem;
-      font-weight:600;
-      margin-bottom:20px;
-      letter-spacing:0.5px;
-    }
-
-    h1{
-      font-size:clamp(2.8rem,8vw,4.8rem);
-      font-weight:900;
-      line-height:1.05;
-      margin:0 0 24px 0;
-      background:linear-gradient(135deg,#1e293b,#0d5c63);
-      -webkit-background-clip:text;
-      background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-
-    .promise-list{
-      max-width:860px;margin:40px auto 48px;
-      text-align:left;font-size:1.25rem;line-height:1.8;
-      color:#1e293b;
-    }
-    .promise-list li{
-      margin-bottom:20px;position:relative;padding-left:48px;
-    }
-    .promise-list li::before{
-      content:"✦";color:var(--gold-light);font-size:2rem;font-weight:900;
-      position:absolute;left:0;top:-6px;
-    }
-    .promise-list strong{color:var(--accent);}
-
-    .motto{
-      font-size:clamp(1.8rem,6vw,3.2rem);
-      font-weight:900;
-      background:linear-gradient(90deg,#ca8a04,#facc15);
-      -webkit-background-clip:text;
-      background-clip:text;
-      -webkit-text-fill-color:transparent;
-      margin:40px 0 48px;
-      display:block;
-    }
-
-    .cta-group{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;}
-
-    .btn{
-      padding:18px 36px;
-      border-radius:999px;
-      font-weight:700;
-      font-size:1.1rem;
-      text-decoration:none;
-      display:inline-flex;
+    /* --------------------
+       Header
+       -------------------- */
+    header.site-header{
+      display:flex;
       align-items:center;
-      gap:12px;
-      transition:var(--transition);
-      box-shadow:0 12px 32px rgba(0,0,0,0.1);
+      gap:18px;
+      justify-content:space-between;
+      padding:18px;
+      backdrop-filter: blur(6px);
+      border-radius:14px;
     }
-
-    .btn-primary{background:var(--gold-light);color:#1e293b;}
-    .btn-primary:hover{
-      transform:translateY(-6px);
-      box-shadow:0 20px 50px rgba(202,138,4,0.3);
+    .brand {
+      display:flex;align-items:center;gap:12px;
     }
-
-    .btn-secondary{background:var(--accent);color:white;}
-    .btn-secondary:hover{
-      transform:translateY(-6px);
-      box-shadow:0 20px 50px rgba(13,92,99,0.4);
+    .logo-square{
+      width:64px;height:64px;border-radius:12px;
+      background:linear-gradient(135deg,var(--mustard),#ffb84d);
+      display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-1);
+      flex-shrink:0;
     }
+    .logo-square svg{width:44px;height:44px}
+    .brand-title{font-weight:800;color:var(--navy);letter-spacing:0.6px}
+    .subtle {font-size:0.9rem;color:rgba(20,30,40,0.6)}
 
-    .stats{
+    .header-ctas{display:flex;gap:10px;align-items:center}
+    .btn-ghost{padding:8px 12px;border-radius:10px;background:transparent;border:1px solid rgba(2,10,36,0.06);font-weight:600}
+    .btn-primary{background:var(--navy);color:white;padding:10px 16px;border-radius:12px;font-weight:700;box-shadow:0 8px 28px rgba(0,0,0,0.12)}
+    .btn-primary:hover{transform:translateY(-4px);transition:var(--trans)}
+
+    /* --------------------
+       Hero — Framer-like layered card
+       -------------------- */
+    .hero {
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      gap:32px;
-      margin:120px auto;
-      max-width:960px;
+      grid-template-columns:1fr;
+      gap:22px;
+      align-items:center;
+      margin:28px 0;
     }
+    @media(min-width:1000px){ .hero { grid-template-columns: 1fr 440px; } }
 
-    .stat{
-      background:white;padding:40px 32px;border-radius:24px;
-      box-shadow:0 20px 50px rgba(0,0,0,0.08);
-      text-align:center;transition:var(--transition);
-    }
-    .stat:hover{transform:translateY(-12px);}
-
-    .stat-value{font-size:3.2rem;font-weight:900;color:var(--accent);line-height:1;margin-bottom:8px;}
-    .stat-label{font-size:1.1rem;color:var(--text-muted);font-weight:500;}
-
-    section{margin:140px 0;}
-    .section-title{font-size:2.6rem;font-weight:900;text-align:center;margin-bottom:80px;color:var(--text);}
-
-    .cards{display:grid;gap:40px;max-width:1000px;margin:0 auto;}
-    .card{
-      background:white;padding:48px;border-radius:28px;
-      box-shadow:0 25px 60px rgba(0,0,0,0.08);
-      transition:var(--transition);border:1px solid var(--border);
-    }
-    .card:hover{
-      transform:translateY(-12px);
-      box-shadow:0 40px 90px rgba(0,0,0,0.14);
-    }
-
-    .card h3{font-size:1.9rem;font-weight:800;color:var(--accent);margin-bottom:20px;}
-    .card p{font-size:1.18rem;color:var(--text-muted);line-height:1.75;margin-bottom:24px;}
-
-    .list{list-style:none;padding:0;}
-    .list li{
-      padding:16px 0;display:flex;gap:20px;
-      align-items:flex-start;border-bottom:1px solid rgba(0,0,0,0.06);
-    }
-    .list li:last-child{border:none;}
-    .list li::before{
-      content:"✓";font-size:2rem;font-weight:bold;
-      color:var(--gold-light);flex-shrink:0;margin-top:4px;
-    }
-
-    /* FINAL CTA */
-    .final-cta{
-      background:linear-gradient(135deg,#0d5c63,#1e293b);
-      color:white;padding:120px 40px;border-radius:40px;
-      text-align:center;margin:160px auto 0;
-      max-width:1000px;box-shadow:0 40px 100px rgba(0,0,0,0.3);
-    }
-    .final-cta h2{
-      font-size:3.6rem;font-weight:900;margin-bottom:32px;
-      background:linear-gradient(90deg,#facc15,#ffd700);
-      -webkit-background-clip:text;background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-    .final-cta p{
-      font-size:1.7rem;max-width:720px;margin:0 auto 48px;
-      opacity:0.95;line-height:1.7;
-    }
-
-    footer{
-      padding:80px 20px 40px;text-align:center;
-      color:var(--text-muted);font-size:1rem;
-    }
-    footer a{color:var(--accent);text-decoration:none;font-weight:600;}
-    footer a:hover{color:var(--gold-light);}
-
-    /* Testimonial Carousel */
-    .testimonial-section { margin:120px 0; }
-
-    .carousel {
-      position:relative;
-      max-width:780px;
-      margin:0 auto;
-      text-align:center;
-    }
-
-    .carousel-track {
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.92));
+      border-radius:var(--radius-lg);
+      padding:34px;
+      box-shadow:var(--shadow-2);
+      border: 1px solid rgba(0,0,0,0.04);
       position:relative;
       overflow:hidden;
-      height:260px;
     }
 
-    .slide {
-      position:absolute;
-      inset:0;
-      opacity:0;
-      transform:translateX(20px);
-      transition:opacity 600ms ease, transform 600ms ease;
-      padding:0 20px;
-    }
-
-    .slide.active {
-      opacity:1;
-      transform:translateX(0);
-      position:absolute;
-    }
-
-    .testimonial-avatar {
-      width:90px;height:90px;border-radius:50%;
-      object-fit:cover;
-      margin-bottom:16px;
-      box-shadow:0 12px 30px rgba(0,0,0,0.15);
-    }
-
-    .testimonial-text {
-      font-size:1.25rem;
-      line-height:1.65;
-      color:#1e293b;
-      margin-bottom:16px;
-      font-style:italic;
-    }
-
-    .testimonial-name {
-      font-weight:800;
-      color:var(--accent);
-    }
-
-    .carousel-controls {
-      display:flex;
-      justify-content:space-between;
-      margin-top:12px;
-    }
-
-    .carousel-btn {
-      background:white;
-      border:none;
-      border-radius:50%;
-      width:44px;height:44px;
-      font-size:1.6rem;
-      box-shadow:0 8px 20px rgba(0,0,0,0.08);
-      cursor:pointer;
-      transition:var(--transition);
-    }
-    .carousel-btn:hover { transform:scale(1.12); }
-
-    .carousel-dots {
-      display:flex;
-      justify-content:center;
+    .eyebrow {
+      display:inline-flex;
       gap:10px;
-      margin-top:16px;
+      align-items:center;
+      padding:8px 12px;
+      border-radius:999px;
+      background:linear-gradient(90deg,var(--mustard),#ffb84d);
+      color:#04334b;font-weight:800;font-size:0.92rem;
+      box-shadow:0 6px 18px rgba(2,10,36,0.06);
+      margin-bottom:14px;
     }
 
-    .dot {
-      width:12px;height:12px;border-radius:50%;
-      background:#cbd5e1;
-      border:none;
-      cursor:pointer;
-      transition:var(--transition);
-    }
-    .dot.active {
-      background:var(--accent);
-      transform:scale(1.2);
+    .hero-title {
+      font-size:clamp(1.6rem,4.4vw,2.9rem);
+      color:var(--navy);font-weight:900;line-height:1.03;
+      margin:0 0 12px;
+      letter-spacing:-0.4px;
     }
 
-    @media (max-width:640px){
-      .hero{padding:120px 0 100px;}
-      .stats{grid-template-columns:1fr;gap:24px;}
-      section{margin:100px 0;}
-      .section-title{font-size:2.3rem;margin-bottom:60px;}
-      .card{padding:40px 28px;}
-      .final-cta{padding:90px 28px;}
-      .final-cta h2{font-size:3rem;}
-      .logo{height:110px;}
-      .promise-list{font-size:1.15rem;padding:0 20px;}
+    .hero-sub {
+      color:var(--muted);font-size:1.05rem;max-width:64ch;margin-bottom:18px;
     }
+
+    .motto-pill{
+      display:inline-block;padding:10px 16px;border-radius:999px;background:linear-gradient(90deg,var(--mustard),#ffc84f);
+      color:var(--navy);font-weight:800;margin-bottom:20px;box-shadow:0 8px 30px rgba(255,183,0,0.12)
+    }
+
+    .hero-ctas{display:flex;flex-wrap:wrap;gap:12px}
+    .cta-join { background: linear-gradient(90deg,var(--navy),#0b4b8a); color:white; padding:14px 20px;border-radius:12px;font-weight:800;box-shadow:0 18px 50px rgba(0,51,102,0.12)}
+    .cta-ghost { background:transparent;border:2px solid rgba(2,10,36,0.06);padding:12px 18px;border-radius:12px;font-weight:700;color:var(--navy) }
+
+    /* hero right: floating cards & stats */
+    .hero-side{display:flex;flex-direction:column;gap:18px;align-items:center}
+    .float-card{
+      width:100%;max-width:420px;background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.88));
+      border-radius:14px;padding:18px;border:1px solid rgba(0,0,0,0.05);box-shadow:var(--shadow-1);
+      transform:translateY(-6px);
+    }
+    .stat-row{display:flex;gap:10px;align-items:center;justify-content:space-between}
+    .stat-big{font-weight:900;color:var(--navy);font-size:1.9rem}
+    .stat-small{font-size:0.95rem;color:var(--muted)}
+
+    /* subtle decorative accents */
+    .accent-ring{position:absolute;right:-40px;top:-40px;width:220px;height:220px;border-radius:999px;background:radial-gradient(circle at 30% 30%, rgba(255,215,0,0.12), transparent 40%);filter:blur(12px);pointer-events:none;opacity:0.9}
+    .wave{position:absolute;left:-60px;bottom:-80px;width:300px;height:180px;background:linear-gradient(90deg, rgba(11,90,43,0.07), transparent);border-radius:60px;pointer-events:none}
+
+    /* --------------------
+       Sections & Cards
+       -------------------- */
+    section.card-section { margin:36px 0; display:grid; gap:18px; }
+    .grid-2{display:grid;grid-template-columns:1fr;gap:18px}
+    @media(min-width:880px){ .grid-2{grid-template-columns:repeat(2,1fr)} }
+
+    .feature {
+      background:var(--card);border-radius:14px;padding:22px;border:1px solid rgba(0,0,0,0.04);
+      box-shadow:var(--shadow-1);
+    }
+    .feature h3{margin:0 0 10px;color:var(--navy);font-size:1.15rem}
+    .feature p{margin:0;color:var(--muted)}
+
+    /* list style */
+    .bullet-list{list-style:none;padding:0;margin:0}
+    .bullet-list li{display:flex;gap:12px;padding:12px 0;border-bottom:1px dashed rgba(0,0,0,0.04)}
+    .bullet-dot{width:12px;height:12px;border-radius:50%;background:var(--mustard);flex:0 0 12px;margin-top:6px}
+
+    /* --------------------
+       Testimonials carousel - refined
+       -------------------- */
+    .testimonial {
+      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.82));
+      border-radius:14px;padding:18px;border:1px solid rgba(0,0,0,0.04);box-shadow:var(--shadow-1);
+      max-width:820px;margin:0 auto;position:relative;overflow:hidden;
+    }
+    .slides{position:relative;height:180px}
+    .slide{position:absolute;inset:0;opacity:0;transform:translateX(14px);transition:opacity 420ms var(--trans), transform 420ms var(--trans);display:flex;gap:14px;align-items:center;padding:8px 18px}
+    .slide.active{opacity:1;transform:none}
+    .avatar{width:70px;height:70px;border-radius:50%;object-fit:cover;box-shadow:0 10px 28px rgba(2,10,36,0.12);flex-shrink:0}
+    .testimonial-text{font-style:italic;color:var(--muted);font-size:1.05rem}
+    .testimonial-meta{font-weight:800;color:var(--navy)}
+
+    .carousel-controls{display:flex;justify-content:space-between;align-items:center;margin-top:14px}
+    .dotbtn{width:10px;height:10px;border-radius:50%;background:#d0d7df;border:none}
+    .dotbtn.active{background:var(--navy);transform:scale(1.1)}
+
+    /* --------------------
+       Final CTA (bold & human)
+       -------------------- */
+    .final-cta{
+      margin:28px 0;padding:38px;border-radius:16px;background:linear-gradient(90deg,var(--navy),#0b4b8a);
+      color:white;box-shadow:0 30px 90px rgba(2,10,36,0.16);
+      display:flex;flex-direction:column;gap:14px;align-items:center;
+    }
+    .final-cta h2{margin:0;font-size:1.9rem;letter-spacing:-0.2px}
+    .final-cta p{max-width:62ch;text-align:center;color:rgba(255,255,255,0.92)}
+    .final-cta .join-btn{background:var(--mustard);color:var(--navy);padding:12px 20px;border-radius:12px;font-weight:800}
+
+    /* --------------------
+       Footer
+       -------------------- */
+    footer{margin-top:28px;padding:28px 18px;text-align:center;color:var(--muted)}
+    footer a{color:var(--navy);font-weight:700}
+
+    /* --------------------
+       Small screens
+       -------------------- */
+    @media(max-width:520px){
+      .brand-title{font-size:1rem}
+      .hero-card{padding:20px}
+      .hero-sub{font-size:0.98rem}
+      .stat-big{font-size:1.4rem}
+    }
+
+    /* --------------------
+       Entrance animation helper
+       -------------------- */
+    .appear { opacity:0; transform: translateY(10px); transition: all 560ms var(--trans) }
+    .appear.in { opacity:1; transform:none }
   </style>
 </head>
-
 <body>
-
-<div class="container">
-
-  <header>
-    <img src="images/logo1.png" alt="TichaAfrica" class="logo" loading="eager">
-  </header>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="badge">Join The Founding Teacher Alliance</div>
-    <h1>African Teachers Leading<br>the AI Revolution</h1>
-
-    <div style="font-size:1.4rem;font-weight:700;color:#1e293b;margin-bottom:32px;">
-      What We Will Create Together:
-    </div>
-
-    <ul class="promise-list">
-      <li><strong>Africa’s First Teacher-co-created AI Training</strong> — with our stories, languages and wisdom at its heart</li>
-      <li><strong>Mobile-first insight-driven tools</strong> that work on any phone, even low-bandwidth</li>
-      <li><strong>Policy-ready resources</strong> already aligned with <strong>UNESCO</strong> & <strong>AU</strong> standards</li>
-      <li><strong>Your voice in global conversations</strong> — shaping how AI enters African classrooms forever</li>
-    </ul>
-
-    <div class="motto">Teach Smart, Lead Change</div>
-
-    <div class="cta-group">
-      <a href="Alliance-form.html" class="btn btn-primary">Join The Alliance — 60sec</a>
-      <a href="#" class="btn btn-secondary">Share your Journey — 2 min</a>
-    </div>
-
-    <div class="stats">
-      <div class="stat">
-        <div class="stat-value" id="counter">1,247</div>
-        <div class="stat-label">Founding teachers so far across the continent</div>
+  <div class="site">
+    <!-- Header -->
+    <header class="site-header" role="banner" aria-label="TichaAfrica header">
+      <div class="brand" style="align-items:center">
+        <div class="logo-square" aria-hidden="true">
+          <!-- Inline minimal emblem — replace with your SVG/logo image if available -->
+          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true">
+            <rect width="64" height="64" rx="12" fill="#fff" opacity="0.02"/>
+            <path d="M16 44 L28 18 L36 36 L48 12" stroke="#003366" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="46" cy="18" r="4" fill="#ffd700"/>
+          </svg>
+        </div>
+        <div>
+          <div class="brand-title">THE TEXT ARTISAN</div>
+          <div class="subtle">TichaAfrica — Teach Smart, Lead Change</div>
+        </div>
       </div>
-      <div class="stat">
-        <div class="stat-value">54</div>
-        <div class="stat-label">African countries</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value"><strong>UNESCO</strong> • <strong>AU</strong></div>
-        <div class="stat-label">Global standards aligned</div>
-      </div>
-    </div>
-  </section>
 
-  <!-- PROBLEM -->
-  <section>
-    <h2 class="section-title">The problem</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>AI tools are entering classrooms faster than teachers are prepared</h3>
-        <p>
-          If teachers are not first in the design room, decades of indigenous wisdom risk being lost. 
-          TichaAfrica ensures teachers lead the transition.
-        </p>
-      </div>
-    </div>
-  </section>
+      <nav class="header-ctas" aria-label="header actions">
+        <a class="btn-ghost" href="#about">About</a>
+        <a class="btn-primary" href="#join" id="headerJoin">Join the Alliance</a>
+      </nav>
+    </header>
 
-  <!-- SOLUTION -->
-  <section>
-    <h2 class="section-title">The Solution — Led By Teachers</h2>
-    <div class="cards">
-      <div class="card">
-        <ul class="list">
-          <li>Teacher-led design. Every module starts with teacher insight.</li>
-          <li>Mobile-first delivery. Simple, low-bandwidth learning for every phone.</li>
-          <li>Free core training. Open access to foundational resources.</li>
-          <li>Policy-aligned. Mapped to <strong>UNESCO</strong> AI CFT and <strong>AU</strong> Continental AI Strategy.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+    <!-- Hero -->
+    <main>
+      <section class="hero appear" id="hero">
+        <div class="hero-card">
+          <div class="eyebrow">Founding Teacher Alliance</div>
+          <h1 class="hero-title">We are the teachers shaping Africa’s AI future</h1>
+          <p class="hero-sub">AI is entering our classrooms — with or without us. Only teachers can ensure it protects our languages, values, and the dignity of learning. TichaAfrica is where African educators co-create curriculum, tools and policy-aligned resources.</p>
 
-  <!-- BENEFITS -->
-  <section>
-    <h2 class="section-title">What Founding Teachers Gain</h2>
-    <div class="cards">
-      <div class="card">
-        <ul class="list">
-          <li>Shape the continent’s first teacher co-created AI curriculum</li>
-          <li>Earn a Founding Teacher digital badge and certificate</li>
-          <li>Early access to tools, templates and micro-courses</li>
-          <li>Be part of research and policy conversations aligned with <strong>UNESCO</strong> & <strong>AU</strong></li>
-        </ul>
-      </div>
-    </div>
-  </section>
+          <span class="motto-pill">Teach Smart, Lead Change</span>
 
-  <!-- TESTIMONIAL CAROUSEL -->
-  <section class="testimonial-section" aria-labelledby="testimonials-title">
-    <h2 id="testimonials-title" class="section-title">What Teachers Are Saying</h2>
+          <div class="hero-ctas" style="margin-top:12px">
+            <a class="cta-join" href="YOUR_ALLIANCE_FORM_LINK">Join the Founding Alliance — 60s</a>
+            <a class="cta-ghost" href="YOUR_INSIGHTS_FORM_LINK">Share quick insight — 2 min</a>
+          </div>
 
-    <div class="carousel" aria-live="polite">
-      <div class="carousel-track">
+          <div style="margin-top:18px;opacity:0.95">
+            <ul class="bullet-list">
+              <li><span class="bullet-dot" aria-hidden="true"></span><div><strong>Africa’s first teacher-co-created AI training</strong> grounded in local languages and classroom practice.</div></li>
+              <li><span class="bullet-dot" aria-hidden="true"></span><div><strong>Mobile-first tools</strong> optimised for low-bandwidth and low-cost devices.</div></li>
+              <li><span class="bullet-dot" aria-hidden="true"></span><div><strong>Policy-aligned resources</strong> mapped to UNESCO AI CFT and the AU Continental AI Strategy.</div></li>
+            </ul>
+          </div>
 
-        <div class="slide active">
-          <img src="images/teacher1.jpg" alt="Teacher from Kenya" class="testimonial-avatar">
-          <p class="testimonial-text">
-            “TichaAfrica is the first programme that made me feel seen in the AI conversation.
-            Everything finally feels made *for us*.”
-          </p>
-          <h4 class="testimonial-name">Mary A. — Kenya</h4>
+          <div class="accent-ring" aria-hidden="true"></div>
+          <div class="wave" aria-hidden="true"></div>
         </div>
 
-        <div class="slide">
-          <img src="images/teacher2.jpg" alt="Teacher from Nigeria" class="testimonial-avatar">
-          <p class="testimonial-text">
-            “I have taken many trainings, but this is different. It's African, practical and empowering.”
-          </p>
-          <h4 class="testimonial-name">Adebola O. — Nigeria</h4>
+        <aside class="hero-side" aria-hidden="false">
+          <div class="float-card" role="status" aria-live="polite">
+            <div class="stat-row">
+              <div>
+                <div class="stat-big" id="count">1,247</div>
+                <div class="stat-small">Founding teachers so far</div>
+              </div>
+              <div style="text-align:right">
+                <div style="font-weight:700;color:var(--navy)">54</div>
+                <div class="stat-small">Countries represented</div>
+              </div>
+            </div>
+            <div style="margin-top:12px;border-top:1px dashed rgba(0,0,0,0.04);padding-top:12px;font-size:0.95rem;color:var(--muted)">
+              Aligned with <strong>UNESCO</strong> & <strong>African Union</strong> standards
+            </div>
+          </div>
+
+          <div class="float-card" style="display:flex;flex-direction:column;gap:10px;align-items:stretch">
+            <div style="font-weight:800;color:var(--navy)">MVP Gift</div>
+            <div style="color:var(--muted);font-size:0.95rem">Free AI Readiness Toolkit for teachers — downloadable on sign up.</div>
+            <div style="margin-top:8px">
+              <a class="cta-ghost" href="#tool">Get the Toolkit</a>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- Problem -->
+      <section class="card-section appear" id="about">
+        <div style="display:flex;flex-direction:column;gap:18px">
+          <h2 class="section-title">The problem</h2>
+          <div class="grid-2">
+            <div class="feature">
+              <h3>AI is arriving before teachers are prepared</h3>
+              <p>If teachers are not first in the design room, decades of indigenous knowledge and classroom wisdom risk being ignored. That is a loss nobody can afford.</p>
+            </div>
+            <div class="feature">
+              <h3>Imported design misses the classroom</h3>
+              <p>Global AI tools are rarely built for African languages, resources or learning contexts. TichaAfrica puts teachers at the steering wheel.</p>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <div class="slide">
-          <img src="images/teacher3.jpg" alt="Teacher from Rwanda" class="testimonial-avatar">
-          <p class="testimonial-text">
-            “Finally, a community where teachers lead the AI future, not the other way around.”
-          </p>
-          <h4 class="testimonial-name">Chantal N. — Rwanda</h4>
+      <!-- Solution -->
+      <section class="card-section appear" id="solution">
+        <h2 class="section-title">The solution — led by teachers</h2>
+        <div class="grid-2">
+          <div class="feature">
+            <h3>Teacher-led curriculum</h3>
+            <p>Curriculum co-created with teachers across the continent, mapped to the UNESCO AI Competency Framework for Teachers.</p>
+          </div>
+          <div class="feature">
+            <h3>Mobile-first tools</h3>
+            <p>Practical templates, lesson aids and micro-courses designed for low-bandwidth environments and everyday classroom use.</p>
+          </div>
         </div>
+      </section>
 
+      <!-- Benefits -->
+      <section class="card-section appear" id="benefits">
+        <h2 class="section-title">What founding teachers gain</h2>
+        <div class="feature" style="max-width:880px;margin:0 auto">
+          <ul class="bullet-list">
+            <li><span class="bullet-dot"></span><div>Shape the continent’s first teacher co-created AI curriculum.</div></li>
+            <li><span class="bullet-dot"></span><div>Receive a Founding Teacher badge & certificate.</div></li>
+            <li><span class="bullet-dot"></span><div>Early access to tools, templates and micro-courses.</div></li>
+            <li><span class="bullet-dot"></span><div>Participate in research and policy dialogues with partners.</div></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Testimonials (carousel) -->
+      <section class="card-section appear" aria-labelledby="testimonials">
+        <h2 id="testimonials" class="section-title">What teachers are saying</h2>
+
+        <div class="testimonial" role="region" aria-label="Teacher testimonials">
+          <div class="slides" id="slides">
+            <div class="slide active">
+              <img src="images/teacher1.jpg" alt="Mary, Kenya" class="avatar" onerror="this.style.display='none'">
+              <div>
+                <div class="testimonial-text">“TichaAfrica finally asks: what do African teachers need? My classroom matters.”</div>
+                <div class="testimonial-meta">— Mary A., Kenya</div>
+              </div>
+            </div>
+
+            <div class="slide">
+              <img src="images/teacher2.jpg" alt="Adebola, Nigeria" class="avatar" onerror="this.style.display='none'">
+              <div>
+                <div class="testimonial-text">“Practical, African-first and immediately useful — not abstract.”</div>
+                <div class="testimonial-meta">— Adebola O., Nigeria</div>
+              </div>
+            </div>
+
+            <div class="slide">
+              <img src="images/teacher3.jpg" alt="Chantal, Rwanda" class="avatar" onerror="this.style.display='none'">
+              <div>
+                <div class="testimonial-text">“It’s not training; it’s a movement that makes me proud.”</div>
+                <div class="testimonial-meta">— Chantal N., Rwanda</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-controls" aria-hidden="false">
+            <div>
+              <button class="dotbtn" aria-label="previous testimonial" id="prevBtn">‹</button>
+            </div>
+            <div style="display:flex;gap:8px;align-items:center">
+              <button class="dotbtn active" data-index="0"></button>
+              <button class="dotbtn" data-index="1"></button>
+              <button class="dotbtn" data-index="2"></button>
+            </div>
+            <div>
+              <button class="dotbtn" aria-label="next testimonial" id="nextBtn">›</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Final CTA -->
+      <section class="final-cta appear" id="join">
+        <h2>Join the Founding Teacher Alliance</h2>
+        <p>AI will shape African classrooms. Teachers will decide whether it does so for us or against us. Join the first 10,000 teachers who will co-create the curriculum and tools for generations.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+          <a class="join-btn" href="YOUR_ALLIANCE_FORM_LINK">Yes — claim my spot</a>
+          <a class="cta-ghost" href="YOUR_INSIGHTS_FORM_LINK">Share quick insight</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div style="max-width:880px;margin:0 auto">
+        <div style="display:flex;flex-direction:column;gap:6px;align-items:center">
+          <div style="font-weight:700;color:var(--navy)">TichaAfrica</div>
+          <div style="font-size:0.95rem;color:var(--muted)">© <span id="year"></span> • Teach Smart. Lead Change.</div>
+          <div style="margin-top:6px"><a href="mailto:contact@tichaafrica.com">contact@tichaafrica.com</a> • <a href="https://wa.me/YOUR_WHATSAPP_NUMBER">WhatsApp</a></div>
+        </div>
       </div>
+    </footer>
+  </div>
 
-      <div class="carousel-controls">
-        <button class="carousel-btn prev">‹</button>
-        <button class="carousel-btn next">›</button>
-      </div>
-
-      <div class="carousel-dots">
-        <button class="dot active"></button>
-        <button class="dot"></button>
-        <button class="dot"></button>
-      </div>
-    </div>
-  </section>
-
-  <!-- FINAL CTA -->
-  <section class="final-cta">
-    <h2>Join The Founding Teacher Alliance</h2>
-    <p>
-      We invite the first 10,000 teachers to co-create the curriculum and 
-      define how AI is used in African classrooms.
-    </p>
-    <div class="cta-group" style="margin-top:40px;">
-      <a href="#" class="btn btn-primary" 
-         style="font-size:1.8rem;padding:28px 80px;background:#facc15;color:#1e293b;">
-        Yes — claim my spot
-      </a>
-    </div>
-  </section>
-
-</div>
-
-<footer>
-  <p>© 2025 TichaAfrica • <strong style="color:#ca8a04;">Teach Smart, Lead Change</strong></p>
-  <p style="margin-top:12px;">
-    <a href="mailto:contact@tichaafrica.com">contact@tichaafrica.com</a> • 
-    <a href="#">WhatsApp</a> • <a href="#">Instagram</a> • <a href="#">X</a> • <a href="#">LinkedIn</a>
-  </p>
-</footer>
-
-<script>
-  /* Animated counter */
-  const counter = document.getElementById('counter');
-  let count = 0;
-  const target = 1247;
-  const increment = Math.ceil(target / 80);
-
-  const timer = setInterval(() => {
-    count += increment;
-    if (count >= target) {
-      counter.textContent = target.toLocaleString();
-      clearInterval(timer);
-    } else {
-      counter.textContent = count.toLocaleString();
-    }
-  }, 40);
-
-  /* Fade-in observer */
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
+  <script>
+    // Simple reveal on load
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.appear').forEach((el,i) => {
+        setTimeout(()=> el.classList.add('in'), 160 + (i*80));
+      });
+      // counter animation
+      const countEl = document.getElementById('count');
+      if(countEl){
+        let v = 700; const target = 1247;
+        const tick = setInterval(()=>{
+          v += Math.max(1, Math.round((target - v) * 0.12));
+          countEl.textContent = v.toLocaleString();
+          if(v >= target) clearInterval(tick);
+        }, 40);
       }
     });
-  }, { threshold: 0.1 });
 
-  document.querySelectorAll('section > *:not(.final-cta)').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(40px)';
-    el.style.transition = 'all 1s cubic-bezier(0.16,1,0.3,1)';
-    observer.observe(el);
-  });
+    // Testimonials carousel (lightweight)
+    (function(){
+      const slides = Array.from(document.querySelectorAll('.slide'));
+      const dots = Array.from(document.querySelectorAll('.dotbtn'));
+      const prev = document.getElementById('prevBtn');
+      const next = document.getElementById('nextBtn');
+      let idx = 0, timer = null;
 
-  /* Testimonial Carousel */
-  (function() {
-    const slides = Array.from(document.querySelectorAll('.slide'));
-    const dots = Array.from(document.querySelectorAll('.dot'));
-    const nextBtn = document.querySelector('.next');
-    const prevBtn = document.querySelector('.prev');
+      function show(i){
+        slides.forEach(s=> s.classList.remove('active'));
+        dots.forEach(d=> d.classList.remove('active'));
+        slides[i].classList.add('active'); dots[i].classList.add('active');
+      }
+      function start(){ timer = setInterval(()=> { idx = (idx+1)%slides.length; show(idx); }, 6000); }
+      function stop(){ clearInterval(timer); timer = null; }
 
-    let index = 0;
-    let autoSlide = null;
+      dots.forEach((d,i)=> d.addEventListener('click', ()=> { idx=i; show(i); }));
+      if(prev) prev.addEventListener('click', ()=> { idx=(idx-1+slides.length)%slides.length; show(idx); });
+      if(next) next.addEventListener('click', ()=> { idx=(idx+1)%slides.length; show(idx); });
+      document.querySelector('.testimonial').addEventListener('mouseenter', stop);
+      document.querySelector('.testimonial').addEventListener('mouseleave', start);
 
-    function showSlide(i) {
-      slides.forEach(s => s.classList.remove('active'));
-      dots.forEach(d => d.classList.remove('active'));
-      slides[i].classList.add('active');
-      dots[i].classList.add('active');
-    }
-
-    function next() {
-      index = (index + 1) % slides.length;
-      showSlide(index);
-    }
-    function prev() {
-      index = (index - 1 + slides.length) % slides.length;
-      showSlide(index);
-    }
-
-    nextBtn.addEventListener('click', next);
-    prevBtn.addEventListener('click', prev);
-
-    dots.forEach((dot, i) => {
-      dot.addEventListener('click', () => {
-        index = i;
-        showSlide(i);
+      // touch support
+      let sx=0;
+      const track = document.getElementById('slides');
+      track.addEventListener('touchstart', e=> sx = e.touches[0].clientX);
+      track.addEventListener('touchend', e=>{
+        const ex = e.changedTouches[0].clientX;
+        if(sx - ex > 40) { idx = (idx+1)%slides.length; show(idx);}
+        if(ex - sx > 40) { idx = (idx-1+slides.length)%slides.length; show(idx);}
       });
-    });
 
-    function startAuto() { autoSlide = setInterval(next, 6000); }
-    function stopAuto() { clearInterval(autoSlide); }
+      show(idx); start();
+    })();
 
-    startAuto();
-
-    document.querySelector('.carousel').addEventListener('mouseenter', stopAuto);
-    document.querySelector('.carousel').addEventListener('mouseleave', startAuto);
-
-    let startX = 0;
-    document.querySelector('.carousel').addEventListener('touchstart', e => {
-      startX = e.touches[0].clientX;
-      stopAuto();
-    });
-
-    document.querySelector('.carousel').addEventListener('touchend', e => {
-      let endX = e.changedTouches[0].clientX;
-      if (startX - endX > 50) next();
-      if (endX - startX > 50) prev();
-      startAuto();
-    });
-  })();
-</script>
+    // set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
