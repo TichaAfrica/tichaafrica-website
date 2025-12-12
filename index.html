@@ -1,1 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>TichaAfrica — Teach Smart, Lead Change</title>
+  <meta name="description" content="Africa’s first teacher-led AI education movement. Co-creating the future of learning with African wisdom at the center.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f8f9fc;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --accent: #0d5c63;
+      --gold: #ca8a04;
+      --gold-light: #facc15;
+      --border: rgba(0,0,0,0.08);
+      --shadow: 0 20px 40px rgba(0,0,0,0.06);
+      --radius: 24px;
+      --transition: all 0.32s cubic-bezier(0.16,1,0.3,1);
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    body{margin:0;font-family:"Inter",system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;}
+    .container{max-width:1280px;margin:0 auto;padding:0 20px;}
+
+    /* Sticky header + big logo */
+    header{
+      padding:32px 0;text-align:center;
+      position:sticky;top:0;background:var(--bg);z-index:1000;
+      transition:all 0.4s cubic-bezier(0.16,1,0.3,1);
+    }
+    .logo{
+      height:140px;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.1));
+      transition:var(--transition);
+    }
+    .logo:hover{transform:scale(1.05);}
+
+    /* Urgency banner – new */
+    .urgency-banner{
+      background:#fef3c7;color:#92400e;padding:14px 0;text-align:center;
+      font-weight:700;font-size:1.15rem;position:relative;z-index:999;
+      box-shadow:0 4px 20px rgba(251,146,60,0.2);
+    }
+    .urgency-banner strong{color:#d97706;}
+
+    /* HERO */
+    .hero{padding:100px 0 140px;text-align:center;
+      background:linear-gradient(to bottom, #f0f9ff 0%, #e0f2fe 100%);
+    }
+    .badge{display:inline-block;background:var(--accent);color:white;
+      padding:8px 20px;border-radius:999px;font-size:0.95rem;font-weight:600;
+      margin-bottom:20px;letter-spacing:0.5px;
+    }
+    h1{font-size:clamp(2.8rem,8vw,4.8rem);font-weight:900;line-height:1.05;margin:0 0 24px 0;
+      background:linear-gradient(135deg,#1e293b,#0d5c63);
+      -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+    }
+
+    /* New concise bullet points */
+    .promise-list{
+      max-width:860px;margin:40px auto 48px;
+      text-align:left;font-size:1.25rem;line-height:1.8;
+      color:#1e293b;
+    }
+    .promise-list li{
+      margin-bottom:20px;position:relative;padding-left:48px;
+    }
+    .promise-list li::before{
+      content:"✦";color:var(--gold-light);font-size:2rem;font-weight:900;
+      position:absolute;left:0;top:-6px;
+    }
+    .promise-list strong{color:var(--accent);}
+
+    .motto{font-size:clamp(1.8rem,6vw,3.2rem);font-weight:900;
+      background:linear-gradient(90deg,#ca8a04,#facc15);
+      -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+      margin:40px 0 48px;display:block;
+    }
+    .cta-group{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;}
+    .btn{padding:18px 36px;border-radius:999px;font-weight:700;font-size:1.1rem;
+      text-decoration:none;display:inline-flex;align-items:center;gap:12px;
+      transition:var(--transition);box-shadow:0 12px 32px rgba(0,0,0,0.1);
+    }
+    .btn-primary{background:var(--gold-light);color:#1e293b;}
+    .btn-primary:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(202,138,4,0.3);}
+    .btn-secondary{background:var(--accent);color:white;}
+    .btn-secondary:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(13,92,99,0.4);}
+
+    /* Rest of your styles unchanged */
+    .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px;margin:120px auto;max-width:960px;}
+    .stat{background:white;padding:40px 32px;border-radius:24px;box-shadow:0 20px 50px rgba(0,0,0,0.08);text-align:center;transition:var(--transition);}
+    .stat:hover{transform:translateY(-12px);}
+    .stat-value{font-size:3.2rem;font-weight:900;color:var(--accent);line-height:1;margin-bottom:8px;}
+    .stat-label{font-size:1.1rem;color:var(--text-muted);font-weight:500;}
+    section{margin:140px 0;}
+    .section-title{font-size:2.6rem;font-weight:900;text-align:center;margin-bottom:80px;color:var(--text);}
+    .cards{display:grid;gap:40px;max-width:1000px;margin:0 auto;}
+    .card{background:white;padding:48px;border-radius:28px;box-shadow:0 25px 60px rgba(0,0,0,0.08);
+      transition:var(--transition);border:1px solid var(--border);}
+    .card:hover{transform:translateY(-12px);box-shadow:0 40px 90px rgba(0,0,0,0.14);}
+    .card h3{font-size:1.9rem;font-weight:800;color:var(--accent);margin-bottom:20px;}
+    .card p{font-size:1.18rem;color:var(--text-muted);line-height:1.75;margin-bottom:24px;}
+    .list{list-style:none;padding:0;}
+    .list li{padding:16px 0;display:flex;gap:20px;align-items:flex-start;border-bottom:1px solid rgba(0,0,0,0.06);}
+    .list li:last-child{border:none;}
+    .list li::before{content:"✓";font-size:2rem;font-weight:bold;color:var(--gold-light);flex-shrink:0;margin-top:4px;}
+    .final-cta{background:linear-gradient(135deg,#0d5c63,#1e293b);color:white;padding:120px 40px;border-radius:40px;
+      text-align:center;margin:160px auto 0;max-width:1000px;box-shadow:0 40px 100px rgba(0,0,0,0.3);}
+    .final-cta h2{font-size:3.6rem;font-weight:900;margin-bottom:32px;
+      background:linear-gradient(90deg,#facc15,#ffd700);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+    .final-cta p{font-size:1.7rem;max-width:720px;margin:0 auto 48px;opacity:0.95;line-height:1.7;}
+    footer{padding:80px 20px 40px;text-align:center;color:var(--text-muted);font-size:1rem;}
+    footer a{color:var(--accent);text-decoration:none;font-weight:600;}
+    footer a:hover{color:var(--gold-light);}
+
+    @media (max-width:640px){
+      .hero{padding:120px 0 100px;}
+      .urgency-banner{font-size:1rem;padding:12px 0;}
+      .stats{grid-template-columns:1fr;gap:24px;}
+      section{margin:100px 0;}
+      .section-title{font-size:2.3rem;margin-bottom:60px;}
+      .card{padding:40px 28px;}
+      .final-cta{padding:90px 28px;}
+      .final-cta h2{font-size:3rem;}
+      .logo{height:110px;}
+      .promise-list{font-size:1.15rem;padding:0 20px;}
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <header>
+    <img src="images/logo1.png" alt="TichaAfrica" class="logo" loading="eager">
+  </header>
+
+  <!-- Urgency banner -->
+  <div class="urgency-banner">
+    We are inviting the first <strong>10,000 African teachers</strong> to co-create the future — spots are filling fast!
+  </div>
+
+  <section class="hero">
+    <div class="badge">Join The Founding Teacher Alliance</div>
+    <h1>African Teachers Leading<br>the AI Revolution</h1>
+
+    <!-- New section -->
+    <div style="font-size:1.4rem;font-weight:700;color:#1e293b;margin-bottom:32px;">
+      What We Will Create Together:
+    </div>
+    <ul class="promise-list">
+      <li><strong>Africa’s First Teacher-co-created AI Training</strong> — with our stories, languages and wisdom at its heart</li>
+      <li><strong>Mobile-first insight-driven tools</strong> that work on any phone, even low-bandwidth</li>
+      <li><strong>Policy-ready resources</strong> already aligned with UNESCO & AU standards</li>
+      <li><strong>Your voice in global conversations</strong> — shaping how AI enters African classrooms forever</li>
+    </ul>
+    <!-- End new section -->
+
+    <div class="motto">Teach Smart, Lead Change</div>
+    
+    <div class="cta-group">
+      <a href="Alliance-form.html" class="btn btn-primary">Join The Alliance — 60sec</a>
+      <a href="YOUR_INSIGHTS_FORM_LINK" class="btn btn-secondary">Share your Journey — 2 min</a>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-value" id="counter">1,247</div>
+        <div class="stat-label">Founding teachers so far across the continent</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">54</div>
+        <div class="stat-label">African countries</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">UNESCO • AU</div>
+        <div class="stat-label">Global standards aligned</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rest of your sections unchanged -->
+  <section>
+    <h2 class="section-title">The problem</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>AI tools are entering classrooms faster than teachers are prepared</h3>
+        <p>
+          If teachers are not first in the design room, decades of indigenous wisdom risk being lost. 
+          TichaAfrica ensures teachers lead the transition.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">The Solution — Led By Teachers</h2>
+    <div class="cards">
+      <div class="card">
+        <ul class="list">
+          <li>Teacher-led design. Every module starts with teacher insight.</li>
+          <li>Mobile-first delivery. Simple, low-bandwidth learning for every phone.</li>
+          <li>Free core training. Open access to foundational resources.</li>
+          <li>Policy-aligned. Mapped to UNESCO AI CFT and AU Continental AI Strategy.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">What Founding Teachers Gain</h2>
+    <div class="cards">
+      <div class="card">
+        <ul class="list">
+          <li>Shape the continent’s first teacher co-created AI curriculum</li>
+          <li>Earn a Founding Teacher digital badge and certificate</li>
+          <li>Early access to tools, templates and micro-courses</li>
+          <li>Be part of research and policy conversations with partners</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <h2>Join The Founding Teacher Alliance</h2>
+    <p>
+      We invite the first 10,000 teachers to co-create the curriculum and 
+      define how AI is used in African classrooms.
+    </p>
+    <div class="cta-group" style="margin-top:40px;">
+      <a href="YOUR_ALLIANCE_FORM_LINK" class="btn btn-primary" 
+         style="font-size:1.8rem;padding:28px 80px;background:#facc15;color:#1e293b;">
+        Yes — claim my spot
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p>© 2025 TichaAfrica • <strong style="color:#ca8a04;">Teach Smart, Lead Change</strong></p>
+  <p style="margin-top:12px;">
+    <a href="mailto:contact@tichaafrica.com">contact@tichaafrica.com</a> • 
+    <a href="#">WhatsApp</a> • <a href="#">Instagram</a> • <a href="#">X</a> • <a href="#">LinkedIn</a>
+  </p>
+</footer>
+
+<script>
+  const counter = document.getElementById('counter');
+  let count = 0;
+  const target = 1247;
+  const increment = Math.ceil(target / 80);
+  const timer = setInterval(() => {
+    count += increment;
+    if (count >= target) {
+      counter.textContent = target.toLocaleString();
+      clearInterval(timer);
+    } else {
+      counter.textContent = count.toLocaleString();
+    }
+  }, 40);
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('section > *:not(.final-cta)').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(40px)';
+    el.style.transition = 'all 1s cubic-bezier(0.16,1,0.3,1)';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
 
