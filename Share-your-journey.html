@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Your Teaching Journey — TichaAfrica</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f8f9fc;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --accent: #0d5c63;
+      --gold: #ca8a04;
+      --gold-light: #facc15;
+      --border: rgba(0,0,0,0.08);
+      --shadow: 0 20px 40px rgba(0,0,0,0.06);
+      --radius: 24px;
+      --transition: all 0.32s cubic-bezier(0.16,1,0.3,1);
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Inter",system-ui,sans-serif;
+      background:linear-gradient(135deg, #f0f9ff 0%, #fef3c7 100%);
+      color:var(--text);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:100vh;
+      padding:20px;
+    }
+    
+    .form-wrapper{
+      max-width:800px;
+      width:100%;
+    }
+
+    .logo{
+      text-align:center;
+      margin-bottom:32px;
+    }
+    .logo img{
+      height:110px;
+      filter:drop-shadow(0 4px 12px rgba(0,0,0,0.1));
+      transition:var(--transition);
+    }
+    
+    .form-header{
+      text-align:center;
+      margin-bottom:40px;
+      background:var(--surface);
+      padding:40px 32px;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    
+    .form-header h1{
+      font-size:clamp(2rem,5vw,2.8rem);
+      font-weight:900;
+      color:var(--accent);
+      margin-bottom:16px;
+    }
+    
+    .form-header p{
+      font-size:1.1rem;
+      color:var(--text-muted);
+      line-height:1.7;
+      max-width:600px;
+      margin:0 auto;
+    }
+    
+    .form-container{
+      background:var(--surface);
+      border-radius:var(--radius);
+      padding:56px 48px;
+      box-shadow:var(--shadow);
+      border:1px solid var(--border);
+      position:relative;
+      min-height:500px;
+    }
+    
+    .progress-container{
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      height:6px;
+      background:#e2e8f0;
+      border-radius:var(--radius) var(--radius) 0 0;
+      overflow:hidden;
+    }
+    
+    .progress{
+      height:100%;
+      background:linear-gradient(90deg, var(--gold), var(--gold-light));
+      transition:width .6s cubic-bezier(0.16,1,0.3,1);
+      width:0%;
+    }
+    
+    .step-indicator{
+      text-align:center;
+      font-size:0.9rem;
+      color:var(--text-muted);
+      margin-bottom:24px;
+      font-weight:600;
+    }
+    
+    .step{
+      opacity:0;
+      transform:translateY(20px);
+      transition:all .6s cubic-bezier(0.16,1,0.3,1);
+      display:none;
+      flex-direction:column;
+      justify-content:center;
+    }
+    .step.active{
+      opacity:1;
+      transform:translateY(0);
+      display:flex;
+    }
+    
+    h2{
+      font-size:clamp(1.8rem,4vw,2.4rem);
+      font-weight:900;
+      color:var(--text);
+      margin-bottom:12px;
+      line-height:1.3;
+    }
+    
+    .icon{
+      font-size:3.8rem;
+      margin-bottom:24px;
+      text-align:center;
+      display:block;
+      animation:breathe 4s ease-in-out infinite;
+    }
+    
+    @keyframes breathe{
+      0%, 100%{transform:scale(1);}
+      50%{transform:scale(1.1);}
+    }
+    
+    .question-text{
+      color:var(--text-muted);
+      font-size:1.1rem;
+      line-height:1.7;
+      margin-bottom:28px;
+      text-align:center;
+    }
+    
+    .context-box{
+      background:linear-gradient(135deg, #e0f2fe 0%, #fef3c7 100%);
+      padding:20px 24px;
+      border-radius:16px;
+      margin-bottom:24px;
+      font-size:1rem;
+      color:var(--text);
+      line-height:1.7;
+      border-left:4px solid var(--accent);
+    }
+    
+    .context-box strong{
+      color:var(--accent);
+      display:block;
+      margin-bottom:8px;
+    }
+    
+    .empathy-note{
+      background:#f8fafc;
+      padding:16px 20px;
+      border-radius:12px;
+      margin-bottom:20px;
+      font-size:0.95rem;
+      color:var(--text-muted);
+      line-height:1.6;
+      font-style:italic;
+      border-left:3px solid var(--gold-light);
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    textarea,
+    select{
+      width:100%;
+      padding:18px 20px;
+      border-radius:16px;
+      border:2px solid var(--border);
+      background:var(--surface);
+      color:var(--text);
+      font-size:1.05rem;
+      font-family:"Inter",system-ui,sans-serif;
+      transition:all .3s;
+      line-height:1.6;
+    }
+    
+    input::placeholder,
+    textarea::placeholder{
+      color:#94a3b8;
+      font-style:italic;
+    }
+    
+    input:focus,
+    textarea:focus,
+    select:focus{
+      outline:none;
+      border-color:var(--gold-light);
+      box-shadow:0 0 0 4px rgba(250,204,21,0.15);
+      transform:scale(1.01);
+    }
+    
+    textarea{
+      resize:vertical;
+      min-height:180px;
+    }
+    
+    .word-count{
+      text-align:right;
+      font-size:0.85rem;
+      color:var(--text-muted);
+      margin-top:8px;
+    }
+    
+    .input-group{
+      margin-bottom:24px;
+    }
+    
+    .input-label{
+      display:block;
+      font-weight:600;
+      color:var(--text);
+      margin-bottom:8px;
+      font-size:1rem;
+    }
+    
+    .scale-options{
+      display:flex;
+      justify-content:space-between;
+      gap:8px;
+      margin:20px 0;
+    }
+    
+    .scale-option{
+      flex:1;
+      text-align:center;
+    }
+    
+    .scale-option input[type="radio"]{
+      display:none;
+    }
+    
+    .scale-option label{
+      display:block;
+      padding:16px 8px;
+      border:2px solid var(--border);
+      border-radius:12px;
+      cursor:pointer;
+      transition:var(--transition);
+      background:var(--surface);
+      font-weight:600;
+      font-size:1.2rem;
+    }
+    
+    .scale-option input:checked + label{
+      background:var(--gold-light);
+      border-color:var(--gold);
+      color:var(--text);
+    }
+    
+    .scale-option label:hover{
+      border-color:var(--gold-light);
+      transform:translateY(-2px);
+    }
+    
+    .scale-labels{
+      display:flex;
+      justify-content:space-between;
+      font-size:0.9rem;
+      color:var(--text-muted);
+      margin-top:8px;
+    }
+    
+    .options{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    
+    .option{
+      display:flex;
+      align-items:flex-start;
+      padding:18px 20px;
+      border:2px solid var(--border);
+      border-radius:16px;
+      cursor:pointer;
+      transition:var(--transition);
+      background:var(--surface);
+    }
+    
+    .option:hover{
+      border-color:var(--gold-light);
+      background:linear-gradient(135deg, #fffef5 0%, #fefce8 100%);
+      transform:translateX(6px);
+    }
+    
+    .option input[type="radio"],
+    .option input[type="checkbox"]{
+      margin-right:16px;
+      margin-top:4px;
+      cursor:pointer;
+      width:22px;
+      height:22px;
+      accent-color:var(--gold-light);
+      flex-shrink:0;
+    }
+    
+    .option label{
+      cursor:pointer;
+      flex:1;
+      font-size:1.05rem;
+      color:var(--text);
+      font-weight:500;
+      line-height:1.5;
+    }
+    
+    .btn-next{
+      display:block;
+      width:100%;
+      padding:18px;
+      background:var(--gold-light);
+      color:var(--text);
+      font-weight:700;
+      font-size:1.2rem;
+      border-radius:999px;
+      border:none;
+      margin-top:32px;
+      cursor:pointer;
+      transition:var(--transition);
+      box-shadow:0 12px 32px rgba(202,138,4,0.2);
+    }
+    
+    .btn-next:hover{
+      transform:translateY(-4px);
+      box-shadow:0 20px 50px rgba(202,138,4,0.3);
+    }
+    
+    .btn-next:active{
+      transform:translateY(-2px);
+    }
+    
+    .skip-note{
+      text-align:center;
+      font-size:0.9rem;
+      color:var(--text-muted);
+      margin-top:16px;
+    }
+    
+    .thankyou{
+      text-align:center;
+      padding:40px 0;
+    }
+    
+    .thankyou h2{
+      font-size:3rem;
+      margin-bottom:24px;
+      color:var(--accent);
+      font-weight:900;
+    }
+    
+    .thankyou p{
+      font-size:1.2rem;
+      color:var(--text-muted);
+      line-height:1.8;
+      margin-bottom:20px;
+    }
+    
+    .appreciation{
+      background:linear-gradient(135deg, #e0f2fe 0%, #fef3c7 100%);
+      padding:32px;
+      border-radius:20px;
+      margin:32px 0;
+      border-left:4px solid var(--accent);
+    }
+    
+    .appreciation p{
+      font-size:1.15rem;
+      line-height:1.8;
+      color:var(--text);
+      font-style:italic;
+    }
+    
+    @media (max-width:640px){
+      .form-container{
+        padding:40px 28px;
+      }
+      .form-header{
+        padding:32px 24px;
+      }
+      .logo img{
+        height:80px;
+      }
+      h2{
+        font-size:1.6rem;
+      }
+      .icon{
+        font-size:3.2rem;
+      }
+      .question-text{
+        font-size:1.05rem;
+      }
+      .scale-options{
+        flex-wrap:wrap;
+      }
+      .scale-option{
+        flex-basis:calc(33.333% - 6px);
+      }
+      .scale-option label{
+        padding:12px 4px;
+        font-size:1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-wrapper">
+  <div class="logo">
+    <img src="../images/logo1.png" alt="TichaAfrica">
+  </div>
+
+  <div class="form-header">
+    <h1>Your Teaching Journey Matters</h1>
+    <p>We're not here to extract data — we're here to witness your story. Every classroom in Africa has its own heartbeat, its own struggles, its own brilliance. We want to understand yours.</p>
+  </div>
+
+  <div class="form-container">
+    <div class="progress-container">
+      <div class="progress" id="progress"></div>
+    </div>
+    <div class="step-indicator" id="stepIndicator">Question 1 of 15</div>
+
+    <!-- Q1: Introduction -->
+    <div class="step active" data-step="1">
+      <span class="icon">🌍💫</span>
+      <h2>Welcome to a conversation, not a survey</h2>
+      <p class="question-text">This will take about 6-8 minutes. There are no right or wrong answers — only your truth. Some questions are easy, others ask you to dig deeper. Take your time.</p>
+      <div class="context-box">
+        <strong>Why this matters:</strong>
+        We're building AI tools for African education. But before we build anything, we need to understand the real experiences of teachers like you — the moments of joy, the weight of challenges, the dreams that keep you going.
+      </div>
+      <button class="btn-next" onclick="startForm()">I'm ready to share my journey →</button>
+    </div>
+
+    <!-- Q2: Basic Info -->
+    <div class="step" data-step="2">
+      <span class="icon">👤</span>
+      <h2>First, let's get to know you</h2>
+      <div class="input-group">
+        <label class="input-label">What's your name?</label>
+        <input type="text" id="name" placeholder="Your first name is enough" required>
+      </div>
+      <div class="input-group">
+        <label class="input-label">Where are you teaching?</label>
+        <input type="text" id="location" placeholder="City/Town, Country" required>
+      </div>
+      <div class="input-group">
+        <label class="input-label">How many years have you been teaching?</label>
+        <input type="number" id="years" placeholder="Number of years" min="0" max="50">
+      </div>
+      <button class="btn-next" onclick="nextStep()">Continue →</button>
+    </div>
+
+    <!-- Q3: Teaching Context -->
+    <div class="step" data-step="3">
+      <span class="icon">🏫</span>
+      <h2>Tell us about your classroom</h2>
+      <p class="question-text">We want to see what you see. Don't worry about making it perfect — just be real.</p>
+      <div class="input-group">
+        <label class="input-label">What do you teach?</label>
+        <input type="text" id="subject" placeholder="Subject(s) and grade level">
+      </div>
+      <div class="input-group">
+        <label class="input-label">How many students do you typically have in a class?</label>
+        <input type="number" id="classSize" placeholder="Number of students">
+      </div>
+      <div class="empathy-note">
+        Optional: Describe your classroom in 2-3 sentences. What does it look like? How does it feel?
+      </div>
+      <textarea id="classroomDesc" placeholder="e.g., I teach in a small room with 60 JSS2 students. Half sit on benches, others on the floor. We share five textbooks among us, but there's a beautiful tree outside our window..."></textarea>
+      <div class="word-count" id="counter1">0 words</div>
+      <button class="btn-next" onclick="nextStep()">Continue →</button>
+    </div>
+
+    <!-- Q4: Why Teaching -->
+    <div class="step" data-step="4">
+      <span class="icon">💝</span>
+      <h2>Why did you become a teacher?</h2>
+      <p class="question-text">Take us back to the beginning. What called you to this work?</p>
+      <textarea id="whyTeach" placeholder="Was it a teacher who believed in you? A moment when you realized you could make a difference? A need in your community? Share what brought you here..."></textarea>
+      <div class="word-count" id="counter2">0 words</div>
+      <button class="btn-next" onclick="nextStep()">Continue →</button>
+    </div>
+
+    <!-- Q5: Best Moment -->
+    <div class="step" data-step="5">
+      <span class="icon">✨</span>
+      <h2>Tell us about your proudest teaching moment</h2>
+      <p class="question-text">That moment when everything clicked. When a student's eyes lit up. When you remembered why you do this.</p>
+      <div class="empathy-note">
+        This is the moment we want to protect and multiply. Help us understand what makes teaching magical for you.
+      </div>
+      <textarea id="proudMoment" placeholder="Paint the picture... What happened? Who was involved? How did it feel? What made it special?"></textarea>
+      <div class="word-count" id="counter3">0 words</div>
+      <button class="btn-next" onclick="nextStep()">Continue →</button>
+    </div>
+
+    <!-- Q6: Daily Challenges -->
+    <div class="step" data-step="6">
+      <span class="icon">⚡</span>
+      <h2>What makes teaching hard for you right now?</h2>
+      <p class="question-text">Select all that apply. Be honest — we can't help if we don't understand.</p>
+      <div class="options">
+        <div class="option">
+          <input type="checkbox" id="challenge1" name="challenges" value="resources">
+          <label for="challenge1">Lack of teaching materials (books, supplies, technology)</label>
+        </div>
+        <div class="option">
+          <input type="checkbox" id="challenge2" name="challenges" value="classSize">
+          <label for="challenge2">Too many students in one class</label>
+        </div>
+        <div class="option">
+          <input type="checkbox" id="challenge3" name="challenges" value="curriculum">
+          <label for="challenge3">Curriculum that doesn't fit our students' reality</label>
+        </div>
+        <div class="option">
+          <input type="checkbox" id="challenge4" name="challenges" value="support">
+          <label for="challenge4">No professional development or mentorship</label>
+        </div>
+        <div class="option">
+          <input type="checkbox" id="challenge5" name="challenges" value="language">
+          <label for="challenge5">Language barriers (teaching in a language students don't speak at home)</label>
+        </div>
+        <div class="option">
+          <input type="checkbox" id="challenge6" name="challenges" value="infrastructure">
+          <label for="challenge6">Poor infrastructure (no electricity, water, proper buildings)</label>
+        </div>
+        <div class="option">
+          <input type="checkbox" id="challenge7" name="challenges" value="pay">
+          <label for="challenge7">Low pay and financial stress</label>
+        </div>
+        <div class="option">
+          <input type="checkbox" id="challenge8" name="challenges" value="recognition">
+          <label for="challenge8">Feeling undervalued by society/government</label>
+        </div>
+        <div class="option">
+          <input type="checkbox" id="challenge9" name="challenges" value="trauma">
+          <label for="challenge9">Students dealing with trauma, poverty, or instability</label>
+        </div>
+      </div>
+      <button class="btn-next" onclick="nextStep()">Continue →</button>
+    </div>
+
+    <!-- Q7: Deepest Challenge -->
+    <div class="step" data-step="7">
+      <span class="icon">🌧️</span>
+      <h2>What's the one challenge that weighs on you most?</h2>
+      <p class="question-text">From what you selected, which one keeps you up at night? The one that feels like carrying a stone in your chest?</p>
+      <div class="empathy-note">
+        You don't need to solve it right now. Just name it. Sometimes being heard is the first step.
+      </div>
+      <textarea id="hardestChallenge" placeholder="Be as honest as you need to be. What's really hard?"></textarea>
+      <div class="word-count" id="counter4">0 words</div>
+      <button class="btn-next" onclick="nextStep()">Continue →</button>
+    </div>
+
+    <!-- Q8: Student Potential -->
+    <div class="step" data-step="8">
+      <span class="icon">🌱</span>
+      <h2>When you look at your students, what do you see?</h2>
+      <p class="question-text">Not what they score on tests — what potential do you see in them?</p>
+      <textarea id="studentPotential" placeholder="e.g., I see future doctors who will serve our village. I see artists who will tell our stories. I see leaders who will transform this country..."></textarea>
+      <div class="word-count" id="counter5">0 words</div>
+      <button class="btn-next" onclick="nextStep()">Continue →</button>
+    </div>
+
+    <!-- Q9: Technology Access -->
+    <div class="step" data-step="9">
+      <span class="icon">📱</span>
+      <h2>Let's talk about technology in your classroom</h2>
+      <p class="question-text">What's your actual situation — not what you wish it was?</p>
+      <div class="options">
+        <div class="option">
+          <input type="radio" id="tech1" name="tech" value="none">
+          <label for="tech1">I have no reliable access to internet or devices for teaching</label>
+        </div>
+        <div class="option">
+          <input type="radio" id="tech2" name="tech" value="phone">
+          <label for="tech2">I have my own smartphone but students don't have devices</label>
+        </div>
+        <div class="option">
+          <input type="radio" id="tech3" name="tech" value="limited">
+          <label for="tech3">We have some devices but internet is very unreliable</label>
+        </div>
+        <div class="option">
+          <input type="radio" id="tech4" name="tech" value="decent">
+          <label for="tech4">We have decent access to devices and internet</label>
+        </div>
+        <div class="option">
+          <input type="radio" id="tech5" name="tech" value="good">
+          <label for="tech5">We have good technology infrastructure</label>
+        </div>
+      </div>
+      <button class="btn-next" onclick="nextStep()">Continue →</button>
+    </div>
+
+    <!-- Q10: AI Awareness -->
+    <div class="step" data-step="10">
+      <span class="icon">🤖</span>
+      <h2>Have you heard about AI in education?</h2>
+      <p class="question-text">ChatGPT, AI tutors, smart learning tools — any of these?</p>
+      <div class="options">
+        <div class="option">
+          <input type="radio" id="ai1" name="aiAware" value="yes-using">
+          <label for="ai1">Yes, and I've tried using some AI tools</label>
+        </div>
+        <div class="option">
+          <input type="radio" id="ai2" name="aiAware" value="yes-curious">
+          <label for="ai2">Yes, I'm curious but haven't tried anything yet</label>
+        </div>
+        <div class="option">
+          <input type="radio" id="ai3" name="aiAware" value="yes-skeptical">
+          <label for="ai3">Yes, but I'm skeptical about it</label>
+        </div>
+     
