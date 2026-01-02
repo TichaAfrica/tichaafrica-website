@@ -127,7 +127,7 @@
       border-radius:12px;
     }
     
-    input,textarea{
+    input,textarea,select{
       width:100%;
       padding:18px 20px;
       border-radius:16px;
@@ -137,13 +137,21 @@
       font-size:1.1rem;
       font-family:"Inter",system-ui,sans-serif;
       transition:all .3s;
+      margin-bottom:20px;
+    }
+    
+    select{
+      appearance:none;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23475569' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+      background-repeat:no-repeat;
+      background-position:right 20px center;
     }
     
     input::placeholder,textarea::placeholder{
       color:#94a3b8;
     }
     
-    input:focus,textarea:focus{
+    input:focus,textarea:focus,select:focus{
       outline:none;
       border-color:var(--gold-light);
       box-shadow:0 0 0 4px rgba(250,204,21,0.15);
@@ -153,45 +161,6 @@
     textarea{
       resize:vertical;
       min-height:140px;
-    }
-    
-    .options{
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-    }
-    
-    .option{
-      display:flex;
-      align-items:center;
-      padding:18px 20px;
-      border:2px solid var(--border);
-      border-radius:16px;
-      cursor:pointer;
-      transition:var(--transition);
-      background:var(--surface);
-    }
-    
-    .option:hover{
-      border-color:var(--gold-light);
-      background:linear-gradient(135deg, #fffef5 0%, #fefce8 100%);
-      transform:translateX(8px);
-    }
-    
-    .option input[type="radio"]{
-      margin-right:16px;
-      cursor:pointer;
-      width:24px;
-      height:24px;
-      accent-color:var(--gold-light);
-    }
-    
-    .option label{
-      cursor:pointer;
-      flex:1;
-      font-size:1.1rem;
-      color:var(--text);
-      font-weight:500;
     }
     
     .btn-next{
@@ -274,7 +243,7 @@
 
 <div class="form-wrapper">
   <div class="logo">
-    <img src="../images/logo1.png" alt="TichaAfrica">
+    <img src="/images/logo1.png" alt="TichaAfrica">
   </div>
 
   <div class="form-container">
@@ -283,110 +252,97 @@
     <!-- STEP 1: Welcome -->
     <div class="step active" data-step="1">
       <span class="emoji">🌍✨</span>
-      <h1>Welcome, Change-Maker!</h1>
-      <p>You're about to become one of the first 10,000 educators co-creating Africa's AI future. This isn't just a form — it's the beginning of a movement where your voice shapes how technology serves our continent's classrooms.</p>
-      <button class="btn-next" onclick="startForm()">I'm ready to lead this change →</button>
+      <h1>Welcome, Teacher!</h1>
+      <p>You’re joining the first 10,000 educators shaping Africa’s AI education future — with your voice at the centre.</p>
+      <button class="btn-next" onclick="startForm()">I’m ready →</button>
     </div>
 
-    <!-- STEP 2: Identity -->
+    <!-- STEP 2: Name -->
     <div class="step" data-step="2">
-      <span class="emoji">👋🏾</span>
-      <h1>First, what name carries your story?</h1>
-      <p>The name you're proud to be called by your students, colleagues, and community</p>
+      <span class="emoji">👋</span>
+      <h1>Your name</h1>
+      <p>How should we address you?</p>
       <input type="text" id="name" placeholder="e.g. Amara Okonkwo" required>
       <button class="btn-next" onclick="nextStep()">Continue →</button>
     </div>
 
-    <!-- STEP 3: Location -->
+    <!-- STEP 3: School Type (Rural/Urban) -->
     <div class="step" data-step="3">
-      <span class="emoji">📍</span>
-      <h1>Where is your classroom?</h1>
-      <p>Help us map this movement — from Lagos to Nairobi, from Kigali to Accra. Every corner of our continent matters.</p>
-      <input type="text" id="location" placeholder="e.g. Kampala, Uganda" required>
+      <span class="emoji">🏫</span>
+      <h1>Your school type</h1>
+      <p>Where do you teach?</p>
+      <select id="schoolType" required>
+        <option value="" disabled selected>Select one</option>
+        <option value="rural">Rural</option>
+        <option value="urban">Urban</option>
+        <option value="peri-urban">Peri-urban / semi-urban</option>
+      </select>
       <button class="btn-next" onclick="nextStep()">Continue →</button>
     </div>
 
-    <!-- STEP 4: Teaching Context -->
+    <!-- STEP 4: Country & City Dropdown -->
     <div class="step" data-step="4">
-      <span class="emoji">📚</span>
-      <h1>What subject brings you to class every day?</h1>
-      <p>Mathematics? Languages? Science? The arts? Share what you teach and at what level.</p>
-      <input type="text" id="subject" placeholder="e.g. Secondary English & Literature, JSS1-3" required>
+      <span class="emoji">📍</span>
+      <h1>Your country & city</h1>
+      <p>Select from our 10 pilot countries</p>
+      <select id="country" required onchange="updateCities()">
+        <option value="" disabled selected>Select your country</option>
+        <option value="nigeria">Nigeria</option>
+        <option value="kenya">Kenya</option>
+        <option value="ghana">Ghana</option>
+        <option value="south_africa">South Africa</option>
+        <option value="ethiopia">Ethiopia</option>
+        <option value="uganda">Uganda</option>
+        <option value="tanzania">Tanzania</option>
+        <option value="rwanda">Rwanda</option>
+        <option value="egypt">Egypt</option>
+        <option value="senegal">Senegal</option>
+      </select>
+      <select id="city" style="margin-top:20px;" required>
+        <option value="" disabled selected>Select city (after country)</option>
+      </select>
       <button class="btn-next" onclick="nextStep()">Continue →</button>
     </div>
 
-    <!-- STEP 5: Vision for AI -->
+    <!-- STEP 5: Class / Subject -->
     <div class="step" data-step="5">
-      <span class="emoji">💡</span>
-      <h1>Imagine AI that truly works for African classrooms...</h1>
-      <p>What's ONE thing you wish AI could help you do better? Think beyond "grading" — what would genuinely transform your teaching or your students' learning?</p>
-      <textarea id="aiVision" placeholder="e.g. Help my students think critically in their mother tongue, not just memorize in English..." required></textarea>
+      <span class="emoji">📚</span>
+      <h1>Your class / subject</h1>
+      <p>What do you teach and at what level?</p>
+      <input type="text" id="subject" placeholder="e.g. Primary 4 Mathematics" required>
       <button class="btn-next" onclick="nextStep()">Continue →</button>
     </div>
 
-    <!-- STEP 6: Current Reality -->
+    <!-- STEP 6: The ONE Listening Question -->
     <div class="step" data-step="6">
-      <span class="emoji">🤔</span>
-      <h1>What's holding you back right now?</h1>
-      <p>Be honest: What's the biggest barrier between you and using technology effectively in your classroom today?</p>
-      <div class="options">
-        <div class="option">
-          <input type="radio" id="barrier1" name="barrier" value="internet">
-          <label for="barrier1">Unreliable or no internet access</label>
-        </div>
-        <div class="option">
-          <input type="radio" id="barrier2" name="barrier" value="devices">
-          <label for="barrier2">Lack of devices (phones, laptops, tablets)</label>
-        </div>
-        <div class="option">
-          <input type="radio" id="barrier3" name="barrier" value="training">
-          <label for="barrier3">I don't know where to start or what tools to trust</label>
-        </div>
-        <div class="option">
-          <input type="radio" id="barrier4" name="barrier" value="time">
-          <label for="barrier4">No time to learn new tools on top of everything else</label>
-        </div>
-        <div class="option">
-          <input type="radio" id="barrier5" name="barrier" value="relevant">
-          <label for="barrier5">Tools don't fit our curriculum or culture</label>
-        </div>
-      </div>
+      <span class="emoji">💡</span>
+      <h1>Your voice</h1>
+      <p>As a teacher, what’s one real challenge in your classroom today that the right tools or support — designed by teachers like you — could fix?</p>
+      <p style="font-size:1rem;margin-top:-16px;margin-bottom:32px;">Answer in any language. Short or long — your experience matters.</p>
+      <textarea id="challenge" rows="5" placeholder="Be honest. We’re listening…" required></textarea>
       <button class="btn-next" onclick="nextStep()">Continue →</button>
     </div>
 
-    <!-- STEP 7: Hope & Possibility -->
+    <!-- STEP 7: Contact -->
     <div class="step" data-step="7">
-      <span class="emoji">🌟</span>
-      <h1>What would change in your classroom if barriers disappeared?</h1>
-      <p>Paint us a picture: If you had the right AI tools, support, and training tomorrow — what would your students be doing differently?</p>
-      <textarea id="possibility" placeholder="e.g. My students would be creating documentaries about our local history, not just copying notes from the board..." required></textarea>
-      <button class="btn-next" onclick="nextStep()">Continue →</button>
-    </div>
-
-    <!-- STEP 8: Connection Method -->
-    <div class="step" data-step="8">
       <span class="emoji">📱</span>
-      <h1>How can we reach you to co-create this future?</h1>
-      <p>WhatsApp is our primary channel for updates, training invites, and connecting you with fellow Founding Teachers</p>
-      <input type="tel" id="contact" placeholder="+234 XXX XXX XXXX" required>
-      <p style="font-size:0.95rem;margin-top:16px;color:var(--text-muted);">Optional: Add your email if you prefer</p>
-      <input type="email" id="email" placeholder="your.email@example.com">
+      <h1>Your contact</h1>
+      <p>WhatsApp number or email (we’ll send your welcome)</p>
+      <input type="text" id="contact" placeholder="+234…" required>
       <button class="btn-next" onclick="submitForm()">Join the Alliance →</button>
     </div>
 
-    <!-- STEP 9: Thank You -->
-    <div class="step" data-step="9">
+    <!-- STEP 8: Thank You -->
+    <div class="step" data-step="8">
       <div class="thankyou">
-        <span class="emoji">🎉🇦🇫</span>
-        <h2>You're officially a Founding Teacher!</h2>
-        <p>Welcome to <strong>The Alliance</strong>, <span id="displayName"></span>.</p>
+        <span class="emoji">🎉</span>
+        <h2>You’re in!</h2>
+        <p>Welcome to <strong>The Founding Teacher Alliance</strong>, <span id="displayName"></span>.</p>
         <div class="subtitle-highlight">
-          Your voice will now shape how AI enters African classrooms — not as an imported solution, but as a tool that honors our wisdom, languages, and lived experiences.
+          Your answer will help shape the tools we build together — for African classrooms, by African teachers.
         </div>
-        <p style="margin-top:32px;">✅ You'll receive a welcome message on WhatsApp within 24 hours<br>
-        ✅ Watch for invites to co-creation workshops and pilot programs<br>
-        ✅ Your Founding Teacher digital badge is coming soon</p>
-        <div class="motto">Teach Smart, Lead Change, Celebrate Africa</div>
+        <p style="margin-top:32px;">Check WhatsApp or email for your welcome message within 24 hours.</p>
+        <div class="motto">Teach Smart, Lead Change</div>
       </div>
     </div>
   </div>
@@ -397,46 +353,54 @@
   const progress = document.getElementById('progress');
   let current = 0;
 
+  const cities = {
+    nigeria: ["Lagos", "Abuja", "Port Harcourt", "Kano", "Ibadan", "Enugu", "Benin City", "Kaduna", "Onitsha", "Jos"],
+    kenya: ["Nairobi", "Mombasa", "Kisumu", "Nakuru", "Eldoret", "Thika", "Nyeri", "Machakos", "Kitale", "Garissa"],
+    ghana: ["Accra", "Kumasi", "Tamale", "Takoradi", "Cape Coast", "Sunyani", "Ho", "Koforidua", "Techiman", "Obuasi"],
+    south_africa: ["Johannesburg", "Cape Town", "Durban", "Pretoria", "Gqeberha", "Bloemfontein", "East London", "Pietermaritzburg", "Polokwane", "Mbombela"],
+    ethiopia: ["Addis Ababa", "Dire Dawa", "Mekelle", "Gondar", "Bahir Dar", "Hawassa", "Adama", "Jimma", "Dessie", "Harar"],
+    uganda: ["Kampala", "Gulu", "Lira", "Mbarara", "Jinja", "Mbale", "Arua", "Fort Portal", "Hoima", "Soroti"],
+    tanzania: ["Dar es Salaam", "Dodoma", "Mwanza", "Arusha", "Mbeya", "Morogoro", "Tanga", "Zanzibar City", "Kigoma", "Moshi"],
+    rwanda: ["Kigali", "Butare", "Gisenyi", "Musanze", "Byumba", "Ruhengeri", "Nyagatare", "Muhanga", "Huye", "Karongi"],
+    egypt: ["Cairo", "Alexandria", "Giza", "Shubra El Kheima", "Port Said", "Suez", "Luxor", "Mansoura", "Tanta", "Asyut"],
+    senegal: ["Dakar", "Thiès", "Kaolack", "Saint-Louis", "Ziguinchor", "Touba", "Rufisque", "Mbour", "Diourbel", "Tambacounda"]
+  };
+
+  function updateCities() {
+    const country = document.getElementById('country').value;
+    const citySelect = document.getElementById('city');
+    citySelect.innerHTML = '<option value="" disabled selected>Select your city</option>';
+
+    if (country && cities[country]) {
+      cities[country].forEach(city => {
+        const option = document.createElement('option');
+        option.value = city;
+        option.textContent = city;
+        citySelect.appendChild(option);
+      });
+    }
+  }
+
   function startForm() {
     steps[current].classList.remove('active');
     current++;
     steps[current].classList.add('active');
     progress.style.width = (current / (steps.length - 1)) * 100 + '%';
-    
-    const nextInput = steps[current].querySelector('input, textarea');
-    if (nextInput) {
-      setTimeout(() => nextInput.focus(), 400);
-    }
+    const nextInput = steps[current].querySelector('input');
+    if (nextInput) setTimeout(() => nextInput.focus(), 400);
   }
 
   function nextStep() {
     const currentStep = steps[current];
-    const input = currentStep.querySelector('input[required], textarea[required]');
-    const radio = currentStep.querySelector('input[type="radio"]:checked');
+    const inputs = currentStep.querySelectorAll('input[required], select[required]');
 
-    // Check if this step requires a radio selection
-    const hasRadioOptions = currentStep.querySelector('input[type="radio"]');
-    
-    if (hasRadioOptions && !radio) {
-      const options = currentStep.querySelectorAll('.option');
-      options.forEach(opt => {
-        opt.style.borderColor = '#ff6b35';
-      });
-      setTimeout(() => {
-        options.forEach(opt => {
-          opt.style.borderColor = '';
-        });
-      }, 2000);
-      return;
-    }
-
-    if (input && !input.value.trim()) {
-      input.style.borderColor = '#ff6b35';
-      input.focus();
-      setTimeout(() => {
-        input.style.borderColor = '';
-      }, 2000);
-      return;
+    for (let input of inputs) {
+      if (!input.value.trim()) {
+        input.style.borderColor = '#ff6b35';
+        input.focus();
+        setTimeout(() => input.style.borderColor = '', 2000);
+        return;
+      }
     }
 
     currentStep.classList.remove('active');
@@ -444,71 +408,49 @@
     steps[current].classList.add('active');
     progress.style.width = (current / (steps.length - 1)) * 100 + '%';
 
-    const nextInput = steps[current].querySelector('input, textarea');
-    if (nextInput && nextInput.type !== 'radio') {
-      setTimeout(() => nextInput.focus(), 400);
-    }
+    const nextInput = steps[current].querySelector('input, select');
+    if (nextInput) setTimeout(() => nextInput.focus(), 400);
   }
 
   function submitForm() {
-    const currentStep = steps[current];
-    const input = currentStep.querySelector('input[required]');
-
-    if (input && !input.value.trim()) {
-      input.style.borderColor = '#ff6b35';
-      input.focus();
-      setTimeout(() => {
-        input.style.borderColor = '';
-      }, 2000);
+    const contact = document.getElementById('contact');
+    if (!contact.value.trim()) {
+      contact.style.borderColor = '#ff6b35';
+      contact.focus();
+      setTimeout(() => contact.style.borderColor = '', 2000);
       return;
     }
 
-    // Collect values
     const data = {
       name: document.getElementById('name').value.trim(),
-      location: document.getElementById('location').value.trim(),
+      schoolType: document.getElementById('schoolType').value,
+      country: document.getElementById('country').options[document.getElementById('country').selectedIndex].text,
+      city: document.getElementById('city').options[document.getElementById('city').selectedIndex].text,
       subject: document.getElementById('subject').value.trim(),
-      aiVision: document.getElementById('aiVision').value.trim(),
-      barrier: document.querySelector('input[name="barrier"]:checked')?.value,
-      possibility: document.getElementById('possibility').value.trim(),
-      contact: document.getElementById('contact').value.trim(),
-      email: document.getElementById('email').value.trim()
+      challenge: document.getElementById('challenge').value.trim(),
+      contact: contact.value.trim(),
+      timestamp: new Date().toISOString()
     };
 
-    console.log("Form submitted:", data);
-    
-    // Display name in thank you message
-    document.getElementById('displayName').textContent = data.name;
-    
-    // TODO: send data to server
-    // fetch('/submit', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data)})
+    console.log('Founding Teacher Joined:', data);
+    // fetch('YOUR_WEBHOOK_URL', {method:'POST',body:JSON.stringify(data)});
 
-    // Show thank you step
+    document.getElementById('displayName').textContent = data.name.split(' ')[0] || data.name;
+
     steps[current].classList.remove('active');
     current++;
     steps[current].classList.add('active');
     progress.style.width = '100%';
   }
 
-  // Handle Enter key
   document.addEventListener('keydown', e => {
     if (e.key === 'Enter' && !e.shiftKey) {
-      const activeStep = steps[current];
-      const isTextarea = activeStep.querySelector('textarea');
-      
-      if (!isTextarea) {
-        e.preventDefault();
-        if (current === 0) {
-          startForm();
-        } else if (current === steps.length - 2) {
-          submitForm();
-        } else if (current < steps.length - 2) {
-          nextStep();
-        }
-      }
+      e.preventDefault();
+      if (current === 0) startForm();
+      else if (current === steps.length - 2) submitForm();
+      else nextStep();
     }
   });
 </script>
-
 </body>
-      </html>
+</html>
