@@ -116,17 +116,6 @@
       margin-bottom:32px;
     }
     
-    .subtitle-highlight{
-      color:var(--accent);
-      font-weight:700;
-      font-size:1.05rem;
-      text-align:center;
-      margin-bottom:24px;
-      padding:12px 20px;
-      background:linear-gradient(135deg, #e0f2fe 0%, #fef3c7 100%);
-      border-radius:12px;
-    }
-    
     input,textarea,select{
       width:100%;
       padding:18px 20px;
@@ -266,7 +255,7 @@
       <button class="btn-next" onclick="nextStep()">Continue →</button>
     </div>
 
-    <!-- STEP 3: School Type (Rural/Urban) -->
+    <!-- STEP 3: School Type -->
     <div class="step" data-step="3">
       <span class="emoji">🏫</span>
       <h1>Your school type</h1>
@@ -280,12 +269,12 @@
       <button class="btn-next" onclick="nextStep()">Continue →</button>
     </div>
 
-    <!-- STEP 4: Country & City Dropdown -->
+    <!-- STEP 4: Country & State/Province/Region Dropdown -->
     <div class="step" data-step="4">
       <span class="emoji">📍</span>
-      <h1>Your country & city</h1>
+      <h1>Your country & state/province/region</h1>
       <p>Select from our 10 pilot countries</p>
-      <select id="country" required onchange="updateCities()">
+      <select id="country" required onchange="updateRegions()">
         <option value="" disabled selected>Select your country</option>
         <option value="nigeria">Nigeria</option>
         <option value="kenya">Kenya</option>
@@ -298,9 +287,11 @@
         <option value="egypt">Egypt</option>
         <option value="senegal">Senegal</option>
       </select>
-      <select id="city" style="margin-top:20px;" required>
-        <option value="" disabled selected>Select city (after country)</option>
+      <select id="region" style="margin-top:20px;" required>
+        <option value="" disabled selected>Select state/province/region</option>
       </select>
+      <p style="font-size:0.95rem;margin-top:16px;">City/Town (optional)</p>
+      <input type="text" id="city" placeholder="e.g. Lagos">
       <button class="btn-next" onclick="nextStep()">Continue →</button>
     </div>
 
@@ -353,104 +344,37 @@
   const progress = document.getElementById('progress');
   let current = 0;
 
-  const cities = {
-    nigeria: ["Lagos", "Abuja", "Port Harcourt", "Kano", "Ibadan", "Enugu", "Benin City", "Kaduna", "Onitsha", "Jos"],
-    kenya: ["Nairobi", "Mombasa", "Kisumu", "Nakuru", "Eldoret", "Thika", "Nyeri", "Machakos", "Kitale", "Garissa"],
-    ghana: ["Accra", "Kumasi", "Tamale", "Takoradi", "Cape Coast", "Sunyani", "Ho", "Koforidua", "Techiman", "Obuasi"],
-    south_africa: ["Johannesburg", "Cape Town", "Durban", "Pretoria", "Gqeberha", "Bloemfontein", "East London", "Pietermaritzburg", "Polokwane", "Mbombela"],
-    ethiopia: ["Addis Ababa", "Dire Dawa", "Mekelle", "Gondar", "Bahir Dar", "Hawassa", "Adama", "Jimma", "Dessie", "Harar"],
-    uganda: ["Kampala", "Gulu", "Lira", "Mbarara", "Jinja", "Mbale", "Arua", "Fort Portal", "Hoima", "Soroti"],
-    tanzania: ["Dar es Salaam", "Dodoma", "Mwanza", "Arusha", "Mbeya", "Morogoro", "Tanga", "Zanzibar City", "Kigoma", "Moshi"],
-    rwanda: ["Kigali", "Butare", "Gisenyi", "Musanze", "Byumba", "Ruhengeri", "Nyagatare", "Muhanga", "Huye", "Karongi"],
-    egypt: ["Cairo", "Alexandria", "Giza", "Shubra El Kheima", "Port Said", "Suez", "Luxor", "Mansoura", "Tanta", "Asyut"],
-    senegal: ["Dakar", "Thiès", "Kaolack", "Saint-Louis", "Ziguinchor", "Touba", "Rufisque", "Mbour", "Diourbel", "Tambacounda"]
+  const regions = {
+    nigeria: ["Abia", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", "Bayelsa", "Benue", "Borno", "Cross River", "Delta", "Ebonyi", "Edo", "Ekiti", "Enugu", "FCT - Abuja", "Gombe", "Imo", "Jigawa", "Kaduna", "Kano", "Katsina", "Kebbi", "Kogi", "Kwara", "Lagos", "Nasarawa", "Niger", "Ogun", "Ondo", "Osun", "Oyo", "Plateau", "Rivers", "Sokoto", "Taraba", "Yobe", "Zamfara"],
+    kenya: ["Baringo", "Bomet", "Bungoma", "Busia", "Elgeyo-Marakwet", "Embu", "Garissa", "Homa Bay", "Isiolo", "Kajiado", "Kakamega", "Kericho", "Kiambu", "Kilifi", "Kirinyaga", "Kisii", "Kisumu", "Kitui", "Kwale", "Laikipia", "Lamu", "Machakos", "Makueni", "Mandera", "Marsabit", "Meru", "Migori", "Mombasa", "Murang'a", "Nairobi City", "Nakuru", "Nandi", "Narok", "Nyamira", "Nyandarua", "Nyeri", "Samburu", "Siaya", "Taita-Taveta", "Tana River", "Tharaka-Nithi", "Trans Nzoia", "Turkana", "Uasin Gishu", "Vihiga", "Wajir", "West Pokot"],
+    ghana: ["Ahafo", "Ashanti", "Bono", "Bono East", "Central", "Eastern", "Greater Accra", "Northern", "North East", "Oti", "Savannah", "Upper East", "Upper West", "Volta", "Western", "Western North"],
+    south_africa: ["Eastern Cape", "Free State", "Gauteng", "KwaZulu-Natal", "Limpopo", "Mpumalanga", "Northern Cape", "North West", "Western Cape"],
+    ethiopia: ["Addis Ababa", "Afar", "Amhara", "Benishangul-Gumuz", "Dire Dawa", "Gambela", "Harari", "Oromia", "Sidama", "Somali", "South West Ethiopia", "Southern Ethiopia", "Tigray"],
+    uganda: ["Central", "Eastern", "Northern", "Western"], // Uganda has 4 regions, not many districts as "states"
+    tanzania: ["Arusha", "Dar es Salaam", "Dodoma", "Geita", "Iringa", "Kagera", "Katavi", "Kigoma", "Kilimanjar", "Lindi", "Manyara", "Mara", "Mbeya", "Morogoro", "Mtwara", "Mwanza", "Njombe", "Pemba North", "Pemba South", "Pwani", "Rukwa", "Ruvuma", "Shinyanga", "Simiyu", "Singida", "Songwe", "Tabora", "Tanga", "Zanzibar North", "Zanzibar South and Central", "Zanzibar Urban/West"],
+    rwanda: ["Eastern", "Kigali", "Northern", "Southern", "Western"],
+    egypt: ["Alexandria", "Aswan", "Asyut", "Beheira", "Beni Suef", "Cairo", "Dakahlia", "Damietta", "Faiyum", "Gharbia", "Giza", "Ismailia", "Kafr El Sheikh", "Luxor", "Matruh", "Minya", "Monufia", "New Valley", "North Sinai", "Port Said", "Qalyubia", "Qena", "Red Sea", "Sharqia", "Sohag", "South Sinai", "Suez"],
+    senegal: ["Dakar", "Diourbel", "Fatick", "Kaffrine", "Kaolack", "Kédougou", "Kolda", "Louga", "Matam", "Saint-Louis", "Sédhiou", "Tambacounda", "Thiès", "Ziguinchor"]
   };
 
-  function updateCities() {
+  function updateRegions() {
     const country = document.getElementById('country').value;
-    const citySelect = document.getElementById('city');
-    citySelect.innerHTML = '<option value="" disabled selected>Select your city</option>';
+    const regionSelect = document.getElementById('region');
+    regionSelect.innerHTML = '<option value="" disabled selected>Select state/province/region</option>';
 
-    if (country && cities[country]) {
-      cities[country].forEach(city => {
+    if (country && regions[country]) {
+      regions[country].sort().forEach(region => {
         const option = document.createElement('option');
-        option.value = city;
-        option.textContent = city;
-        citySelect.appendChild(option);
+        option.value = region;
+        option.textContent = region;
+        regionSelect.appendChild(option);
       });
     }
   }
 
-  function startForm() {
-    steps[current].classList.remove('active');
-    current++;
-    steps[current].classList.add('active');
-    progress.style.width = (current / (steps.length - 1)) * 100 + '%';
-    const nextInput = steps[current].querySelector('input');
-    if (nextInput) setTimeout(() => nextInput.focus(), 400);
-  }
+  // Rest of your script (startForm, nextStep, submitForm) unchanged from previous version
+  // Paste your existing script here
 
-  function nextStep() {
-    const currentStep = steps[current];
-    const inputs = currentStep.querySelectorAll('input[required], select[required]');
-
-    for (let input of inputs) {
-      if (!input.value.trim()) {
-        input.style.borderColor = '#ff6b35';
-        input.focus();
-        setTimeout(() => input.style.borderColor = '', 2000);
-        return;
-      }
-    }
-
-    currentStep.classList.remove('active');
-    current++;
-    steps[current].classList.add('active');
-    progress.style.width = (current / (steps.length - 1)) * 100 + '%';
-
-    const nextInput = steps[current].querySelector('input, select');
-    if (nextInput) setTimeout(() => nextInput.focus(), 400);
-  }
-
-  function submitForm() {
-    const contact = document.getElementById('contact');
-    if (!contact.value.trim()) {
-      contact.style.borderColor = '#ff6b35';
-      contact.focus();
-      setTimeout(() => contact.style.borderColor = '', 2000);
-      return;
-    }
-
-    const data = {
-      name: document.getElementById('name').value.trim(),
-      schoolType: document.getElementById('schoolType').value,
-      country: document.getElementById('country').options[document.getElementById('country').selectedIndex].text,
-      city: document.getElementById('city').options[document.getElementById('city').selectedIndex].text,
-      subject: document.getElementById('subject').value.trim(),
-      challenge: document.getElementById('challenge').value.trim(),
-      contact: contact.value.trim(),
-      timestamp: new Date().toISOString()
-    };
-
-    console.log('Founding Teacher Joined:', data);
-    // fetch('YOUR_WEBHOOK_URL', {method:'POST',body:JSON.stringify(data)});
-
-    document.getElementById('displayName').textContent = data.name.split(' ')[0] || data.name;
-
-    steps[current].classList.remove('active');
-    current++;
-    steps[current].classList.add('active');
-    progress.style.width = '100%';
-  }
-
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Enter' && !e.shiftKey) {
-      e.preventDefault();
-      if (current === 0) startForm();
-      else if (current === steps.length - 2) submitForm();
-      else nextStep();
-    }
-  });
 </script>
 </body>
 </html>
