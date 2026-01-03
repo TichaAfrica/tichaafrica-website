@@ -3,300 +3,146 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Join The Founding Teacher Alliance — TichaAfrica</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <title>Join the Founding Teacher Alliance — TichaAfrica</title>
+  <meta name="description" content="A teacher-led initiative shaping how AI enters African classrooms.">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #f8f9fc;
-      --surface: #ffffff;
-      --text: #0f172a;
-      --text-muted: #475569;
-      --accent: #0d5c63;
-      --gold: #ca8a04;
-      --gold-light: #facc15;
-      --border: rgba(0,0,0,0.08);
-      --shadow: 0 20px 40px rgba(0,0,0,0.06);
-      --radius: 24px;
-      --transition: all 0.32s cubic-bezier(0.16,1,0.3,1);
-    }
-    *,*::before,*::after{box-sizing:border-box}
     body{
+      font-family:Inter,system-ui,sans-serif;
+      background:#f8f9fc;
+      color:#0f172a;
       margin:0;
-      font-family:"Inter",system-ui,sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.6;
-      -webkit-font-smoothing:antialiased;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      min-height:100vh;
       padding:20px;
-    }
-    
-    .form-wrapper{
-      max-width:720px;
-      width:100%;
-    }
-
-    .logo{
-      text-align:center;
-      margin-bottom:48px;
-    }
-    .logo img{
-      height:120px;
-      filter:drop-shadow(0 4px 12px rgba(0,0,0,0.1));
-      transition:var(--transition);
-    }
-    
-    .form-container{
-      background:var(--surface);
-      border-radius:var(--radius);
-      padding:56px 48px;
-      box-shadow:var(--shadow);
-      border:1px solid var(--border);
-      position:relative;
-      min-height:500px;
-    }
-    
-    .progress{
-      position:absolute;
-      top:0;
-      left:0;
-      height:6px;
-      background:linear-gradient(90deg, var(--gold), var(--gold-light));
-      transition:width .6s cubic-bezier(0.16,1,0.3,1);
-      z-index:10;
-      width:0%;
-      border-radius:var(--radius) var(--radius) 0 0;
-    }
-    
-    .step{
-      opacity:0;
-      transform:translateY(20px);
-      transition:all .6s cubic-bezier(0.16,1,0.3,1);
-      display:none;
-      flex-direction:column;
+      display:flex;
       justify-content:center;
     }
-    .step.active{
-      opacity:1;
-      transform:translateY(0);
-      display:flex;
+    .wrap{max-width:720px;width:100%;}
+    .card{
+      background:#fff;
+      border-radius:24px;
+      padding:40px 32px;
+      box-shadow:0 20px 40px rgba(0,0,0,.08);
     }
-    
-    h1{
-      font-size:clamp(1.9rem,5vw,2.6rem);
-      font-weight:900;
-      text-align:center;
-      margin-bottom:16px;
-      color:var(--text);
-      line-height:1.3;
-    }
-    
-    .emoji{
-      font-size:3.5rem;
-      margin-bottom:20px;
-      text-align:center;
-      display:block;
-      animation:bounce 2s infinite;
-    }
-    
-    @keyframes bounce{
-      0%, 100%{transform:translateY(0);}
-      50%{transform:translateY(-10px);}
-    }
-    
-    p{
-      text-align:center;
-      color:var(--text-muted);
-      font-size:1.15rem;
-      line-height:1.6;
-      margin-bottom:32px;
-    }
-    
-    .subtitle-highlight{
-      color:var(--accent);
-      font-weight:700;
-      font-size:1.05rem;
-      text-align:center;
-      margin-bottom:24px;
-      padding:12px 20px;
-      background:linear-gradient(135deg, #e0f2fe 0%, #fef3c7 100%);
+    h1,h2{font-weight:900;line-height:1.3;}
+    h1{font-size:2rem;margin-bottom:12px;}
+    p{color:#475569;font-size:1.1rem;line-height:1.6;}
+    .highlight{
+      background:#eef7f7;
+      color:#0d5c63;
+      padding:12px 16px;
       border-radius:12px;
+      font-weight:600;
+      margin:24px 0;
     }
-    
-    input,textarea{
+    label{font-weight:600;margin-top:24px;display:block;}
+    input,textarea,select{
       width:100%;
-      padding:18px 20px;
-      border-radius:16px;
-      border:2px solid var(--border);
-      background:var(--surface);
-      color:var(--text);
-      font-size:1.1rem;
-      font-family:"Inter",system-ui,sans-serif;
-      transition:all .3s;
+      padding:16px;
+      margin-top:8px;
+      border-radius:14px;
+      border:2px solid #e2e8f0;
+      font-size:1rem;
     }
-    
-    input::placeholder,textarea::placeholder{
-      color:#94a3b8;
-    }
-    
-    input:focus,textarea:focus{
-      outline:none;
-      border-color:var(--gold-light);
-      box-shadow:0 0 0 4px rgba(250,204,21,0.15);
-      transform:scale(1.02);
-    }
-    
-    textarea{
-      resize:vertical;
-      min-height:140px;
-    }
-    
-    .options{
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-    }
-    
-    .option{
-      display:flex;
-      align-items:center;
-      padding:18px 20px;
-      border:2px solid var(--border);
-      border-radius:16px;
-      cursor:pointer;
-      transition:var(--transition);
-      background:var(--surface);
-    }
-    
-    .option:hover{
-      border-color:var(--gold-light);
-      background:linear-gradient(135deg, #fffef5 0%, #fefce8 100%);
-      transform:translateX(8px);
-    }
-    
-    .option input[type="radio"]{
-      margin-right:16px;
-      cursor:pointer;
-      width:24px;
-      height:24px;
-      accent-color:var(--gold-light);
-    }
-    
-    .option label{
-      cursor:pointer;
-      flex:1;
-      font-size:1.1rem;
-      color:var(--text);
-      font-weight:500;
-    }
-    
-    .btn-next{
-      display:block;
-      width:100%;
-      padding:18px;
-      background:var(--gold-light);
-      color:var(--text);
-      font-weight:700;
-      font-size:1.2rem;
-      border-radius:999px;
-      border:none;
+    textarea{min-height:120px;}
+    button{
       margin-top:32px;
+      width:100%;
+      padding:16px;
+      border:none;
+      border-radius:999px;
+      background:#facc15;
+      color:#1e293b;
+      font-size:1.15rem;
+      font-weight:700;
       cursor:pointer;
-      transition:var(--transition);
-      box-shadow:0 12px 32px rgba(202,138,4,0.2);
     }
-    
-    .btn-next:hover{
-      transform:translateY(-4px);
-      box-shadow:0 20px 50px rgba(202,138,4,0.3);
-    }
-    
-    .btn-next:active{
-      transform:translateY(-2px);
-    }
-    
-    .thankyou{
-      text-align:center;
-      padding:40px 0;
-    }
-    
-    .thankyou h2{
-      font-size:2.8rem;
-      margin-bottom:24px;
-      color:var(--accent);
-      font-weight:900;
-    }
-    
-    .thankyou p{
-      font-size:1.25rem;
-      color:var(--text-muted);
-      line-height:1.7;
-    }
-    
-    .thankyou .motto{
-      margin-top:48px;
-      font-size:2rem;
-      font-weight:900;
-      background:linear-gradient(90deg,var(--gold),var(--gold-light));
-      -webkit-background-clip:text;
-      background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-    
-    @media (max-width:640px){
-      .form-container{
-        padding:40px 28px;
-      }
-      .logo img{
-        height:90px;
-      }
-      h1{
-        font-size:1.7rem;
-      }
-      .emoji{
-        font-size:3rem;
-      }
-      p{
-        font-size:1.05rem;
-      }
-      .btn-next{
-        font-size:1.1rem;
-        padding:16px;
-      }
-    }
+    button:hover{opacity:.9;}
+    .small{font-size:.95rem;color:#64748b;}
   </style>
 </head>
+
 <body>
+<div class="wrap">
+  <div class="card">
 
-<div class="form-wrapper">
-  <div class="logo">
-    <img src="../images/logo1.png" alt="TichaAfrica">
-  </div>
+    <!-- STEP 1 -->
+    <h1>Welcome, Teacher.</h1>
+    <p>
+      You are joining a growing group of African educators contributing their professional experience to how artificial intelligence enters our classrooms.
+    </p>
+    <p>
+      This is not just a form.  
+      It is a teacher-led effort to ensure technology supports African learners, languages, and educational realities.
+    </p>
 
-  <div class="form-container">
-    <div class="progress" id="progress"></div>
-
-    <!-- STEP 1: Welcome — FIXED: added () -->
-    <div class="step active" data-step="1">
-      <span class="emoji">🌍✨</span>
-      <h1>Welcome, Change-Maker!</h1>
-      <p>You're about to become one of the first 10,000 educators co-creating Africa's AI future. This isn't just a form — it's the beginning of a movement where your voice shapes how technology serves our continent's classrooms.</p>
-      <button class="btn-next" onclick="startForm()">I'm ready to lead this change →</button>
+    <div class="highlight">
+      Teachers from Anglophone, Francophone, Lusophone, and Arabic-speaking education systems across Africa are welcome.
     </div>
 
-    <!-- All your other steps (2–9) remain exactly as you had them -->
-    <!-- ... (paste your existing steps here) ... -->
+    <!-- STEP 2 -->
+    <label for="role">Which best describes your current role?</label>
+    <select id="role" name="role">
+      <option value="">Select one</option>
+      <option>Primary / Early Years Teacher</option>
+      <option>Secondary School Teacher</option>
+      <option>Tertiary / Higher Education Lecturer</option>
+      <option>School Administrator or Education Officer</option>
+      <option>Teacher Educator / Trainer</option>
+      <option>Retired Teacher (still engaged in education)</option>
+    </select>
+
+    <!-- STEP 3 -->
+    <label for="experience">Tell us briefly about your teaching experience.</label>
+    <textarea id="experience" placeholder="For example: subject area, learner age group, school type, or local challenges."></textarea>
+
+    <!-- STEP 4 -->
+    <label for="why-ai">
+      In your view, why should teachers lead how AI is used in African education?
+    </label>
+    <textarea id="why-ai" placeholder="You may reflect on culture, language, classroom realities, learner protection, or policy decisions."></textarea>
+
+    <!-- STEP 5 -->
+    <label for="contribute">How would you like to contribute?</label>
+    <select id="contribute" name="contribute">
+      <option value="">Select one</option>
+      <option>Sharing classroom insights and lived experience</option>
+      <option>Reviewing or co-creating learning resources</option>
+      <option>Participating in research, surveys, or pilots</option>
+      <option>Learning how to apply AI responsibly in my teaching</option>
+      <option>Contributing to discussions on policy and ethics</option>
+    </select>
+
+    <!-- STEP 6 -->
+    <div class="highlight">
+      Your responses are used only for educational research, community dialogue, and programme design led by teachers.
+      <br><br>
+      There is no commercial use, no automated profiling, and no representation without consent.
+    </div>
+
+    <!-- STEP 7 -->
+    <label for="commitment">
+      Are you willing to contribute your professional voice to a collaborative, teacher-led effort shaping the future of education in Africa?
+    </label>
+    <select id="commitment">
+      <option value="">Select one</option>
+      <option>Yes</option>
+      <option>I would like to learn more first</option>
+    </select>
+
+    <!-- SUBMIT -->
+    <button type="submit">Submit my contribution</button>
+
+    <!-- THANK YOU NOTE -->
+    <p class="small" style="margin-top:32px;text-align:center;">
+      Artificial intelligence will enter African classrooms — with or without teachers.<br>
+      Your participation helps ensure it reflects African knowledge systems and protects learners.
+    </p>
+
+    <p style="text-align:center;font-weight:800;margin-top:16px;">
+      Teach Smart. Lead Change.
+    </p>
 
   </div>
 </div>
-
-<script>
-  // Your full existing script (unchanged — it already works for nextStep() and submitForm())
-  // Just ensure the first button now has ()
-</script>
 </body>
 </html>
