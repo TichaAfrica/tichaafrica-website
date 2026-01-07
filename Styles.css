@@ -59,7 +59,10 @@ p {
   padding: 4rem 1.5rem;
 }
 
-/* HEADER */
+/* ===========================
+   HEADER & NAVIGATION
+   =========================== */
+
 header {
   position: sticky;
   top: 0;
@@ -76,19 +79,18 @@ header {
   padding: 1.2rem 1.5rem;
 }
 
-.logo {
+/* 🔒 LOGO — LOCKED SIZE */
+header img.logo {
   height: 92px;
-   width: auto;
-   max-height: none
-}
-  .logo {
+  width: auto;
+  max-height: none;
+  display: block;
   transition: transform 0.3s ease;
 }
 
-.logo:hover {
+header img.logo:hover {
   transform: scale(1.04);
-} 
-
+}
 
 .nav a {
   text-decoration: none;
@@ -97,7 +99,10 @@ header {
   margin-left: 2rem;
 }
 
-/* BUTTONS */
+/* ===========================
+   BUTTONS
+   =========================== */
+
 .btn-primary {
   background: linear-gradient(135deg, var(--gold), #fbbf24);
   color: #1e293b;
@@ -114,7 +119,10 @@ header {
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
 }
 
-/* SECTIONS */
+/* ===========================
+   SECTIONS
+   =========================== */
+
 .section-light {
   background: var(--white);
 }
@@ -132,7 +140,10 @@ header {
   color: #e5e7eb;
 }
 
-/* CARDS */
+/* ===========================
+   CARDS
+   =========================== */
+
 .card {
   background: var(--white);
   border-radius: 24px;
@@ -145,7 +156,10 @@ header {
   transform: translateY(-8px);
 }
 
-/* FOOTER */
+/* ===========================
+   FOOTER
+   =========================== */
+
 footer {
   padding: 3rem 1.5rem;
   background: #0b1220;
@@ -153,7 +167,10 @@ footer {
   text-align: center;
 }
 
-/* ANIMATION */
+/* ===========================
+   ANIMATIONS
+   =========================== */
+
 .fade-up {
   animation: fadeUp 0.8s ease forwards;
 }
@@ -168,8 +185,13 @@ footer {
     transform: translateY(0);
   }
 }
+
+/* ===========================
+   MOBILE ADJUSTMENTS
+   =========================== */
+
 @media (max-width: 640px) {
-  .logo {
-    height: 56px;
+  header img.logo {
+    height: 64px;
   }
-     }
+}
