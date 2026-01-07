@@ -1,85 +1,160 @@
+/* ===========================
+   TICHA AFRICA DESIGN SYSTEM
+   =========================== */
+
 :root {
   --blue: #003366;
   --gold: #FFD700;
-  --silver: #E6E3DC;
-  --green: #2E7D32;
-  --white: #ffffff;
+  --silver-beige: #E6E4DF;
+  --leaf-green: #2E7D32;
+  --white: #FFFFFF;
+  --dark: #0f172a;
 }
 
-/* Base Reset */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   background-color: var(--white);
-  color: var(--blue);
+  color: var(--dark);
   line-height: 1.6;
 }
 
-/* Header */
-header {
-  background: linear-gradient(90deg, var(--blue), #001f33);
-  padding: 1rem 1.5rem;
+/* TYPOGRAPHY SCALE */
+h1 {
+  font-size: clamp(2.8rem, 6vw, 4.2rem);
+  font-weight: 800;
+  line-height: 1.1;
 }
 
-.nav-container {
-  max-width: 1100px;
+h2 {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+p {
+  font-size: 1.05rem;
+  max-width: 720px;
+  color: #334155;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1200px;
   margin: auto;
+  padding: 4rem 1.5rem;
+}
+
+/* HEADER */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 1.2rem 1.5rem;
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
+  height: 52px;
 }
 
-.logo img {
-  height: 44px;
-}
-
-.logo span {
-  color: var(--gold);
-  font-weight: 600;
-  font-size: 1.1rem;
-}
-
-/* Navigation */
-nav a {
-  color: var(--white);
-  margin-left: 1.2rem;
+.nav a {
   text-decoration: none;
-  font-weight: 500;
-}
-
-nav a:hover {
-  color: var(--gold);
-}
-
-/* Main content */
-main {
-  max-width: 900px;
-  margin: 3rem auto;
-  padding: 0 1.5rem;
-}
-
-/* Footer */
-footer {
-  background-color: var(--silver);
+  font-weight: 600;
   color: var(--blue);
-  padding: 1.5rem;
-  margin-top: 4rem;
+  margin-left: 2rem;
 }
 
-.footer-inner {
-  max-width: 900px;
-  margin: auto;
+/* BUTTONS */
+.btn-primary {
+  background: linear-gradient(135deg, var(--gold), #fbbf24);
+  color: #1e293b;
+  padding: 0.9rem 1.8rem;
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* SECTIONS */
+.section-light {
+  background: var(--white);
+}
+
+.section-muted {
+  background: var(--silver-beige);
+}
+
+.section-dark {
+  background: linear-gradient(135deg, var(--blue), #001a33);
+  color: var(--white);
+}
+
+.section-dark p {
+  color: #e5e7eb;
+}
+
+/* CARDS */
+.card {
+  background: var(--white);
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+/* FOOTER */
+footer {
+  padding: 3rem 1.5rem;
+  background: #0b1220;
+  color: #cbd5f5;
   text-align: center;
-  font-size: 0.9rem;
+}
+
+/* ANIMATION */
+.fade-up {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
