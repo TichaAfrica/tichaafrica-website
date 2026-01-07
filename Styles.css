@@ -84,6 +84,8 @@ header img.logo {
   height: 92px;
   width: auto;
   max-height: none;
+   object-fit: contain
+   flex-shrink: 0;
   display: block;
   transition: transform 0.3s ease;
 }
