@@ -77,7 +77,14 @@ header {
 }
 
 .logo {
-  height: 52px;
+  height: 72px; width: auto;
+  .logo {
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.04);
+} 
 }
 
 .nav a {
