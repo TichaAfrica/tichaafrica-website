@@ -1,29 +1,57 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TichaAfrica — Teach Smart, Lead Change</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="include.js" defer></script>
 </head>
-
 <body>
 
-<div id="site-header"></div>
+<!-- Header (via include.js partial) -->
+<div data-include="header.html"></div>
 
-<section class="section-light">
-  <div class="container">
-    <h1>Teachers are shaping Africa’s AI future</h1>
-    <p>
-      TichaAfrica is a teacher-led movement ensuring that artificial intelligence
-      in education reflects African classrooms, cultures, and values.
-    </p>
-    <a href="teachers.html" class="btn-primary">Join the Teacher Alliance</a>
+<!-- HERO -->
+<section class="container section-light fade-up" style="text-align:center; padding:6rem 1.5rem; position:relative; overflow:hidden;">
+  <div class="float" style="position:absolute; top:-20px; left:5%; width:100px; height:100px; background:var(--gold); border-radius:50%; opacity:0.3;"></div>
+  <div class="float" style="position:absolute; bottom:-30px; right:10%; width:120px; height:120px; background:var(--blue); border-radius:50%; opacity:0.2;"></div>
+
+  <h1>We — the teachers — are shaping Africa's AI future</h1>
+  <p>A continent-wide teacher movement designing AI for our classrooms, languages, and values</p>
+  
+  <div style="margin-top:2rem; display:flex; justify-content:center; gap:1.5rem; flex-wrap:wrap;">
+    <a href="teachers.html" class="btn-primary">Join Teacher Alliance</a>
+    <a href="institutional.html" class="btn-primary">Partner as an Institution</a>
   </div>
 </section>
 
-<div id="site-footer"></div>
-<script src="includes.js"></script>
+<!-- CTA Cards / Pillars -->
+<section class="container section-muted fade-up" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:2rem; margin-top:4rem;">
+  <div class="card">
+    <h3>Languages & Culture</h3>
+    <p>Classroom expertise ensures AI respects local realities.</p>
+  </div>
+  <div class="card">
+    <h3>Leadership & Safety</h3>
+    <p>Teachers’ input safeguards dignity and development.</p>
+  </div>
+  <div class="card">
+    <h3>Ownership of AI Tools</h3>
+    <p>We co-create curriculum and templates that work on local devices.</p>
+  </div>
+  <div class="card">
+    <h3>Policy & Advocacy</h3>
+    <p>Teachers’ voices shape continental AI strategy and classroom practice.</p>
+  </div>
+  <div class="card">
+    <h3>Skills & Growth</h3>
+    <p>Founding teachers gain recognition, leadership, and digital credentials.</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<div data-include="footer.html"></div>
+
 </body>
 </html>
