@@ -1,54 +1,27 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TichaAfrica — Teacher Mobilisation</title>
-<link rel="stylesheet" href="styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>TichaAfrica</title>
+  <link rel="icon" href="/assets/images/favicon.png">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body>
+<body data-page="home">
 
-<!-- HEADER -->
-<div w3-include-html="partials/header.html"></div>
+<div data-include="/partials/header.html"></div>
 
-<!-- HERO -->
-<section class="hero section-light">
-  <h1>We — the <span style="color:#FFD700;">teachers</span> — are shaping Africa's AI future</h1>
-  <p>A continent-wide teacher movement designing AI for our classrooms, languages, and values</p>
-  <div style="margin-top:2rem;">
-    <a href="teacher.html" class="btn-primary">Join as Teacher</a>
-    <a href="institution.html" class="btn-primary" style="margin-left:1rem;">Invite Your Institution</a>
+<section class="section">
+  <h1>A teacher led movement shaping Africas learning future</h1>
+  <p>TichaAfrica mobilises teachers to co create responsible use of technology in African classrooms starting with collective leadership not tools.</p>
+
+  <div class="cta-group">
+    <a href="/teachers/" class="btn btn-primary">Join the Founding Teacher Alliance</a>
+    <a href="/institutions/" class="btn btn-secondary">For institutions and partners</a>
   </div>
 </section>
 
-<!-- SECTIONS / PILLARS -->
-<section class="section-muted container" style="margin-top:4rem;">
-  <div class="card fade-up">
-    <h3>Teachers carry languages & culture</h3>
-    <p>Classroom expertise ensures AI respects local realities.</p>
-  </div>
-  <div class="card fade-up">
-    <h3>Leadership protects children</h3>
-    <p>Teachers’ input safeguards dignity and development.</p>
-  </div>
-  <div class="card fade-up">
-    <h3>Ownership of AI tools</h3>
-    <p>We co-create curriculum and templates that work on local devices.</p>
-  </div>
-  <div class="card fade-up">
-    <h3>Policy & advocacy</h3>
-    <p>Teachers’ voices shape continental AI strategy and classroom practice.</p>
-  </div>
-  <div class="card fade-up">
-    <h3>Skills & growth</h3>
-    <p>Founding teachers gain recognition, leadership, and digital credentials.</p>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<div w3-include-html="partials/footer.html"></div>
-<script src="include.js"></script>
-<script>includeHTML();</script>
+<div data-include="/partials/footer.html"></div>
+<script src="/assets/js/include.js"></script>
 </body>
 </html>
