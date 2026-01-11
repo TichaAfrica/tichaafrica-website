@@ -2,26 +2,95 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>TichaAfrica</title>
-  <link rel="icon" href="/assets/images/favicon.png">
+  <title>TichaAfrica — Teach Smart, Lead Change</title>
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+  <link rel="manifest" href="/assets/images/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/images/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
   <link rel="stylesheet" href="/assets/css/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body data-page="home">
 
-<div data-include="/partials/header.html"></div>
+  <!-- Header -->
+  <div data-include="/partials/header.html"></div>
 
-<section class="section">
-  <h1>A teacher-led movement shaping Africa's learning future</h1>
-  <p>TichaAfrica brings together African teachers to co-design how technology serves classrooms, students, and communities. We start with teacher wisdom, not imported solutions.</p>
+  <!-- Hero Section -->
+  <section class="section section-light hero">
+    <div class="container text-center">
+      <h1>A teacher-led movement shaping Africa's learning future</h1>
+      <p>TichaAfrica brings together African teachers to co-design how technology serves classrooms, students, and communities. We start with teacher wisdom, not imported solutions.</p>
 
-  <div class="cta-group">
-    <a href="/teachers/" class="btn btn-primary">Join the Founding Teacher Alliance</a>
-    <a href="/institutions/" class="btn btn-secondary">See what we're building</a>
-  </div>
-</section>
+      <div class="cta-group mt-6">
+        <a href="/teachers/" class="btn btn-primary btn-lg">Join the Founding Teacher Alliance</a>
+      </div>
+    </div>
+  </section>
 
-<div data-include="/partials/footer.html"></div>
-<script src="/assets/js/include.js"></script>
+  <!-- Conversation Section -->
+  <section class="section section-muted conversation">
+    <div class="container max-w-3xl mx-auto">
+      <p>Have you ever felt that classroom tools and AI are built without understanding your reality? Here, your experience shapes the solution.</p>
+      <p>We invite teachers across Africa to step forward, share their voice, and co-create the future of learning for every student in their community.</p>
+    </div>
+  </section>
+
+  <!-- Insights Question Section -->
+  <section class="section section-light">
+    <div class="container max-w-2xl mx-auto text-center">
+      <h2>One Quick Insight</h2>
+      <p>Before you join, we'd love your perspective:</p>
+      <form action="/teachers/form" method="post" class="insight-form">
+        <label for="insight" class="sr-only">Your Insight</label>
+        <textarea id="insight" name="insight" placeholder="In one sentence, what do you feel is the biggest challenge for African classrooms today?" required></textarea>
+        <button type="submit" class="btn btn-primary mt-3">Submit & Continue</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Founding Pledge Section -->
+  <section class="section section-muted">
+    <div class="container max-w-3xl mx-auto text-center">
+      <h2>Founding Teacher Pledge</h2>
+      <p>
+        I commit to shaping Africa's learning future. I will share my knowledge, guide AI tools to respect our students, and lead change in my classroom and community. I will be a voice for local wisdom, culture, and values.
+      </p>
+      <div class="cta-group mt-6">
+        <a href="/teachers/form" class="btn btn-primary btn-lg">I Take the Pledge</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Progress / Badge Indicator -->
+  <section class="section section-light">
+    <div class="container max-w-2xl mx-auto text-center">
+      <p>Your journey begins here. Completing the pledge will unlock your <strong>Founding Teacher Badge</strong> and recognition across Africa.</p>
+      <div class="progress-bar mt-3">
+        <div class="progress-fill" style="width:33%;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div data-include="/partials/footer.html"></div>
+
+  <script src="/assets/js/include.js"></script>
+
 </body>
 </html>
