@@ -1,115 +1,130 @@
-:root {
-  --primary: #0b3c5d;
-  --accent: #f4b400;
-  --bg: #f9fafb;
-  --text: #1f2933;
-  --muted: #6b7280;
-  --success: #0f766e;
-}
-
+/* --------------------
+   RESET & BASE
+--------------------- */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  background: var(--bg);
-  color: var(--text);
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #ffffff;
+  color: #1a1a1a;
   line-height: 1.6;
 }
 
-header {
-  background: white;
-  border-bottom: 1px solid #e5e7eb;
+/* --------------------
+   LAYOUT
+--------------------- */
+.container {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 24px 20px 64px;
 }
 
-.nav {
-  max-width: 900px;
-  margin: auto;
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+section {
+  margin-bottom: 40px;
 }
 
-.nav a {
-  text-decoration: none;
-  color: var(--muted);
-  margin-left: 1rem;
-  font-weight: 500;
-}
-
-.nav a.active {
-  color: var(--primary);
-  border-bottom: 2px solid var(--accent);
-  padding-bottom: 0.25rem;
-}
-
-main {
-  max-width: 700px;
-  margin: auto;
-  padding: 3rem 1.5rem;
-}
-
+/* --------------------
+   TYPOGRAPHY
+--------------------- */
 h1 {
-  font-size: 2rem;
-  margin-bottom: 0.75rem;
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 16px;
 }
 
-p.lead {
-  font-size: 1.1rem;
-  color: var(--muted);
+h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 12px;
 }
 
-.card {
-  background: white;
-  border-radius: 14px;
-  padding: 2rem;
-  margin-top: 2rem;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-}
-
-button {
-  background: var(--primary);
-  color: white;
-  border: none;
-  padding: 0.85rem 1.5rem;
-  border-radius: 999px;
+p {
   font-size: 1rem;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+/* --------------------
+   BUTTONS
+--------------------- */
+.btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 14px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
   cursor: pointer;
 }
 
-button:disabled {
-  opacity: 0.6;
+.btn-primary {
+  background: #0f766e;
+  color: #ffffff;
+}
+
+.btn-primary:disabled {
+  background: #9ca3af;
   cursor: not-allowed;
 }
 
-/* Progress indicator */
-.progress {
-  margin-bottom: 1.5rem;
-  font-size: 0.9rem;
-  color: var(--muted);
+.btn-secondary {
+  background: transparent;
+  color: #0f766e;
+  border: 2px solid #0f766e;
 }
 
-.progress span {
-  font-weight: 600;
-  color: var(--primary);
-}
-
-/* Form */
+/* --------------------
+   FORMS
+--------------------- */
 textarea {
   width: 100%;
   min-height: 120px;
-  padding: 1rem;
-  border-radius: 10px;
+  padding: 14px;
+  font-size: 1rem;
+  border-radius: 8px;
   border: 1px solid #d1d5db;
+  resize: vertical;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* --------------------
+   PROGRESS INDICATOR
+--------------------- */
+.progress {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+/* --------------------
+   HEADER
+--------------------- */
+header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+header strong {
   font-size: 1rem;
 }
 
+/* --------------------
+   FOOTER
+--------------------- */
 footer {
-  text-align: center;
-  padding: 2rem 1rem;
+  padding: 32px 20px;
   font-size: 0.85rem;
-  color: var(--muted);
+  color: #6b7280;
+  text-align: center;
 }
