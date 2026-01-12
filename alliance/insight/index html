@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Founding Teacher Insight — TichaAfrica</title>
+  <meta name="description" content="Share one insight to help shape Africa’s learning future.">
+
+  <link rel="icon" href="/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+      font-family:'Inter',sans-serif;
+      background:#f8f9fc;
+      color:#0f172a;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+    }
+    main{
+      flex:1;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+      text-align:center;
+    }
+    .container{
+      max-width:720px;
+      width:100%;
+    }
+    .step{
+      font-size:0.9rem;
+      font-weight:600;
+      color:#64748b;
+      margin-bottom:20px;
+    }
+    h1{
+      font-size:clamp(2.2rem,7vw,3.2rem);
+      font-weight:900;
+      line-height:1.15;
+      margin-bottom:20px;
+    }
+    p{
+      font-size:1.1rem;
+      line-height:1.7;
+      color:#475569;
+      margin-bottom:28px;
+    }
+    form{
+      background:#ffffff;
+      padding:28px;
+      border-radius:16px;
+      box-shadow:0 10px 30px rgba(15,23,42,0.08);
+      text-align:left;
+    }
+    label{
+      font-weight:700;
+      display:block;
+      margin-bottom:12px;
+      color:#0f172a;
+    }
+    textarea{
+      width:100%;
+      min-height:140px;
+      padding:16px;
+      font-family:'Inter',sans-serif;
+      font-size:1rem;
+      border-radius:12px;
+      border:1px solid #cbd5e1;
+      resize:vertical;
+      margin-bottom:24px;
+    }
+    textarea:focus{
+      outline:none;
+      border-color:#0d5c63;
+    }
+    .btn{
+      width:100%;
+      padding:18px;
+      background:#0d5c63;
+      color:#ffffff;
+      font-weight:700;
+      font-size:1.15rem;
+      border-radius:999px;
+      border:none;
+      cursor:pointer;
+      box-shadow:0 14px 36px rgba(13,92,99,0.25);
+      transition:all .3s ease;
+    }
+    .btn:hover{
+      transform:translateY(-3px);
+      box-shadow:0 22px 52px rgba(13,92,99,0.35);
+    }
+    .btn[disabled]{
+      opacity:0.6;
+      cursor:not-allowed;
+      transform:none;
+      box-shadow:none;
+    }
+    footer{
+      padding:32px 20px;
+      text-align:center;
+      font-size:0.9rem;
+      color:#64748b;
+      background:#f8f9fc;
+    }
+  </style>
+</head>
+
+<body>
+
+<main>
+  <div class="container">
+
+    <div class="step">Step 2 of 3 — Your Insight</div>
+
+    <h1>Your Voice Matters</h1>
+
+    <p>
+      There is no right or wrong answer.  
+      Share what you know from lived classroom experience.
+    </p>
+
+    <form id="insightForm">
+      <label for="insight">
+        <!-- 🔒 PASTE THE AGREED INSIGHT QUESTION EXACTLY BELOW -->
+        <!-- INSIGHT QUESTION START -->
+        [PASTE THE INSIGHT QUESTION HERE]
+        <!-- INSIGHT QUESTION END -->
+      </label>
+
+      <textarea
+        id="insight"
+        name="insight"
+        required
+        placeholder="Write freely. One honest response is enough."></textarea>
+
+      <button type="submit" class="btn" id="submitBtn">
+        Submit My Insight
+      </button>
+    </form>
+
+  </div>
+</main>
+
+<footer>
+  © 2025 TichaAfrica • Teach Smart. Lead Change.
+</footer>
+
+<script>
+  const form = document.getElementById('insightForm');
+  const textarea = document.getElementById('insight');
+  const button = document.getElementById('submitBtn');
+
+  // Restore saved response if user returns
+  textarea.value = localStorage.getItem('tichaInsight') || '';
+
+  textarea.addEventListener('input', () => {
+    localStorage.setItem('tichaInsight', textarea.value);
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    if (!textarea.value.trim()) return;
+
+    button.disabled = true;
+    button.textContent = 'Submitting…';
+
+    localStorage.setItem('tichaInsightSubmitted', 'true');
+
+    // Redirect to thank you page
+    window.location.href = '/alliance/thank-you/';
+  });
+
+  // Prevent resubmission
+  if (localStorage.getItem('tichaInsightSubmitted')) {
+    window.location.href = '/alliance/thank-you/';
+  }
+</script>
+
+</body>
+</html>
