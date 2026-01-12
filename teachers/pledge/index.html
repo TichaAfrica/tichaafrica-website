@@ -1,39 +1,52 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Join the Founding Teacher Alliance — TichaAfrica</title>
-  <link rel="icon" href="/assets/images/favicon-32x32.png">
+  <meta charset="UTF-8">
+  <title>Founding Teacher Pledge</title>
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+
   <link rel="stylesheet" href="/assets/css/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body data-page="teachers-pledge">
+<body>
 
-  <!-- HEADER -->
-  <div data-include="/partials/header.html"></div>
-
-  <!-- HERO / PLEDGE -->
-  <section class="section section-light container">
-    <h1>Become a Founding Teacher</h1>
-    <p>By joining the Founding Teacher Alliance, you co-create Africa’s AI-powered learning future. Your expertise, your classroom, your wisdom — at the heart of the movement.</p>
-    
-    <div class="progress-indicator">
-      <span class="step active">1</span>
-      <span class="step">2</span>
-      <span class="step">3</span>
+<header>
+  <nav class="nav">
+    <strong>TichaAfrica</strong>
+    <div>
+      <a href="/teachers/pledge/" class="active">Pledge</a>
+      <a href="/teachers/insight/">Insight</a>
+      <a href="/teachers/thank-you/">Complete</a>
     </div>
+  </nav>
+</header>
 
-    <div class="pledge-box">
-      <p class="pledge-copy">
-        I pledge to share my classroom insights, guide AI in education responsibly, and support fellow teachers to shape Africa’s learning future. My voice, my students, my continent — I lead change.
-      </p>
-      <a href="/teachers/insight/" class="btn btn-primary">I Accept the Pledge</a>
-    </div>
-  </section>
+<main>
+  <div class="progress">Step <span>1</span> of 3</div>
 
-  <!-- FOOTER -->
-  <div data-include="/partials/footer.html"></div>
-  <script src="/assets/js/include.js"></script>
+  <h1>Before we move forward…</h1>
+  <p class="lead">
+    This is not a registration.  
+    It is a moment of intention.
+  </p>
+
+  <div class="card">
+    <p>
+      By stepping into the Founding Teacher Alliance, you are choosing to
+      teach with clarity, lead with courage, and shape what comes next.
+    </p>
+
+    <form action="/teachers/insight/">
+      <button type="submit">I take this pledge →</button>
+    </form>
+  </div>
+</main>
+
+<footer>
+  Teach smart. Lead change.
+</footer>
+
 </body>
 </html>
