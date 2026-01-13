@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to the Founders — TichaAfrica</title>
+  <meta name="description" content="You’re officially one of the first 10,000 shaping Africa’s learning future.">
+  <link rel="icon" href="/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Inter',sans-serif;background:#f8f9fc;color:#0f172a;min-height:100vh;display:flex;flex-direction:column;}
+    main{flex:1;display:flex;align-items:center;justify-content:center;padding:24px;text-align:center;}
+    .container{max-width:720px;width:100%;}
+    h1{font-size:clamp(2.5rem,8vw,4rem);font-weight:900;line-height:1.15;margin-bottom:24px;color:#0d5c63;}
+    .badge{
+      margin:40px auto;
+      padding:32px;
+      background:#ffffff;
+      border-radius:20px;
+      box-shadow:0 10px 30px rgba(13,92,99,0.15);
+      max-width:400px;
+    }
+    .badge h2{font-size:2.2rem;color:#0d5c63;margin-bottom:16px;}
+    .badge .medal{font-size:5rem;margin:16px 0;}
+    .btn-share{
+      display:block;
+      width:100%;
+      max-width:320px;
+      margin:16px auto;
+      padding:16px;
+      background:#25D366;
+      color:#fff;
+      font-weight:700;
+      font-size:1.2rem;
+      border-radius:999px;
+      text-decoration:none;
+      box-shadow:0 12px 32px rgba(37,211,102,0.3);
+      transition:all .3s;
+    }
+    .btn-share:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(37,211,102,0.4);}
+    .btn-copy{background:#0d5c63;color:#fff;}
+    footer{padding:40px 20px;text-align:center;font-size:0.95rem;color:#64748b;}
+  </style>
+</head>
+
+<body>
+
+<main>
+  <div class="container">
+
+    <h1>Teacher, you did it!</h1>
+
+    <p style="font-size:1.3rem;line-height:1.6;color:#475569;margin-bottom:32px;">
+      Welcome to <strong>The Founding Teacher Alliance</strong>.<br>
+      You are officially one of the first 10,000 who said “Yes” —<br>
+      the ones who will shape AI in African classrooms, by teachers, for teachers.
+    </p>
+
+    <div class="badge">
+      <h2>Your Founding Teacher Badge</h2>
+      <div class="medal">🏅</div>
+      <p style="font-size:1.2rem;font-weight:700;color:#0d5c63;">
+        African teachers creating AI tools our learners deserve
+      </p>
+    </div>
+
+    <p style="font-size:1.1rem;color:#475569;margin:32px 0;">
+      Tell your colleagues — the more voices we have, the stronger this movement becomes.
+    </p>
+
+    <a href="#" class="btn-share" onclick="shareWhatsApp()">
+      Share on WhatsApp →
+    </a>
+
+    <a href="#" class="btn-share btn-copy" onclick="copyLink()">
+      Copy Link to Share
+    </a>
+
+  </div>
+</main>
+
+<footer>
+  © 2025 TichaAfrica • Teach Smart. Lead Change.
+</footer>
+
+<script>
+  function shareWhatsApp() {
+    const text = "I just became a Founding Teacher with TichaAfrica! Be one of the first 10,000 shaping AI in African classrooms. Join me: https://tichaafrica.com";
+    window.open("https://wa.me/?text=" + encodeURIComponent(text), "_blank");
+  }
+
+  function copyLink() {
+    navigator.clipboard.writeText("https://tichaafrica.com").then(() => {
+      alert("Link copied! Share with your colleagues.");
+    });
+  }
+</script>
+
+</body>
+</html>
