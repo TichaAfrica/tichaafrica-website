@@ -3,79 +3,44 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Founding Teacher Insight — TichaAfrica</title>
-  <meta name="description" content="Share one insight to help shape Africa’s learning future.">
-
+  <title>Your Voice — TichaAfrica</title>
+  <meta name="description" content="Share one real challenge from your classroom. Your insight will help shape the future.">
   <link rel="icon" href="/favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-
   <style>
     *{margin:0;padding:0;box-sizing:border-box;}
-    body{
-      font-family:'Inter',sans-serif;
-      background:#f8f9fc;
-      color:#0f172a;
-      min-height:100vh;
-      display:flex;
-      flex-direction:column;
-    }
-    main{
-      flex:1;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:24px;
-      text-align:center;
-    }
-    .container{
-      max-width:720px;
-      width:100%;
-    }
-    .step{
-      font-size:0.9rem;
-      font-weight:600;
-      color:#64748b;
-      margin-bottom:20px;
-    }
-    h1{
-      font-size:clamp(2.2rem,7vw,3.2rem);
-      font-weight:900;
-      line-height:1.15;
-      margin-bottom:20px;
-    }
-    p{
-      font-size:1.1rem;
-      line-height:1.7;
-      color:#475569;
-      margin-bottom:28px;
-    }
+    body{font-family:'Inter',sans-serif;background:#f8f9fc;color:#0f172a;min-height:100vh;display:flex;flex-direction:column;}
+    main{flex:1;display:flex;align-items:center;justify-content:center;padding:24px;text-align:center;}
+    .container{max-width:720px;width:100%;}
+    .step{font-size:0.9rem;font-weight:600;color:#64748b;margin-bottom:20px;}
+    h1{font-size:clamp(2.2rem,7vw,3.4rem);font-weight:900;line-height:1.15;margin-bottom:24px;color:#0d5c63;}
+    .intro p{font-size:1.2rem;line-height:1.7;color:#475569;margin-bottom:24px;text-align:left;}
+    .intro strong{color:#0d5c63;}
     form{
       background:#ffffff;
-      padding:28px;
+      padding:32px;
       border-radius:16px;
       box-shadow:0 10px 30px rgba(15,23,42,0.08);
       text-align:left;
+      margin:32px 0;
+      border-left:6px solid #0d5c63;
     }
-    label{
-      font-weight:700;
-      display:block;
-      margin-bottom:12px;
-      color:#0f172a;
-    }
+    label{font-weight:700;font-size:1.15rem;color:#0f172a;display:block;margin-bottom:12px;}
     textarea{
       width:100%;
-      min-height:140px;
+      min-height:160px;
       padding:16px;
-      font-family:'Inter',sans-serif;
-      font-size:1rem;
+      font-size:1.1rem;
       border-radius:12px;
       border:1px solid #cbd5e1;
       resize:vertical;
       margin-bottom:24px;
+      font-family:'Inter',sans-serif;
     }
     textarea:focus{
       outline:none;
       border-color:#0d5c63;
+      box-shadow:0 0 0 4px rgba(13,92,99,0.1);
     }
     .btn{
       width:100%;
@@ -83,30 +48,15 @@
       background:#0d5c63;
       color:#ffffff;
       font-weight:700;
-      font-size:1.15rem;
+      font-size:1.2rem;
       border-radius:999px;
       border:none;
       cursor:pointer;
       box-shadow:0 14px 36px rgba(13,92,99,0.25);
       transition:all .3s ease;
     }
-    .btn:hover{
-      transform:translateY(-3px);
-      box-shadow:0 22px 52px rgba(13,92,99,0.35);
-    }
-    .btn[disabled]{
-      opacity:0.6;
-      cursor:not-allowed;
-      transform:none;
-      box-shadow:none;
-    }
-    footer{
-      padding:32px 20px;
-      text-align:center;
-      font-size:0.9rem;
-      color:#64748b;
-      background:#f8f9fc;
-    }
+    .btn:hover{transform:translateY(-4px);box-shadow:0 24px 56px rgba(13,92,99,0.35);}
+    footer{padding:32px 20px;text-align:center;font-size:0.9rem;color:#64748b;background:#f8f9fc;}
   </style>
 </head>
 
@@ -117,29 +67,30 @@
 
     <div class="step">Step 2 of 3 — Your Insight</div>
 
-    <h1>Your Voice Matters</h1>
+    <h1>Your voice is the missing piece</h1>
 
-    <p>
-      There is no right or wrong answer.  
-      Share what you know from lived classroom experience.
-    </p>
+    <div class="intro">
+      <p>
+        Teacher, you’ve lived it — the long hours, the creative workarounds, the moments when a child’s eyes light up despite everything.<br>
+        No policy document or foreign app can replace what you know.
+      </p>
+      <p>
+        Right now, we’re building tools that actually serve African classrooms — and <strong>your reality</strong> is the blueprint.<br>
+        One honest sentence from you can change how thousands teach and learn.
+      </p>
+    </div>
 
-    <form id="insightForm">
+    <form name="teacher-insight" method="POST" data-netlify="true" action="/alliance/thank-you/">
+      <input type="hidden" name="form-name" value="teacher-insight">
+
       <label for="insight">
-        <!-- 🔒 PASTE THE AGREED INSIGHT QUESTION EXACTLY BELOW -->
-        <!-- INSIGHT QUESTION START -->
-        [PASTE THE INSIGHT QUESTION HERE]
-        <!-- INSIGHT QUESTION END -->
+        As a teacher, what’s one real challenge in your classroom today that the right tools — designed by teachers like you — could fix?
       </label>
 
-      <textarea
-        id="insight"
-        name="insight"
-        required
-        placeholder="Write freely. One honest response is enough."></textarea>
+      <textarea id="insight" name="insight" rows="6" placeholder="Be honest. Your experience matters. Write in any language." required></textarea>
 
-      <button type="submit" class="btn" id="submitBtn">
-        Submit My Insight
+      <button type="submit" class="btn">
+        Submit My Insight & Join
       </button>
     </form>
 
@@ -149,38 +100,6 @@
 <footer>
   © 2025 TichaAfrica • Teach Smart. Lead Change.
 </footer>
-
-<script>
-  const form = document.getElementById('insightForm');
-  const textarea = document.getElementById('insight');
-  const button = document.getElementById('submitBtn');
-
-  // Restore saved response if user returns
-  textarea.value = localStorage.getItem('tichaInsight') || '';
-
-  textarea.addEventListener('input', () => {
-    localStorage.setItem('tichaInsight', textarea.value);
-  });
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    if (!textarea.value.trim()) return;
-
-    button.disabled = true;
-    button.textContent = 'Submitting…';
-
-    localStorage.setItem('tichaInsightSubmitted', 'true');
-
-    // Redirect to thank you page
-    window.location.href = '/alliance/thank-you/';
-  });
-
-  // Prevent resubmission
-  if (localStorage.getItem('tichaInsightSubmitted')) {
-    window.location.href = '/alliance/thank-you/';
-  }
-</script>
 
 </body>
 </html>
