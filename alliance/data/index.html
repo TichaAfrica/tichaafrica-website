@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complete Your Profile — TichaAfrica</title>
+  <meta name="description" content="Add your details to join the Founding Teacher Alliance. Your information helps us build together.">
+  <link rel="icon" href="/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Inter',sans-serif;background:#f8f9fc;color:#0f172a;min-height:100vh;display:flex;flex-direction:column;}
+    main{flex:1;display:flex;align-items:center;justify-content:center;padding:24px;text-align:center;}
+    .container{max-width:720px;width:100%;}
+    .step{font-size:0.9rem;font-weight:600;color:#64748b;margin-bottom:20px;}
+    h1{font-size:clamp(2.2rem,7vw,3.4rem);font-weight:900;line-height:1.15;margin-bottom:24px;color:#0d5c63;}
+    .intro p{font-size:1.2rem;line-height:1.7;color:#475569;margin-bottom:24px;text-align:left;}
+    .intro strong{color:#0d5c63;}
+    form{
+      background:#ffffff;
+      padding:32px;
+      border-radius:16px;
+      box-shadow:0 10px 30px rgba(15,23,42,0.08);
+      text-align:left;
+      margin:32px 0;
+      border-left:6px solid #0d5c63;
+    }
+    label{font-weight:700;font-size:1.1rem;color:#0f172a;display:block;margin:24px 0 8px;}
+    input,select,textarea{
+      width:100%;
+      padding:16px;
+      font-size:1.1rem;
+      border-radius:12px;
+      border:1px solid #cbd5e1;
+      margin-bottom:16px;
+    }
+    select option{color:#0f172a;}
+    input:focus,select:focus,textarea:focus{outline:none;border-color:#0d5c63;box-shadow:0 0 0 4px rgba(13,92,99,0.1);}
+    textarea{min-height:120px;resize:vertical;}
+    .btn{
+      width:100%;
+      padding:18px;
+      background:#0d5c63;
+      color:#ffffff;
+      font-weight:700;
+      font-size:1.2rem;
+      border-radius:999px;
+      border:none;
+      cursor:pointer;
+      box-shadow:0 14px 36px rgba(13,92,99,0.25);
+      transition:all .3s ease;
+    }
+    .btn:hover{transform:translateY(-4px);box-shadow:0 24px 56px rgba(13,92,99,0.35);}
+    footer{padding:32px 20px;text-align:center;font-size:0.9rem;color:#64748b;background:#f8f9fc;}
+  </style>
+</head>
+
+<body>
+
+<main>
+  <div class="container">
+
+    <div class="step">Step 3 of 3 — Your Details</div>
+
+    <h1>Almost there, Teacher</h1>
+
+    <div class="intro">
+      <p>
+        Thank you for sharing your insight — your words are already helping shape what comes next.<br>
+        <strong>Now let us know who you are</strong> so we can welcome you properly into the Alliance.
+      </p>
+      <p>
+        This quick information helps us connect you with fellow founding teachers in your country, region, and subject area.<br>
+        Your profile stays private — used only to build this movement together.
+      </p>
+    </div>
+
+    <form name="teacher-data" method="POST" data-netlify="true" action="/alliance/thank-you/">
+      <input type="hidden" name="form-name" value="teacher-data">
+
+      <label for="fullName">Your full name</label>
+      <input type="text" id="fullName" name="fullName" placeholder="e.g. Aisha Mohammed" required>
+
+      <label for="schoolType">School type</label>
+      <select id="schoolType" name="schoolType" required>
+        <option value="" disabled selected>Select one</option>
+        <option value="rural">Rural</option>
+        <option value="urban">Urban</option>
+        <option value="peri-urban">Peri-urban / semi-urban</option>
+      </select>
+
+      <label for="country">Your country (from our 10 pioneer countries)</label>
+      <select id="country" name="country" required>
+        <option value="" disabled selected>Select your country</option>
+        <option value="nigeria">Nigeria</option>
+        <option value="kenya">Kenya</option>
+        <option value="ghana">Ghana</option>
+        <option value="south_africa">South Africa</option>
+        <option value="ethiopia">Ethiopia</option>
+        <option value="uganda">Uganda</option>
+        <option value="tanzania">Tanzania</option>
+        <option value="rwanda">Rwanda</option>
+        <option value="egypt">Egypt</option>
+        <option value="senegal">Senegal</option>
+      </select>
+
+      <label for="regionState">Your region/state/province</label>
+      <select id="regionState" name="regionState" required>
+        <option value="" disabled selected>Select region/state (after country)</option>
+      </select>
+
+      <label for="localGovt">Local government area / district (optional)</label>
+      <textarea id="localGovt" name="localGovt" rows="3" placeholder="e.g. Ikeja LGA, Lagos State (or your local area/district)"></textarea>
+
+      <label for="subjectLevel">Subject & level you teach</label>
+      <input type="text" id="subjectLevel" name="subjectLevel" placeholder="e.g. Mathematics (Primary 4–6)" required>
+
+      <label for="whatsapp">WhatsApp number (preferred)</label>
+      <input type="tel" id="whatsapp" name="whatsapp" placeholder="+234..." required>
+
+      <label for="email">Email (optional — for updates)</label>
+      <input type="email" id="email" name="email" placeholder="your.email@example.com">
+
+      <button type="submit" class="btn">
+        Submit & Unlock My Badge
+      </button>
+    </form>
+
+  </div>
+</main>
+
+<footer>
+  © 2025 TichaAfrica • Teach Smart. Lead Change.
+</footer>
+
+<script>
+// Dynamic region/state dropdown (basic version - add your full list later)
+const regions = {
+  nigeria: ["Lagos", "Abuja FCT", "Rivers", "Kano", "Oyo", "Kaduna", "Enugu", "Anambra", "Ogun", "Delta"],
+  kenya: ["Nairobi", "Mombasa", "Kisumu", "Nakuru", "Uasin Gishu", "Kiambu", "Kilifi", "Machakos", "Meru", "Nyeri"],
+  ghana: ["Greater Accra", "Ashanti", "Central", "Eastern", "Northern", "Western", "Volta", "Upper East", "Upper West"],
+  south_africa: ["Gauteng", "Western Cape", "KwaZulu-Natal", "Eastern Cape", "Limpopo", "Mpumalanga", "North West", "Free State", "Northern Cape"],
+  ethiopia: ["Addis Ababa", "Oromia", "Amhara", "Tigray", "SNNPR", "Afar", "Somali", "Benishangul-Gumuz"],
+  uganda: ["Central", "Eastern", "Northern", "Western"],
+  tanzania: ["Dar es Salaam", "Arusha", "Dodoma", "Mwanza", "Mbeya", "Morogoro", "Tanga", "Zanzibar"],
+  rwanda: ["Kigali", "Eastern", "Northern", "Southern", "Western"],
+  egypt: ["Cairo", "Alexandria", "Giza", "Dakahlia", "Beheira", "Minya", "Sohag", "Aswan"],
+  senegal: ["Dakar", "Thiès", "Diourbel", "Fatick", "Kaolack", "Saint-Louis", "Ziguinchor"]
+};
+
+document.getElementById('country').addEventListener('change', function() {
+  const country = this.value;
+  const regionSelect = document.getElementById('regionState');
+  regionSelect.innerHTML = '<option value="" disabled selected>Select region/state</option>';
+
+  if (country && regions[country]) {
+    regions[country].forEach(r => {
+      const option = document.createElement('option');
+      option.value = r;
+      option.textContent = r;
+      regionSelect.appendChild(option);
+    });
+  }
+});
+</script>
+
+</body>
+</html>
