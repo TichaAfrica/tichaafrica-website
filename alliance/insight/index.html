@@ -5,19 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Voice — TichaAfrica</title>
   <meta name="description" content="Share one real challenge from your classroom. Your insight will help shape the future.">
-  <!-- Open Graph / WhatsApp Sharing Tags -->
-<meta property="og:title" content="TichaAfrica — Teachers Leading AI in Africa" />
-<meta property="og:description" content="African teachers creating the tools our learners deserve. Join the first 10,000 shaping the future." />
-<meta property="og:image" content="https://tichaafrica.com/assets/images/og-image.jpg" />
-<meta property="og:url" content="https://tichaafrica.com" />
-<meta property="og:type" content="website" />
 
-<!-- Recommended for better preview -->
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:image:type" content="image/jpeg" />
+  <!-- Open Graph / WhatsApp Sharing Tags -->
+  <meta property="og:title" content="TichaAfrica — Teachers Leading AI in Africa" />
+  <meta property="og:description" content="African teachers creating the tools our learners deserve. Join the first 10,000 shaping the future." />
+  <meta property="og:image" content="https://tichaafrica.com/assets/images/og-image.jpg" />
+  <meta property="og:url" content="https://tichaafrica.com" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/jpeg" />
+
   <link rel="icon" href="/favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
   <style>
     *{margin:0;padding:0;box-sizing:border-box;}
     body{font-family:'Inter',sans-serif;background:#f8f9fc;color:#0f172a;min-height:100vh;display:flex;flex-direction:column;}
@@ -82,7 +83,6 @@
       Your voice is the missing piece</h1>
 
     <div class="intro">
-      
       <p>
         Right now, we’re building tools that actually serve African classrooms; and <strong>your reality</strong> is the blueprint.<br>
         One honest sentence from you can change how thousands teach and learn.
@@ -92,19 +92,33 @@
       </p>
     </div>
 
-    <form name="teacher-insight" method="POST" data-netlify="true" action="/alliance/data/">
+    <form
+      name="teacher-insight"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      action="/alliance/data/">
+
       <input type="hidden" name="form-name" value="teacher-insight">
+      <input type="hidden" name="bot-field">
 
       <label for="insight">
         As a teacher, what’s one real challenge in your classroom today that the right tools — designed by teachers like you; could fix?
       </label>
 
-      <textarea id="insight" name="insight" rows="6" placeholder="Be honest. Your experience matters. Write in any language." required></textarea>
+      <textarea
+        id="insight"
+        name="insight"
+        rows="6"
+        minlength="10"
+        maxlength="800"
+        placeholder="Be honest. Your experience matters. Write in any language."
+        required></textarea>
 
       <button type="submit" class="btn">
-        <a href="/alliance/data/" class="btn">Join →</a>
-      
+        Join →
       </button>
+
     </form>
 
   </div>
