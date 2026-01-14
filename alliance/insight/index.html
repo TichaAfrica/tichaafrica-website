@@ -93,14 +93,16 @@
     </div>
 
     <form
-      name="teacher-insight"
-      method="POST"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
-      action="/alliance/data/">
+  name="teacher-insight"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field">
 
-      <input type="hidden" name="form-name" value="teacher-insight">
-      <input type="hidden" name="bot-field">
+  <input type="hidden" name="form-name" value="teacher-insight">
+  <input type="hidden" name="bot-field">
+  <input type="hidden" name="redirect" value="/alliance/data/">
+
+  <!-- textarea + button -->
 
       <label for="insight">
         As a teacher, what’s one real challenge in your classroom today that the right tools — designed by teachers like you; could fix?
