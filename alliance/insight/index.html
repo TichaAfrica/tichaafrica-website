@@ -1,1 +1,120 @@
+Alliance/insight/
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Voice — TichaAfrica</title>
+  <meta name="description" content="Share one real challenge from your classroom. Your insight will help shape the future.">
+  <!-- Open Graph / WhatsApp Sharing Tags -->
+<meta property="og:title" content="TichaAfrica — Teachers Leading AI in Africa" />
+<meta property="og:description" content="African teachers creating the tools our learners deserve. Join the first 10,000 shaping the future." />
+<meta property="og:image" content="https://tichaafrica.com/assets/images/og-image.jpg" />
+<meta property="og:url" content="https://tichaafrica.com" />
+<meta property="og:type" content="website" />
+
+<!-- Recommended for better preview -->
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:type" content="image/jpeg" />
+  <link rel="icon" href="/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Inter',sans-serif;background:#f8f9fc;color:#0f172a;min-height:100vh;display:flex;flex-direction:column;}
+    main{flex:1;display:flex;align-items:center;justify-content:center;padding:24px;text-align:center;}
+    .container{max-width:720px;width:100%;}
+    .step{font-size:0.9rem;font-weight:600;color:#64748b;margin-bottom:20px;}
+    h1{font-size:clamp(2.2rem,7vw,3.4rem);font-weight:900;line-height:1.15;margin-bottom:24px;color:#0d5c63;}
+    .intro p{font-size:1.2rem;line-height:1.7;color:#475569;margin-bottom:24px;text-align:left;}
+    .intro strong{color:#0d5c63;}
+    form{
+      background:#ffffff;
+      padding:32px;
+      border-radius:16px;
+      box-shadow:0 10px 30px rgba(15,23,42,0.08);
+      text-align:left;
+      margin:32px 0;
+      border-left:6px solid #0d5c63;
+    }
+    label{font-weight:700;font-size:1.15rem;color:#0f172a;display:block;margin-bottom:12px;}
+    textarea{
+      width:100%;
+      min-height:160px;
+      padding:16px;
+      font-size:1.1rem;
+      border-radius:12px;
+      border:1px solid #cbd5e1;
+      resize:vertical;
+      margin-bottom:24px;
+      font-family:'Inter',sans-serif;
+    }
+    textarea:focus{
+      outline:none;
+      border-color:#0d5c63;
+      box-shadow:0 0 0 4px rgba(13,92,99,0.1);
+    }
+    .btn{
+      width:100%;
+      padding:18px;
+      background:#0d5c63;
+      color:#ffffff;
+      font-weight:700;
+      font-size:1.2rem;
+      border-radius:999px;
+      border:none;
+      cursor:pointer;
+      box-shadow:0 14px 36px rgba(13,92,99,0.25);
+      transition:all .3s ease;
+    }
+    .btn:hover{transform:translateY(-4px);box-shadow:0 24px 56px rgba(13,92,99,0.35);}
+    footer{padding:32px 20px;text-align:center;font-size:0.9rem;color:#64748b;background:#f8f9fc;}
+  </style>
+</head>
+
+<body>
+
+<main>
+  <div class="container">
+
+    <div class="step">Step 2 of 3 — Your Insight</div>
+
+    <h1>Welcome Teacher!
+      Your voice is the missing piece</h1>
+
+    <div class="intro">
+      
+      <p>
+        Right now, we’re building tools that actually serve African classrooms; and <strong>your reality</strong> is the blueprint.<br>
+        One honest sentence from you can change how thousands teach and learn.
+      </p>
+      <p>
+        No policy document or foreign app can replace what you know.
+      </p>
+    </div>
+
+    <form name="teacher-insight" method="POST" data-netlify="true" action="/alliance/data/">
+      <input type="hidden" name="form-name" value="teacher-insight">
+
+      <label for="insight">
+        As a teacher, what’s one real challenge in your classroom today that the right tools — designed by teachers like you; could fix?
+      </label>
+
+      <textarea id="insight" name="insight" rows="6" placeholder="Be honest. Your experience matters. Write in any language." required></textarea>
+
+      <button type="submit" class="btn">
+        <a href="/alliance/data/" class="btn">Join →</a>
+      
+      </button>
+    </form>
+
+  </div>
+</main>
+
+<footer>
+  © 2026 TichaAfrica • Teach Smart. Lead Change.
+</footer>
+
+</body>
+</html>
 
