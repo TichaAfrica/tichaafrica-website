@@ -1,9 +1,11 @@
+# STEP 2 → STEP 3 (biodata page)
 [[redirects]]
   from = "/alliance/data"
   to = "/alliance/data/index.html"
   status = 200
-  
+
+# FINAL THANK YOU PAGE
 [[redirects]]
-  from = "/alliance/thank-you"
-  to = "/alliance/thank-you/index.html"
+  from = "/thank-you"
+  to = "/thank-you.html"
   status = 200
