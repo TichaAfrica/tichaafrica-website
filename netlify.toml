@@ -1,4 +1,9 @@
 [[redirects]]
+  from = "/alliance/data"
+  to = "/alliance/data/index.html"
+  status = 200
+  
+[[redirects]]
   from = "/alliance/thank-you"
   to = "/alliance/thank-you/index.html"
   status = 200
