@@ -30,6 +30,7 @@ textarea{min-height:120px;}
 .btn{margin-top:28px;width:100%;padding:18px;border:none;border-radius:999px;background:#0d5c63;color:#fff;font-size:1.1rem;font-weight:700;cursor:pointer;}
 .btn:disabled{opacity:.6;cursor:not-allowed;}
 footer{text-align:center;padding:24px;color:#64748b;}
+.micro-text{font-size:0.95rem;line-height:1.5;color:#64748b;margin-bottom:16px;}
 </style>
 </head>
 
@@ -41,11 +42,23 @@ footer{text-align:center;padding:24px;color:#64748b;}
 <div class="step">Step 3 of 3 — Your Details</div>
 <h1>Almost there, Teacher</h1>
 
+<!-- Hands-off block -->
+<p class="micro-text">
+Your response is helping shape solutions for real classrooms across Africa.  
+To do this well, we need to know <strong>who every founding teacher is and where they teach</strong>.
+</p>
+
 <form id="teacherForm">
 
+<p class="micro-text">
+Start by telling us your name; it helps us recognise your contribution and connect you with fellow founding teachers.
+</p>
 <label>Full name</label>
 <input name="fullName" required>
 
+<p class="micro-text">
+Let us know your school type; this helps us understand different classroom environments across regions.
+</p>
 <label>School type</label>
 <select name="schoolType" required>
   <option value="">Select</option>
@@ -54,24 +67,42 @@ footer{text-align:center;padding:24px;color:#64748b;}
   <option>Peri-urban</option>
 </select>
 
+<p class="micro-text">
+Choosing your country ensures your classroom insights are placed on the right map; so they reach the right teachers and programs.
+</p>
 <label>Country</label>
 <select id="country" name="country" required></select>
 
+<p class="micro-text">
+Select your region/state; this helps place your classroom in the right local context for meaningful insights.
+</p>
 <label>Region / State / Province</label>
 <select id="region" name="regionState" required></select>
 
+<p class="micro-text">
+Optional: share your local area/district so we can connect teachers in your immediate community. This keeps your contribution precise and actionable.
+</p>
 <label>Local government / District</label>
 <input name="localGovt">
 
+<p class="micro-text">
+Let us know what subject and level you teach. This ensures your classroom challenges guide the right resources and training.
+</p>
 <label>Subject & Level</label>
 <input name="subjectLevel" required>
 
+<p class="micro-text">
+Add your WhatsApp number — we use it to keep you updated and connected with other founding teachers. Your number is private and secure.
+</p>
 <label>WhatsApp</label>
 <div style="display:flex;gap:8px">
   <select id="code"></select>
   <input id="whatsapp" name="whatsapp" required>
 </div>
 
+<p class="micro-text">
+Optional: share your email for updates and insights. It’s another way to stay informed without missing a beat.
+</p>
 <label>Email (optional)</label>
 <input type="email" name="email">
 
