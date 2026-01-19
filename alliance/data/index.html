@@ -31,13 +31,16 @@ textarea{min-height:120px;}
 .btn:disabled{opacity:.6;cursor:not-allowed;}
 footer{text-align:center;padding:24px;color:#64748b;}
 .micro-text{font-size:0.95rem;line-height:1.5;color:#64748b;margin-bottom:16px;}
-  /* Add spacing between fields */
-label,
+  /* Tighten label-to-field spacing */
+label {
+  margin-bottom: 4px; /* closer to the input */
+}
+
+/* Add spacing between blocks of fields (label + input group) */
 input,
 select,
-textarea,
-.micro-text {
-  margin-bottom: 12px; /* subtle spacing, non-disruptive */
+textarea {
+  margin-bottom: 20px; /* more breathing room between fields */
 }
 </style>
 </head>
