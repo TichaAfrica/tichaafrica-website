@@ -8,27 +8,28 @@
 <meta name="description" content="Add your details to join the Founding Teacher Alliance.">
 
 <meta property="og:title" content="TichaAfrica — Teachers Leading AI in Africa">
-<meta property="og:description" content="African teachers creating the tools our learners deserve.">
+<meta property="og:description" content="African teachers shaping the future of learning.">
 <meta property="og:image" content="https://tichaafrica.com/assets/images/og-image.jpg">
+<meta property="og:url" content="https://tichaafrica.com">
 <meta property="og:type" content="website">
 
 <link rel="icon" href="/favicon.ico">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Inter,sans-serif;background:#f8f9fc;color:#0f172a}
-main{padding:24px}
-.container{max-width:720px;margin:auto}
-.step{font-weight:600;color:#64748b;margin-bottom:16px}
-h1{font-size:clamp(2rem,6vw,3rem);color:#0d5c63;margin-bottom:16px}
-form{background:#fff;padding:32px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.08)}
-label{font-weight:700;margin-top:20px;display:block}
-input,select,textarea{width:100%;padding:14px;margin-top:8px;border-radius:12px;border:1px solid #cbd5e1}
-textarea{min-height:120px}
-.btn{margin-top:24px;width:100%;padding:18px;border:none;border-radius:999px;background:#0d5c63;color:#fff;font-weight:700;font-size:1.1rem}
-.btn:disabled{opacity:.6}
-footer{text-align:center;margin:32px 0;color:#64748b}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:#f8f9fc;color:#0f172a;}
+main{padding:24px;display:flex;justify-content:center;}
+.container{max-width:720px;width:100%;}
+.step{font-weight:600;color:#64748b;margin-bottom:16px;}
+h1{font-size:clamp(2rem,6vw,3rem);color:#0d5c63;margin-bottom:20px;}
+form{background:#fff;padding:32px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.08);}
+label{font-weight:700;margin-top:20px;display:block;}
+input,select,textarea{width:100%;padding:14px;border-radius:10px;border:1px solid #cbd5e1;margin-top:8px;}
+textarea{min-height:120px;}
+.btn{margin-top:28px;width:100%;padding:18px;border:none;border-radius:999px;background:#0d5c63;color:#fff;font-size:1.1rem;font-weight:700;cursor:pointer;}
+.btn:disabled{opacity:.6;cursor:not-allowed;}
+footer{text-align:center;padding:24px;color:#64748b;}
 </style>
 </head>
 
@@ -43,95 +44,89 @@ footer{text-align:center;margin:32px 0;color:#64748b}
 <form id="teacherForm">
 
 <label>Full name</label>
-<input name="fullname" required>
+<input name="fullName" required>
 
 <label>School type</label>
 <select name="schoolType" required>
-<option value="">Select</option>
-<option>Rural</option>
-<option>Urban</option>
-<option>Peri-urban</option>
+  <option value="">Select</option>
+  <option>Rural</option>
+  <option>Urban</option>
+  <option>Peri-urban</option>
 </select>
 
 <label>Country</label>
 <select id="country" name="country" required></select>
 
 <label>Region / State / Province</label>
-<select id="region" name="region" required></select>
+<select id="region" name="regionState" required></select>
 
 <label>Local government / District</label>
-<textarea name="localGovt"></textarea>
+<input name="localGovt">
 
-<label>Subject & level</label>
+<label>Subject & Level</label>
 <input name="subjectLevel" required>
 
 <label>WhatsApp</label>
 <div style="display:flex;gap:8px">
-<select id="code" name="code" required></select>
-<input name="whatsapp" required placeholder="8012345678">
+  <select id="code"></select>
+  <input id="whatsapp" name="whatsapp" required>
 </div>
 
 <label>Email (optional)</label>
 <input type="email" name="email">
 
-<button class="btn" type="submit">Unlock My Badge →</button>
+<button class="btn" id="submitBtn">Unlock My Badge →</button>
 
 </form>
+
 </div>
 </main>
 
 <footer>© 2025 TichaAfrica • Teach Smart. Lead Change.</footer>
 
 <script>
-const WEBHOOK = "https://script.google.com/macros/s/AKfycbxKP-LUtdz_EiwdnpA25-D2oeVaHsMmxRB0lO9OtT5_XypRDsYcXEFi05jV8Y6W4Hwd/exec";
-
-if(sessionStorage.getItem("submitted")) {
-  window.location.href="/alliance/thank-you/";
-}
+const webhook = "https://script.google.com/macros/s/AKfycbxKP-LUtdz_EiwdnpA25-D2oeVaHsMmxRB0lO9OtT5_XypRDsYcXEFi05jV8Y6W4Hwd/exec";
 
 const countries = {
  Nigeria:{code:"+234",regions:["Abia","Adamawa","Akwa Ibom","Anambra","Bauchi","Bayelsa","Benue","Borno","Cross River","Delta","Ebonyi","Edo","Ekiti","Enugu","FCT","Gombe","Imo","Jigawa","Kaduna","Kano","Katsina","Kebbi","Kogi","Kwara","Lagos","Nasarawa","Niger","Ogun","Ondo","Osun","Oyo","Plateau","Rivers","Sokoto","Taraba","Yobe","Zamfara"]},
- Kenya:{code:"+254",regions:["Nairobi","Mombasa","Kiambu","Nakuru","Machakos","Meru","Nyeri","Uasin Gishu"]},
- Ghana:{code:"+233",regions:["Greater Accra","Ashanti","Central","Eastern","Northern","Western","Volta"]},
- SouthAfrica:{code:"+27",regions:["Gauteng","Western Cape","KwaZulu-Natal","Eastern Cape","Limpopo"]},
- Ethiopia:{code:"+251",regions:["Addis Ababa","Oromia","Amhara","Tigray","SNNPR"]},
- Uganda:{code:"+256",regions:["Central","Eastern","Northern","Western"]},
- Tanzania:{code:"+255",regions:["Dar es Salaam","Arusha","Dodoma","Mwanza"]},
- Rwanda:{code:"+250",regions:["Kigali","Eastern","Western","Northern","Southern"]},
- Egypt:{code:"+20",regions:["Cairo","Giza","Alexandria","Aswan","Luxor"]},
- Senegal:{code:"+221",regions:["Dakar","Thiès","Saint-Louis","Ziguinchor"]}
+ Kenya:{code:"+254",regions:["All Counties"]},
+ Ghana:{code:"+233",regions:["All Regions"]},
+ "South Africa":{code:"+27",regions:["All Provinces"]},
+ Ethiopia:{code:"+251",regions:["All Regions"]},
+ Uganda:{code:"+256",regions:["All Regions"]},
+ Tanzania:{code:"+255",regions:["All Regions"]},
+ Rwanda:{code:"+250",regions:["All Regions"]},
+ Egypt:{code:"+20",regions:["All Governorates"]},
+ Senegal:{code:"+221",regions:["All Regions"]}
 };
 
 const countrySel=document.getElementById("country");
 const regionSel=document.getElementById("region");
 const codeSel=document.getElementById("code");
 
-Object.entries(countries).forEach(([c,d])=>{
+Object.keys(countries).forEach(c=>{
   countrySel.add(new Option(c,c));
-  codeSel.add(new Option(d.code,d.code));
 });
 
 countrySel.onchange=()=>{
   regionSel.innerHTML="";
-  countries[countrySel.value].regions.forEach(r=>{
-    regionSel.add(new Option(r,r));
-  });
-  codeSel.value=countries[countrySel.value].code;
+  codeSel.innerHTML="";
+  const c=countries[countrySel.value];
+  codeSel.add(new Option(c.code,c.code));
+  c.regions.forEach(r=>regionSel.add(new Option(r,r)));
 };
 
 document.getElementById("teacherForm").onsubmit=async e=>{
   e.preventDefault();
-  if(sessionStorage.getItem("submitted")) return;
-
-  const btn=e.target.querySelector("button");
+  const btn=document.getElementById("submitBtn");
   btn.disabled=true;
 
-  const data=Object.fromEntries(new FormData(e.target));
-  data.timestamp=new Date().toISOString();
-  data.submissionType="Alliance Data";
+  const data=new FormData(e.target);
+  data.set("whatsapp",codeSel.value+document.getElementById("whatsapp").value);
+  data.append("submissionType","Alliance Profile");
+  data.append("timestamp",new Date().toISOString());
 
-  await fetch(WEBHOOK,{method:"POST",body:JSON.stringify(data)});
-  sessionStorage.setItem("submitted","yes");
+  await fetch(webhook,{method:"POST",body:data});
   window.location.href="/alliance/thank-you/";
 };
 </script>
