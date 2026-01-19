@@ -1,177 +1,165 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Complete Your Profile — TichaAfrica</title>
+<!doctype html>  
+<html lang="en">  
+<head>  
+<meta charset="utf-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>Complete Your Profile — TichaAfrica</title>  
 
-<meta name="description" content="Add your details to join the Founding Teacher Alliance.">
+<meta name="description" content="Add your details to join the Founding Teacher Alliance.">  
 
-<meta property="og:title" content="TichaAfrica — Teachers Leading AI in Africa">
-<meta property="og:description" content="African teachers shaping the future of learning.">
-<meta property="og:image" content="https://tichaafrica.com/assets/images/og-image.jpg">
-<meta property="og:url" content="https://tichaafrica.com">
-<meta property="og:type" content="website">
+<meta property="og:title" content="TichaAfrica — Teachers Leading AI in Africa">  
+<meta property="og:description" content="African teachers shaping the future of learning.">  
+<meta property="og:image" content="https://tichaafrica.com/assets/images/og-image.jpg">  
+<meta property="og:url" content="https://tichaafrica.com">  
+<meta property="og:type" content="website">  
 
-<link rel="icon" href="/favicon.ico">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico">  
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">  
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Inter',sans-serif;background:#f8f9fc;color:#0f172a;}
-main{padding:24px;display:flex;justify-content:center;}
-.container{max-width:720px;width:100%;}
-.step{font-weight:600;color:#64748b;margin-bottom:16px;}
-h1{font-size:clamp(2rem,6vw,3rem);color:#0d5c63;margin-bottom:20px;}
-form{background:#fff;padding:32px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.08);}
-label{font-weight:700;margin-top:20px;display:block;}
-input,select,textarea{width:100%;padding:14px;border-radius:10px;border:1px solid #cbd5e1;margin-top:8px;}
-textarea{min-height:120px;}
-.btn{margin-top:28px;width:100%;padding:18px;border:none;border-radius:999px;background:#0d5c63;color:#fff;font-size:1.1rem;font-weight:700;cursor:pointer;}
-.btn:disabled{opacity:.6;cursor:not-allowed;}
-footer{text-align:center;padding:24px;color:#64748b;}
-.micro-text{font-size:0.95rem;line-height:1.5;color:#64748b;margin-bottom:16px;}
-  /* Tighten label-to-field spacing */
-label {
-  margin-bottom: 4px; /* closer to the input */
-}
+<style>  
+*{margin:0;padding:0;box-sizing:border-box;}  
+body{font-family:'Inter',sans-serif;background:#f8f9fc;color:#0f172a;}  
+main{padding:24px;display:flex;justify-content:center;}  
+.container{max-width:720px;width:100%;}  
+.step{font-weight:600;color:#64748b;margin-bottom:16px;}  
+h1{font-size:clamp(2rem,6vw,3rem);color:#0d5c63;margin-bottom:20px;}  
+form{background:#fff;padding:32px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.08);}  
+label{font-weight:700;margin-top:20px;display:block;margin-bottom:4px;}  
+input,select,textarea{width:100%;padding:14px;border-radius:10px;border:1px solid #cbd5e1;margin-bottom:20px;}  
+textarea{min-height:120px;}  
+.btn{margin-top:28px;width:100%;padding:18px;border:none;border-radius:999px;background:#0d5c63;color:#fff;font-size:1.1rem;font-weight:700;cursor:pointer;}  
+.btn:disabled{opacity:.6;cursor:not-allowed;}  
+footer{text-align:center;padding:24px;color:#64748b;}  
+.micro-text{font-size:0.95rem;line-height:1.5;color:#64748b;margin-bottom:16px;}  
+</style>  
+</head>  
 
-/* Add spacing between blocks of fields (label + input group) */
-input,
-select,
-textarea {
-  margin-bottom: 20px; /* more breathing room between fields */
-}
-</style>
-</head>
+<body>  
 
-<body>
+<main>  
+<div class="container">  
 
-<main>
-<div class="container">
+<div class="step">Step 3 of 3 — Your Details</div>  
+<h1>You’re helping shape real classroom solutions</h1>  
 
-<div class="step">Step 3 of 3 — Your Details</div>
-<h1>Almost there, Teacher</h1>
+<!-- Hands-off block -->  
+<p class="micro-text">  
+Your response is helping shape solutions for real classrooms across Africa. To do this well, we need to know <strong>who every Founding Teacher is and where they teach</strong>. This helps us connect you with other teachers making change, and ensures your insights lead to real tools, training and support.  
+</p>  
 
-<!-- Hands-off block -->
-<p class="micro-text">
-Your response is helping shape solutions for real classrooms across Africa.  
-To do this well, we need to know <strong>who every Founding Teacher is and where they teach</strong>.
-</p>
+<form id="teacherForm">  
 
-<form id="teacherForm">
+<p class="micro-text">  
+Start by telling us your name; it lets us recognise your contribution and connect you with fellow Founding Teachers.  
+</p>  
+<label>Full name</label>  
+<input name="fullName" placeholder="e.g. Aisha Mohammed" required>  
 
-<p class="micro-text">
-Start by telling us your name; it helps us recognise your contribution and connect you with fellow Founding Teachers.
-</p>
-<label>Full name</label>
-<input name="fullName" required>
+<p class="micro-text">  
+Let us know your school type; this helps us understand different classroom environments across regions.  
+</p>  
+<label>School type</label>  
+<select name="schoolType" required>  
+  <option value="">Select</option>  
+  <option>Rural</option>  
+  <option>Urban</option>  
+  <option>Peri-urban</option>  
+</select>  
 
-<p class="micro-text">
-Let us know your school type; this helps us understand different classroom environments across regions.
-</p>
-<label>School type</label>
-<select name="schoolType" required>
-  <option value="">Select</option>
-  <option>Rural</option>
-  <option>Urban</option>
-  <option>Peri-urban</option>
-</select>
+<p class="micro-text">  
+Choosing your country ensures your classroom insights are placed on the right map so they reach the right teachers and programmes.  
+</p>  
+<label>Country</label>  
+<select id="country" name="country" required></select>  
 
-<p class="micro-text">
-Choosing your country ensures your classroom insights are placed on the right map; so they reach the right teachers and programs.
-</p>
-<label>Country</label>
-<select id="country" name="country" required></select>
+<p class="micro-text">  
+Select your region/state; this helps place your classroom in the right local context for meaningful insights.  
+</p>  
+<label>Region / State / Province</label>  
+<select id="region" name="regionState" required></select>  
 
-<p class="micro-text">
-Select your region/state; this helps place your classroom in the right local context for meaningful insights.
-</p>
-<label>Region / State / Province</label>
-<select id="region" name="regionState" required></select>
+<p class="micro-text">  
+Share your local area or district so we can connect teachers in your immediate community. This keeps your contribution precise and actionable.  
+</p>  
+<label>Local government / District</label>  
+<input name="localGovt" placeholder="e.g. Ikeja LGA, Lagos State">  
 
-<p class="micro-text">
-Share your local area/district so we can connect teachers in your immediate community. This keeps your contribution precise and actionable.
-</p>
-<label>Local government / District</label>
-<input name="localGovt">
+<p class="micro-text">  
+Let us know what subject and level you teach. This ensures your classroom challenges guide the right resources and training.  
+</p>  
+<label>Subject & Level</label>  
+<input name="subjectLevel" placeholder="e.g. Mathematics (Primary 4–6)" required>  
 
-<p class="micro-text">
-Let us know what subject and level you teach. This ensures your classroom challenges guide the right resources and training.
-</p>
-<label>Subject & Level</label>
-<input name="subjectLevel" required>
+<p class="micro-text">  
+Add your WhatsApp number. We use it to keep you updated and connected with other founding teachers. Your number is private and secure.  
+</p>  
+<label>WhatsApp</label>  
+<div style="display:flex;gap:8px">  
+  <select id="code"></select>  
+  <input id="whatsapp" name="whatsapp" placeholder="+234 701 234 5678" required>  
+</div>  
 
-<p class="micro-text">
-Add your WhatsApp number. We use it to keep you updated and connected with other founding teachers. Your number is private and secure.
-</p>
-<label>WhatsApp</label>
-<div style="display:flex;gap:8px">
-  <select id="code"></select>
-  <input id="whatsapp" name="whatsapp" required>
-</div>
+<p class="micro-text">  
+Optional: share your email for updates and insights. It’s another way to stay informed and connected.  
+</p>  
+<label>Email (optional)</label>  
+<input type="email" name="email" placeholder="your.email@example.com">  
 
-<p class="micro-text">
-Optional: share your email for updates and insights. It’s another way to stay informed without missing a beat.
-</p>
-<label>Email (optional)</label>
-<input type="email" name="email">
+<button class="btn" id="submitBtn">Unlock your badge and join teachers shaping real classroom tools →</button>  
 
-<button class="btn" id="submitBtn">Unlock My Badge →</button>
+</form>  
 
-</form>
+</div>  
+</main>  
 
-</div>
-</main>
+<footer>© 2025 TichaAfrica • Teach Smart. Lead Change.</footer>  
 
-<footer>© 2025 TichaAfrica • Teach Smart. Lead Change.</footer>
+<script>  
+const webhook = "https://script.google.com/macros/s/AKfycbxKP-LUtdz_EiwdnpA25-D2oeVaHsMmxRB0lO9OtT5_XypRDsYcXEFi05jV8Y6W4Hwd/exec";  
 
-<script>
-const webhook = "https://script.google.com/macros/s/AKfycbxKP-LUtdz_EiwdnpA25-D2oeVaHsMmxRB0lO9OtT5_XypRDsYcXEFi05jV8Y6W4Hwd/exec";
+const countries = {  
+ Nigeria:{code:"+234",regions:["Abia","Adamawa","Akwa Ibom","Anambra","Bauchi","Bayelsa","Benue","Borno","Cross River","Delta","Ebonyi","Edo","Ekiti","Enugu","FCT","Gombe","Imo","Jigawa","Kaduna","Kano","Katsina","Kebbi","Kogi","Kwara","Lagos","Nasarawa","Niger","Ogun","Ondo","Osun","Oyo","Plateau","Rivers","Sokoto","Taraba","Yobe","Zamfara"]},  
+ Kenya:{code:"+254",regions:["All Counties"]},  
+ Ghana:{code:"+233",regions:["All Regions"]},  
+ "South Africa":{code:"+27",regions:["All Provinces"]},  
+ Ethiopia:{code:"+251",regions:["All Regions"]},  
+ Uganda:{code:"+256",regions:["All Regions"]},  
+ Tanzania:{code:"+255",regions:["All Regions"]},  
+ Rwanda:{code:"+250",regions:["All Regions"]},  
+ Egypt:{code:"+20",regions:["All Governorates"]},  
+ Senegal:{code:"+221",regions:["All Regions"]}  
+};  
 
-const countries = {
- Nigeria:{code:"+234",regions:["Abia","Adamawa","Akwa Ibom","Anambra","Bauchi","Bayelsa","Benue","Borno","Cross River","Delta","Ebonyi","Edo","Ekiti","Enugu","FCT","Gombe","Imo","Jigawa","Kaduna","Kano","Katsina","Kebbi","Kogi","Kwara","Lagos","Nasarawa","Niger","Ogun","Ondo","Osun","Oyo","Plateau","Rivers","Sokoto","Taraba","Yobe","Zamfara"]},
- Kenya:{code:"+254",regions:["All Counties"]},
- Ghana:{code:"+233",regions:["All Regions"]},
- "South Africa":{code:"+27",regions:["All Provinces"]},
- Ethiopia:{code:"+251",regions:["All Regions"]},
- Uganda:{code:"+256",regions:["All Regions"]},
- Tanzania:{code:"+255",regions:["All Regions"]},
- Rwanda:{code:"+250",regions:["All Regions"]},
- Egypt:{code:"+20",regions:["All Governorates"]},
- Senegal:{code:"+221",regions:["All Regions"]}
-};
+const countrySel=document.getElementById("country");  
+const regionSel=document.getElementById("region");  
+const codeSel=document.getElementById("code");  
 
-const countrySel=document.getElementById("country");
-const regionSel=document.getElementById("region");
-const codeSel=document.getElementById("code");
+Object.keys(countries).forEach(c=>{  
+  countrySel.add(new Option(c,c));  
+});  
 
-Object.keys(countries).forEach(c=>{
-  countrySel.add(new Option(c,c));
-});
+countrySel.onchange=()=>{  
+  regionSel.innerHTML="";  
+  codeSel.innerHTML="";  
+  const c=countries[countrySel.value];  
+  codeSel.add(new Option(c.code,c.code));  
+  c.regions.forEach(r=>regionSel.add(new Option(r,r)));  
+};  
 
-countrySel.onchange=()=>{
-  regionSel.innerHTML="";
-  codeSel.innerHTML="";
-  const c=countries[countrySel.value];
-  codeSel.add(new Option(c.code,c.code));
-  c.regions.forEach(r=>regionSel.add(new Option(r,r)));
-};
+document.getElementById("teacherForm").onsubmit=async e=>{  
+  e.preventDefault();  
+  const btn=document.getElementById("submitBtn");  
+  btn.disabled=true;  
 
-document.getElementById("teacherForm").onsubmit=async e=>{
-  e.preventDefault();
-  const btn=document.getElementById("submitBtn");
-  btn.disabled=true;
+  const data=new FormData(e.target);  
+  data.set("whatsapp",codeSel.value+document.getElementById("whatsapp").value);  
+  data.append("submissionType","Alliance Profile");  
+  data.append("timestamp",new Date().toISOString());  
 
-  const data=new FormData(e.target);
-  data.set("whatsapp",codeSel.value+document.getElementById("whatsapp").value);
-  data.append("submissionType","Alliance Profile");
-  data.append("timestamp",new Date().toISOString());
+  await fetch(webhook,{method:"POST",body:data});  
+  window.location.href="/alliance/thank-you/";  
+};  
+</script>  
 
-  await fetch(webhook,{method:"POST",body:data});
-  window.location.href="/alliance/thank-you/";
-};
-</script>
-
-</body>
+</body>  
 </html>
