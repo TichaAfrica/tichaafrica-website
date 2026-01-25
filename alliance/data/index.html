@@ -132,23 +132,23 @@ Unlock your badge and join teachers shaping real classroom tools →
 const webhook="https://script.google.com/macros/s/AKfycbxKP-LUtdz_EiwdnpA25-D2oeVaHsMmxRB0lO9OtT5_XypRDsYcXEFi05jV8Y6W4Hwd/exec";
 
 const countries={
-  Nigeria:{code:"+234",regions:["Abia","Adamawa","Akwa Ibom","Anambra","Bauchi","Bayelsa","Benue","Borno","Cross River","Delta","Ebonyi","Edo","Ekiti","Enugu","FCT","Gombe","Imo","Jigawa","Kaduna","Kano","Katsina","Kebbi","Kogi","Kwara","Lagos","Nasarawa","Niger","Ogun","Ondo","Osun","Oyo","Plateau","Rivers","Sokoto","Taraba","Yobe","Zamfara"]},
-  Kenya:{code:"+254",regions:["Baringo","Bomet","Bungoma","Busia","Elgeyo-Marakwet","Embu","Garissa","Homa Bay","Isiolo","Kajiado","Kakamega","Kericho","Kiambu","Kilifi","Kirinyaga","Kisii","Kisumu","Kitui","Kwale","Laikipia","Lamu","Machakos","Makueni","Mandera","Meru","Migori","Mombasa","Murang'a","Nairobi","Nakuru","Nandi","Narok","Nyamira","Nyandarua","Nyeri","Samburu","Siaya","Taita-Taveta","Tana River","Tharaka-Nithi","Trans-Nzoia","Turkana","Uasin Gishu","Vihiga","Wajir","West Pokot"]},
-  Ghana:{code:"+233",regions:["Ahafo","Ashanti","Bono","Bono East","Central","Eastern","Greater Accra","North East","Northern","Oti","Savannah","Upper East","Upper West","Volta","Western","Western North"]},
-  "South Africa":{code:"+27",regions:["Eastern Cape","Free State","Gauteng","KwaZulu-Natal","Limpopo","Mpumalanga","Northern Cape","North West","Western Cape"]},
-  Ethiopia:{code:"+251",regions:["Addis Ababa","Afar","Amhara","Benishangul-Gumuz","Dire Dawa","Gambela","Harari","Oromia","Sidama","Somali","Southern Nations, Nationalities, and Peoples' Region","Tigray"]},
-  Uganda:{code:"+256",regions:["Central","Eastern","Northern","Western"]},
-  Tanzania:{code:"+255",regions:["Arusha","Dar es Salaam","Dodoma","Geita","Iringa","Kagera","Katavi","Kigoma","Kilimanjaro","Lindi","Manyara","Mara","Mbeya","Morogoro","Mtwara","Mwanza","Njombe","Pwani","Rukwa","Ruvuma","Shinyanga","Simiyu","Singida","Tabora","Tanga","Zanzibar North","Zanzibar South","Zanzibar West"]},
-  Rwanda:{code:"+250",regions:["Kigali","Northern","Southern","Eastern","Western"]},
+  Cameroon:{code:"+237",regions:["Adamawa","Centre","East","Far North","Littoral","North","North-West","South","South-West","West"]},
   Egypt:{code:"+20",regions:["Alexandria","Aswan","Beheira","Beni Suef","Cairo","Dakahlia","Damietta","Faiyum","Gharbia","Giza","Ismailia","Kafr El Sheikh","Luxor","Matruh","Minya","Monufia","New Valley","North Sinai","Port Said","Qalyubia","Qena","Red Sea","Sharqia","Sohag","South Sinai","Suez"]},
-  Senegal:{code:"+221",regions:["Dakar","Diourbel","Fatick","Kaolack","Kaffrine","Kédougou","Kolda","Louga","Matam","Saint-Louis","Sédhiou","Tambacounda","Thiès","Ziguinchor"]}
+  Ethiopia:{code:"+251",regions:["Addis Ababa","Afar","Amhara","Benishangul-Gumuz","Dire Dawa","Gambela","Harari","Oromia","Sidama","Somali","Southern Nations, Nationalities, and Peoples' Region","Tigray"]},
+  Ghana:{code:"+233",regions:["Ahafo","Ashanti","Bono","Bono East","Central","Eastern","Greater Accra","North East","Northern","Oti","Savannah","Upper East","Upper West","Volta","Western","Western North"]},
+  Kenya:{code:"+254",regions:["Baringo","Bomet","Bungoma","Busia","Elgeyo-Marakwet","Embu","Garissa","Homa Bay","Isiolo","Kajiado","Kakamega","Kericho","Kiambu","Kilifi","Kirinyaga","Kisii","Kisumu","Kitui","Kwale","Laikipia","Lamu","Machakos","Makueni","Mandera","Meru","Migori","Mombasa","Murang'a","Nairobi","Nakuru","Nandi","Narok","Nyamira","Nyandarua","Nyeri","Samburu","Siaya","Taita-Taveta","Tana River","Tharaka-Nithi","Trans-Nzoia","Turkana","Uasin Gishu","Vihiga","Wajir","West Pokot"]},
+  Nigeria:{code:"+234",regions:["Abia","Adamawa","Akwa Ibom","Anambra","Bauchi","Bayelsa","Benue","Borno","Cross River","Delta","Ebonyi","Edo","Ekiti","Enugu","FCT","Gombe","Imo","Jigawa","Kaduna","Kano","Katsina","Kebbi","Kogi","Kwara","Lagos","Nasarawa","Niger","Ogun","Ondo","Osun","Oyo","Plateau","Rivers","Sokoto","Taraba","Yobe","Zamfara"]},
+  Rwanda:{code:"+250",regions:["Eastern","Kigali","Northern","Southern","Western"]},
+  Senegal:{code:"+221",regions:["Dakar","Diourbel","Fatick","Kaolack","Kaffrine","Kédougou","Kolda","Louga","Matam","Saint-Louis","Sédhiou","Tambacounda","Thiès","Ziguinchor"]},
+  "South Africa":{code:"+27",regions:["Eastern Cape","Free State","Gauteng","KwaZulu-Natal","Limpopo","Mpumalanga","North West","Northern Cape","Western Cape"]},
+  Uganda:{code:"+256",regions:["Central","Eastern","Northern","Western"]}
 };
 
 const countrySel=document.getElementById("country");
 const regionSel=document.getElementById("region");
 const codeSel=document.getElementById("code");
 
-Object.keys(countries).forEach(c=>countrySel.add(new Option(c,c)));
+Object.keys(countries).sort().forEach(c=>countrySel.add(new Option(c,c)));
 
 countrySel.onchange=()=>{
   regionSel.innerHTML='<option value="">Tap to select</option>';
