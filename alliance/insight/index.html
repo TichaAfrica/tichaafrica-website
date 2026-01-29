@@ -28,6 +28,8 @@
     label{font-weight:700;font-size:1.15rem;margin-bottom:12px;display:block;}
     textarea{width:100%;min-height:160px;padding:16px;font-size:1.1rem;border-radius:12px;border:1px solid #cbd5e1;margin-bottom:24px;}
     .btn{width:100%;padding:18px;background:#0d5c63;color:#fff;font-weight:700;font-size:1.2rem;border-radius:999px;border:none;cursor:pointer;}
+    .btn:disabled{opacity:.6;cursor:not-allowed;}
+    footer{text-align:center;padding:24px;color:#64748b;}
   </style>
 </head>
 
@@ -41,14 +43,14 @@
 
     <div class="intro">
       <p>
-        Right now, we’re building tools that actually serve African classrooms; and <strong>your reality</strong> is the blueprint.
+        Right now, we're building tools that actually serve African classrooms; and <strong>your reality</strong> is the blueprint.
       </p>
       <p>No policy document or foreign app can replace what you know.</p>
     </div>
 
     <form id="insightForm">
       <label for="insight">
-        As a teacher, what’s one real challenge in your classroom today that the right tools — designed by teachers like you — could fix?
+        As a teacher, what's one real challenge in your classroom today that the right tools — designed by teachers like you — could fix?
       </label>
 
       <textarea
@@ -65,12 +67,10 @@
 </main>
 
 <footer>
-  © 2026 TichaAfrica • Teach Smart. Lead Change.
+  © 2025 TichaAfrica • Teach Smart. Lead Change.
 </footer>
 
 <script>
-const webhook = "https://script.google.com/macros/s/AKfycbxKP-LUtdz_EiwdnpA25-D2oeVaHsMmxRB0lO9OtT5_XypRDsYcXEFi05jV8Y6W4Hwd/exec";
-
 const form = document.getElementById("insightForm");
 const button = document.getElementById("submitBtn");
 
@@ -86,16 +86,7 @@ form.addEventListener("submit", async (e) => {
   // ✅ Persist insight for Step 3
   sessionStorage.setItem("tichaInsight", insight);
 
-  // ✅ Send to webhook
-  fetch(webhook, {
-    method: "POST",
-    body: new URLSearchParams({
-      submissionType: "Insight",
-      insight: insight
-    })
-  }).catch(()=>{});
-
-  // ➡️ Continue flow
+  // ➡️ Continue flow (no webhook call here)
   window.location.href = "/alliance/data/";
 });
 </script>
