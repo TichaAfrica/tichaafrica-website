@@ -117,6 +117,23 @@ Optional: share your email for updates and insights. It's another way to stay in
 <label>Email (optional)</label>
 <input type="email" name="email" placeholder="your.email@example.com">
 
+<p class="micro-text">
+Help us understand how you found TichaAfrica so we can reach more teachers like you.
+</p>
+<label>How did you hear about us? (optional)</label>
+<select name="referralSource">
+  <option value="">Tap to select</option>
+  <option>WhatsApp</option>
+  <option>Facebook</option>
+  <option>Twitter/X</option>
+  <option>LinkedIn</option>
+  <option>Instagram</option>
+  <option>Friend/Colleague</option>
+  <option>School/Training</option>
+  <option>Google Search</option>
+  <option>Other</option>
+</select>
+
 <button class="btn" id="submitBtn">
 Unlock your badge and join teachers shaping real classroom tools →
 </button>
@@ -126,10 +143,10 @@ Unlock your badge and join teachers shaping real classroom tools →
 </div>
 </main>
 
-<footer>© 2026 TichaAfrica • Teach Smart. Lead Change.</footer>
+<footer>© 2025 TichaAfrica • Teach Smart. Lead Change.</footer>
 
 <script>
-const webhook="https://script.google.com/macros/s/AKfycbxKP-LUtdz_EiwdnpA25-D2oeVaHsMmxRB0lO9OtT5_XypRDsYcXEFi05jV8Y6W4Hwd/exec";
+const webhook="https://script.google.com/macros/s/AKfycbxJapUiUAbM9scEQa5IatRR7-_Poj6bTmjEsNxVSVmu5PNrjkMjlkI_ygjHDS-UWrnj/exec";
 
 const countries={
   Cameroon:{code:"+237",regions:["Adamawa","Centre","East","Far North","Littoral","North","North-West","South","South-West","West"]},
@@ -171,12 +188,20 @@ document.getElementById("teacherForm").addEventListener("submit",async e=>{
   const cleanPhone=document.getElementById("whatsapp").value.replace(/\D/g,"");
   data.set("whatsapp",codeSel.value+cleanPhone);
 
-  ["fullName","schoolType","country","regionState","localGovt","subjectLevel","whatsapp","email","submissionType"]
+  // ✅ Retrieve insight from Step 2
+  const insight = sessionStorage.getItem("tichaInsight") || "";
+  data.append("insight", insight);
+
+  ["fullName","schoolType","country","regionState","localGovt","subjectLevel","whatsapp","email","referralSource","submissionType","insight"]
     .forEach(f=>{ if(!data.has(f)) data.append(f,""); });
 
   fetch(webhook,{method:"POST",body:data}).catch(()=>{});
 
-  form.submit();
+  // Clear the stored insight
+  sessionStorage.removeItem("tichaInsight");
+  
+  // Redirect to thank you page
+  window.location.href = "/alliance/thank-you/";
 });
 </script>
 
