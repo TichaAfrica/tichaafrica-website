@@ -31,6 +31,7 @@ textarea{min-height:120px;}
 .btn:disabled{opacity:.6;cursor:not-allowed;}
 footer{text-align:center;padding:24px;color:#64748b;}
 .micro-text{font-size:0.95rem;line-height:1.5;color:#64748b;margin-bottom:16px;}
+select option{padding:8px;}
 </style>
 </head>
 
@@ -145,63 +146,126 @@ Unlock your badge and join teachers shaping real classroom tools →
 
 <footer>© 2026 TichaAfrica • Teach Smart. Lead Change.</footer>
 
-<script>
-const webhook="https://script.google.com/macros/s/AKfycbxJapUiUAbM9scEQa5IatRR7-_Poj6bTmjEsNxVSVmu5PNrjkMjlkI_ygjHDS-UWrnj/exec";
+<!-- Hidden form for Netlify detection -->
+<form name="Founding Teacher Alliance" netlify netlify-honeypot="bot-field" hidden>
+  <input type="text" name="fullName" />
+  <input type="text" name="schoolType" />
+  <input type="text" name="country" />
+  <input type="text" name="regionState" />
+  <input type="text" name="localGovt" />
+  <input type="text" name="subjectLevel" />
+  <textarea name="insight"></textarea>
+  <input type="text" name="whatsapp" />
+  <input type="email" name="email" />
+  <input type="text" name="referralSource" />
+  <input type="text" name="submissionType" />
+</form>
 
-const countries={
-  Cameroon:{code:"+237",regions:["Adamawa","Centre","East","Far North","Littoral","North","North-West","South","South-West","West"]},
-  Egypt:{code:"+20",regions:["Alexandria","Aswan","Beheira","Beni Suef","Cairo","Dakahlia","Damietta","Faiyum","Gharbia","Giza","Ismailia","Kafr El Sheikh","Luxor","Matruh","Minya","Monufia","New Valley","North Sinai","Port Said","Qalyubia","Qena","Red Sea","Sharqia","Sohag","South Sinai","Suez"]},
-  Ethiopia:{code:"+251",regions:["Addis Ababa","Afar","Amhara","Benishangul-Gumuz","Dire Dawa","Gambela","Harari","Oromia","Sidama","Somali","Southern Nations, Nationalities, and Peoples' Region","Tigray"]},
-  Ghana:{code:"+233",regions:["Ahafo","Ashanti","Bono","Bono East","Central","Eastern","Greater Accra","North East","Northern","Oti","Savannah","Upper East","Upper West","Volta","Western","Western North"]},
-  Kenya:{code:"+254",regions:["Baringo","Bomet","Bungoma","Busia","Elgeyo-Marakwet","Embu","Garissa","Homa Bay","Isiolo","Kajiado","Kakamega","Kericho","Kiambu","Kilifi","Kirinyaga","Kisii","Kisumu","Kitui","Kwale","Laikipia","Lamu","Machakos","Makueni","Mandera","Meru","Migori","Mombasa","Murang'a","Nairobi","Nakuru","Nandi","Narok","Nyamira","Nyandarua","Nyeri","Samburu","Siaya","Taita-Taveta","Tana River","Tharaka-Nithi","Trans-Nzoia","Turkana","Uasin Gishu","Vihiga","Wajir","West Pokot"]},
-  Nigeria:{code:"+234",regions:["Abia","Adamawa","Akwa Ibom","Anambra","Bauchi","Bayelsa","Benue","Borno","Cross River","Delta","Ebonyi","Edo","Ekiti","Enugu","FCT","Gombe","Imo","Jigawa","Kaduna","Kano","Katsina","Kebbi","Kogi","Kwara","Lagos","Nasarawa","Niger","Ogun","Ondo","Osun","Oyo","Plateau","Rivers","Sokoto","Taraba","Yobe","Zamfara"]},
-  Rwanda:{code:"+250",regions:["Eastern","Kigali","Northern","Southern","Western"]},
-  Senegal:{code:"+221",regions:["Dakar","Diourbel","Fatick","Kaolack","Kaffrine","Kédougou","Kolda","Louga","Matam","Saint-Louis","Sédhiou","Tambacounda","Thiès","Ziguinchor"]},
-  "South Africa":{code:"+27",regions:["Eastern Cape","Free State","Gauteng","KwaZulu-Natal","Limpopo","Mpumalanga","North West","Northern Cape","Western Cape"]},
-  Uganda:{code:"+256",regions:["Central","Eastern","Northern","Western"]}
+<script>
+// ✅ Your Google Apps Script webhook
+const GOOGLE_WEBHOOK = "https://script.google.com/macros/s/AKfycby47eYtGdiiVw81z6V0tsvTDyhZe43vmaTP7oK8mNcRVWawBUNpoa1PZ5fGWD2JHl0E/exec";
+
+const countries = {
+  "🇨🇲 Cameroon": {code: "+237", regions: ["Adamawa", "Centre", "East", "Far North", "Littoral", "North", "North-West", "South", "South-West", "West"]},
+  "🇪🇬 Egypt": {code: "+20", regions: ["Alexandria", "Aswan", "Beheira", "Beni Suef", "Cairo", "Dakahlia", "Damietta", "Faiyum", "Gharbia", "Giza", "Ismailia", "Kafr El Sheikh", "Luxor", "Matruh", "Minya", "Monufia", "New Valley", "North Sinai", "Port Said", "Qalyubia", "Qena", "Red Sea", "Sharqia", "Sohag", "South Sinai", "Suez"]},
+  "🇪🇹 Ethiopia": {code: "+251", regions: ["Addis Ababa", "Afar", "Amhara", "Benishangul-Gumuz", "Dire Dawa", "Gambela", "Harari", "Oromia", "Sidama", "Somali", "Southern Nations, Nationalities, and Peoples' Region", "Tigray"]},
+  "🇬🇭 Ghana": {code: "+233", regions: ["Ahafo", "Ashanti", "Bono", "Bono East", "Central", "Eastern", "Greater Accra", "North East", "Northern", "Oti", "Savannah", "Upper East", "Upper West", "Volta", "Western", "Western North"]},
+  "🇰🇪 Kenya": {code: "+254", regions: ["Baringo", "Bomet", "Bungoma", "Busia", "Elgeyo-Marakwet", "Embu", "Garissa", "Homa Bay", "Isiolo", "Kajiado", "Kakamega", "Kericho", "Kiambu", "Kilifi", "Kirinyaga", "Kisii", "Kisumu", "Kitui", "Kwale", "Laikipia", "Lamu", "Machakos", "Makueni", "Mandera", "Meru", "Migori", "Mombasa", "Murang'a", "Nairobi", "Nakuru", "Nandi", "Narok", "Nyamira", "Nyandarua", "Nyeri", "Samburu", "Siaya", "Taita-Taveta", "Tana River", "Tharaka-Nithi", "Trans-Nzoia", "Turkana", "Uasin Gishu", "Vihiga", "Wajir", "West Pokot"]},
+  "🇳🇬 Nigeria": {code: "+234", regions: ["Abia", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", "Bayelsa", "Benue", "Borno", "Cross River", "Delta", "Ebonyi", "Edo", "Ekiti", "Enugu", "FCT", "Gombe", "Imo", "Jigawa", "Kaduna", "Kano", "Katsina", "Kebbi", "Kogi", "Kwara", "Lagos", "Nasarawa", "Niger", "Ogun", "Ondo", "Osun", "Oyo", "Plateau", "Rivers", "Sokoto", "Taraba", "Yobe", "Zamfara"]},
+  "🇷🇼 Rwanda": {code: "+250", regions: ["Eastern", "Kigali", "Northern", "Southern", "Western"]},
+  "🇸🇳 Senegal": {code: "+221", regions: ["Dakar", "Diourbel", "Fatick", "Kaolack", "Kaffrine", "Kédougou", "Kolda", "Louga", "Matam", "Saint-Louis", "Sédhiou", "Tambacounda", "Thiès", "Ziguinchor"]},
+  "🇿🇦 South Africa": {code: "+27", regions: ["Eastern Cape", "Free State", "Gauteng", "KwaZulu-Natal", "Limpopo", "Mpumalanga", "North West", "Northern Cape", "Western Cape"]},
+  "🇺🇬 Uganda": {code: "+256", regions: ["Central", "Eastern", "Northern", "Western"]}
 };
 
-const countrySel=document.getElementById("country");
-const regionSel=document.getElementById("region");
-const codeSel=document.getElementById("code");
+const countrySel = document.getElementById("country");
+const regionSel = document.getElementById("region");
+const codeSel = document.getElementById("code");
 
-Object.keys(countries).sort().forEach(c=>countrySel.add(new Option(c,c)));
+// Populate countries with flags
+Object.keys(countries).sort().forEach(c => {
+  const option = new Option(c, c.replace(/^🇨🇲|🇪🇬|🇪🇹|🇬🇭|🇰🇪|🇳🇬|🇷🇼|🇸🇳|🇿🇦|🇺🇬\s/, ''));
+  countrySel.add(option);
+});
 
-countrySel.onchange=()=>{
-  regionSel.innerHTML='<option value="">Tap to select</option>';
-  codeSel.innerHTML="";
-  const c=countries[countrySel.value];
-  if(c){
-    codeSel.add(new Option(c.code,c.code));
-    c.regions.forEach(r=>regionSel.add(new Option(r,r)));
+// Update regions when country changes
+countrySel.onchange = () => {
+  regionSel.innerHTML = '<option value="">Tap to select</option>';
+  codeSel.innerHTML = "";
+  
+  // Find country data by matching the country name (without flag)
+  const selectedCountry = Object.keys(countries).find(key => 
+    key.includes(countrySel.value)
+  );
+  
+  const c = countries[selectedCountry];
+  if (c) {
+    codeSel.add(new Option(c.code, c.code));
+    c.regions.forEach(r => regionSel.add(new Option(r, r)));
   }
 };
 
-document.getElementById("teacherForm").addEventListener("submit",async e=>{
+// Form submission
+document.getElementById("teacherForm").addEventListener("submit", async (e) => {
   e.preventDefault();
-  const btn=document.getElementById("submitBtn");
-  btn.disabled=true;
-
-  const form=e.target;
-  const data=new FormData(form);
-
-  const cleanPhone=document.getElementById("whatsapp").value.replace(/\D/g,"");
-  data.set("whatsapp",codeSel.value+cleanPhone);
-
-  // ✅ Retrieve insight from Step 2
-  const insight = sessionStorage.getItem("tichaInsight") || "";
-  data.append("insight", insight);
-
-  ["fullName","schoolType","country","regionState","localGovt","subjectLevel","whatsapp","email","referralSource","submissionType","insight"]
-    .forEach(f=>{ if(!data.has(f)) data.append(f,""); });
-
-  fetch(webhook,{method:"POST",body:data}).catch(()=>{});
-
-  // Clear the stored insight
-  sessionStorage.removeItem("tichaInsight");
   
-  // Redirect to thank you page
-  window.location.href = "/alliance/thank-you/";
+  const btn = document.getElementById("submitBtn");
+  const originalText = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = "Submitting...";
+
+  try {
+    const form = e.target;
+    const formData = new FormData(form);
+    
+    // Add WhatsApp with country code
+    const cleanPhone = document.getElementById("whatsapp").value.replace(/\D/g, "");
+    formData.set("whatsapp", codeSel.value + cleanPhone);
+    
+    // Get insight from Step 2
+    const insight = sessionStorage.getItem("tichaInsight") || "";
+    formData.set("insight", insight);
+
+    // Ensure all fields exist
+    const fields = [
+      "form-name", "submissionType", "fullName", "schoolType", 
+      "country", "regionState", "localGovt", "subjectLevel", 
+      "insight", "whatsapp", "email", "referralSource"
+    ];
+    
+    fields.forEach(field => {
+      if (!formData.has(field)) formData.append(field, "");
+    });
+
+    // Send to Google Sheets
+    const googleResponse = await fetch(GOOGLE_WEBHOOK, {
+      method: "POST",
+      body: formData
+    });
+
+    const result = await googleResponse.json();
+    console.log("Google Sheets:", result);
+
+    // Send to Netlify Forms (backup)
+    await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString()
+    });
+
+    // Clear insight
+    sessionStorage.removeItem("tichaInsight");
+    
+    // Redirect
+    window.location.href = "/alliance/thank-you/";
+
+  } catch (error) {
+    console.error("Error:", error);
+    
+    // Continue anyway
+    sessionStorage.removeItem("tichaInsight");
+    window.location.href = "/alliance/thank-you/";
+  }
 });
 </script>
 
