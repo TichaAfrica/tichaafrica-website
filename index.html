@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,65 +6,198 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TichaAfrica — Teach Smart, Lead Change</title>
   <meta name="description" content="Teacher-led Movement Co-designing AI for African Classrooms — by Teachers, for Teachers.">
+  
   <!-- Open Graph / WhatsApp -->
-<meta property="og:title" content="TichaAfrica — Teachers Leading AI in Africa" />
-<meta property="og:description" content="African teachers co-designing how AI serves our classrooms. Join the first 10,000 shaping Africa’s learning future." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://tichaafrica.com/" />
-
-<meta property="og:image" content="https://tichaafrica.com/assets/images/og-image.jpg?v=1" />
-<meta property="og:image:secure_url" content="https://tichaafrica.com/assets/images/og-image.jpg?v=1" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
+  <meta property="og:title" content="TichaAfrica — Teachers Leading AI in Africa" />
+  <meta property="og:description" content="African teachers co-designing how AI serves our classrooms. Join the first 10,000 shaping Africa's learning future." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tichaafrica.com/" />
+  <meta property="og:image" content="https://tichaafrica.com/assets/images/og-image.jpg?v=1" />
+  <meta property="og:image:secure_url" content="https://tichaafrica.com/assets/images/og-image.jpg?v=1" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  
   <style>
-  *{margin:0;padding:0;box-sizing:border-box;}
-  body{font-family:'Inter',sans-serif;background:#f8f9fc;color:#0f172a;min-height:100vh;display:flex;flex-direction:column;}
-  main{flex:1;display:flex;align-items:center;justify-content:center;padding:20px;text-align:center;background:#f8f9fc;}
-  .logo img{height:clamp(80px,20vw,140px);margin-bottom:32px;}
-  h1{font-size:clamp(2.8rem,8vw,5rem);font-weight:900;line-height:1.1;margin-bottom:24px;background:linear-gradient(135deg,#0d5c63,#ca8a04);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-  p{font-size:clamp(1.1rem,4vw,1.4rem);max-width:680px;margin:0 auto 48px;line-height:1.6;color:#475569;}
-  .btn{display:inline-block;padding:20px 60px;background:#0d5c63;color:#fff;font-weight:700;font-size:clamp(1.2rem,5vw,1.5rem);border-radius:999px;text-decoration:none;box-shadow:0 12px 32px rgba(13,92,99,0.2);transition:all .3s;}
-  .btn:hover{transform:translateY(-6px);box-shadow:0 24px 64px rgba(13,92,99,0.3);}
-  footer{padding:40px 20px;text-align:center;font-size:0.95rem;color:#64748b;background:#f8f9fc;}
-</style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8f9fc;
+      color: #0f172a;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    
+    .container {
+      max-width: 800px;
+      width: 100%;
+    }
+    
+    .logo img {
+      height: clamp(80px, 20vw, 140px);
+      margin-bottom: 32px;
+    }
+    
+    h1 {
+      font-size: clamp(2.8rem, 8vw, 5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      background: linear-gradient(135deg, #0d5c63, #ca8a04);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .tagline {
+      font-size: clamp(1.1rem, 4vw, 1.4rem);
+      max-width: 680px;
+      margin: 0 auto 16px;
+      line-height: 1.6;
+      color: #475569;
+      font-weight: 600;
+    }
+    
+    p {
+      font-size: clamp(1rem, 3.5vw, 1.2rem);
+      max-width: 680px;
+      margin: 0 auto 24px;
+      line-height: 1.7;
+      color: #64748b;
+    }
+    
+    .highlight {
+      color: #0f172a;
+      font-weight: 600;
+      margin-top: 32px;
+      margin-bottom: 32px;
+    }
+    
+    .cta-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-width: 500px;
+      margin: 48px auto 0;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 20px 60px;
+      font-weight: 700;
+      font-size: clamp(1.1rem, 4vw, 1.3rem);
+      border-radius: 999px;
+      text-decoration: none;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .btn-primary {
+      background: #0d5c63;
+      color: #fff;
+      box-shadow: 0 12px 32px rgba(13, 92, 99, 0.2);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 64px rgba(13, 92, 99, 0.3);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: #0d5c63;
+      border: 2px solid #0d5c63;
+    }
+    
+    .btn-secondary:hover {
+      background: #0d5c63;
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(13, 92, 99, 0.15);
+    }
+    
+    footer {
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #64748b;
+      background: #f8f9fc;
+    }
+    
+    @media (min-width: 640px) {
+      .cta-container {
+        flex-direction: row;
+        justify-content: center;
+      }
+      
+      .btn {
+        flex: 1;
+        max-width: 240px;
+      }
+    }
+  </style>
 </head>
+
 <body>
   <main>
-    <div>
+    <div class="container">
       <div class="logo">
         <img src="/assets/images/Logo1.jpg" alt="TichaAfrica">
       </div>
-      <h1>We are Teachers Shaping Africa’s Learning Future</h1>
-      <p>
+      
+      <h1>We are Teachers Shaping Africa's Learning Future</h1>
+      
+      <p class="tagline">
         Our classroom wisdom is what Africa needs right now
       </p>
+      
       <p>
-        Foreign AI is already entering our classrooms; designed without a single African teacher in the room.  
-        <p>
+        Foreign AI is already entering our classrooms—designed without a single African teacher in the room.
+      </p>
+      
+      <p>
         But <strong>we</strong> are the ones who know what our learners truly need.
-        </p>
       </p>
+      
       <p class="highlight">
-        <strong>TichaAfrica</strong> exists because of teachers like us. 
+        <strong>TichaAfrica</strong> exists because of teachers like us.
       </p>
+      
       <p>
-        TichaAfrica brings together African teachers to co-design how technology
-        serves our classrooms, students, and communities; starting with first-hand
-        classroom wisdom.
+        We bring together African teachers to co-design how technology serves our classrooms, students, and communities—starting with first-hand classroom wisdom.
       </p>
+      
       <p>
-        Our experience, our challenges, our ideas; they matter more than any imported solution.
+        Our experience, our challenges, our ideas—they matter more than any imported solution.
       </p>
-      <p class="cta-text">
-            If you're ready to help shape the future of learning;<br>
-            add your voice and; become a <strong>Founding Teacher</strong>.
-      </p>
-      <a href="/alliance/intro/" class="btn">
-        Join the Founding Teacher Alliance
-      </a>
+      
+      <div class="cta-container">
+        <a href="/alliance/intro/" class="btn btn-primary">
+          Become a Founding Teacher
+        </a>
+        <a href="/concept/" class="btn btn-secondary">
+          Learn More
+        </a>
+      </div>
     </div>
   </main>
 
