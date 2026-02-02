@@ -32,6 +32,7 @@ textarea{min-height:120px;}
 footer{text-align:center;padding:24px;color:#64748b;}
 .micro-text{font-size:0.95rem;line-height:1.5;color:#64748b;margin-bottom:16px;}
 select option{padding:8px;}
+#debugInfo{margin-top:20px;padding:15px;background:#fef3c7;border-radius:8px;font-size:0.85rem;font-family:monospace;white-space:pre-wrap;word-break:break-all;}
 </style>
 </head>
 
@@ -139,6 +140,9 @@ Help us understand how you found TichaAfrica so we can reach more teachers like 
 Unlock your badge and join teachers shaping real classroom tools →
 </button>
 
+<!-- Debug info panel -->
+<div id="debugInfo" style="display:none;"></div>
+
 </form>
 
 </div>
@@ -164,6 +168,25 @@ Unlock your badge and join teachers shaping real classroom tools →
 <script>
 // ✅ Your Google Apps Script webhook
 const GOOGLE_WEBHOOK = "https://script.google.com/macros/s/AKfycby47eYtGdiiVw81z6V0tsvTDyhZe43vmaTP7oK8mNcRVWawBUNpoa1PZ5fGWD2JHl0E/exec";
+
+// Debug panel helper
+function debug(message) {
+  const debugPanel = document.getElementById('debugInfo');
+  debugPanel.style.display = 'block';
+  debugPanel.textContent += message + '\n';
+  console.log(message);
+}
+
+// Check for insight on page load
+window.addEventListener('DOMContentLoaded', () => {
+  const insight = sessionStorage.getItem("tichaInsight");
+  debug("📋 Page loaded");
+  debug("🔍 Insight from sessionStorage: " + (insight || "NOT FOUND"));
+  
+  if (!insight) {
+    debug("⚠️ WARNING: No insight found. Did you come from Step 2?");
+  }
+});
 
 const countries = {
   "🇨🇲 Cameroon": {code: "+237", regions: ["Adamawa", "Centre", "East", "Far North", "Littoral", "North", "North-West", "South", "South-West", "West"]},
@@ -193,7 +216,6 @@ countrySel.onchange = () => {
   regionSel.innerHTML = '<option value="">Tap to select</option>';
   codeSel.innerHTML = "";
   
-  // Find country data by matching the country name (without flag)
   const selectedCountry = Object.keys(countries).find(key => 
     key.includes(countrySel.value)
   );
@@ -214,17 +236,22 @@ document.getElementById("teacherForm").addEventListener("submit", async (e) => {
   btn.disabled = true;
   btn.textContent = "Submitting...";
 
+  debug("\n🚀 FORM SUBMISSION STARTED");
+
   try {
     const form = e.target;
     const formData = new FormData(form);
     
     // Add WhatsApp with country code
     const cleanPhone = document.getElementById("whatsapp").value.replace(/\D/g, "");
-    formData.set("whatsapp", codeSel.value + cleanPhone);
+    const fullWhatsApp = codeSel.value + cleanPhone;
+    formData.set("whatsapp", fullWhatsApp);
+    debug("📱 WhatsApp: " + fullWhatsApp);
     
     // Get insight from Step 2
     const insight = sessionStorage.getItem("tichaInsight") || "";
     formData.set("insight", insight);
+    debug("💡 Insight retrieved: " + (insight ? "YES (" + insight.substring(0, 50) + "...)" : "MISSING"));
 
     // Ensure all fields exist
     const fields = [
@@ -237,15 +264,40 @@ document.getElementById("teacherForm").addEventListener("submit", async (e) => {
       if (!formData.has(field)) formData.append(field, "");
     });
 
+    debug("\n📤 Sending to Google Sheets...");
+    debug("🔗 Webhook URL: " + GOOGLE_WEBHOOK);
+
     // Send to Google Sheets
     const googleResponse = await fetch(GOOGLE_WEBHOOK, {
       method: "POST",
       body: formData
     });
 
-    const result = await googleResponse.json();
-    console.log("Google Sheets:", result);
+    debug("📊 Response Status: " + googleResponse.status);
+    debug("✅ Response OK: " + googleResponse.ok);
 
+    const responseText = await googleResponse.text();
+    debug("📄 Raw Response: " + responseText);
+
+    let result;
+    try {
+      result = JSON.parse(responseText);
+      debug("✅ Parsed JSON: " + JSON.stringify(result));
+      
+      if (result.status === "success") {
+        debug("🎉 SUCCESS: Data saved to Google Sheets!");
+      } else if (result.status === "error") {
+        debug("❌ ERROR from Google: " + result.message);
+      } else if (result.status === "duplicate") {
+        debug("⚠️ DUPLICATE: " + result.message);
+      }
+    } catch (e) {
+      debug("❌ JSON Parse Error: " + e.message);
+      debug("This might mean Google returned HTML instead of JSON");
+    }
+
+    debug("\n📤 Sending to Netlify Forms (backup)...");
+    
     // Send to Netlify Forms (backup)
     await fetch("/", {
       method: "POST",
@@ -253,18 +305,27 @@ document.getElementById("teacherForm").addEventListener("submit", async (e) => {
       body: new URLSearchParams(formData).toString()
     });
 
+    debug("✅ Netlify submission complete");
+
     // Clear insight
     sessionStorage.removeItem("tichaInsight");
+    debug("🗑️ Insight cleared from sessionStorage");
     
-    // Redirect
-    window.location.href = "/alliance/thank-you/";
+    debug("\n🔄 Redirecting to thank-you page in 3 seconds...");
+    
+    // Redirect after delay so user can see debug info
+    setTimeout(() => {
+      window.location.href = "/alliance/thank-you/";
+    }, 3000);
 
   } catch (error) {
-    console.error("Error:", error);
+    debug("\n❌ CRITICAL ERROR: " + error.message);
+    debug("Stack: " + error.stack);
     
-    // Continue anyway
-    sessionStorage.removeItem("tichaInsight");
-    window.location.href = "/alliance/thank-you/";
+    btn.disabled = false;
+    btn.textContent = originalText;
+    
+    alert("Submission error. Please check the yellow debug box and try again, or contact support.");
   }
 });
 </script>
