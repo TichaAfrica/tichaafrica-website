@@ -239,9 +239,16 @@ document.getElementById("teacherForm").addEventListener("submit", async (e) => {
       body: new URLSearchParams(formData).toString()
     });
 
-    sessionStorage.removeItem("tichaInsight");
-    window.location.href = "/alliance/thank-you/";
+    // Store teacher name for thank you page
+const teacherName = formData.get("fullName") || "";
+sessionStorage.setItem("teacherName", teacherName);
 
+// Clear insight
+sessionStorage.removeItem("tichaInsight");
+
+// Redirect
+window.location.href = "/alliance/thank-you/";
+    
   } catch (error) {
     console.error("Submission error:", error);
     sessionStorage.removeItem("tichaInsight");
