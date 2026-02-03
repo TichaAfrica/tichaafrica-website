@@ -6,15 +6,6 @@
   <title>Welcome, Founding Teacher! — TichaAfrica</title>
   <meta name="description" content="You're now part of the movement shaping Africa's learning future.">
   
-  <!-- Open Graph / WhatsApp -->
-  <meta property="og:title" content="TichaAfrica — Teachers Leading AI in Africa" />
-  <meta property="og:description" content="African teachers creating the tools our learners deserve. Join the first 10,000 shaping the future." />
-  <meta property="og:image" content="https://tichaafrica.com/assets/images/og-image.jpg" />
-  <meta property="og:url" content="https://tichaafrica.com" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  
   <link rel="icon" href="/favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
   
@@ -38,31 +29,25 @@
     }
     
     .container {
-      max-width: 700px;
+      max-width: 650px;
       background: rgba(255, 255, 255, 0.98);
-      padding: 48px 36px;
+      padding: 48px 32px;
       border-radius: 24px;
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
       color: #0f172a;
     }
     
     .icon {
-      font-size: 4.5rem;
+      font-size: 4rem;
       margin-bottom: 24px;
-      animation: celebrate 1s ease-in-out;
-    }
-    
-    @keyframes celebrate {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.2); }
     }
     
     h1 {
-      font-size: clamp(2.2rem, 7vw, 3.2rem);
+      font-size: clamp(2rem, 6vw, 2.8rem);
       font-weight: 900;
       color: #0d5c63;
       margin-bottom: 16px;
-      line-height: 1.15;
+      line-height: 1.2;
     }
     
     .name {
@@ -70,11 +55,10 @@
     }
     
     .subtitle {
-      font-size: clamp(1.15rem, 4vw, 1.35rem);
+      font-size: clamp(1.1rem, 4vw, 1.3rem);
       color: #475569;
       margin-bottom: 32px;
       font-weight: 600;
-      line-height: 1.5;
     }
     
     p {
@@ -84,53 +68,108 @@
       margin-bottom: 20px;
     }
     
-    .badge {
-      margin: 32px auto;
-      padding: 28px;
-      background: linear-gradient(135deg, #fef3c7, #fde68a);
-      border-radius: 16px;
+    .highlight {
+      background: #fef3c7;
+      padding: 24px;
+      border-radius: 12px;
+      margin: 32px 0;
       border-left: 6px solid #ca8a04;
     }
     
-    .badge .medal {
-      font-size: 4rem;
-      margin: 12px 0;
-    }
-    
-    .badge h2 {
-      font-size: 1.6rem;
+    .highlight p {
       color: #78350f;
-      margin-bottom: 8px;
+      font-weight: 600;
+      margin: 0;
     }
     
-    .badge p {
-      color: #92400e;
+    /* Share Section */
+    .share-section {
+      background: #f1f5f9;
+      padding: 28px;
+      border-radius: 16px;
+      margin: 32px 0;
+      border: 2px dashed #cbd5e1;
+    }
+    
+    .share-section h3 {
+      color: #0d5c63;
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+    
+    .share-section p {
+      font-size: 1rem;
+      color: #64748b;
+      margin-bottom: 20px;
+    }
+    
+    .share-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 24px;
+      border-radius: 999px;
+      text-decoration: none;
       font-weight: 600;
       font-size: 1rem;
-      margin: 0;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
     }
     
-    .highlight {
-      background: #e0f2fe;
-      padding: 24px;
-      border-radius: 12px;
-      margin: 28px 0;
-      border-left: 6px solid #0284c7;
+    .share-btn-whatsapp {
+      background: #25D366;
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
     }
     
-    .highlight p {
-      color: #0c4a6e;
-      font-weight: 600;
-      margin: 0;
+    .share-btn-whatsapp:hover {
+      background: #20ba5a;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
     }
     
-    .btn-primary {
+    .share-btn-copy {
+      background: #64748b;
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(100, 116, 139, 0.3);
+    }
+    
+    .share-btn-copy:hover {
+      background: #475569;
+      transform: translateY(-2px);
+    }
+    
+    .share-btn-copy.copied {
+      background: #10b981;
+    }
+    
+    .referral-link {
+      background: #fff;
+      padding: 16px;
+      border-radius: 8px;
+      margin-top: 16px;
+      border: 1px solid #e2e8f0;
+      word-break: break-all;
+      font-family: monospace;
+      font-size: 0.9rem;
+      color: #475569;
+    }
+    
+    .btn {
       display: inline-block;
-      padding: 20px 48px;
+      padding: 18px 48px;
       background: #0d5c63;
       color: #fff;
       font-weight: 700;
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       border-radius: 999px;
       text-decoration: none;
       margin-top: 24px;
@@ -138,7 +177,7 @@
       box-shadow: 0 10px 30px rgba(13, 92, 99, 0.3);
     }
     
-    .btn-primary:hover {
+    .btn:hover {
       transform: translateY(-4px);
       box-shadow: 0 16px 40px rgba(13, 92, 99, 0.4);
     }
@@ -156,7 +195,7 @@
     }
     
     footer {
-      margin-top: 36px;
+      margin-top: 32px;
       padding-top: 24px;
       border-top: 1px solid #e2e8f0;
       color: #94a3b8;
@@ -165,7 +204,7 @@
     
     .loading {
       opacity: 0;
-      animation: fadeIn 0.6s ease-in forwards;
+      animation: fadeIn 0.5s ease-in forwards;
     }
     
     @keyframes fadeIn {
@@ -178,28 +217,43 @@
   <div class="container loading">
     <div class="icon">🎉</div>
     
-    <h1><span class="name" id="teacherName">Teacher</span>, you did it!</h1>
+    <h1>Welcome, <span class="name" id="teacherName">Founding Teacher</span>!</h1>
     
     <p class="subtitle">
-      You're officially a <strong>Founding Teacher</strong> in the TichaAfrica movement.
+      You're now one of the first teachers shaping Africa's AI future.
     </p>
     
-    <div class="badge">
-      <div class="medal">🏅</div>
-      <h2>Founding Teacher Badge</h2>
-      <p>
-        One of the first 10,000 shaping AI for African classrooms
-      </p>
-    </div>
-    
     <p>
-      Your classroom insight has been recorded. You are now part of the movement co-designing technology that serves <strong>our</strong> learners, honors <strong>our</strong> languages, and reflects <strong>our</strong> realities.
+      Your classroom insight has been recorded. You're officially a <strong>Founding Teacher</strong> in the TichaAfrica movement.
     </p>
     
     <div class="highlight">
       <p>
-        💡 Your voice will directly influence the tools we build. This is just the beginning.
+        💡 Your voice will directly influence the tools we build for African classrooms. This is just the beginning.
       </p>
+    </div>
+    
+    <!-- SHARING SECTION -->
+    <div class="share-section">
+      <h3>🚀 Help Us Reach 10,000 Teachers</h3>
+      <p>
+        Know other teachers who should be part of this? Share TichaAfrica with your colleagues!
+      </p>
+      
+      <div class="share-buttons">
+        <a href="#" class="share-btn share-btn-whatsapp" id="shareWhatsApp">
+          <span>📱</span>
+          Share on WhatsApp
+        </a>
+        <button class="share-btn share-btn-copy" id="copyLinkBtn">
+          <span>🔗</span>
+          <span id="copyBtnText">Copy Link</span>
+        </button>
+      </div>
+      
+      <div class="referral-link" id="referralLink">
+        https://tichaafrica.com/alliance/intro/
+      </div>
     </div>
     
     <p>
@@ -207,10 +261,14 @@
     </p>
     
     <p>
-      Many founding teachers are taking the <strong>Founding Teacher Pledge</strong> to formalize their commitment and join our exclusive <strong>WhatsApp Community</strong> where we're connecting, collaborating, and shaping our roadmap.
+      Many founding teachers are taking the <strong>Founding Teacher Pledge</strong> to formalize their commitment to this movement.
     </p>
     
-    <a href="/alliance/pledge/" class="btn-primary" id="pledgeBtn">
+    <p>
+      Taking the pledge gives you access to our exclusive <strong>Founding Teachers WhatsApp Community</strong> where we're already connecting, sharing strategies, and shaping our roadmap together.
+    </p>
+    
+    <a href="/alliance/pledge/" class="btn">
       Take the Founding Teacher Pledge
     </a>
     
@@ -234,26 +292,79 @@
       const nameFromStorage = sessionStorage.getItem('teacherName');
       if (nameFromStorage) return nameFromStorage;
       
-      return null;
+      return 'Founding Teacher';
     }
     
-    // Display personalized greeting
+    // Display the name
     const teacherName = getTeacherName();
     const nameElement = document.getElementById('teacherName');
     
-    if (teacherName) {
+    if (teacherName && teacherName !== 'Founding Teacher') {
       const firstName = teacherName.split(' ')[0];
       nameElement.textContent = firstName;
-      
-      // Pass name to pledge page via URL
-      const pledgeBtn = document.getElementById('pledgeBtn');
-      pledgeBtn.href = `/alliance/pledge/?name=${encodeURIComponent(teacherName)}`;
-      
-      // Store for later use
-      sessionStorage.setItem('teacherName', teacherName);
-    } else {
-      nameElement.textContent = 'Teacher';
     }
+    
+    // Generate referral link (optional: add tracking parameter)
+    const referralLink = 'https://tichaafrica.com/alliance/intro/';
+    // If you want tracking, use: 
+    // const referralLink = `https://tichaafrica.com/alliance/intro/?ref=${encodeURIComponent(teacherName)}`;
+    
+    document.getElementById('referralLink').textContent = referralLink;
+    
+    // WhatsApp share message
+    const firstName = teacherName.split(' ')[0];
+    const shareMessage = `🌍 I just became a Founding Teacher at TichaAfrica!
+
+We're 10,000 African teachers co-designing AI for OUR classrooms—not importing Western solutions.
+
+Foreign companies are building tools for us without us. Time to change that.
+
+Join me: ${referralLink}
+
+Let's shape Africa's learning future together! 🚀`;
+    
+    // WhatsApp share button
+    document.getElementById('shareWhatsApp').addEventListener('click', (e) => {
+      e.preventDefault();
+      const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(shareMessage)}`;
+      window.open(whatsappUrl, '_blank');
+    });
+    
+    // Copy link button
+    const copyBtn = document.getElementById('copyLinkBtn');
+    const copyBtnText = document.getElementById('copyBtnText');
+    
+    copyBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(referralLink);
+        copyBtnText.textContent = '✓ Copied!';
+        copyBtn.classList.add('copied');
+        
+        setTimeout(() => {
+          copyBtnText.textContent = 'Copy Link';
+          copyBtn.classList.remove('copied');
+        }, 2000);
+      } catch (err) {
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = referralLink;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        
+        copyBtnText.textContent = '✓ Copied!';
+        copyBtn.classList.add('copied');
+        
+        setTimeout(() => {
+          copyBtnText.textContent = 'Copy Link';
+          copyBtn.classList.remove('copied');
+        }, 2000);
+      }
+    });
+    
+    // Clear sessionStorage name
+    sessionStorage.removeItem('teacherName');
   </script>
 </body>
 </html>
