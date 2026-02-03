@@ -3,110 +3,257 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to the Founders — TichaAfrica</title>
-  <meta name="description" content="You’re officially one of the first 10,000 shaping Africa’s learning future.">
-  <!-- Open Graph / WhatsApp Sharing Tags -->
-<meta property="og:title" content="TichaAfrica — Teachers Leading AI in Africa" />
-<meta property="og:description" content="African teachers creating the tools our learners deserve. Join the first 10,000 shaping the future." />
-<meta property="og:image" content="https://tichaafrica.com/assets/images/og-image.jpg" />
-<meta property="og:url" content="https://tichaafrica.com" />
-<meta property="og:type" content="website" />
-
-<!-- Recommended for better preview -->
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:image:type" content="image/jpeg" />
+  <title>Welcome, Founding Teacher! — TichaAfrica</title>
+  <meta name="description" content="You're now part of the movement shaping Africa's learning future.">
+  
+  <!-- Open Graph / WhatsApp -->
+  <meta property="og:title" content="TichaAfrica — Teachers Leading AI in Africa" />
+  <meta property="og:description" content="African teachers creating the tools our learners deserve. Join the first 10,000 shaping the future." />
+  <meta property="og:image" content="https://tichaafrica.com/assets/images/og-image.jpg" />
+  <meta property="og:url" content="https://tichaafrica.com" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  
   <link rel="icon" href="/favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  
   <style>
-    *{margin:0;padding:0;box-sizing:border-box;}
-    body{font-family:'Inter',sans-serif;background:#f8f9fc;color:#0f172a;min-height:100vh;display:flex;flex-direction:column;}
-    main{flex:1;display:flex;align-items:center;justify-content:center;padding:24px;text-align:center;}
-    .container{max-width:720px;width:100%;}
-    h1{font-size:clamp(2.5rem,8vw,4rem);font-weight:900;line-height:1.15;margin-bottom:24px;color:#0d5c63;}
-    .badge{
-      margin:40px auto;
-      padding:32px;
-      background:#ffffff;
-      border-radius:20px;
-      box-shadow:0 10px 30px rgba(13,92,99,0.15);
-      max-width:400px;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    .badge h2{font-size:2.2rem;color:#0d5c63;margin-bottom:16px;}
-    .badge .medal{font-size:5rem;margin:16px 0;}
-    .btn-share{
-      display:block;
-      width:100%;
-      max-width:320px;
-      margin:16px auto;
-      padding:16px;
-      background:#25D366;
-      color:#fff;
-      font-weight:700;
-      font-size:1.2rem;
-      border-radius:999px;
-      text-decoration:none;
-      box-shadow:0 12px 32px rgba(37,211,102,0.3);
-      transition:all .3s;
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0d5c63 0%, #0a4a50 100%);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      text-align: center;
     }
-    .btn-share:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(37,211,102,0.4);}
-    .btn-copy{background:#0d5c63;color:#fff;}
-    footer{padding:40px 20px;text-align:center;font-size:0.95rem;color:#64748b;}
+    
+    .container {
+      max-width: 700px;
+      background: rgba(255, 255, 255, 0.98);
+      padding: 48px 36px;
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      color: #0f172a;
+    }
+    
+    .icon {
+      font-size: 4.5rem;
+      margin-bottom: 24px;
+      animation: celebrate 1s ease-in-out;
+    }
+    
+    @keyframes celebrate {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+    
+    h1 {
+      font-size: clamp(2.2rem, 7vw, 3.2rem);
+      font-weight: 900;
+      color: #0d5c63;
+      margin-bottom: 16px;
+      line-height: 1.15;
+    }
+    
+    .name {
+      color: #ca8a04;
+    }
+    
+    .subtitle {
+      font-size: clamp(1.15rem, 4vw, 1.35rem);
+      color: #475569;
+      margin-bottom: 32px;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+    
+    p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #64748b;
+      margin-bottom: 20px;
+    }
+    
+    .badge {
+      margin: 32px auto;
+      padding: 28px;
+      background: linear-gradient(135deg, #fef3c7, #fde68a);
+      border-radius: 16px;
+      border-left: 6px solid #ca8a04;
+    }
+    
+    .badge .medal {
+      font-size: 4rem;
+      margin: 12px 0;
+    }
+    
+    .badge h2 {
+      font-size: 1.6rem;
+      color: #78350f;
+      margin-bottom: 8px;
+    }
+    
+    .badge p {
+      color: #92400e;
+      font-weight: 600;
+      font-size: 1rem;
+      margin: 0;
+    }
+    
+    .highlight {
+      background: #e0f2fe;
+      padding: 24px;
+      border-radius: 12px;
+      margin: 28px 0;
+      border-left: 6px solid #0284c7;
+    }
+    
+    .highlight p {
+      color: #0c4a6e;
+      font-weight: 600;
+      margin: 0;
+    }
+    
+    .btn-primary {
+      display: inline-block;
+      padding: 20px 48px;
+      background: #0d5c63;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.25rem;
+      border-radius: 999px;
+      text-decoration: none;
+      margin-top: 24px;
+      transition: all 0.3s;
+      box-shadow: 0 10px 30px rgba(13, 92, 99, 0.3);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(13, 92, 99, 0.4);
+    }
+    
+    .skip-link {
+      display: block;
+      margin-top: 24px;
+      color: #64748b;
+      font-size: 0.95rem;
+      text-decoration: none;
+    }
+    
+    .skip-link:hover {
+      text-decoration: underline;
+    }
+    
+    footer {
+      margin-top: 36px;
+      padding-top: 24px;
+      border-top: 1px solid #e2e8f0;
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+    
+    .loading {
+      opacity: 0;
+      animation: fadeIn 0.6s ease-in forwards;
+    }
+    
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
   </style>
 </head>
 
 <body>
-
-<main>
-  <div class="container">
-
-    <h1>Teacher, you did it!</h1>
-
-    <p style="font-size:1.3rem;line-height:1.6;color:#475569;margin-bottom:32px;">
-      Welcome to <strong>The Founding Teacher Alliance</strong>.<br>
-      You are officially one of the first 10,000 who said “Yes” —<br>
-      the ones who will shape AI in African classrooms, by teachers, for teachers.
+  <div class="container loading">
+    <div class="icon">🎉</div>
+    
+    <h1><span class="name" id="teacherName">Teacher</span>, you did it!</h1>
+    
+    <p class="subtitle">
+      You're officially a <strong>Founding Teacher</strong> in the TichaAfrica movement.
     </p>
-
+    
     <div class="badge">
-      <h2>Your Founding Teacher Badge</h2>
       <div class="medal">🏅</div>
-      <p style="font-size:1.2rem;font-weight:700;color:#0d5c63;">
-        African teachers creating AI tools our learners deserve
+      <h2>Founding Teacher Badge</h2>
+      <p>
+        One of the first 10,000 shaping AI for African classrooms
       </p>
     </div>
-
-    <p style="font-size:1.1rem;color:#475569;margin:32px 0;">
-      Tell your colleagues — the more voices we have, the stronger this movement becomes.
+    
+    <p>
+      Your classroom insight has been recorded. You are now part of the movement co-designing technology that serves <strong>our</strong> learners, honors <strong>our</strong> languages, and reflects <strong>our</strong> realities.
     </p>
-
-    <a href="#" class="btn-share" onclick="shareWhatsApp()">
-      Share on WhatsApp →
+    
+    <div class="highlight">
+      <p>
+        💡 Your voice will directly influence the tools we build. This is just the beginning.
+      </p>
+    </div>
+    
+    <p>
+      <strong>What happens next?</strong>
+    </p>
+    
+    <p>
+      Many founding teachers are taking the <strong>Founding Teacher Pledge</strong> to formalize their commitment and join our exclusive <strong>WhatsApp Community</strong> where we're connecting, collaborating, and shaping our roadmap.
+    </p>
+    
+    <a href="/alliance/pledge/" class="btn-primary" id="pledgeBtn">
+      Take the Founding Teacher Pledge
     </a>
-
-    <a href="#" class="btn-share btn-copy" onclick="copyLink()">
-      Copy Link to Share
+    
+    <a href="/" class="skip-link">
+      I'll do this later
     </a>
-
+    
+    <footer>
+      © 2026 TichaAfrica • Teach Smart. Lead Change.
+    </footer>
   </div>
-</main>
 
-<footer>
-  © 2025 TichaAfrica • Teach Smart. Lead Change.
-</footer>
-
-<script>
-  function shareWhatsApp() {
-    const text = "I just became a Founding Teacher with TichaAfrica! Be one of the first 10,000 shaping AI in African classrooms. Join me: https://tichaafrica.com";
-    window.open("https://wa.me/?text=" + encodeURIComponent(text), "_blank");
-  }
-
-  function copyLink() {
-    navigator.clipboard.writeText("https://tichaafrica.com").then(() => {
-      alert("Link copied! Share with your colleagues.");
-    });
-  }
-</script>
-
+  <script>
+    // Get teacher's name
+    function getTeacherName() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const nameFromUrl = urlParams.get('name');
+      
+      if (nameFromUrl) return nameFromUrl;
+      
+      const nameFromStorage = sessionStorage.getItem('teacherName');
+      if (nameFromStorage) return nameFromStorage;
+      
+      return null;
+    }
+    
+    // Display personalized greeting
+    const teacherName = getTeacherName();
+    const nameElement = document.getElementById('teacherName');
+    
+    if (teacherName) {
+      const firstName = teacherName.split(' ')[0];
+      nameElement.textContent = firstName;
+      
+      // Pass name to pledge page via URL
+      const pledgeBtn = document.getElementById('pledgeBtn');
+      pledgeBtn.href = `/alliance/pledge/?name=${encodeURIComponent(teacherName)}`;
+      
+      // Store for later use
+      sessionStorage.setItem('teacherName', teacherName);
+    } else {
+      nameElement.textContent = 'Teacher';
+    }
+  </script>
 </body>
 </html>
