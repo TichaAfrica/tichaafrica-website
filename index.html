@@ -1,208 +1,260 @@
-
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TichaAfrica — Teach Smart, Lead Change</title>
-  <meta name="description" content="Teacher-led Movement Co-designing AI for African Classrooms — by Teachers, for Teachers.">
-  
-  <!-- Open Graph / WhatsApp -->
-  <meta property="og:title" content="TichaAfrica — Teachers Leading AI in Africa" />
-  <meta property="og:description" content="African teachers co-designing how AI serves our classrooms. Join the first 10,000 shaping Africa's learning future." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://tichaafrica.com/" />
-  <meta property="og:image" content="https://tichaafrica.com/assets/images/og-image.jpg?v=1" />
-  <meta property="og:image:secure_url" content="https://tichaafrica.com/assets/images/og-image.jpg?v=1" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-  
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #f8f9fc;
-      color: #0f172a;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-    
-    main {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    
-    .container {
-      max-width: 800px;
-      width: 100%;
-    }
-    
-    .logo img {
-      height: clamp(80px, 20vw, 140px);
-      margin-bottom: 32px;
-    }
-    
-    h1 {
-      font-size: clamp(2.8rem, 8vw, 5rem);
-      font-weight: 900;
-      line-height: 1.1;
-      margin-bottom: 24px;
-      background: linear-gradient(135deg, #0d5c63, #ca8a04);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    
-    .tagline {
-      font-size: clamp(1.1rem, 4vw, 1.4rem);
-      max-width: 680px;
-      margin: 0 auto 16px;
-      line-height: 1.6;
-      color: #475569;
-      font-weight: 600;
-    }
-    
-    p {
-      font-size: clamp(1rem, 3.5vw, 1.2rem);
-      max-width: 680px;
-      margin: 0 auto 24px;
-      line-height: 1.7;
-      color: #64748b;
-    }
-    
-    .highlight {
-      color: #0f172a;
-      font-weight: 600;
-      margin-top: 32px;
-      margin-bottom: 32px;
-    }
-    
-    .cta-container {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      max-width: 500px;
-      margin: 48px auto 0;
-    }
-    
-    .btn {
-      display: inline-block;
-      padding: 20px 60px;
-      font-weight: 700;
-      font-size: clamp(1.1rem, 4vw, 1.3rem);
-      border-radius: 999px;
-      text-decoration: none;
-      transition: all 0.3s;
-      border: none;
-      cursor: pointer;
-    }
-    
-    .btn-primary {
-      background: #0d5c63;
-      color: #fff;
-      box-shadow: 0 12px 32px rgba(13, 92, 99, 0.2);
-    }
-    
-    .btn-primary:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 24px 64px rgba(13, 92, 99, 0.3);
-    }
-    
-    .btn-secondary {
-      background: transparent;
-      color: #0d5c63;
-      border: 2px solid #0d5c63;
-    }
-    
-    .btn-secondary:hover {
-      background: #0d5c63;
-      color: #fff;
-      transform: translateY(-3px);
-      box-shadow: 0 12px 32px rgba(13, 92, 99, 0.15);
-    }
-    
-    footer {
-      padding: 40px 20px;
-      text-align: center;
-      font-size: 0.95rem;
-      color: #64748b;
-      background: #f8f9fc;
-    }
-    
-    @media (min-width: 640px) {
-      .cta-container {
-        flex-direction: row;
-        justify-content: center;
-      }
-      
-      .btn {
-        flex: 1;
-        max-width: 240px;
-      }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Teachers Will Decide Africa’s AI Future | TichaAfrica</title>
+<meta name="description" content="AI is already entering African classrooms. The question is: will teachers shape it — or adapt to it? Join the first 10,000 educators building teacher-led AI for Africa.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Teachers Will Decide Africa’s AI Future | TichaAfrica" />
+<meta property="og:description" content="AI is already entering African classrooms. The question is: will teachers shape it — or adapt to it? Join the first 10,000 educators building teacher-led AI for Africa." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://tichaafrica.com/" />
+<meta property="og:image" content="https://tichaafrica.com/assets/images/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:type" content="image/jpeg" />
+
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:#f8f9fc;
+  color:#0f172a;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+/* Ambient gradient glow */
+body::before{
+  content:"";
+  position:fixed;
+  top:-250px;
+  left:-250px;
+  width:700px;
+  height:700px;
+  background:radial-gradient(circle at center, rgba(13,92,99,0.15), transparent 70%);
+  z-index:-1;
+}
+
+body::after{
+  content:"";
+  position:fixed;
+  bottom:-250px;
+  right:-250px;
+  width:700px;
+  height:700px;
+  background:radial-gradient(circle at center, rgba(202,138,4,0.15), transparent 70%);
+  z-index:-1;
+}
+
+main{
+  padding:90px 24px 120px;
+  max-width:1100px;
+  margin:auto;
+}
+
+.logo{
+  text-align:center;
+  margin-bottom:70px;
+}
+
+.logo img{
+  height:110px;
+}
+
+/* HERO */
+.hero{
+  text-align:center;
+  max-width:900px;
+  margin:auto;
+}
+
+.hero h1{
+  font-size:clamp(2.5rem,6vw,4.5rem);
+  font-weight:900;
+  line-height:1.05;
+  margin-bottom:30px;
+  background:linear-gradient(135deg,#0d5c63,#ca8a04);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+  font-size:clamp(1.1rem,2.5vw,1.35rem);
+  color:#475569;
+  margin-bottom:18px;
+}
+
+/* Divider */
+.divider{
+  height:1px;
+  background:linear-gradient(to right, transparent, rgba(13,92,99,0.3), transparent);
+  margin:100px 0;
+}
+
+/* Movement */
+.movement{
+  text-align:center;
+  max-width:850px;
+  margin:auto;
+}
+
+.movement h2{
+  font-size:2rem;
+  font-weight:800;
+  margin-bottom:24px;
+  color:#0d5c63;
+}
+
+.movement p{
+  font-size:1.15rem;
+  color:#334155;
+  margin-bottom:18px;
+}
+
+/* CTA */
+.cta{
+  text-align:center;
+  max-width:700px;
+  margin:auto;
+}
+
+.cta h3{
+  font-size:1.9rem;
+  font-weight:800;
+  margin-bottom:16px;
+}
+
+.cta p{
+  color:#475569;
+  margin-bottom:40px;
+}
+
+.buttons{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.btn{
+  padding:18px 48px;
+  border-radius:999px;
+  font-weight:700;
+  text-decoration:none;
+  font-size:1.1rem;
+  transition:all .3s ease;
+  display:inline-block;
+}
+
+.btn-primary{
+  background:#0d5c63;
+  color:#fff;
+  box-shadow:0 20px 50px rgba(13,92,99,0.25);
+}
+
+.btn-primary:hover{
+  transform:translateY(-6px);
+  box-shadow:0 30px 80px rgba(13,92,99,0.35);
+}
+
+.btn-secondary{
+  border:2px solid #0d5c63;
+  color:#0d5c63;
+}
+
+.btn-secondary:hover{
+  background:#0d5c63;
+  color:#fff;
+  transform:translateY(-4px);
+}
+
+/* Footer */
+footer{
+  text-align:center;
+  padding:50px 20px;
+  font-size:0.9rem;
+  color:#64748b;
+}
+
+/* Responsive */
+@media(min-width:768px){
+  .buttons{
+    flex-direction:row;
+    justify-content:center;
+  }
+}
+
+/* Subtle fade animation */
+.fade-up{
+  opacity:0;
+  transform:translateY(20px);
+  animation:fadeUp 1s ease forwards;
+}
+
+.fade-up:nth-child(2){animation-delay:.2s}
+.fade-up:nth-child(3){animation-delay:.4s}
+
+@keyframes fadeUp{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+</style>
 </head>
 
 <body>
-  <main>
-    <div class="container">
-      <div class="logo">
-        <img src="/assets/images/Logo1.jpg" alt="TichaAfrica">
-      </div>
-      
-      <h1>We are Teachers Shaping Africa's Learning Future</h1>
-      
-      <p class="tagline">
-        Our classroom wisdom is what Africa needs right now
-      </p>
-      
-      <p>
-        Foreign AI is already entering our classrooms; designed without a single African teacher in the room.
-      </p>
-      
-      <p>
-        But <strong>we</strong> are the ones who know what our learners truly need.
-      </p>
-      
-      <p class="highlight">
-        <strong>TichaAfrica</strong> exists because of teachers like us.
-      </p>
-      
-      <p>
-        We bring together African teachers to co-design how technology serves our classrooms, students, and communities: starting with first-hand classroom wisdom.
-      </p>
-      
-      <p>
-        Our experiences, our challenges, our ideas; they matter more than any imported solution.
-      </p>
-      
-      <div class="cta-container">
-        <a href="/alliance/intro/" class="btn btn-primary">
-          Become a Founding Teacher
-        </a>
-        <a href="/concept/" class="btn btn-secondary">
-          Learn More
-        </a>
-      </div>
-    </div>
-  </main>
 
-  <footer>
-    © 2026 TichaAfrica • Teach Smart. Lead Change.
-  </footer>
+<main>
+
+<div class="logo fade-up">
+  <img src="/assets/images/Logo1.jpg" alt="TichaAfrica">
+</div>
+
+<section class="hero fade-up">
+  <h1>Teachers Will Decide Africa’s AI Future</h1>
+  <p>AI is already entering African classrooms.</p>
+  <p><strong>The question is: will teachers shape it — or adapt to it?</strong></p>
+</section>
+
+<div class="divider"></div>
+
+<section class="movement fade-up">
+  <h2>Designed elsewhere. Funded elsewhere. Decided elsewhere.</h2>
+  <p>Yet teachers stand in front of learners every single day.</p>
+  <p>We understand context. Culture. Constraint. Possibility.</p>
+  <p>If teachers are not shaping AI, AI will shape education without us.</p>
+  <p><strong>TichaAfrica is building a continental alliance to change that.</strong></p>
+</section>
+
+<div class="divider"></div>
+
+<section class="cta fade-up">
+  <h3>Join the Founding Teacher Alliance</h3>
+  <p>The first 10,000 teachers will shape standards, influence policy, and lead responsible AI in African classrooms.</p>
+
+  <div class="buttons">
+    <a href="/alliance/intro/" class="btn btn-primary">
+      Join the Founding Teacher Alliance →
+    </a>
+    <a href="/concept/" class="btn btn-secondary">
+      Learn More
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+© 2026 TichaAfrica • Teach Smart. Lead Change.
+</footer>
+
 </body>
 </html>
