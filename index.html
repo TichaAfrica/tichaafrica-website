@@ -1,536 +1,551 @@
 <!doctype html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TichaAfrica</title>
-<meta name="description" content="African classroom intelligence still has no seat at the systems shaping African learning.">
-
-<meta property="og:title" content="TichaAfrica" />
-<meta property="og:description" content="African classroom intelligence still has no seat at the systems shaping African learning." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://tichaafrica.com/" />
-
-<link rel="icon" href="/favicon.ico" type="image/x-icon">
-
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-<style>
-:root {
-  --bg: #f6f4ef;
-  --paper: #fbfaf7;
-  --ink: #101010;
-  --muted: #5e5e5e;
-  --line: rgba(16,16,16,0.08);
-  --accent: #8a6a2f;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background: var(--bg);
-  color: var(--ink);
-  font-family: 'Inter', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  overflow-x: hidden;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: radial-gradient(rgba(0,0,0,0.025) 1px, transparent 1px);
-  background-size: 7px 7px;
-  pointer-events: none;
-  opacity: 0.25;
-  z-index: 9999;
-}
-
-main {
-  position: relative;
-}
-
-/* =========================
-   HERO
-========================= */
-
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 80px 28px;
-  position: relative;
-}
-
-.hero-inner {
-  width: 100%;
-  max-width: 1040px;
-}
-
-.topline {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 120px;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.brand img {
-  height: 32px;
-  width: auto;
-}
-
-.brand span {
-  font-size: 0.82rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-.status {
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(16,16,16,0.45);
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 80px;
-  align-items: end;
-}
-
-.hero-copy h1 {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(3.1rem, 7vw, 6.2rem);
-  line-height: 0.98;
-  font-weight: 400;
-  letter-spacing: -0.04em;
-  max-width: 860px;
-}
-
-.hero-copy h1 em {
-  font-style: italic;
-  color: rgba(16,16,16,0.5);
-  font-weight: 300;
-}
-
-.hero-copy p {
-  margin-top: 42px;
-  max-width: 520px;
-  font-size: 1rem;
-  line-height: 1.9;
-  color: var(--muted);
-}
-
-.hero-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-  align-self: end;
-}
-
-.hero-link {
-  text-decoration: none;
-  color: var(--ink);
-  border-top: 1px solid var(--line);
-  padding-top: 18px;
-  transition: all 0.25s ease;
-}
-
-.hero-link small {
-  display: block;
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(16,16,16,0.42);
-  margin-bottom: 8px;
-}
-
-.hero-link span {
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-.hero-link:hover {
-  transform: translateX(6px);
-}
-
-/* =========================
-   POSITIONING BLOCK
-========================= */
-
-.positioning {
-  padding: 140px 28px;
-}
-
-.positioning-inner {
-  max-width: 1040px;
-  margin: 0 auto;
-}
-
-.positioning p {
-  max-width: 760px;
-  font-family: 'Fraunces', serif;
-  font-size: clamp(1.7rem, 3vw, 2.7rem);
-  line-height: 1.4;
-  font-weight: 300;
-  color: rgba(16,16,16,0.88);
-}
-
-/* =========================
-   WRITINGS
-========================= */
-
-.writings {
-  padding: 0 28px 140px;
-}
-
-.writings-inner {
-  max-width: 1040px;
-  margin: auto;
-}
-
-.section-tag {
-  font-size: 0.74rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(16,16,16,0.42);
-  margin-bottom: 52px;
-  display: block;
-}
-
-.writing-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 30px;
-  padding: 32px 0;
-  border-top: 1px solid var(--line);
-  text-decoration: none;
-  color: var(--ink);
-  transition: all 0.25s ease;
-}
-
-.writing-item:last-child {
-  border-bottom: 1px solid var(--line);
-}
-
-.writing-item h3 {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(1.3rem, 2vw, 2rem);
-  font-weight: 400;
-  line-height: 1.3;
-  max-width: 720px;
-}
-
-.writing-item span {
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(16,16,16,0.38);
-  white-space: nowrap;
-}
-
-.writing-item:hover {
-  transform: translateX(8px);
-}
-
-/* =========================
-   FINAL STATEMENT
-========================= */
-
-.statement {
-  padding: 0 28px 140px;
-}
-
-.statement-inner {
-  max-width: 1040px;
-  margin: auto;
-  border-top: 1px solid var(--line);
-  padding-top: 80px;
-}
-
-.statement h2 {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(2rem, 4vw, 4rem);
-  line-height: 1.1;
-  font-weight: 400;
-  max-width: 760px;
-  margin-bottom: 60px;
-}
-
-.statement-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-}
-
-.statement-actions a {
-  text-decoration: none;
-  color: var(--ink);
-  border: 1px solid var(--line);
-  padding: 16px 22px;
-  border-radius: 999px;
-  font-size: 0.92rem;
-  transition: all 0.25s ease;
-  background: rgba(255,255,255,0.45);
-}
-
-.statement-actions a:hover {
-  background: var(--ink);
-  color: white;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-  padding: 40px 28px 60px;
-}
-
-.footer-inner {
-  max-width: 1040px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  border-top: 1px solid var(--line);
-  padding-top: 22px;
-}
-
-.footer-inner p {
-  font-size: 0.78rem;
-  color: rgba(16,16,16,0.42);
-  line-height: 1.7;
-}
-
-.footer-links {
-  display: flex;
-  gap: 18px;
-}
-
-.footer-links a {
-  text-decoration: none;
-  color: rgba(16,16,16,0.5);
-  font-size: 0.8rem;
-  transition: color 0.2s ease;
-}
-
-.footer-links a:hover {
-  color: var(--ink);
-}
-
-/* =========================
-   REVEAL
-========================= */
-
-.reveal {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 860px) {
-
-  .topline {
-    margin-bottom: 90px;
-  }
-
-  .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 70px;
-  }
-
-  .hero-copy h1 {
-    font-size: clamp(2.8rem, 12vw, 4.8rem);
-  }
-
-  .writing-item {
-    flex-direction: column;
-    gap: 14px;
-  }
-
-  .footer-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-</style>
-</head>
-
-<body>
-
-<main>
-
-<section class="hero">
-  <div class="hero-inner">
-
-    <div class="topline reveal">
-      <div class="brand">
-        <img src="/assets/images/Transparent.png" alt="TichaAfrica logo">
-        <span>TichaAfrica</span>
-      </div>
-
-      <div class="status">
-        African Educational Intelligence Initiative
-      </div>
-    </div>
-
-    <div class="hero-grid">
-
-      <div class="hero-copy reveal">
-        <h1>
-          African classroom intelligence still has no seat at the systems shaping African learning.
-        </h1>
-
-        <p>
-          TichaAfrica is documenting, refining, and advancing the intelligence emerging from African classrooms.
-        </p>
-      </div>
-
-      <div class="hero-actions reveal">
-
-        <a href="/alliance" class="hero-link">
-          <small>Participation</small>
-          <span>Enter the Founding Teacher Alliance</span>
-        </a>
-
-        <a href="/manifesto" class="hero-link">
-          <small>Foundational Text</small>
-          <span>Read the Foundational Manifesto</span>
-        </a>
-
-        <a href="/classroom-intelligence" class="hero-link">
-          <small>Framework</small>
-          <span>Explore Classroom Intelligence</span>
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<section class="positioning">
-  <div class="positioning-inner reveal">
-    <p>
-      The future of African learning cannot be designed without the intelligence of African classrooms.
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TichaAfrica — African Classroom Intelligence</title>  <meta name="description" content="TichaAfrica is building the institutional infrastructure through which African classroom intelligence shapes the future of learning.">  <meta property="og:title" content="TichaAfrica — African Classroom Intelligence" />
+  <meta property="og:description" content="The future of African learning cannot be designed without the intelligence of African classrooms." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tichaafrica.com/" />  <link rel="icon" href="/favicon.ico" type="image/x-icon">  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">  <style>
+
+    :root {
+      --ink: #111111;
+      --paper: #f5f1e8;
+      --stone: #d8d1c3;
+      --gold: #9d7b32;
+      --muted: #5b5b5b;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Manrope', sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 48px));
+      margin: auto;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: 80px 0 120px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 96px;
+      align-items: end;
+    }
+
+    .logo {
+      width: 140px;
+      margin-bottom: 64px;
+      opacity: 0;
+      animation: fadeUp 1s cubic-bezier(.19,1,.22,1) forwards;
+    }
+
+    .eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 26px;
+      opacity: 0;
+      animation: fadeUp 1s cubic-bezier(.19,1,.22,1) forwards 0.12s;
+    }
+
+    .hero h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(3.2rem, 7vw, 6.6rem);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+      font-weight: 600;
+      max-width: 820px;
+      margin-bottom: 34px;
+      opacity: 0;
+      animation: fadeUp 1.15s cubic-bezier(.19,1,.22,1) forwards 0.22s;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      font-weight: 300;
+      color: rgba(17,17,17,0.55);
+    }
+
+    .hero-sub {
+      max-width: 640px;
+      font-size: 1.16rem;
+      line-height: 1.9;
+      color: var(--muted);
+      opacity: 0;
+      animation: fadeUp 1.2s cubic-bezier(.19,1,.22,1) forwards 0.38s;
+    }
+
+    .hero-sub strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .human-line {
+      margin-top: 28px;
+      padding-left: 18px;
+      border-left: 2px solid rgba(157,123,50,0.45);
+      font-size: 0.98rem;
+      color: #444;
+      max-width: 500px;
+      line-height: 1.8;
+      opacity: 0;
+      animation: fadeUp 1.2s cubic-bezier(.19,1,.22,1) forwards 0.5s;
+    }
+
+    /* CTA COLUMN */
+
+    .action-panel {
+      border-top: 1px solid rgba(17,17,17,0.14);
+      padding-top: 18px;
+      opacity: 0;
+      animation: fadeUp 1.2s cubic-bezier(.19,1,.22,1) forwards 0.65s;
+    }
+
+    .action-link {
+      display: block;
+      padding: 26px 0;
+      border-bottom: 1px solid rgba(17,17,17,0.12);
+      transition: padding-left 0.35s ease, color 0.35s ease;
+    }
+
+    .action-link:hover {
+      padding-left: 10px;
+      color: var(--gold);
+    }
+
+    .action-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(17,17,17,0.45);
+      margin-bottom: 10px;
+    }
+
+    .action-title {
+      font-family: 'Fraunces', serif;
+      font-size: 1.55rem;
+      line-height: 1.2;
+    }
+
+    /* POSITIONING */
+
+    .positioning {
+      padding: 140px 0;
+      border-top: 1px solid rgba(17,17,17,0.08);
+      border-bottom: 1px solid rgba(17,17,17,0.08);
+    }
+
+    .positioning-grid {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .positioning-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(17,17,17,0.42);
+      position: sticky;
+      top: 80px;
+    }
+
+    .positioning-text {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2rem, 4vw, 3.8rem);
+      line-height: 1.22;
+      letter-spacing: -0.03em;
+      max-width: 940px;
+    }
+
+    .positioning-text em {
+      color: var(--gold);
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    /* WRITINGS */
+
+    .writings {
+      padding: 140px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 64px;
+    }
+
+    .section-kicker {
+      font-size: 0.76rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(17,17,17,0.45);
+      margin-bottom: 18px;
+    }
+
+    .section-head h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2rem, 4vw, 4rem);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      font-weight: 600;
+    }
+
+    .section-note {
+      max-width: 380px;
+      font-size: 0.98rem;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    .article-list {
+      border-top: 1px solid rgba(17,17,17,0.1);
+    }
+
+    .article {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 24px;
+      padding: 34px 0;
+      border-bottom: 1px solid rgba(17,17,17,0.08);
+      transition: transform 0.35s ease;
+    }
+
+    .article:hover {
+      transform: translateX(8px);
+    }
+
+    .article-number {
+      font-size: 0.85rem;
+      color: rgba(17,17,17,0.35);
+      padding-top: 6px;
+    }
+
+    .article-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(1.4rem, 2vw, 2.3rem);
+      line-height: 1.18;
+      letter-spacing: -0.03em;
+      margin-bottom: 10px;
+    }
+
+    .article-desc {
+      max-width: 760px;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    /* FINAL CTA */
+
+    .closing {
+      padding: 140px 0 160px;
+      border-top: 1px solid rgba(17,17,17,0.08);
+    }
+
+    .closing-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 48px;
+      align-items: end;
+    }
+
+    .closing h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.2rem, 5vw, 5rem);
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+      max-width: 840px;
+      margin-bottom: 22px;
+    }
+
+    .closing p {
+      max-width: 620px;
+      line-height: 1.9;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .closing-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      min-width: 260px;
+    }
+
+    .closing-link {
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(17,17,17,0.16);
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .closing-link:hover {
+      transform: translateX(6px);
+      color: var(--gold);
+    }
+
+    .closing-link span {
+      display: block;
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(17,17,17,0.42);
+      margin-bottom: 6px;
+    }
+
+    .closing-link strong {
+      font-family: 'Fraunces', serif;
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
+
+    footer {
+      padding: 32px 0 40px;
+      border-top: 1px solid rgba(17,17,17,0.08);
+      font-size: 0.82rem;
+      color: rgba(17,17,17,0.45);
+    }
+
+    /* REVEALS */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition:
+        opacity 1s cubic-bezier(.19,1,.22,1),
+        transform 1s cubic-bezier(.19,1,.22,1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 980px) {
+
+      .hero-grid,
+      .positioning-grid,
+      .closing-grid,
+      .article {
+        grid-template-columns: 1fr;
+      }
+
+      .positioning-label {
+        position: relative;
+        top: 0;
+      }
+
+      .action-panel {
+        margin-top: 24px;
+      }
+
+      .section-head {
+        flex-direction: column;
+        align-items: start;
+      }
+
+      .article-number {
+        padding-top: 0;
+      }
+
+      .closing-actions {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 640px) {
+
+      .hero {
+        padding-top: 56px;
+      }
+
+      .container {
+        width: min(100% - 32px, 1180px);
+      }
+
+      .positioning,
+      .writings,
+      .closing {
+        padding: 100px 0;
+      }
+
+      .action-title {
+        font-size: 1.3rem;
+      }
+
+      .article-title {
+        font-size: 1.5rem;
+      }
+    }
+
+  </style></head>
+<body>  <section class="hero">
+    <div class="container hero-grid"><div>
+    <img src="/assets/images/Transparent.png" alt="TichaAfrica" class="logo">
+
+    <div class="eyebrow">African Classroom Intelligence</div>
+
+    <h1>
+      African classroom intelligence is becoming one of the most consequential forces in the future of learning.<br>
+      <em>TichaAfrica exists to ensure Africa helps shape what comes next.</em>
+    </h1>
+
+    <p class="hero-sub">
+      TichaAfrica is building the intellectual, professional, and institutional infrastructure through which the knowledge developed inside African classrooms becomes visible to the systems now shaping African education.
+    </p>
+
+    <p class="human-line">
+      Somewhere in Africa right now, a teacher is rebuilding a lesson across three languages so a child does not get left behind.
     </p>
   </div>
-</section>
 
-<section class="writings">
-  <div class="writings-inner">
+  <div class="action-panel">
 
-    <span class="section-tag reveal">Writings</span>
-
-    <a href="#" class="writing-item reveal">
-      <h3>The Systems Understand the Curriculum. Teachers Understand the Learners.</h3>
-      <span>Essay</span>
+    <a href="/alliance/intro/" class="action-link">
+      <div class="action-label">Join</div>
+      <div class="action-title">Enter the Founding Teacher Alliance</div>
     </a>
 
-    <a href="#" class="writing-item reveal">
-      <h3>Translation Is Not Understanding.</h3>
-      <span>Field Note</span>
+    <a href="/manifesto/" class="action-link">
+      <div class="action-label">Read</div>
+      <div class="action-title">The Foundational Manifesto</div>
     </a>
 
-    <a href="#" class="writing-item reveal">
-      <h3>Most Educational Technology Cannot Read Context.</h3>
-      <span>Briefing</span>
-    </a>
-
-    <a href="#" class="writing-item reveal">
-      <h3>The Classroom Is Already More Intelligent Than the System Around It.</h3>
-      <span>Essay</span>
-    </a>
-
-    <a href="#" class="writing-item reveal">
-      <h3>African Teachers Are Solving Problems Global Systems Still Misunderstand.</h3>
-      <span>Publication</span>
+    <a href="/research/" class="action-link">
+      <div class="action-label">Explore</div>
+      <div class="action-title">Research, essays, and field thinking</div>
     </a>
 
   </div>
-</section>
 
-<section class="statement">
-  <div class="statement-inner reveal">
+</div>
 
-    <h2>
-      Educational systems designed without contextual intelligence will always misunderstand the learners they claim to serve.
+  </section>  <section class="positioning reveal">
+    <div class="container positioning-grid"><div class="positioning-label">
+    Positioning
+  </div>
+
+  <div class="positioning-text">
+    Educational systems serving African learners cannot remain intellectually incomplete. The teachers who understand African classrooms most deeply must become part of the foundations shaping how those systems are designed.
+  </div>
+
+</div>
+
+  </section>  <section class="writings reveal">
+    <div class="container"><div class="section-head">
+
+    <div>
+      <div class="section-kicker">Thought leadership</div>
+      <h2>
+      The future of African learning will be shaped either with African classroom intelligence — or without the accuracy African learners deserve.
     </h2>
 
-    <div class="statement-actions">
-      <a href="/alliance">Founding Teacher Alliance</a>
-      <a href="/manifesto">Manifesto</a>
-      <a href="/writings">Writings</a>
-    </div>
-
-  </div>
-</section>
-
-<footer>
-  <div class="footer-inner">
-
     <p>
-      © 2026 TichaAfrica<br>
-      African Educational Intelligence Initiative
+      TichaAfrica is building a continental intellectual movement around classroom intelligence: documenting it, refining it, protecting it, and ensuring it becomes institutionally consequential in the systems shaping African education.
     </p>
+  </div>
 
-    <div class="footer-links">
-      <a href="/manifesto">Manifesto</a>
-      <a href="/writings">Writings</a>
-      <a href="/contact">Contact</a>
-    </div>
+  <div class="closing-actions">
+
+    <a href="/alliance/intro/" class="closing-link">
+      <span>Alliance</span>
+      <strong>Become a Founding Teacher</strong>
+    </a>
+
+    <a href="/concept/" class="closing-link">
+      <span>Framework</span>
+      <strong>Explore Classroom Intelligence</strong>
+    </a>
+
+    <a href="/research/" class="closing-link">
+      <span>Writing</span>
+      <strong>Read the institutional essays</strong>
+    </a>
 
   </div>
-</footer>
 
-</main>
+</div>
 
-<script>
-const reveals = document.querySelectorAll('.reveal');
+  </section>  <footer>
+    <div class="container">
+      © 2026 TichaAfrica — African classroom intelligence shaping the future of learning.
+    </div>
+  </footer>  <script>
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, {
-  threshold: 0.1
-});
+    const reveals = document.querySelectorAll('.reveal');
 
-reveals.forEach((el) => observer.observe(el));
-</script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
 
-</body>
+        if (entry.isIntersecting) {
+
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 120);
+
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.14
+    });
+
+    reveals.forEach((el) => observer.observe(el));
+
+  </script></body>
 </html>
