@@ -5,29 +5,29 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-  <title>TichaAfrica · Classroom Intelligence for the Age of AI</title>
+  <title>TichaAfrica · Classroom Intelligence for the Age of Artificial Intelligence</title>
 
   <meta
     name="description"
-    content="TichaAfrica builds pathways that connect African teachers’ classroom intelligence with the people shaping AI for education."
+    content="TichaAfrica builds pathways that connect African teachers' classroom intelligence with the people shaping artificial intelligence for education."
   >
 
-  <meta name="theme-color" content="#101a2f">
+  <meta name="theme-color" content="#f4f0e7">
   <meta name="robots" content="index, follow">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="TichaAfrica · Classroom Intelligence for the Age of AI">
+  <meta property="og:title" content="TichaAfrica · Classroom Intelligence for the Age of Artificial Intelligence">
   <meta
     property="og:description"
-    content="TichaAfrica builds pathways that connect African teachers’ classroom intelligence with the people shaping AI for education."
+    content="TichaAfrica builds pathways that connect African teachers' classroom intelligence with the people shaping artificial intelligence for education."
   >
   <meta property="og:image" content="/assets/images/og-image.jpg">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="TichaAfrica · Classroom Intelligence for the Age of AI">
+  <meta name="twitter:title" content="TichaAfrica · Classroom Intelligence for the Age of Artificial Intelligence">
   <meta
     name="twitter:description"
-    content="TichaAfrica builds pathways that connect African teachers’ classroom intelligence with the people shaping AI for education."
+    content="TichaAfrica builds pathways that connect African teachers' classroom intelligence with the people shaping artificial intelligence for education."
   >
   <meta name="twitter:image" content="/assets/images/og-image.jpg">
 
@@ -48,6 +48,12 @@
       --cream-muted: rgba(244,240,231,.43);
       --cream-faint: rgba(244,240,231,.10);
       --amber: #f3a51f;
+
+      --nav-bg: rgba(244,240,231,.92);
+      --nav-bg-scrolled: rgba(244,240,231,.98);
+      --nav-border: rgba(16,26,47,.10);
+      --nav-text: rgba(16,26,47,.72);
+      --nav-text-strong: var(--navy);
 
       --display: "Fraunces", Georgia, serif;
       --serif: "Instrument Serif", Georgia, serif;
@@ -136,6 +142,7 @@
 
     /* -------------------------
        NAVIGATION
+       Light banner for contrast against the dark page.
     ------------------------- */
 
     .site-nav {
@@ -143,7 +150,7 @@
       inset: 0 0 auto;
       z-index: 1000;
 
-      background: rgba(16,26,47,.78);
+      background: var(--nav-bg);
       border-bottom: 1px solid transparent;
 
       backdrop-filter: blur(16px);
@@ -155,8 +162,8 @@
     }
 
     .site-nav.scrolled {
-      background: rgba(11,19,37,.94);
-      border-color: var(--cream-faint);
+      background: var(--nav-bg-scrolled);
+      border-color: var(--nav-border);
     }
 
     .nav-inner {
@@ -172,6 +179,8 @@
       align-items: center;
       gap: 12px;
 
+      color: var(--nav-text-strong);
+
       font-family: var(--display);
       font-size: 1.16rem;
       letter-spacing: -.035em;
@@ -181,7 +190,6 @@
       width: 36px;
       height: 36px;
       object-fit: contain;
-      filter: brightness(0) invert(1);
     }
 
     .nav-links {
@@ -191,17 +199,17 @@
     }
 
     .nav-links a {
-      color: var(--cream-soft);
+      color: var(--nav-text);
       font-size: .80rem;
       transition: color .25s ease;
     }
 
     .nav-links a:hover {
-      color: var(--cream);
+      color: var(--nav-text-strong);
     }
 
     .nav-links .nav-cta {
-      color: var(--cream);
+      color: var(--nav-text-strong);
       border-bottom: 1px solid var(--amber);
       padding-bottom: 4px;
     }
@@ -215,7 +223,7 @@
       padding: 0;
       border: 0;
       background: transparent;
-      color: var(--cream);
+      color: var(--nav-text-strong);
 
       cursor: pointer;
     }
@@ -487,7 +495,7 @@
     }
 
     /* -------------------------
-       AI STAKES
+       ARTIFICIAL INTELLIGENCE STAKES
     ------------------------- */
 
     .stakes {
@@ -555,6 +563,18 @@
       color: var(--cream-soft);
       font-size: .86rem;
       line-height: 1.75;
+    }
+
+    .stakes-closing {
+      max-width: 780px;
+
+      margin-top: 55px;
+
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(1.4rem, 2.4vw, 2rem);
+      line-height: 1.5;
+      color: var(--cream-soft);
     }
 
     /* -------------------------
@@ -644,7 +664,7 @@
     }
 
     /* -------------------------
-       WHAT WE LEARNED
+       WHAT WE HAVE LEARNED
     ------------------------- */
 
     .learned {
@@ -923,10 +943,6 @@
         padding-block: 90px;
       }
 
-      .site-nav {
-        background: rgba(11,19,37,.92);
-      }
-
       .nav-inner {
         min-height: 68px;
       }
@@ -1093,7 +1109,7 @@
 
       <a href="/" class="brand" aria-label="TichaAfrica home">
         <img
-          src="assets/images/logo.png"
+          src="/assets/images/Transparent.png"
           alt=""
           aria-hidden="true"
         >
@@ -1102,9 +1118,9 @@
 
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="#framework">Framework</a>
-        <a href="#learned">What We've Learned</a>
+        <a href="#learned">What We Have Learned</a>
         <a href="#invitation">Invitation</a>
-        <a href="#invitation" class="nav-cta">
+        <a href="/alliance/intro/" class="nav-cta">
           Founding Alliance
         </a>
       </nav>
@@ -1132,9 +1148,9 @@
   <div class="mobile-menu" id="mobileMenu">
 
     <a href="#framework">Framework</a>
-    <a href="#learned">What We've Learned</a>
+    <a href="#learned">What We Have Learned</a>
     <a href="#invitation">Invitation</a>
-    <a href="#invitation">Founding Alliance</a>
+    <a href="/alliance/intro/">Founding Alliance</a>
 
   </div>
 
@@ -1163,7 +1179,7 @@
 
         <div class="hero-actions reveal">
 
-          <a href="#invitation" class="text-link">
+          <a href="/alliance/intro/" class="text-link">
             Join the Founding Teacher Alliance
           </a>
 
@@ -1199,7 +1215,7 @@
             </p>
 
             <p class="reveal">
-              His teacher knows in an instant <em>why</em> it's wrong, not just that it is.
+              His teacher knows in an instant <em>why</em> it is wrong, not just that it is.
             </p>
 
             <p class="reveal">
@@ -1277,7 +1293,7 @@
 
 
     <!-- =========================
-         AI STAKES
+         ARTIFICIAL INTELLIGENCE STAKES
     ========================== -->
 
     <section class="stakes section">
@@ -1285,7 +1301,7 @@
       <div class="container">
 
         <div class="section-label reveal">
-          Why AI changes the stakes
+          Why artificial intelligence changes the stakes
         </div>
 
         <h2 class="stakes-intro reveal">
@@ -1304,7 +1320,7 @@
             </h3>
 
             <p>
-              AI systems are being built to explain concepts in ways learners can understand.
+              Artificial intelligence systems are being built to explain concepts in ways learners can understand.
             </p>
 
           </article>
@@ -1339,6 +1355,10 @@
 
         </div>
 
+        <p class="stakes-closing reveal">
+          That gap does not show up as a fault in the system. It shows up as a tool that works for the learner it was designed for, and quietly fails the one sitting in front of a real teacher.
+        </p>
+
       </div>
 
     </section>
@@ -1353,7 +1373,7 @@
       <div class="container">
 
         <div class="section-label reveal">
-          What we're building
+          What we are building
         </div>
 
         <h2 class="pathway-heading reveal">
@@ -1369,7 +1389,7 @@
 
             <div>
               <h3>
-                The Founding Teacher Academy
+                The Classroom Intelligence Institute
               </h3>
 
               <p>
@@ -1450,7 +1470,7 @@
 
 
     <!-- =========================
-         WHAT WE'VE LEARNED
+         WHAT WE HAVE LEARNED
     ========================== -->
 
     <section class="learned section" id="learned">
@@ -1460,11 +1480,11 @@
         <div class="learned-header">
 
           <div class="section-label reveal">
-            What we've learned
+            What we have learned
           </div>
 
           <h2 class="learned-title reveal">
-            We asked teachers what AI means for <em>their work.</em>
+            We asked teachers what artificial intelligence means for <em>their work.</em>
           </h2>
 
         </div>
@@ -1479,7 +1499,7 @@
             </span>
 
             <blockquote>
-              “I need to learn this so I don't get left behind.”
+              "I need to learn this so I don't get left behind."
             </blockquote>
 
           </article>
@@ -1492,7 +1512,7 @@
             </span>
 
             <blockquote>
-              “How can I participate when the electricity, the data costs, and the policies around me can't keep up?”
+              "How can I participate when the electricity, the data costs, and the policies around me can't keep up?"
             </blockquote>
 
           </article>
@@ -1504,7 +1524,7 @@
           We heard thousands of responses, not one story.
           <strong>The circumstances differ. The pressure is real.</strong>
           Poor connectivity. Outdated devices. Limited funding. Low remuneration.
-          Slow policy response. And a growing demand to remain relevant in an AI-shaped world.
+          Slow policy response. And a growing demand to remain relevant in a world being reshaped by artificial intelligence.
         </p>
 
 
@@ -1538,13 +1558,13 @@
 
         <h2 class="invitation-title reveal">
           The seat has been empty for a long time.
-          <em>We're building the means to fill it.</em>
+          <em>We are building the means to fill it.</em>
         </h2>
 
 
         <div class="doors">
 
-          <a href="#" class="door reveal">
+          <a href="/alliance/intro/" class="door reveal">
 
             <span class="door-role">
               I am a teacher
@@ -1577,7 +1597,7 @@
           <a href="#" class="door reveal">
 
             <span class="door-role">
-              I build AI
+              I build artificial intelligence
             </span>
 
             <span class="door-text">
@@ -1621,13 +1641,13 @@
     <div class="container footer-inner">
 
       <div class="footer-copy">
-        © 2026 TichaAfrica · Classroom Intelligence Initiative
+        © 2026 TichaAfrica. All rights reserved.
       </div>
 
       <div class="footer-links">
         <a href="#framework">Framework</a>
-        <a href="#learned">Writings</a>
-        <a href="#invitation">Alliance</a>
+        <a href="#learned">What We Have Learned</a>
+        <a href="/alliance/intro/">Alliance</a>
       </div>
 
     </div>
