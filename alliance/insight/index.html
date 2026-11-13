@@ -1,94 +1,691 @@
+
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Voice — TichaAfrica</title>
-  <meta name="description" content="Share one real challenge from your classroom. Your insight will help shape the future.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="TichaAfrica — Teachers Leading AI in Africa" />
-  <meta property="og:description" content="African teachers creating the tools our learners deserve. Join the first 10,000 shaping the future." />
-  <meta property="og:image" content="https://tichaafrica.com/assets/images/og-image.jpg" />
-  <meta property="og:url" content="https://tichaafrica.com" />
-  <meta property="og:type" content="website" />
+<title>Your Classroom Insight | Founding Teacher Alliance</title>
 
-  <link rel="icon" href="/favicon.ico">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+<meta name="description" content="Share a real classroom experience with TichaAfrica. Your knowledge can help inform research, educational innovation and the future of AI in African education.">
 
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box;}
-    body{font-family:'Inter',sans-serif;background:#f8f9fc;color:#0f172a;min-height:100vh;display:flex;flex-direction:column;}
-    main{flex:1;display:flex;align-items:center;justify-content:center;padding:24px;text-align:center;}
-    .container{max-width:720px;width:100%;}
-    .step{font-size:0.9rem;font-weight:600;color:#64748b;margin-bottom:20px;}
-    h1{font-size:clamp(2.2rem,7vw,3.4rem);font-weight:900;line-height:1.15;margin-bottom:24px;color:#0d5c63;}
-    .intro p{font-size:1.2rem;line-height:1.7;color:#475569;margin-bottom:24px;text-align:left;}
-    form{background:#fff;padding:32px;border-radius:16px;box-shadow:0 10px 30px rgba(15,23,42,.08);text-align:left;margin:32px 0;border-left:6px solid #0d5c63;}
-    label{font-weight:700;font-size:1.15rem;margin-bottom:12px;display:block;}
-    textarea{width:100%;min-height:160px;padding:16px;font-size:1.1rem;border-radius:12px;border:1px solid #cbd5e1;margin-bottom:24px;}
-    .btn{width:100%;padding:18px;background:#0d5c63;color:#fff;font-weight:700;font-size:1.2rem;border-radius:999px;border:none;cursor:pointer;}
-    .btn:disabled{opacity:.6;cursor:not-allowed;}
-    footer{text-align:center;padding:24px;color:#64748b;}
-  </style>
+<meta property="og:site_name" content="TichaAfrica">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Your Classroom Insight | TichaAfrica">
+<meta property="og:description" content="Every classroom holds knowledge worth understanding. Share an experience that could help shape the future of education.">
+<meta property="og:url" content="https://tichaafrica.com/alliance/insight/">
+
+<link rel="canonical" href="https://tichaafrica.com/alliance/insight/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #142b2d;
+  --muted: #647477;
+  --teal: #0d5c63;
+  --teal-dark: #08474d;
+  --gold: #c99735;
+  --paper: #f6f8f6;
+  --white: #ffffff;
+  --line: #dce5e2;
+  --soft: #eaf2ef;
+  --shadow: 0 18px 55px rgba(20,43,45,.09);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behaviour: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Inter, Arial, sans-serif;
+  line-height: 1.65;
+}
+
+.site-header {
+  width: min(1120px, 100%);
+  margin: auto;
+  padding: 18px 28px;
+  min-height: 112px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.brand-logo {
+  display: block;
+  width: 190px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.header-note {
+  color: var(--muted);
+  font-size: .82rem;
+  font-weight: 600;
+  text-align: right;
+}
+
+main {
+  width: min(100%, 900px);
+  margin: 0 auto;
+  padding: 26px 24px 76px;
+}
+
+.shell {
+  background: var(--white);
+  border: 1px solid rgba(220,229,226,.9);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.progress-wrap {
+  padding: 22px clamp(26px,5vw,58px) 0;
+}
+
+.progress-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+  color: var(--muted);
+  font-size: .78rem;
+  font-weight: 700;
+}
+
+.progress-track {
+  height: 5px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #e8eeeb;
+}
+
+.progress-fill {
+  width: 66.666%;
+  height: 100%;
+  border-radius: 20px;
+  background: var(--teal);
+}
+
+.steps {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.step-dot {
+  height: 4px;
+  flex: 1;
+  border-radius: 20px;
+  background: #e8eeeb;
+}
+
+.step-dot.active {
+  background: var(--teal);
+}
+
+.content {
+  padding: clamp(26px,5vw,58px);
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  color: var(--teal);
+  font-size: .76rem;
+  font-weight: 800;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0 0 18px;
+  color: var(--ink);
+  font-size: clamp(2rem,5.8vw,3.45rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -.055em;
+}
+
+h2 {
+  margin: 0 0 10px;
+  font-size: 1.12rem;
+  line-height: 1.35;
+  letter-spacing: -.02em;
+}
+
+.lead {
+  max-width: 690px;
+  margin: 0;
+  color: #526366;
+  font-size: clamp(1.02rem,2.2vw,1.15rem);
+  line-height: 1.8;
+}
+
+.context {
+  margin: 30px 0;
+  padding: 22px 24px;
+  border: 1px solid #dce9e4;
+  border-radius: 16px;
+  background: var(--soft);
+}
+
+.context p {
+  margin: 0;
+  color: #41585a;
+  font-size: .94rem;
+}
+
+.context strong {
+  color: var(--ink);
+}
+
+.section-heading {
+  margin: 34px 0 12px;
+}
+
+.section-heading p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .92rem;
+}
+
+.prompt-card {
+  margin-top: 22px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: #fff;
+}
+
+.prompt-label {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--teal);
+  font-size: .76rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.prompt-question {
+  margin: 0 0 12px;
+  color: var(--ink);
+  font-size: clamp(1.15rem,3vw,1.42rem);
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.prompt-description {
+  margin: 0;
+  color: var(--muted);
+  font-size: .91rem;
+  line-height: 1.7;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  min-height: 220px;
+  margin-top: 20px;
+  padding: 18px;
+  resize: vertical;
+  border: 1px solid #cfdcd7;
+  border-radius: 13px;
+  outline: none;
+  background: #fcfdfc;
+  color: var(--ink);
+  font: 400 1rem/1.75 Inter, Arial, sans-serif;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+textarea::placeholder {
+  color: #98a5a4;
+}
+
+textarea:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(13,92,99,.1);
+}
+
+textarea:focus-visible {
+  outline: none;
+}
+
+.field-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 9px;
+  color: var(--muted);
+  font-size: .78rem;
+}
+
+.guidance {
+  display: grid;
+  gap: 13px;
+  margin: 26px 0 0;
+}
+
+.guidance-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.guidance-mark {
+  display: inline-flex;
+  flex: 0 0 23px;
+  width: 23px;
+  height: 23px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--soft);
+  color: var(--teal);
+  font-size: .8rem;
+  font-weight: 800;
+}
+
+.guidance-item p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .88rem;
+  line-height: 1.65;
+}
+
+.privacy-note {
+  margin-top: 30px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.privacy-note h2 {
+  font-size: .96rem;
+}
+
+.privacy-note p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .85rem;
+  line-height: 1.75;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.btn {
+  display: inline-flex;
+  min-height: 54px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 25px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--teal);
+  color: #fff;
+  font: 700 1rem Inter, Arial, sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .2s ease, transform .2s ease;
+}
+
+.btn:hover:not(:disabled) {
+  background: var(--teal-dark);
+  transform: translateY(-1px);
+}
+
+.btn:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.back-link {
+  color: var(--teal);
+  font-size: .9rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  display: none;
+  margin-top: 12px;
+  color: #a33d32;
+  font-size: .86rem;
+}
+
+footer {
+  padding: 0 24px 30px;
+  color: #819092;
+  font-size: .8rem;
+  text-align: center;
+}
+
+@media(max-width:620px) {
+  .site-header {
+    min-height: 88px;
+    padding: 14px 18px;
+  }
+
+  .brand-logo {
+    width: 158px;
+  }
+
+  .header-note {
+    max-width: 118px;
+    font-size: .7rem;
+  }
+
+  main {
+    padding: 12px 14px 48px;
+  }
+
+  .shell {
+    border-radius: 18px;
+  }
+
+  .content {
+    padding: 27px 21px 32px;
+  }
+
+  .progress-wrap {
+    padding: 20px 21px 0;
+  }
+
+  .prompt-card {
+    padding: 19px;
+  }
+
+  textarea {
+    min-height: 210px;
+    font-size: .95rem;
+  }
+
+  .actions {
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .back-link {
+    text-align: center;
+  }
+}
+</style>
 </head>
 
 <body>
 
+<header class="site-header">
+  <a class="brand" href="/" aria-label="TichaAfrica home">
+    <img
+      class="brand-logo"
+      src="/assets/images/tichaafrica-logo.png"
+      alt="TichaAfrica — Teach Smart. Lead Change."
+    >
+  </a>
+
+  <span class="header-note">Founding Teacher Alliance</span>
+</header>
+
 <main>
-  <div class="container">
-    <div class="step">Step 2 of 3 — Your Insight</div>
+  <section class="shell">
 
-    <h1>Welcome Teacher!<br>Your Voice is the Missing Piece</h1>
+    <div class="progress-wrap">
+      <div class="progress-meta">
+        <span>YOUR ENROLMENT</span>
+        <span>STEP 2 OF 3</span>
+      </div>
 
-    <div class="intro">
-      <p>
-        Right now, we're building tools that actually serve African classrooms; and <strong>your reality</strong> is the blueprint.
-      </p>
-      <p>No policy document or foreign app can replace what you know.</p>
+      <div
+        class="progress-track"
+        role="progressbar"
+        aria-label="Enrolment progress"
+        aria-valuemin="1"
+        aria-valuemax="3"
+        aria-valuenow="2"
+      >
+        <div class="progress-fill"></div>
+      </div>
+
+      <div class="steps" aria-hidden="true">
+        <span class="step-dot active"></span>
+        <span class="step-dot active"></span>
+        <span class="step-dot"></span>
+      </div>
     </div>
 
-    <form id="insightForm">
-      <label for="insight">
-        As a teacher, what's one real challenge in your classroom today that the right tools; designed by teachers like you; could fix?
-      </label>
+    <div class="content">
 
-      <textarea
-        id="insight"
-        name="insight"
-        placeholder="Be honest. Your experience matters. Write in any language."
-        required></textarea>
+      <p class="eyebrow">Your experience matters</p>
 
-      <button type="submit" class="btn" id="submitBtn">
-        Join →
-      </button>
-    </form>
-  </div>
+      <h1>Every classroom holds knowledge worth understanding.</h1>
+
+      <p class="lead">
+        Teachers make decisions every day that shape how learners understand,
+        participate and grow. Much of that knowledge remains inside the
+        classroom. We want to help bring it into the wider conversation about
+        education and artificial intelligence.
+      </p>
+
+      <div class="context">
+        <h2>Why we are asking</h2>
+
+        <p>
+          TichaAfrica believes that teachers should help shape the systems
+          being built for education. Your experiences can help us recognise
+          recurring classroom realities, develop research questions and
+          inform educational solutions that reflect the contexts in which
+          African learners live and learn.
+        </p>
+      </div>
+
+      <div class="section-heading">
+        <h2>Let's begin with one experience.</h2>
+
+        <p>
+          It does not have to be extraordinary. It only needs to be real.
+        </p>
+      </div>
+
+      <form id="insightForm">
+
+        <div class="prompt-card">
+
+          <span class="prompt-label">Your classroom insight</span>
+
+          <p class="prompt-question">
+            Think of a real moment in your teaching when something did not
+            go as expected, a learner struggled, or you had to make a
+            decision that changed how learning happened. What happened,
+            and how did you respond?
+          </p>
+
+          <p class="prompt-description">
+            Describe the situation in your own words. You may also share
+            what you learnt from it or what you wish an educational tool
+            or AI system understood about that situation.
+          </p>
+
+          <label for="insight" class="prompt-label" style="margin-top:24px">
+            Write your experience
+          </label>
+
+          <textarea
+            id="insight"
+            name="insight"
+            placeholder="In my classroom, I once noticed that..."
+            required
+            aria-describedby="writing-help"
+          ></textarea>
+
+          <div class="field-meta">
+            <span id="writing-help">Write in any language. There is no perfect answer.</span>
+            <span id="characterCount">0 characters</span>
+          </div>
+
+        </div>
+
+        <div class="guidance">
+
+          <div class="guidance-item">
+            <span class="guidance-mark">1</span>
+            <p>
+              <strong>Be specific.</strong> A particular classroom moment
+              is more useful than a broad statement about education.
+            </p>
+          </div>
+
+          <div class="guidance-item">
+            <span class="guidance-mark">2</span>
+            <p>
+              <strong>Use your natural voice.</strong> You do not need
+              academic language or technical knowledge of AI.
+            </p>
+          </div>
+
+          <div class="guidance-item">
+            <span class="guidance-mark">3</span>
+            <p>
+              <strong>Protect learners' privacy.</strong> Please do not
+              include learners' names, contact details or other identifying
+              personal information.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="privacy-note">
+          <h2>What happens to your contribution?</h2>
+
+          <p>
+            TichaAfrica may analyse contributions collectively to identify
+            shared classroom experiences and inform research, educational
+            innovation and AI development. We may also use insights to guide
+            further conversations with educators and share findings with
+            researchers, developers, education institutions and potential
+            partners. Where individual contributions are published or shared
+            publicly, they will be anonymised. Your contribution is part of
+            a wider effort to make teachers' knowledge visible and useful.
+          </p>
+        </div>
+
+        <p class="error-message" id="errorMessage" role="alert">
+          Please write a little about your experience before continuing.
+        </p>
+
+        <div class="actions">
+          <button type="submit" class="btn" id="continueBtn">
+            Continue to your profile
+            <span aria-hidden="true">→</span>
+          </button>
+
+          <a href="/enrol" class="back-link">
+            ← Back
+          </a>
+        </div>
+
+      </form>
+
+    </div>
+  </section>
 </main>
 
 <footer>
-  © 2026 TichaAfrica • Teach Smart. Lead Change.
+  © 2026 TichaAfrica · Teach Smart. Lead Change.
 </footer>
 
 <script>
-const form = document.getElementById("insightForm");
-const button = document.getElementById("submitBtn");
+(function () {
+  const form = document.getElementById("insightForm");
+  const textarea = document.getElementById("insight");
+  const count = document.getElementById("characterCount");
+  const error = document.getElementById("errorMessage");
+  const button = document.getElementById("continueBtn");
 
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
+  // Restore an earlier response if the teacher returns to this page.
+  try {
+    const savedInsight = sessionStorage.getItem("tichaInsight");
 
-  const insight = document.getElementById("insight").value.trim();
-  if (!insight) return;
+    if (savedInsight) {
+      textarea.value = savedInsight;
+    }
+  } catch (e) {
+    console.warn("Could not restore the saved insight.", e);
+  }
 
-  button.disabled = true;
-  button.textContent = "Submitting…";
+  function updateCount() {
+    count.textContent = textarea.value.length + " characters";
+  }
 
-  // ✅ Persist insight for Step 3
-  sessionStorage.setItem("tichaInsight", insight);
+  textarea.addEventListener("input", function () {
+    updateCount();
+    error.style.display = "none";
 
-  // ➡️ Continue flow (no webhook call here)
-  window.location.href = "/alliance/data/";
-});
+    try {
+      sessionStorage.setItem("tichaInsight", textarea.value);
+    } catch (e) {
+      console.warn("Could not save the insight in this browser.", e);
+    }
+  });
+
+  updateCount();
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const insight = textarea.value.trim();
+
+    if (!insight) {
+      error.style.display = "block";
+      textarea.focus();
+      return;
+    }
+
+    try {
+      sessionStorage.setItem("tichaInsight", insight);
+    } catch (e) {
+      error.textContent =
+        "Your browser could not save your response. Please check your browser settings and try again.";
+      error.style.display = "block";
+      return;
+    }
+
+    button.disabled = true;
+    button.textContent = "Continuing…";
+
+    window.location.href = "/alliance/data/";
+  });
+})();
 </script>
 
 </body>
