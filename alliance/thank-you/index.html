@@ -1,370 +1,462 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome, Founding Teacher! — TichaAfrica</title>
-  <meta name="description" content="You're now part of the movement shaping Africa's learning future.">
-  
-  <link rel="icon" href="/favicon.ico">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
-  
+
+  <title>Welcome to the Founding Teacher Alliance | TichaAfrica</title>
+  <meta name="description" content="Welcome to the TichaAfrica Founding Teacher Alliance. Your classroom experience matters in shaping the future of education.">
+  <meta name="theme-color" content="#073b3a">
+  <link rel="canonical" href="https://tichaafrica.com/alliance/thank-you/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --teal: #073b3a;
+      --teal-light: #0d5652;
+      --gold: #c9a34a;
+      --ink: #182c2b;
+      --muted: #647573;
+      --paper: #faf9f5;
+      --white: #ffffff;
+      --line: #e8e7df;
+    }
+
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
-    
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #0d5c63 0%, #0a4a50 100%);
-      color: #fff;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      line-height: 1.7;
       min-height: 100vh;
+    }
+
+    .page {
+      width: 100%;
+      min-height: 100vh;
+      padding: 35px 20px 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .logo {
+      width: 190px;
+      max-width: 65%;
+      height: auto;
+      object-fit: contain;
+      margin-bottom: 35px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 690px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 48px 52px;
+      box-shadow: 0 12px 40px rgba(7, 59, 58, 0.055);
+    }
+
+    .success-mark {
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: #eaf3ef;
+      color: var(--teal);
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 20px;
-      text-align: center;
+      font-size: 30px;
+      font-weight: 700;
+      margin-bottom: 25px;
     }
-    
-    .container {
-      max-width: 650px;
-      background: rgba(255, 255, 255, 0.98);
-      padding: 48px 32px;
-      border-radius: 24px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-      color: #0f172a;
+
+    .eyebrow {
+      color: var(--teal-light);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 13px;
     }
-    
-    .icon {
-      font-size: 4rem;
-      margin-bottom: 24px;
+
+    h1, h2 {
+      font-family: 'Manrope', sans-serif;
+      color: var(--teal);
+      line-height: 1.25;
     }
-    
+
     h1 {
-      font-size: clamp(2rem, 6vw, 2.8rem);
-      font-weight: 900;
-      color: #0d5c63;
-      margin-bottom: 16px;
-      line-height: 1.2;
+      font-size: clamp(29px, 5vw, 39px);
+      font-weight: 800;
+      letter-spacing: -1.2px;
+      margin-bottom: 17px;
     }
-    
-    .name {
-      color: #ca8a04;
+
+    .intro {
+      color: #4e625f;
+      font-size: 16px;
+      margin-bottom: 27px;
     }
-    
-    .subtitle {
-      font-size: clamp(1.1rem, 4vw, 1.3rem);
-      color: #475569;
-      margin-bottom: 32px;
-      font-weight: 600;
+
+    .gold-line {
+      width: 55px;
+      height: 3px;
+      background: var(--gold);
+      margin: 27px 0;
+      border-radius: 5px;
     }
-    
-    p {
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: #64748b;
-      margin-bottom: 20px;
+
+    h2 {
+      font-size: 21px;
+      font-weight: 700;
+      margin-bottom: 13px;
     }
-    
-    .highlight {
-      background: #fef3c7;
-      padding: 24px;
-      border-radius: 12px;
-      margin: 32px 0;
-      border-left: 6px solid #ca8a04;
+
+    .body-copy {
+      color: #536461;
+      font-size: 15px;
+      margin-bottom: 17px;
     }
-    
-    .highlight p {
-      color: #78350f;
-      font-weight: 600;
-      margin: 0;
+
+    .next-steps {
+      background: #f5f7f3;
+      border-left: 3px solid var(--gold);
+      padding: 22px 23px;
+      border-radius: 0 10px 10px 0;
+      margin: 25px 0;
     }
-    
-    /* Share Section */
-    .share-section {
-      background: #f1f5f9;
-      padding: 28px;
-      border-radius: 16px;
-      margin: 32px 0;
-      border: 2px dashed #cbd5e1;
-    }
-    
-    .share-section h3 {
-      color: #0d5c63;
-      font-size: 1.4rem;
+
+    .next-steps p {
+      color: #536461;
+      font-size: 14px;
       margin-bottom: 12px;
     }
-    
+
+    .next-steps p:last-child {
+      margin-bottom: 0;
+    }
+
+    .share-section {
+      margin-top: 31px;
+      padding-top: 27px;
+      border-top: 1px solid var(--line);
+    }
+
     .share-section p {
-      font-size: 1rem;
-      color: #64748b;
-      margin-bottom: 20px;
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 19px;
     }
-    
-    .share-buttons {
+
+    .share-actions {
       display: flex;
-      gap: 12px;
       flex-wrap: wrap;
-      justify-content: center;
+      gap: 12px;
     }
-    
-    .share-btn {
+
+    .button {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 14px 24px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: all 0.3s;
-      border: none;
-      cursor: pointer;
-    }
-    
-    .share-btn-whatsapp {
-      background: #25D366;
-      color: #fff;
-      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
-    }
-    
-    .share-btn-whatsapp:hover {
-      background: #20ba5a;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-    }
-    
-    .share-btn-copy {
-      background: #64748b;
-      color: #fff;
-      box-shadow: 0 4px 12px rgba(100, 116, 139, 0.3);
-    }
-    
-    .share-btn-copy:hover {
-      background: #475569;
-      transform: translateY(-2px);
-    }
-    
-    .share-btn-copy.copied {
-      background: #10b981;
-    }
-    
-    .referral-link {
-      background: #fff;
-      padding: 16px;
-      border-radius: 8px;
-      margin-top: 16px;
-      border: 1px solid #e2e8f0;
-      word-break: break-all;
-      font-family: monospace;
-      font-size: 0.9rem;
-      color: #475569;
-    }
-    
-    .btn {
-      display: inline-block;
-      padding: 18px 48px;
-      background: #0d5c63;
-      color: #fff;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 19px;
+      border-radius: 7px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
       font-weight: 700;
-      font-size: 1.2rem;
-      border-radius: 999px;
       text-decoration: none;
-      margin-top: 24px;
-      transition: all 0.3s;
-      box-shadow: 0 10px 30px rgba(13, 92, 99, 0.3);
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+      border: 1px solid var(--teal);
+      text-align: center;
     }
-    
-    .btn:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(13, 92, 99, 0.4);
+
+    .button:hover {
+      transform: translateY(-2px);
     }
-    
-    .skip-link {
-      display: block;
-      margin-top: 24px;
-      color: #64748b;
-      font-size: 0.95rem;
+
+    .button-primary {
+      background: var(--teal);
+      color: var(--white);
+    }
+
+    .button-primary:hover {
+      background: var(--teal-light);
+    }
+
+    .button-secondary {
+      background: var(--white);
+      color: var(--teal);
+    }
+
+    .button-secondary:hover {
+      background: #f2f6f3;
+    }
+
+    .homepage-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: var(--teal-light);
+      font-size: 14px;
+      font-weight: 700;
       text-decoration: none;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 3px;
     }
-    
-    .skip-link:hover {
-      text-decoration: underline;
+
+    .homepage-link:hover {
+      color: var(--gold);
     }
-    
-    footer {
-      margin-top: 32px;
-      padding-top: 24px;
-      border-top: 1px solid #e2e8f0;
-      color: #94a3b8;
-      font-size: 0.9rem;
+
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      color: #83908c;
+      font-size: 12px;
     }
-    
-    .loading {
-      opacity: 0;
-      animation: fadeIn 0.5s ease-in forwards;
+
+    .footer strong {
+      color: var(--teal);
+      font-weight: 700;
     }
-    
-    @keyframes fadeIn {
-      to { opacity: 1; }
+
+    @media (max-width: 600px) {
+      .page {
+        padding: 25px 14px 35px;
+      }
+
+      .logo {
+        width: 165px;
+        margin-bottom: 25px;
+      }
+
+      .container {
+        padding: 32px 23px;
+        border-radius: 13px;
+      }
+
+      .intro {
+        font-size: 15px;
+      }
+
+      .share-actions {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .homepage-link {
+        margin-top: 22px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="container loading">
-    <div class="icon">🎉</div>
-    
-    <h1>Welcome, <span class="name" id="teacherName">Founding Teacher</span>!</h1>
-    
-    <p class="subtitle">
-      You're now one of the first teachers shaping Africa's AI future.
-    </p>
-    
-    <p>
-      Your classroom insight has been recorded. You're officially a <strong>Founding Teacher</strong> in the TichaAfrica movement.
-    </p>
-    
-    <div class="highlight">
-      <p>
-        💡 Your voice will directly influence the tools we build for African classrooms. This is just the beginning.
+  <main class="page">
+
+    <img
+      src="/assets/images/tichaafrica-logo.png"
+      alt="TichaAfrica – Teach Smart. Lead Change."
+      class="logo"
+    >
+
+    <section class="container" aria-labelledby="welcome-heading">
+
+      <div class="success-mark" aria-hidden="true">✓</div>
+
+      <p class="eyebrow">Founding Teacher Alliance</p>
+
+      <h1 id="welcome-heading">
+        Welcome<span id="first-name"></span>.
+      </h1>
+
+      <p class="intro">
+        Thank you for sharing a part of your classroom experience with us.
+        Your enrolment journey is complete, and your contribution is now
+        part of a growing body of teacher knowledge.
       </p>
-    </div>
-    
-    <!-- SHARING SECTION -->
-    <div class="share-section">
-      <h3>🚀 Help Us Reach 10,000 Teachers</h3>
-      <p>
-        Know other teachers who should be part of this? Share TichaAfrica with your colleagues!
+
+      <div class="gold-line"></div>
+
+      <h2>Your experience matters.</h2>
+
+      <p class="body-copy">
+        Teachers make decisions every day that shape how learning happens.
+        Those decisions hold knowledge that is often missing from conversations
+        about the future of education.
       </p>
-      
-      <div class="share-buttons">
-        <a href="#" class="share-btn share-btn-whatsapp" id="shareWhatsApp">
-          <span>📱</span>
-          Share on WhatsApp
+
+      <p class="body-copy">
+        The Founding Teacher Alliance exists to make that knowledge visible,
+        connect educators across Africa, and ensure that teachers have a voice
+        in shaping the educational solutions and AI systems that affect their work.
+      </p>
+
+      <div class="next-steps">
+        <h2>What happens next?</h2>
+
+        <p>
+          <strong>We learn from your contribution.</strong>
+          Teacher insights will be reviewed collectively to identify recurring
+          classroom experiences and challenges.
+        </p>
+
+        <p>
+          <strong>We build on shared knowledge.</strong>
+          These findings will inform TichaAfrica's research, educational innovation
+          and the development of AI solutions that better reflect African classrooms.
+        </p>
+
+        <p>
+          <strong>We keep the conversation going.</strong>
+          We may contact you to understand your experience further. Findings may
+          also be shared with researchers, developers and education partners,
+          with individual contributions anonymised where shared publicly.
+        </p>
+
+        <p>
+          You will receive further information about the Alliance and how to
+          stay connected.
+        </p>
+      </div>
+
+      <h2>Bring another teacher along.</h2>
+
+      <p class="body-copy">
+        The more classroom experiences we understand, the clearer the picture
+        becomes. If you know a teacher whose perspective deserves to be heard,
+        invite them to join the Alliance.
+      </p>
+
+      <div class="share-actions">
+
+        <a
+          class="button button-primary"
+          id="whatsapp-share"
+          href="https://wa.me/?text=I%20have%20joined%20the%20TichaAfrica%20Founding%20Teacher%20Alliance.%20It%20is%20a%20community%20of%20African%20educators%20sharing%20classroom%20knowledge%20to%20shape%20the%20future%20of%20education.%20You%20can%20join%20here%3A%20https%3A%2F%2Ftichaafrica.com%2Fenrol"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Invite a teacher on WhatsApp
         </a>
-        <button class="share-btn share-btn-copy" id="copyLinkBtn">
-          <span>🔗</span>
-          <span id="copyBtnText">Copy Link</span>
+
+        <button
+          class="button button-secondary"
+          id="copy-link"
+          type="button"
+        >
+          Copy enrolment link
         </button>
+
       </div>
-      
-      <div class="referral-link" id="referralLink">
-        https://tichaafrica.com/alliance/intro/
+
+      <a class="homepage-link" href="/">
+        Return to TichaAfrica homepage →
+      </a>
+
+      <div class="share-section">
+        <p>
+          Thank you for being part of a conversation that places teachers
+          where they belong: at the heart of education's future.
+        </p>
+
+        <p>
+          <strong>TichaAfrica</strong><br>
+          Teach Smart. Lead Change.
+        </p>
       </div>
-    </div>
-    
-    <p>
-      <strong>What happens next?</strong>
-    </p>
-    
-    <p>
-      Many founding teachers are taking the <strong>Founding Teacher Pledge</strong> to formalize their commitment to this movement.
-    </p>
-    
-    <p>
-      Taking the pledge gives you access to our exclusive <strong>Founding Teachers WhatsApp Community</strong> where we're already connecting, sharing strategies, and shaping our roadmap together.
-    </p>
-    
-    <a href="/alliance/pledge/" class="btn">
-      Take the Founding Teacher Pledge
-    </a>
-    
-    <a href="/" class="skip-link">
-      I'll do this later
-    </a>
-    
-    <footer>
-      © 2026 TichaAfrica • Teach Smart. Lead Change.
+
+    </section>
+
+    <footer class="footer">
+      <strong>TichaAfrica</strong> · Teachers Shaping Africa's Learning Future
     </footer>
-  </div>
+
+  </main>
 
   <script>
-    // Get teacher's name
-    function getTeacherName() {
-      const urlParams = new URLSearchParams(window.location.search);
-      const nameFromUrl = urlParams.get('name');
-      
-      if (nameFromUrl) return nameFromUrl;
-      
-      const nameFromStorage = sessionStorage.getItem('teacherName');
-      if (nameFromStorage) return nameFromStorage;
-      
-      return 'Founding Teacher';
-    }
-    
-    // Display the name
-    const teacherName = getTeacherName();
-    const nameElement = document.getElementById('teacherName');
-    
-    if (teacherName && teacherName !== 'Founding Teacher') {
-      const firstName = teacherName.split(' ')[0];
-      nameElement.textContent = firstName;
-    }
-    
-    // Generate referral link (optional: add tracking parameter)
-    const referralLink = 'https://tichaafrica.com/alliance/intro/';
-    // If you want tracking, use: 
-    // const referralLink = `https://tichaafrica.com/alliance/intro/?ref=${encodeURIComponent(teacherName)}`;
-    
-    document.getElementById('referralLink').textContent = referralLink;
-    
-    // WhatsApp share message
-    const firstName = teacherName.split(' ')[0];
-    const shareMessage = `🌍 I just became a Founding Teacher at TichaAfrica!
+    (function () {
+      const params = new URLSearchParams(window.location.search);
 
-We're 10,000 African teachers co-designing AI for OUR classrooms—not importing Western solutions.
+      let teacherName = '';
 
-Foreign companies are building tools for us without us. Time to change that.
-
-Join me: ${referralLink}
-
-Let's shape Africa's learning future together! 🚀`;
-    
-    // WhatsApp share button
-    document.getElementById('shareWhatsApp').addEventListener('click', (e) => {
-      e.preventDefault();
-      const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(shareMessage)}`;
-      window.open(whatsappUrl, '_blank');
-    });
-    
-    // Copy link button
-    const copyBtn = document.getElementById('copyLinkBtn');
-    const copyBtnText = document.getElementById('copyBtnText');
-    
-    copyBtn.addEventListener('click', async () => {
       try {
-        await navigator.clipboard.writeText(referralLink);
-        copyBtnText.textContent = '✓ Copied!';
-        copyBtn.classList.add('copied');
-        
-        setTimeout(() => {
-          copyBtnText.textContent = 'Copy Link';
-          copyBtn.classList.remove('copied');
-        }, 2000);
-      } catch (err) {
-        // Fallback for older browsers
-        const textArea = document.createElement('textarea');
-        textArea.value = referralLink;
-        document.body.appendChild(textArea);
-        textArea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textArea);
-        
-        copyBtnText.textContent = '✓ Copied!';
-        copyBtn.classList.add('copied');
-        
-        setTimeout(() => {
-          copyBtnText.textContent = 'Copy Link';
-          copyBtn.classList.remove('copied');
-        }, 2000);
+        teacherName = sessionStorage.getItem('teacherName') || '';
+        sessionStorage.removeItem('teacherName');
+      } catch (error) {
+        teacherName = '';
       }
-    });
-    
-    // Clear sessionStorage name
-    sessionStorage.removeItem('teacherName');
+
+      if (!teacherName) {
+        teacherName = params.get('name') || '';
+      }
+
+      const firstName = teacherName.trim().split(/\s+/)[0];
+
+      if (firstName) {
+        document.getElementById('first-name').textContent =
+          ', ' + firstName;
+      }
+
+      const enrolmentLink = 'https://tichaafrica.com/enrol';
+      const copyButton = document.getElementById('copy-link');
+
+      copyButton.addEventListener('click', async function () {
+        try {
+          await navigator.clipboard.writeText(enrolmentLink);
+          copyButton.textContent = 'Link copied!';
+        } catch (error) {
+          const temporaryInput = document.createElement('textarea');
+          temporaryInput.value = enrolmentLink;
+          temporaryInput.style.position = 'fixed';
+          temporaryInput.style.opacity = '0';
+
+          document.body.appendChild(temporaryInput);
+          temporaryInput.select();
+
+          try {
+            document.execCommand('copy');
+            copyButton.textContent = 'Link copied!';
+          } catch (copyError) {
+            copyButton.textContent = 'Please copy: tichaafrica.com/enrol';
+          }
+
+          document.body.removeChild(temporaryInput);
+        }
+
+        window.setTimeout(function () {
+          copyButton.textContent = 'Copy enrolment link';
+        }, 2500);
+      });
+    })();
   </script>
+
 </body>
 </html>
