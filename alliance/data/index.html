@@ -4,680 +4,204 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Your Profile | Founding Teacher Alliance | TichaAfrica</title>
-
-<meta name="description" content="Complete your Founding Teacher Alliance profile and help TichaAfrica understand the teaching contexts represented across its growing community.">
-
-<meta property="og:site_name" content="TichaAfrica">
+<title>Complete Your Profile | TichaAfrica</title>
+<meta name="description" content="Complete your Founding Teacher Alliance profile.">
+<meta property="og:title" content="TichaAfrica — Teachers Shaping AI for African Classrooms">
+<meta property="og:description" content="African teachers contributing the classroom knowledge that should shape the future of learning.">
+<meta property="og:image" content="https://tichaafrica.com/assets/images/og-image.jpg">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Your Profile | TichaAfrica">
-<meta property="og:description" content="Your teaching experience and context matter. Complete your Founding Teacher Alliance profile.">
-<meta property="og:url" content="https://tichaafrica.com/alliance/data/">
-
-<link rel="canonical" href="https://tichaafrica.com/alliance/data/">
+<link rel="canonical" href="https://tichaafrica.com/enrol">
 <link rel="icon" href="/favicon.ico">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --ink: #142b2d;
-  --muted: #647477;
-  --teal: #0d5c63;
-  --teal-dark: #08474d;
-  --gold: #c99735;
-  --paper: #f6f8f6;
-  --white: #fff;
-  --line: #dce5e2;
-  --soft: #eaf2ef;
-  --shadow: 0 18px 55px rgba(20,43,45,.09);
+:root{
+  --ink:#142b2d;--muted:#647477;--teal:#0d5c63;--teal-dark:#08474d;
+  --gold:#c99735;--paper:#f6f8f6;--white:#fff;--line:#dce5e2;
+  --soft:#eaf2ef;--shadow:0 18px 55px rgba(20,43,45,.09);
 }
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: Inter, Arial, sans-serif;
-  background: var(--paper);
-  color: var(--ink);
-  line-height: 1.6;
-}
-
-a {
-  color: inherit;
-}
-
-.site-header {
-  width: min(1120px,100%);
-  margin: auto;
-  padding: 18px 28px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 22px;
-  min-height: 112px;
-}
-
-.brand {
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-  min-width: 0;
-}
-
-.brand-logo {
-  display: block;
-  width: 190px;
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-.header-note {
-  font-size: .82rem;
-  color: var(--muted);
-  font-weight: 600;
-  text-align: right;
-}
-
-main {
-  width: min(100%,900px);
-  margin: 0 auto;
-  padding: 26px 24px 76px;
-}
-
-.shell {
-  background: var(--white);
-  border: 1px solid rgba(220,229,226,.9);
-  border-radius: 24px;
-  box-shadow: var(--shadow);
-  overflow: hidden;
-}
-
-.progress-wrap {
-  padding: 22px clamp(26px,5vw,58px) 0;
-}
-
-.progress-meta {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  font-size: .78rem;
-  color: var(--muted);
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.progress-track {
-  height: 5px;
-  background: #e8eeeb;
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-.progress-fill {
-  width: 100%;
-  height: 100%;
-  background: var(--teal);
-  border-radius: 20px;
-}
-
-.steps {
-  display: flex;
-  gap: 8px;
-  margin-top: 14px;
-}
-
-.step-dot {
-  height: 4px;
-  flex: 1;
-  border-radius: 20px;
-  background: #e8eeeb;
-}
-
-.step-dot.active {
-  background: var(--teal);
-}
-
-.content {
-  padding: clamp(26px,5vw,58px);
-}
-
-.eyebrow {
-  font-size: .76rem;
-  text-transform: uppercase;
-  letter-spacing: .13em;
-  font-weight: 800;
-  color: var(--teal);
-  margin: 0 0 14px;
-}
-
-h1 {
-  font-size: clamp(2rem,5.8vw,3.45rem);
-  line-height: 1.08;
-  letter-spacing: -.055em;
-  color: var(--ink);
-  margin: 0 0 20px;
-  font-weight: 800;
-}
-
-h2 {
-  font-size: 1.15rem;
-  line-height: 1.35;
-  letter-spacing: -.02em;
-  margin: 0 0 10px;
-}
-
-.lead {
-  font-size: clamp(1.03rem,2.2vw,1.15rem);
-  line-height: 1.75;
-  color: #526366;
-  max-width: 680px;
-  margin: 0;
-}
-
-.muted {
-  color: var(--muted);
-}
-
-.intro-panel {
-  background: var(--soft);
-  border: 1px solid #dce9e4;
-  border-radius: 16px;
-  padding: 21px 23px;
-  margin: 28px 0 30px;
-}
-
-.intro-panel p {
-  margin: 0;
-  color: #41585a;
-  font-size: .92rem;
-  line-height: 1.75;
-}
-
-.form-card {
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  padding: clamp(20px,4vw,34px);
-  margin-top: 28px;
-}
-
-.form-heading {
-  margin-bottom: 26px;
-}
-
-.form-heading p {
-  margin: 0;
-  color: var(--muted);
-  font-size: .89rem;
-  line-height: 1.7;
-}
-
-.required-note {
-  font-size: .78rem;
-  color: var(--muted);
-  margin: 0 0 22px;
-}
-
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0 18px;
-}
-
-.span-2 {
-  grid-column: 1 / -1;
-}
-
-.field {
-  margin-bottom: 22px;
-}
-
-label {
-  display: block;
-  font-size: .91rem;
-  font-weight: 750;
-  margin: 0 0 8px;
-  color: var(--ink);
-}
-
-.hint {
-  font-size: .82rem;
-  line-height: 1.5;
-  color: var(--muted);
-  margin: -2px 0 9px;
-}
-
-input,
-select {
-  display: block;
-  width: 100%;
-  min-height: 50px;
-  padding: 13px 15px;
-  border: 1px solid #cbd8d4;
-  border-radius: 10px;
-  background: #fff;
-  color: var(--ink);
-  font: inherit;
-  font-size: 16px;
-}
-
-input::placeholder {
-  color: #9aa8a6;
-}
-
-input:focus,
-select:focus {
-  border-color: var(--teal);
-  outline: 3px solid rgba(13,92,99,.1);
-}
-
-.phone-row {
-  display: grid;
-  grid-template-columns: 112px 1fr;
-  gap: 10px;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  min-height: 54px;
-  padding: 15px 25px;
-  border: 0;
-  border-radius: 999px;
-  background: var(--teal);
-  color: #fff;
-  text-decoration: none;
-  font: 700 1rem Inter,Arial,sans-serif;
-  cursor: pointer;
-  transition: background .2s ease,transform .2s ease;
-}
-
-.btn:hover:not(:disabled) {
-  background: var(--teal-dark);
-  transform: translateY(-1px);
-}
-
-.btn:disabled {
-  opacity: .6;
-  cursor: not-allowed;
-  transform: none;
-}
-
-.btn:focus-visible,
-a:focus-visible,
-input:focus-visible,
-select:focus-visible {
-  outline: 3px solid rgba(201,151,53,.55);
-  outline-offset: 3px;
-}
-
-.form-submit {
-  width: 100%;
-  margin-top: 4px;
-}
-
-.privacy-note {
-  margin-top: 25px;
-  padding-top: 20px;
-  border-top: 1px solid var(--line);
-}
-
-.privacy-note p {
-  margin: 0;
-  color: var(--muted);
-  font-size: .83rem;
-  line-height: 1.75;
-}
-
-.form-error {
-  display: none;
-  margin: 14px 0 0;
-  color: #a33d32;
-  font-size: .85rem;
-}
-
-.back-link {
-  display: inline-block;
-  margin-top: 20px;
-  color: var(--teal);
-  font-size: .88rem;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.back-link:hover {
-  text-decoration: underline;
-}
-
-footer {
-  padding: 0 24px 30px;
-  text-align: center;
-  color: #819092;
-  font-size: .8rem;
-}
-
-@media(max-width:620px) {
-  .site-header {
-    padding: 14px 18px;
-    min-height: 88px;
-  }
-
-  .brand-logo {
-    width: 158px;
-  }
-
-  .header-note {
-    font-size: .7rem;
-    max-width: 118px;
-  }
-
-  main {
-    padding: 12px 14px 48px;
-  }
-
-  .shell {
-    border-radius: 18px;
-  }
-
-  .content {
-    padding: 27px 21px 32px;
-  }
-
-  .progress-wrap {
-    padding: 20px 21px 0;
-  }
-
-  .form-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .span-2 {
-    grid-column: auto;
-  }
-
-  .phone-row {
-    grid-template-columns: 100px 1fr;
-  }
-
-  .btn {
-    width: 100%;
-  }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6}
+a{color:inherit}
+.site-header{width:min(1120px,100%);margin:auto;padding:18px 28px;display:flex;align-items:center;justify-content:space-between;gap:22px;min-height:112px}
+.brand{display:inline-flex;align-items:center;text-decoration:none;flex:0 1 auto;min-width:0}
+.brand-logo{display:block;width:190px;max-width:100%;height:auto;object-fit:contain}
+.header-note{font-size:.82rem;color:var(--muted);font-weight:600;text-align:right}
+main{width:min(100%,900px);margin:0 auto;padding:26px 24px 76px}
+.shell{background:var(--white);border:1px solid rgba(220,229,226,.9);border-radius:24px;box-shadow:var(--shadow);overflow:hidden}
+.content{padding:clamp(26px,5vw,58px)}
+.eyebrow{font-size:.76rem;text-transform:uppercase;letter-spacing:.13em;font-weight:800;color:var(--teal);margin:0 0 14px}
+h1{font-size:clamp(2rem,5.8vw,3.65rem);line-height:1.08;letter-spacing:-.055em;color:var(--ink);margin:0 0 20px;font-weight:800}
+h2{font-size:1.18rem;line-height:1.3;letter-spacing:-.02em;margin:0 0 10px}
+.lead{font-size:clamp(1.03rem,2.2vw,1.18rem);line-height:1.75;color:#526366;max-width:680px;margin:0}
+.muted{color:var(--muted)}
+.progress-wrap{padding:22px clamp(26px,5vw,58px) 0}
+.progress-meta{display:flex;justify-content:space-between;gap:12px;font-size:.78rem;color:var(--muted);font-weight:700;margin-bottom:10px}
+.progress-track{height:5px;background:#e8eeeb;border-radius:20px;overflow:hidden}
+.progress-fill{height:100%;background:var(--teal);border-radius:20px}
+.steps{display:flex;gap:8px;margin-top:14px}
+.step-dot{height:4px;flex:1;border-radius:20px;background:#e8eeeb}
+.step-dot.active{background:var(--teal)}
+.panel{background:var(--soft);border:1px solid #dce9e4;border-radius:16px;padding:20px 22px;margin:28px 0}
+.panel p{margin:0;color:#41585a}
+.panel strong{color:var(--ink)}
+.actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:15px 25px;border:0;border-radius:999px;background:var(--teal);color:#fff;text-decoration:none;font:700 1rem Inter,Arial,sans-serif;cursor:pointer;transition:background .2s ease,transform .2s ease}
+.btn:hover{background:var(--teal-dark);transform:translateY(-1px)}
+.btn:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid rgba(201,151,53,.55);outline-offset:3px}
+.btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.text-link{font-weight:700;color:var(--teal);text-decoration:none}
+.text-link:hover{text-decoration:underline}
+footer{padding:0 24px 30px;text-align:center;color:#819092;font-size:.8rem}
+.form-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:clamp(20px,4vw,34px);margin-top:30px}
+.field{margin-bottom:22px}
+label{display:block;font-size:.91rem;font-weight:750;margin:0 0 8px;color:var(--ink)}
+.hint{font-size:.82rem;line-height:1.5;color:var(--muted);margin:-2px 0 9px}
+input,select,textarea{display:block;width:100%;min-height:50px;padding:13px 15px;border:1px solid #cbd8d4;border-radius:10px;background:#fff;color:var(--ink);font:inherit;font-size:16px}
+textarea{min-height:180px;resize:vertical;line-height:1.65}
+input::placeholder,textarea::placeholder{color:#9aa8a6}
+input:focus,select:focus,textarea:focus{border-color:var(--teal);outline:3px solid rgba(13,92,99,.1)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
+.span-2{grid-column:1/-1}
+.phone-row{display:grid;grid-template-columns:112px 1fr;gap:10px}
+.required-note{font-size:.78rem;color:var(--muted);margin:0 0 18px}
+.form-submit{width:100%;margin-top:4px}
+@media(max-width:620px){
+ .site-header{padding:14px 18px;min-height:88px}.brand-logo{width:158px}.header-note{font-size:.7rem;max-width:118px}
+ main{padding:12px 14px 48px}.shell{border-radius:18px}
+ .content{padding:27px 21px 32px}.progress-wrap{padding:20px 21px 0}
+ .form-grid{grid-template-columns:1fr}.span-2{grid-column:auto}
+ .phone-row{grid-template-columns:100px 1fr}
+ .btn{width:100%}.actions{align-items:stretch}
 }
 </style>
 </head>
 
 <body>
-
 <header class="site-header">
   <a class="brand" href="/" aria-label="TichaAfrica home">
-    <img
-      class="brand-logo"
-      src="/assets/images/tichaafrica-logo.png"
-      alt="TichaAfrica — Teach Smart. Lead Change."
-    >
+    <img class="brand-logo" src="/assets/images/tichaafrica-logo.png" alt="TichaAfrica — Teach Smart. Lead Change.">
   </a>
-
   <span class="header-note">Founding Teacher Alliance</span>
 </header>
 
 <main>
-<section class="shell">
-
-  <div class="progress-wrap">
-    <div class="progress-meta">
-      <span>YOUR ENROLMENT</span>
-      <span>STEP 3 OF 3</span>
-    </div>
-
-    <div
-      class="progress-track"
-      role="progressbar"
-      aria-label="Enrolment progress"
-      aria-valuemin="1"
-      aria-valuemax="3"
-      aria-valuenow="3"
-    >
-      <div class="progress-fill"></div>
-    </div>
-
-    <div class="steps" aria-hidden="true">
-      <span class="step-dot active"></span>
-      <span class="step-dot active"></span>
-      <span class="step-dot active"></span>
-    </div>
-  </div>
-
-  <div class="content">
-
-    <p class="eyebrow">Step 3 · Your profile</p>
-
-    <h1>Let's put your insight in context.</h1>
-
-    <p class="lead">
-      A classroom experience becomes more meaningful when we understand
-      the environment in which it happened. Tell us a little about your
-      teaching context so we can better understand the educators and
-      experiences represented in the Alliance.
-    </p>
-
-    <div class="intro-panel">
-      <h2>Why these details matter</h2>
-      <p>
-        Teachers work in different settings, with different learners,
-        resources, languages and educational realities. Understanding
-        those differences helps TichaAfrica identify patterns without
-        losing sight of the contexts behind them. It also helps us
-        communicate with you as the Alliance develops.
-      </p>
-    </div>
-
-    <form
-      id="teacherForm"
-      name="Founding Teacher Alliance"
-      method="POST"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
-      class="form-card"
-    >
-
-      <input type="hidden" name="form-name" value="Founding Teacher Alliance">
-      <input type="hidden" name="submissionType" value="Alliance Profile">
-
-      <div hidden>
-        <label>Leave this field empty
-          <input name="bot-field">
-        </label>
+  <section class="shell">
+    <div class="progress-wrap">
+      <div class="progress-meta">
+        <span>YOUR ENROLMENT</span>
+        <span>STEP 3 OF 3</span>
       </div>
-
-      <div class="form-heading">
-        <h2>About you and your teaching context</h2>
-        <p>
-          Complete the details below. Your information will help us
-          understand the range of educators contributing to the Alliance.
-        </p>
+      <div class="progress-track" role="progressbar" aria-label="Enrolment progress" aria-valuemin="1" aria-valuemax="3" aria-valuenow="3">
+        <div class="progress-fill" style="width:100%"></div>
       </div>
+      <div class="steps" aria-hidden="true">
+        <span class="step-dot active"></span>
+        <span class="step-dot active"></span>
+        <span class="step-dot active"></span>
+      </div>
+    </div>
 
-      <p class="required-note">
-        Fields marked with * are required.
-      </p>
+    <div class="content">
+      <p class="eyebrow">Step 3 · Your profile</p>
+      <h1>Let's put your insight in context.</h1>
+      <p class="lead">A few details will help us understand the teaching environments represented in the Alliance and keep in touch as the work develops.</p>
 
-      <div class="form-grid">
+      <form id="teacherForm" name="Founding Teacher Alliance" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="form-card">
+        <input type="hidden" name="form-name" value="Founding Teacher Alliance">
+        <input type="hidden" name="submissionType" value="Alliance Profile">
 
-        <div class="field span-2">
-          <label for="fullName">Full name *</label>
-          <input
-            id="fullName"
-            name="fullName"
-            autocomplete="name"
-            placeholder="Your full name"
-            required
-          >
-        </div>
+        <p class="required-note">Fields marked as required must be completed.</p>
 
-        <div class="field">
-          <label for="schoolType">School setting *</label>
-          <select id="schoolType" name="schoolType" required>
-            <option value="">Select your setting</option>
-            <option value="Rural">Rural</option>
-            <option value="Urban">Urban</option>
-            <option value="Peri-urban">Peri-urban</option>
-          </select>
-        </div>
+        <div class="form-grid">
+          <div class="field span-2">
+            <label for="fullName">Full name *</label>
+            <input id="fullName" name="fullName" autocomplete="name" placeholder="Your full name" required>
+          </div>
 
-        <div class="field">
-          <label for="country">Country *</label>
-          <select id="country" name="country" required>
-            <option value="">Select country</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="region">State / Region / Province *</label>
-          <select id="region" name="regionState" required>
-            <option value="">Select your region</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="localGovt">Local area / District</label>
-          <input
-            id="localGovt"
-            name="localGovt"
-            placeholder="e.g. Nsukka LGA"
-          >
-        </div>
-
-        <div class="field span-2">
-          <label for="subjectLevel">Subject and level taught *</label>
-          <input
-            id="subjectLevel"
-            name="subjectLevel"
-            placeholder="e.g. Mathematics, Primary 4–6"
-            required
-          >
-          <p class="hint">
-            You can include more than one subject or class level.
-          </p>
-        </div>
-
-        <div class="field span-2">
-          <label for="whatsapp">WhatsApp number *</label>
-          <p class="hint">
-            Select your country code, then enter your number without
-            the country code.
-          </p>
-
-          <div class="phone-row">
-            <select id="code" aria-label="Country calling code" required>
-              <option value="">Code</option>
+          <div class="field">
+            <label for="schoolType">School setting *</label>
+            <select id="schoolType" name="schoolType" required>
+              <option value="">Select your setting</option>
+              <option>Rural</option>
+              <option>Urban</option>
+              <option>Peri-urban</option>
             </select>
+          </div>
 
-            <input
-              id="whatsapp"
-              type="tel"
-              inputmode="tel"
-              autocomplete="tel-national"
-              placeholder="7012345678"
-              required
-            >
+          <div class="field">
+            <label for="country">Country *</label>
+            <select id="country" name="country" required>
+              <option value="">Select country</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="region">State / Region / Province *</label>
+            <input id="region" name="regionState" list="regionOptions" placeholder="Enter your state, region or province" required>
+            <datalist id="regionOptions"></datalist>
+          </div>
+
+          <div class="field">
+            <label for="localGovt">Local area / District</label>
+            <input id="localGovt" name="localGovt" placeholder="e.g. Nsukka LGA">
+          </div>
+
+          <div class="field span-2">
+            <label for="subjectLevel">Subject and level taught *</label>
+            <input id="subjectLevel" name="subjectLevel" placeholder="e.g. Mathematics, Primary 4–6" required>
+          </div>
+
+          <div class="field span-2">
+            <label for="whatsapp">WhatsApp number *</label>
+            <p class="hint">Include your number without the country code; select your country code first.</p>
+            <div class="phone-row">
+              <select id="code" aria-label="Country calling code" required>
+                <option value="">Code</option>
+              </select>
+              <input id="whatsapp" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="7012345678" required>
+            </div>
+          </div>
+
+          <div class="field span-2">
+            <label for="email">Email address <span class="muted" style="font-weight:500">(optional)</span></label>
+            <input id="email" type="email" name="email" autocomplete="email" placeholder="you@example.com">
+          </div>
+
+          <div class="field span-2">
+            <label for="referralSource">How did you hear about TichaAfrica? <span class="muted" style="font-weight:500">(optional)</span></label>
+            <select id="referralSource" name="referralSource">
+              <option value="">Select an option</option>
+              <option>WhatsApp</option>
+              <option>Facebook</option>
+              <option>Twitter/X</option>
+              <option>LinkedIn</option>
+              <option>Instagram</option>
+              <option>Friend/Colleague</option>
+              <option>School/Training</option>
+              <option>Google Search</option>
+              <option>Other</option>
+            </select>
           </div>
         </div>
 
-        <div class="field span-2">
-          <label for="email">
-            Email address
-            <span class="muted" style="font-weight:500">(optional)</span>
-          </label>
+        <button type="submit" class="btn form-submit" id="submitBtn">
+          Complete my enrolment <span aria-hidden="true">→</span>
+        </button>
+      </form>
 
-          <input
-            id="email"
-            type="email"
-            name="email"
-            autocomplete="email"
-            placeholder="you@example.com"
-          >
-        </div>
-
-        <div class="field span-2">
-          <label for="referralSource">
-            How did you hear about TichaAfrica?
-            <span class="muted" style="font-weight:500">(optional)</span>
-          </label>
-
-          <select id="referralSource" name="referralSource">
-            <option value="">Select an option</option>
-            <option value="WhatsApp">WhatsApp</option>
-            <option value="Facebook">Facebook</option>
-            <option value="Twitter/X">Twitter/X</option>
-            <option value="LinkedIn">LinkedIn</option>
-            <option value="Instagram">Instagram</option>
-            <option value="Friend/Colleague">Friend / Colleague</option>
-            <option value="School/Training">School / Training</option>
-            <option value="Google Search">Google Search</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-
-      </div>
-
-      <p class="form-error" id="formError" role="alert">
-        Something went wrong while preparing your submission. Please
-        check your entries and try again.
-      </p>
-
-      <button type="submit" class="btn form-submit" id="submitBtn">
-        Complete my enrolment
-        <span aria-hidden="true">→</span>
-      </button>
-
-      <div class="privacy-note">
-        <p>
-          Your details help TichaAfrica understand its teacher community
-          and communicate with you about its work. Your classroom insight
-          will be considered alongside the wider contributions of
-          educators. Please do not submit learners' identifying personal
-          information.
-        </p>
-      </div>
-
-    </form>
-
-    <a href="/alliance/insight/" class="back-link">
-      ← Back to your classroom insight
-    </a>
-
-  </div>
-</section>
+      <p class="muted" style="font-size:.82rem;margin:16px 2px 0">Thank you for contributing your classroom knowledge to the Founding Teacher Alliance.</p>
+    </div>
+  </section>
 </main>
 
-<footer>
-  © 2026 TichaAfrica · Teach Smart. Lead Change.
-</footer>
+<footer>© 2026 TichaAfrica · Teach Smart. Lead Change.</footer>
 
-<!-- Netlify form detection -->
-<form
-  name="Founding Teacher Alliance"
-  method="POST"
-  data-netlify="true"
-  netlify-honeypot="bot-field"
-  hidden
->
-  <input type="hidden" name="form-name" value="Founding Teacher Alliance">
-  <input type="hidden" name="submissionType">
-
+<!-- Hidden form retained for Netlify form detection -->
+<form name="Founding Teacher Alliance" netlify netlify-honeypot="bot-field" hidden>
   <input type="text" name="fullName">
   <input type="text" name="schoolType">
   <input type="text" name="country">
@@ -688,217 +212,146 @@ footer {
   <input type="text" name="whatsapp">
   <input type="email" name="email">
   <input type="text" name="referralSource">
-  <input type="text" name="bot-field">
+  <input type="text" name="submissionType">
 </form>
 
 <script>
-/* Original Google Apps Script endpoint retained. */
-const GOOGLE_WEBHOOK =
-  "https://script.google.com/macros/s/AKfycby47eYtGdiiVw81z6V0tsvTDyhZe43vmaTP7oK8mNcRVWawBUNpoa1PZ5fGWD2JHl0E/exec";
+const GOOGLE_WEBHOOK = "https://script.google.com/macros/s/AKfycby47eYtGdiiVw81z6V0tsvTDyhZe43vmaTP7oK8mNcRVWawBUNpoa1PZ5fGWD2JHl0E/exec";
 
-/* Original country, region and calling-code data retained. */
 const countries = {
-  "🇨🇲 Cameroon": {
-    code: "+237",
-    regions: ["Adamawa", "Centre", "East", "Far North", "Littoral", "North", "North-West", "South", "South-West", "West"]
-  },
-
-  "🇪🇬 Egypt": {
-    code: "+20",
-    regions: ["Alexandria", "Aswan", "Beheira", "Beni Suef", "Cairo", "Dakahlia", "Damietta", "Faiyum", "Gharbia", "Giza", "Ismailia", "Kafr El Sheikh", "Luxor", "Matruh", "Minya", "Monufia", "New Valley", "North Sinai", "Port Said", "Qalyubia", "Qena", "Red Sea", "Sharqia", "Sohag", "South Sinai", "Suez"]
-  },
-
-  "🇪🇹 Ethiopia": {
-    code: "+251",
-    regions: ["Addis Ababa", "Afar", "Amhara", "Benishangul-Gumuz", "Dire Dawa", "Gambela", "Harari", "Oromia", "Sidama", "Somali", "Southern Nations, Nationalities, and Peoples' Region", "Tigray"]
-  },
-
-  "🇬🇭 Ghana": {
-    code: "+233",
-    regions: ["Ahafo", "Ashanti", "Bono", "Bono East", "Central", "Eastern", "Greater Accra", "North East", "Northern", "Oti", "Savannah", "Upper East", "Upper West", "Volta", "Western", "Western North"]
-  },
-
-  "🇰🇪 Kenya": {
-    code: "+254",
-    regions: ["Baringo", "Bomet", "Bungoma", "Busia", "Elgeyo-Marakwet", "Embu", "Garissa", "Homa Bay", "Isiolo", "Kajiado", "Kakamega", "Kericho", "Kiambu", "Kilifi", "Kirinyaga", "Kisii", "Kisumu", "Kitui", "Kwale", "Laikipia", "Lamu", "Machakos", "Makueni", "Mandera", "Meru", "Migori", "Mombasa", "Murang'a", "Nairobi", "Nakuru", "Nandi", "Narok", "Nyamira", "Nyandarua", "Nyeri", "Samburu", "Siaya", "Taita-Taveta", "Tana River", "Tharaka-Nithi", "Trans-Nzoia", "Turkana", "Uasin Gishu", "Vihiga", "Wajir", "West Pokot"]
-  },
-
-  "🇳🇬 Nigeria": {
-    code: "+234",
-    regions: ["Abia", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", "Bayelsa", "Benue", "Borno", "Cross River", "Delta", "Ebonyi", "Edo", "Ekiti", "Enugu", "FCT", "Gombe", "Imo", "Jigawa", "Kaduna", "Kano", "Katsina", "Kebbi", "Kogi", "Kwara", "Lagos", "Nasarawa", "Niger", "Ogun", "Ondo", "Osun", "Oyo", "Plateau", "Rivers", "Sokoto", "Taraba", "Yobe", "Zamfara"]
-  },
-
-  "🇷🇼 Rwanda": {
-    code: "+250",
-    regions: ["Eastern", "Kigali", "Northern", "Southern", "Western"]
-  },
-
-  "🇸🇳 Senegal": {
-    code: "+221",
-    regions: ["Dakar", "Diourbel", "Fatick", "Kaolack", "Kaffrine", "Kédougou", "Kolda", "Louga", "Matam", "Saint-Louis", "Sédhiou", "Tambacounda", "Thiès", "Ziguinchor"]
-  },
-
-  "🇿🇦 South Africa": {
-    code: "+27",
-    regions: ["Eastern Cape", "Free State", "Gauteng", "KwaZulu-Natal", "Limpopo", "Mpumalanga", "North West", "Northern Cape", "Western Cape"]
-  },
-
-  "🇺🇬 Uganda": {
-    code: "+256",
-    regions: ["Central", "Eastern", "Northern", "Western"]
-  }
+  "Algeria": {code: "+213"},
+  "Angola": {code: "+244"},
+  "Benin": {code: "+229"},
+  "Botswana": {code: "+267"},
+  "Burkina Faso": {code: "+226"},
+  "Burundi": {code: "+257"},
+  "Cabo Verde": {code: "+238"},
+  "Cameroon": {code: "+237", regions: ["Adamawa", "Centre", "East", "Far North", "Littoral", "North", "North-West", "South", "South-West", "West"]},
+  "Central African Republic": {code: "+236"},
+  "Chad": {code: "+235"},
+  "Comoros": {code: "+269"},
+  "Democratic Republic of the Congo": {code: "+243"},
+  "Republic of the Congo": {code: "+242"},
+  "Côte d’Ivoire": {code: "+225"},
+  "Djibouti": {code: "+253"},
+  "Egypt": {code: "+20", regions: ["Alexandria", "Aswan", "Beheira", "Beni Suef", "Cairo", "Dakahlia", "Damietta", "Faiyum", "Gharbia", "Giza", "Ismailia", "Kafr El Sheikh", "Luxor", "Matruh", "Minya", "Monufia", "New Valley", "North Sinai", "Port Said", "Qalyubia", "Qena", "Red Sea", "Sharqia", "Sohag", "South Sinai", "Suez"]},
+  "Equatorial Guinea": {code: "+240"},
+  "Eritrea": {code: "+291"},
+  "Eswatini": {code: "+268"},
+  "Ethiopia": {code: "+251", regions: ["Addis Ababa", "Afar", "Amhara", "Benishangul-Gumuz", "Dire Dawa", "Gambela", "Harari", "Oromia", "Sidama", "Somali", "Southern Nations, Nationalities, and Peoples' Region", "Tigray"]},
+  "Gabon": {code: "+241"},
+  "Gambia": {code: "+220"},
+  "Ghana": {code: "+233", regions: ["Ahafo", "Ashanti", "Bono", "Bono East", "Central", "Eastern", "Greater Accra", "North East", "Northern", "Oti", "Savannah", "Upper East", "Upper West", "Volta", "Western", "Western North"]},
+  "Guinea": {code: "+224"},
+  "Guinea-Bissau": {code: "+245"},
+  "Kenya": {code: "+254", regions: ["Baringo", "Bomet", "Bungoma", "Busia", "Elgeyo-Marakwet", "Embu", "Garissa", "Homa Bay", "Isiolo", "Kajiado", "Kakamega", "Kericho", "Kiambu", "Kilifi", "Kirinyaga", "Kisii", "Kisumu", "Kitui", "Kwale", "Laikipia", "Lamu", "Machakos", "Makueni", "Mandera", "Meru", "Migori", "Mombasa", "Murang'a", "Nairobi", "Nakuru", "Nandi", "Narok", "Nyamira", "Nyandarua", "Nyeri", "Samburu", "Siaya", "Taita-Taveta", "Tana River", "Tharaka-Nithi", "Trans-Nzoia", "Turkana", "Uasin Gishu", "Vihiga", "Wajir", "West Pokot"]},
+  "Lesotho": {code: "+266"},
+  "Liberia": {code: "+231"},
+  "Libya": {code: "+218"},
+  "Madagascar": {code: "+261"},
+  "Malawi": {code: "+265"},
+  "Mali": {code: "+223"},
+  "Mauritania": {code: "+222"},
+  "Mauritius": {code: "+230"},
+  "Morocco": {code: "+212"},
+  "Mozambique": {code: "+258"},
+  "Namibia": {code: "+264"},
+  "Niger": {code: "+227"},
+  "Nigeria": {code: "+234", regions: ["Abia", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", "Bayelsa", "Benue", "Borno", "Cross River", "Delta", "Ebonyi", "Edo", "Ekiti", "Enugu", "FCT", "Gombe", "Imo", "Jigawa", "Kaduna", "Kano", "Katsina", "Kebbi", "Kogi", "Kwara", "Lagos", "Nasarawa", "Niger", "Ogun", "Ondo", "Osun", "Oyo", "Plateau", "Rivers", "Sokoto", "Taraba", "Yobe", "Zamfara"]},
+  "Rwanda": {code: "+250", regions: ["Eastern", "Kigali", "Northern", "Southern", "Western"]},
+  "São Tomé and Príncipe": {code: "+239"},
+  "Senegal": {code: "+221", regions: ["Dakar", "Diourbel", "Fatick", "Kaolack", "Kaffrine", "Kédougou", "Kolda", "Louga", "Matam", "Saint-Louis", "Sédhiou", "Tambacounda", "Thiès", "Ziguinchor"]},
+  "Seychelles": {code: "+248"},
+  "Sierra Leone": {code: "+232"},
+  "Somalia": {code: "+252"},
+  "South Africa": {code: "+27", regions: ["Eastern Cape", "Free State", "Gauteng", "KwaZulu-Natal", "Limpopo", "Mpumalanga", "North West", "Northern Cape", "Western Cape"]},
+  "South Sudan": {code: "+211"},
+  "Sudan": {code: "+249"},
+  "Tanzania": {code: "+255"},
+  "Togo": {code: "+228"},
+  "Tunisia": {code: "+216"},
+  "Uganda": {code: "+256", regions: ["Central", "Eastern", "Northern", "Western"]},
+  "Zambia": {code: "+260"},
+  "Zimbabwe": {code: "+263"}
 };
 
 const countrySel = document.getElementById("country");
-const regionSel = document.getElementById("region");
+const regionInput = document.getElementById("region");
+const regionOptions = document.getElementById("regionOptions");
 const codeSel = document.getElementById("code");
 
-Object.keys(countries).sort().forEach(country => {
-  const cleanName = country.replace(
-    /^(🇨🇲|🇪🇬|🇪🇹|🇬🇭|🇰🇪|🇳🇬|🇷🇼|🇸🇳|🇿🇦|🇺🇬)\s*/,
-    ""
-  );
-
-  countrySel.add(new Option(country, cleanName));
+Object.keys(countries).sort((a, b) => a.localeCompare(b)).forEach(name => {
+  countrySel.add(new Option(name, name));
 });
 
 countrySel.addEventListener("change", () => {
-  regionSel.innerHTML = '<option value="">Select your region</option>';
+  regionInput.value = "";
+  regionOptions.innerHTML = "";
   codeSel.innerHTML = '<option value="">Code</option>';
 
-  const selectedCountry = Object.keys(countries).find(key =>
-    key.includes(countrySel.value)
-  );
+  const selected = countries[countrySel.value];
+  if (!selected) return;
 
-  const country = countries[selectedCountry];
+  codeSel.add(new Option(selected.code, selected.code));
 
-  if (country) {
-    codeSel.add(new Option(country.code, country.code));
-
-    country.regions.forEach(region => {
-      regionSel.add(new Option(region, region));
-    });
-  }
+  (selected.regions || []).forEach(region => {
+    regionOptions.appendChild(new Option(region, region));
+  });
 });
 
-const form = document.getElementById("teacherForm");
-const submitBtn = document.getElementById("submitBtn");
-const formError = document.getElementById("formError");
+document.getElementById("teacherForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-form.addEventListener("submit", async (event) => {
-  event.preventDefault();
+  const btn = document.getElementById("submitBtn");
+  if (btn.disabled) return;
 
-  if (submitBtn.disabled) return;
+  btn.disabled = true;
+  btn.textContent = "Submitting…";
 
-  formError.style.display = "none";
+  const form = e.target;
+  const formData = new FormData(form);
+  const cleanPhone = document.getElementById("whatsapp").value.replace(/\D/g, "");
+  formData.set("whatsapp", codeSel.value + cleanPhone);
 
   const insight = sessionStorage.getItem("tichaInsight") || "";
-
-  if (!insight.trim()) {
-    formError.textContent =
-      "Your classroom insight could not be found. Please return to the previous page and enter your contribution.";
-    formError.style.display = "block";
-    return;
-  }
-
-  const phoneDigits = document
-    .getElementById("whatsapp")
-    .value
-    .replace(/\D/g, "");
-
-  if (!phoneDigits || !codeSel.value) {
-    formError.textContent =
-      "Please select your country calling code and enter your WhatsApp number.";
-    formError.style.display = "block";
-    return;
-  }
-
-  submitBtn.disabled = true;
-  submitBtn.textContent = "Submitting…";
-
-  const formData = new FormData(form);
-
-  formData.set("whatsapp", codeSel.value + phoneDigits);
   formData.set("insight", insight);
-  formData.set("form-name", "Founding Teacher Alliance");
-  formData.set("submissionType", "Alliance Profile");
 
-  /*
-   * Preserve the original webhook field names and payload structure.
-   * Optional fields are included even when left blank.
-   */
   const fields = [
-    "form-name",
-    "submissionType",
-    "fullName",
-    "schoolType",
-    "country",
-    "regionState",
-    "localGovt",
-    "subjectLevel",
-    "insight",
-    "whatsapp",
-    "email",
-    "referralSource"
+    "form-name", "submissionType", "fullName", "schoolType",
+    "country", "regionState", "localGovt", "subjectLevel",
+    "insight", "whatsapp", "email", "referralSource"
   ];
 
   fields.forEach(field => {
-    if (!formData.has(field)) {
-      formData.append(field, "");
-    }
+    if (!formData.has(field)) formData.append(field, "");
   });
 
+  // Each destination is contacted once. There is deliberately no retry,
+  // preventing a second submission from creating duplicate records.
   const netlifyBody = new URLSearchParams(formData).toString();
 
-  /*
-   * Submit once to each destination.
-   * No automatic retry is used, to avoid duplicate records.
-   */
   const results = await Promise.allSettled([
-    fetch(GOOGLE_WEBHOOK, {
-      method: "POST",
-      body: formData
-    }),
-
+    fetch(GOOGLE_WEBHOOK, { method: "POST", body: formData }),
     fetch("/", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: netlifyBody
     })
   ]);
 
   results.forEach((result, index) => {
     if (result.status === "rejected") {
-      console.error(
-        index === 0
-          ? "Google Sheets request error:"
-          : "Netlify Forms request error:",
-        result.reason
-      );
+      console.error(index === 0 ? "Google Sheets request error:" : "Netlify Forms request error:", result.reason);
     } else if (!result.value.ok) {
-      console.error(
-        index === 0
-          ? "Google Sheets returned an HTTP error:"
-          : "Netlify Forms returned an HTTP error:",
-        result.value.status
-      );
+      console.error(index === 0 ? "Google Sheets returned an HTTP error:" : "Netlify Forms returned an HTTP error:", result.value.status);
     }
   });
 
-  /*
-   * Preserve the name for the Thank-you page.
-   * Keep the existing redirect and clear the stored insight afterwards.
-   */
   const teacherName = formData.get("fullName") || "";
-
   sessionStorage.setItem("teacherName", teacherName);
   sessionStorage.removeItem("tichaInsight");
-
   window.location.href = "/alliance/thank-you/";
 });
 </script>
-
 </body>
 </html>
